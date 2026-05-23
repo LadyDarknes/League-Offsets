@@ -1,3 +1,5 @@
+if somebody need another pattern/offsets that I never write down, please contact me from Discord: swansizz, or create an issue!
+
 
 | Name                    | AOB Pattern                                                           |
 | ----------------------- | --------------------------------------------------------------------- |
