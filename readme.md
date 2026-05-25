@@ -34,8 +34,8 @@ league-of-legends/
 | ---------- | ----- |
 | Version    | Patch 25.10 |
 | Timestamp  | `6A0507E6` — Wed May 13 23:23:18 2026 |
-| SHA-256    | `AD9A3C2B...1803E390` |
-| MD5        | `CAE7B686...3A339A` |
+| SHA-256    | `AD9A3C2B9F1FAAE9BC013C4598F74EA3EB1B16FC90EF7FB2FB496E771803E390` |
+| MD5        | `CAE7B6864A09A08974E229CDF43A339A` |
 | Imagebase  | `0x7FF7C5CD0000` |
 | Compiler   | Visual C++ (x64 PE) |
 
