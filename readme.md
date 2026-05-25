@@ -1,46 +1,56 @@
-﻿# League of Legends — Reverse Engineering Reference
+<div align="center">
 
-> Offsets, AOB patterns, and struct layouts extracted from the League of Legends x64 binary.
-> All reversing work is manual. AI was used only for formatting.
+# League of Legends — Offset Reference
+
+![Patch](https://img.shields.io/badge/Patch-25.10-blue?style=flat-square)
+![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
+![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.0%2B-orange?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
+
+RVA offsets, AOB patterns, and struct layouts extracted manually from the live binary.  
+All reversing is my own work. AI was only used for table formatting.
+
+</div>
 
 ---
 
-## Project Structure
+## Repository Layout
 
 ```
-league-of-legends/
+League-Offsets/
 ├── src/
-│   ├── offsets.md          # RVA & global offsets, function entries, struct field offsets
-│   ├── patterns.md         # AOB byte patterns for globals, functions, and structs
-│   └── w2s.h               # World-to-screen (W2S) implementation
-└── dump/                   # IDA Pro database files (binary dump, .i64, .id0/.id1/.nam/.til)
+│   ├── offsets.md    ← global RVAs, function entries, all struct field offsets
+│   ├── patterns.md   ← AOB byte patterns for every global and function
+│   └── w2s.h         ← world-to-screen header (view / proj matrix math)
+└── dump/             ← IDA Pro database files (.i64 · .id0 · .id1 · .nam · .til)
 ```
 
 ---
 
-## Contents
+## Files
 
-| File | Description |
-| ---- | ----------- |
-| [`src/offsets.md`](src/offsets.md) | RVA values for all globals and function entry points, plus per-struct field offsets (GameObject, HeroManager, Camera, SpellBook, NavGrid, etc.) |
-| [`src/patterns.md`](src/patterns.md) | AOB signatures for every global pointer and function — includes multiple caller-context patterns for resolving via `E8` call |
-| [`src/w2s.h`](src/w2s.h) | Header-only W2S using the view/projection matrices from the CameraData struct |
+| File | Contents |
+| ---- | -------- |
+| [`src/offsets.md`](src/offsets.md) | RVA values for all global pointers and function entries, plus per-struct field offsets — `GameObject`, `HeroManager`, `Camera`, `SpellBook`, `NavGrid`, and more |
+| [`src/patterns.md`](src/patterns.md) | AOB signatures for everything in `offsets.md`. Multiple caller-context variants per entry so you can resolve through `E8` calls |
+| [`src/w2s.h`](src/w2s.h) | Header-only W2S using the view / projection matrices from the `CameraData` struct |
 
 ---
 
 ## Build Info
 
-| Field      | Value |
-| ---------- | ----- |
-| Version    | Patch 25.10 |
-| Timestamp  | `6A0507E6` — Wed May 13 23:23:18 2026 |
-| SHA-256    | `AD9A3C2B9F1FAAE9BC013C4598F74EA3EB1B16FC90EF7FB2FB496E771803E390` |
-| MD5        | `CAE7B6864A09A08974E229CDF43A339A` |
-| Imagebase  | `0x7FF7C5CD0000` |
-| Compiler   | Visual C++ (x64 PE) |
+| Field | Value |
+| ----- | ----- |
+| Patch | 25.10 |
+| Timestamp | `6A0507E6` — Wed May 13 23:23:18 2026 |
+| SHA-256 | `AD9A3C2B9F1FAAE9BC013C4598F74EA3EB1B16FC90EF7FB2FB496E771803E390` |
+| MD5 | `CAE7B6864A09A08974E229CDF43A339A` |
+| Imagebase | `0x7FF7C5CD0000` |
+| Compiler | Visual C++ · x64 PE |
 
 ---
 
 ## Contact
 
-Discord: **swansizz** — or open an [issue](../../issues) if a pattern is missing or broken.
+Discord — **swansizz**  
+Or open an [issue](../../issues) if a pattern is missing or broken.
