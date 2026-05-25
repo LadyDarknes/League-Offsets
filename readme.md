@@ -2,7 +2,7 @@
 
 # League of Legends — Offset Reference
 
-![Patch](https://img.shields.io/badge/Patch-25.10-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.10-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.0%2B-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
