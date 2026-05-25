@@ -1,4 +1,4 @@
-# League of Legends — Reverse Engineering Reference
+﻿# League of Legends — Reverse Engineering Reference
 
 > Offsets, AOB patterns, and struct layouts extracted from the League of Legends x64 binary.
 > All reversing work is manual. AI was used only for formatting.
