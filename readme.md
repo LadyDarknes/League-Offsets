@@ -4,7 +4,7 @@
 
 ![Patch](https://img.shields.io/badge/Patch-26.10-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
-![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.0%2B-orange?style=flat-square)
+![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-squar)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
 RVA offsets, AOB patterns, and struct layouts extracted manually from the live binary.  
