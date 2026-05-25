@@ -4,7 +4,7 @@
 
 ![Patch](https://img.shields.io/badge/Patch-26.10-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
-![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-squar)
+![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
 RVA offsets, AOB patterns, and struct layouts extracted manually from the live binary.  
@@ -19,10 +19,11 @@ All reversing is my own work. AI was only used for table formatting.
 ```
 League-Offsets/
 ├── src/
-│   ├── offsets.md    ← global RVAs, function entries, all struct field offsets
-│   ├── patterns.md   ← AOB byte patterns for every global and function
-│   └── w2s.h         ← world-to-screen header (view / proj matrix math)
-└── dump/             ← IDA Pro database files (.i64 · .id0 · .id1 · .nam · .til)
+│   ├── offsets.md             ← global RVAs, function entries, struct field offsets
+│   ├── patterns.md            ← AOB byte patterns for every global and function
+│   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
+│   └── w2s.h                  ← world-to-screen header (view / proj matrix math)
+└── dump/                      ← IDA Pro database files (.i64 · .id0 · .id1 · .nam · .til)
 ```
 
 ---
@@ -33,6 +34,7 @@ League-Offsets/
 | ---- | -------- |
 | [`src/offsets.md`](src/offsets.md) | RVA values for all global pointers and function entries, plus per-struct field offsets — `GameObject`, `HeroManager`, `Camera`, `SpellBook`, `NavGrid`, and more |
 | [`src/patterns.md`](src/patterns.md) | AOB signatures for everything in `offsets.md`. Multiple caller-context variants per entry so you can resolve through `E8` calls |
+| [`src/reflection_offsets.md`](src/reflection_offsets.md) | Dynamic reflection offsets for `AIHero`, `AIMinionCommon`, `AITurretCommon`, `Barracks`, `HQ`, and more — extracted from getter functions |
 | [`src/w2s.h`](src/w2s.h) | Header-only W2S using the view / projection matrices from the `CameraData` struct |
 
 ---
