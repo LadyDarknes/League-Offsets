@@ -7,7 +7,9 @@
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
-RVA offsets, AOB patterns, and struct layouts extracted manually from the live binary.  
+star for support :)⭐
+
+RVA offsets, AOB patterns, and struct layouts extracted manually from the league.  
 All reversing is my own work. AI was only used for table formatting.
 
 </div>
