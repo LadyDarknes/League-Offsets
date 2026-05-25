@@ -49,6 +49,11 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **GetSpellCastInfo** (caller ctx)     | `E8 ?? ?? ?? ?? 48 85 C0 74 ?? 0F B6 40 ?? 84 C0`                                        | Resolve E8                                      |
 | **GetSpellSlot** (body)               | `48 63 C2 48 8B 84 C1 ?? ?? ?? ?? C3`                                                    | Unique body                                     |
 | **GetSpellSlot** (entry check)        | `83 FA ? 77 ? 48 63 C2 48 8B 84 C1`                                                      | Function start                                  |
+| **SpellSlot::GetLevel**               | `CC CC CC CC CC 8B 41 28 C3`                                                             | Prefix: CC CC CC CC CC, Offset: +5              |
+| **SpellSlot::GetCooldown**            | `40 53 48 83 EC 40 48 8B D9 0F 29 74 24 30 48 8B 0D ? ? ? ? 0F 29`                       | Function entry                                  |
+| **SpellSlot::Cast**                    | `48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00`                      | Virtual function table [4]                      |
+| **BuffManagerClient::OnBuffAdd**       | `40 55 53 56 41 56 48 8D 6C 24 C1 48 81 EC D8 00 00 00 48 8B 01 48 8B F2`                | Core buff add function                          |
+| **BuffManagerClient::OnBuffRemove**    | `40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1`                   | Core buff remove function                       |
 | **GetMapID**                          | `E8 ? ? ? ? 4C 89 7C 24 40 48 8D 4C 24 70`                                               | Caller ctx                                      |
 | **GetFirstObject**                    | `48 83 EC ? 48 8B 51 ? 8B 41 ? 48 8D 0C C2`                                              | Function entry                                  |
 | **GetNextObject**                     | `0F B7 42 ? 44 8B 41`                                                                    | Function entry                                  |

@@ -8,12 +8,7 @@
 | Compiler | Visual C++ |
 | Format | Portable executable for AMD64 (PE) |
 | Imagebase | `7FF7C5CD0000` |
-| Timestamp | `6A0507E6` — Wed May 13 23:23:18 2026 |
-| Section 1 VA | `00001000` |
-| Virtual size | `019689C8` (26642888) |
-| Raw size | `01969000` (26644480) |
-| Raw offset | `00001000` |
-| Section flags | `60000020` — Text · Executable · Readable |
+| Timestamp | 6A0507E6 (Wed May 13 23:23:18 2026) |
 
 ---
 
@@ -32,7 +27,7 @@
 | `HudInstance` | `0x1e3a560` | `0x7ff7c7b0a560` |
 | `r3dRenderer` | `0x1f0b248` | `0x7ff7c7bdb248` |
 | `NetInstance` | `0x1e3a3d0` | `0x7ff7c7b0a3d0` |
-| `NetClient` (GetPing) | `0x1e3a3b8` | `0x7ff7c7b0a3b8` |
+| `NetClient (GetPing)` | `0x1e3a3b8` | `0x7ff7c7b0a3b8` |
 | `UnderMouseObj` | `0x1e3e690` | `0x7ff7c7b0e690` |
 | `ChatClient` | `0x1f09da8` | `0x7ff7c7bd9da8` |
 
@@ -43,13 +38,18 @@
 | Name | RVA | Address |
 | ---- | --- | ------- |
 | `IssueOrderCore` | `0x2bf6c0` | `0x7ff7c5f8f6c0` |
-| `IssueOrderCore` (caller) | `0x2bf6c0` | `0x7ff7c5f8f6c0` |
-| `WorldToScreen` (fn entry) | `0x12c9c20` | `0x7ff7c6f99c20` |
-| `WorldToScreen` (caller ctx) | `0x12c9c20` | `0x7ff7c6f99c20` |
+| `IssueOrderCore (caller)` | `0x2bf6c0` | `0x7ff7c5f8f6c0` |
+| `WorldToScreen (fn entry)` | `0x12c9c20` | `0x7ff7c6f99c20` |
+| `WorldToScreen (caller ctx)` | `0x12c9c20` | `0x7ff7c6f99c20` |
 | `GetBoundingRadius` | `0x2a3f20` | `0x7ff7c5f73f20` |
 | `GetAttackWindup` | `0x55d3e0` | `0x7ff7c622d3e0` |
-| `GetAttackDelay` (caller ctx) | `0x55d4e0` | `0x7ff7c622d4e0` |
+| `GetAttackDelay (caller ctx)` | `0x55d4e0` | `0x7ff7c622d4e0` |
 | `GetCollisionFlags` | `0x12170b0` | `0x7ff7c6ee70b0` |
 | `IsTurret` | `0x32e100` | `0x7ff7c5ffe100` |
-| `IsTurret` (caller ctx) | `0x30a040` | `0x7ff7c5fda040` |
+| `IsTurret (caller ctx)` | `0x30a040` | `0x7ff7c5fda040` |
 | `IsAlive` | `0x30a040` | `0x7ff7c5fda040` |
+| `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` |
+| `SpellSlot::GetCooldown` | `0x92cc40` | `0x7ff7c65fcc40` |
+| `SpellSlot::Cast` | `0x70ac00` | `0x7ff7c63dac00` |
+| `BuffManagerClient::OnBuffAdd` | `0x93fb00` | `0x7ff7c660fb00` |
+| `BuffManagerClient::OnBuffRemove` | `0x9405c0` | `0x7ff7c66105c0` |
