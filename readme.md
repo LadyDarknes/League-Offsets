@@ -22,7 +22,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **MouseScreenVec2**     | `48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 8B 01`               |
 | **CastSpellFlag**       | `C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?`                                  |
 | **IssueOrderFlag**      | `C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24`  |
-| **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 75 ? 48 8B 0D` |
+| **ChatClient**          | `48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 01 FF 50` |
 
 ---
 
