@@ -6,7 +6,6 @@
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
-![Vibe](https://img.shields.io/badge/Built%20with-Vibe%20Coding-blueviolet?style=flat-square)
 
 star for support ⭐
 
@@ -25,7 +24,7 @@ League-Offsets/
 │   ├── offsets.md             ← global RVAs, function entries, struct field offsets
 │   ├── patterns.md            ← AOB byte patterns for every global and function
 │   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
-│   └── quick_usage/           ← ready-to-use C++ snippets for each system
+│   └── quick_usage/           ← ready-to-use C++ snippets for each system (most of it Vibe Coded!)
 │       ├── w2s.h              ← world-to-screen header (view / proj matrix math)
 │       ├── ai_manager.cpp     ← navigation / movement (AIManager)
 │       ├── buff_manager.cpp   ← buff iteration and lookup
