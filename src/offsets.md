@@ -51,6 +51,7 @@ This document records the global addresses, function entry points, and internal 
 | `GetCollisionFlags` | `0x12170b0` | `0x7ff7c6ee70b0` | Retrieves terrain collision byte at coordinates |
 | `IsTurret` | `0x32e100` | `0x7ff7c5ffe100` | Returns true if the entity is an active defense tower |
 | `IsAlive` | `0x30a040` | `0x7ff7c5fda040` | Returns true if target HP > 0 |
+| `IsVisible` | `0x4e1340` | `0x7ff7c61b1340` | Returns true if entity is visible — checks `+0x168/+0x169/+0x16A` |
 | `GameObject::IsType` | `0x2bc530` | `0x7ff7c5f8c530` | Helper function to check classification flags (TypeFlags) |
 | `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` | Retrieves `SpellSlot*` from the array at `SpellBook + 0xAE0` |
 | `SpellSlot::GetCooldown` | `0x92cc40` | `0x7ff7c65fcc40` | Calculates remaining cooldown time for a spell slot |
@@ -68,14 +69,24 @@ This document records the global addresses, function entry points, and internal 
 ## Structure Offsets (Scripting-Essential)
 
 ### 1. GameObject & Character Components
+- **`Position`:** `GameObject + 0x25C` (604) [Type: `Vec3` — X=`+0x25C`, Y=`+0x260`, Z=`+0x264`]
+- **`TeamID`:** `GameObject + 0x259` (601) [Type: `uint8_t` — 100=Blue, 200=Red]
+- **`IsVisible`:** `GameObject + 0x168` (360) [Type: `bool` × 3 — see below]
+- **`StatusFlags`:** `GameObject + 0xF8` (248) [Type: `uint32_t*` — lea getter]
+- **`TypeFlags` Obfuscated Field:** `GameObject + 0x4C` (76) (XOR-obfuscated classification bitmask)
 - **`SpellBook` Component:** `GameObject + 0x3128` (12584)
 - **`BuffManager` Wrapper:** `GameObject + 0x2B0` (688) (Calling `vtable[21]` returns the `BuffManagerClient*` pointer)
 - **`BuffManagerClient` Direct Pointer:** `AIBaseClient + 0x28F0` (10480) (Direct pointer without wrapper calls)
 - **`Quest Component Handle/Cache`:** `GameObject + 0xE0` (224) (Contains generic component pointers array/map)
-- **`AIManager` & `HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (Stores pointers to navigation/inventory wrappers)
-- **`TypeFlags` Obfuscated Field:** `GameObject + 0x4C` (76) (XOR-obfuscated classification bitmask)
+- **`AIManager` Ptr:** `*(QWORD*)(GameObject + 0x4070)` (16496) — IDA confirmed: `cmp qword ptr [rcx+4070h], 0`
+- **`HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (inventory wrapper — not AIManager)
 - **`JungleTypeOffset`:** `GameObject + 0x4484` (17540) (Jungle creep classification type ID)
-- **`Team ID`:** `*(int*)(*(QWORD*)(GameObject + 0x2A8) + vtable[6] offset)`
+
+### Visibility bytes (IsVisible)
+- **`+0x168`** — primary visibility flag
+- **`+0x169`** — fog-of-war bit (0 = visible)
+- **`+0x16A`** — alternate visibility source
+- Logic: `(+0x168 || +0x16A) && !+0x169`
 
 ### 2. `SpellBook` & `SpellSlot`
 - **`SpellSlots` Array:** `SpellBook + 0xAE0` (2784) (Array of 64 pointers to `SpellSlot` structures)
@@ -99,6 +110,7 @@ This document records the global addresses, function entry points, and internal 
 - **`BuffInstance::Stacks` / Count:** `BuffInstance + 0x94` (148) [Type: `byte`]
 
 ### 4. `AIManager` Component (Navigation)
+- **`AIManager` Ptr:** `*(QWORD*)(GameObject + 0x4070)` → `navInner = *(QWORD*)(AIManager + 0x40)` → `navPath = navInner + 0x45C`
 - **`TargetPosition`:** `AIManager + 0x34` [Type: `Vec3`]
 - **`Velocity`:** `AIManager + 0x318` [Type: `Vec3`]
 - **`IsMoving`:** `AIManager + 0x31C` [Type: `bool`]
@@ -108,6 +120,13 @@ This document records the global addresses, function entry points, and internal 
 - **`DashSpeed`:** `AIManager + 0x360` [Type: `float`]
 - **`IsDashing`:** `AIManager + 0x384` [Type: `bool`]
 - **`ServerPos`:** `AIManager + 0x474` [Type: `Vec3`]
+- **`IsMovingFlag`:** `GameObject + 0x452` (1106) [Type: `bool`]
+- **`PathBufferSelector`:** `GameObject + 0x478` (1144) [Type: `bool`]
+
+### NavPath Struct (navInner + 0x45C)
+- **`CurrentNodeIndex`:** `NavPath + 0x00` [Type: `int`]
+- **`WaypointArray`:** `NavPath + 0x28` [Type: `Vec3*` — each entry 12 bytes]
+- **`WaypointCount`:** `NavPath + 0x30` [Type: `int`]
 
 ### 5. `HeroInventoryClient` Component (Inventory)
 - **`SlotInfo` Array:** `HeroInventoryClient + 0x10` [Type: `ItemSlot[7]` array]
