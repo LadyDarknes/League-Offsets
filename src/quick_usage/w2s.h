@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 #ifndef VEC3_DEFINED
 #define VEC3_DEFINED
 struct Vec3 {

@@ -83,6 +83,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **IsTurret** (caller ctx)             | `E8 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 83 ?? ?? ?? ?? 48 8D 8B`                               | Resolve E8                                      |
 | **IsBuilding** (caller ctx)           | `E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??` | Resolve E8                                      |
 | **IsAlive**                           | `E8 ? ? ? ? 84 C0 74 ? 48 8B 83 ? ? ? ? 48 8D 8B`                                        | Caller ctx                                      |
+| **GameObject::IsType**                | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                                               | Helper function to check classification flags   |
 
 ---
 
