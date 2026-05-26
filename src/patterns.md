@@ -23,6 +23,10 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **CastSpellFlag**       | `C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?`                                  |
 | **IssueOrderFlag**      | `C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24`  |
 | **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 75 ? 48 8B 0D` |
+| **QuestProgressFn**     | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` |
+| **QuestValueFn**        | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`          |
+| **ComponentLookupFn**   | `48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D`                    |
+| **RoleBoundInit**       | `48 83 EC ? 48 8D 15 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? 48 83 C4 ? E9 ? ? ? ?` |
 
 ---
 
@@ -54,6 +58,10 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **SpellSlot::Cast**                    | `48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00`                      | Virtual function table [4]                      |
 | **BuffManagerClient::OnBuffAdd**       | `40 55 53 56 41 56 48 8D 6C 24 C1 48 81 EC D8 00 00 00 48 8B 01 48 8B F2`                | Core buff add function                          |
 | **BuffManagerClient::OnBuffRemove**    | `40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1`                   | Core buff remove function                       |
+| **QuestProgress::Calculate**           | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` | Calculates quest tier, target, and progress     |
+| **QuestProgress::GetQuestValue**       | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`                             | Retrieves quest progress value                  |
+| **ComponentRegistry::Lookup**          | `48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D`                                       | Generic component lookup by key                 |
+| **RoleBound::Init**                    | `48 83 EC ? 48 8D 15 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? 48 83 C4 ? E9 ? ? ? ?` | RoleBound type registration initialization      |
 | **GetMapID**                          | `E8 ? ? ? ? 4C 89 7C 24 40 48 8D 4C 24 70`                                               | Caller ctx                                      |
 | **GetFirstObject**                    | `48 83 EC ? 48 8B 51 ? 8B 41 ? 48 8D 0C C2`                                              | Function entry                                  |
 | **GetNextObject**                     | `0F B7 42 ? 44 8B 41`                                                                    | Function entry                                  |
