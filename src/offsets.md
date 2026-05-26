@@ -51,6 +51,7 @@ This document records the global addresses, function entry points, and internal 
 | `GetCollisionFlags` | `0x12170b0` | `0x7ff7c6ee70b0` | Retrieves terrain collision byte at coordinates |
 | `IsTurret` | `0x32e100` | `0x7ff7c5ffe100` | Returns true if the entity is an active defense tower |
 | `IsAlive` | `0x30a040` | `0x7ff7c5fda040` | Returns true if target HP > 0 |
+| `GameObject::IsType` | `0x2bc530` | `0x7ff7c5f8c530` | Helper function to check classification flags (TypeFlags) |
 | `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` | Retrieves `SpellSlot*` from the array at `SpellBook + 0xAE0` |
 | `SpellSlot::GetCooldown` | `0x92cc40` | `0x7ff7c65fcc40` | Calculates remaining cooldown time for a spell slot |
 | `SpellSlot::Cast` | `0x70ac00` | `0x7ff7c63dac00` | Triggers a spell cast request (`vtable[4]`) |
@@ -69,7 +70,11 @@ This document records the global addresses, function entry points, and internal 
 ### 1. GameObject & Character Components
 - **`SpellBook` Component:** `GameObject + 0x3128` (12584)
 - **`BuffManager` Wrapper:** `GameObject + 0x2B0` (688) (Calling `vtable[21]` returns the `BuffManagerClient*` pointer)
+- **`BuffManagerClient` Direct Pointer:** `AIBaseClient + 0x28F0` (10480) (Direct pointer without wrapper calls)
 - **`Quest Component Handle/Cache`:** `GameObject + 0xE0` (224) (Contains generic component pointers array/map)
+- **`AIManager` & `HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (Stores pointers to navigation/inventory wrappers)
+- **`TypeFlags` Obfuscated Field:** `GameObject + 0x4C` (76) (XOR-obfuscated classification bitmask)
+- **`JungleTypeOffset`:** `GameObject + 0x4484` (17540) (Jungle creep classification type ID)
 - **`Team ID`:** `*(int*)(*(QWORD*)(GameObject + 0x2A8) + vtable[6] offset)`
 
 ### 2. `SpellBook` & `SpellSlot`
@@ -93,17 +98,35 @@ This document records the global addresses, function entry points, and internal 
 - **`BuffInstance::EndTime`:** `BuffInstance + 0x90` (144) [Type: `float`]
 - **`BuffInstance::Stacks` / Count:** `BuffInstance + 0x94` (148) [Type: `byte`]
 
-### 4. `QuestEntry` Structure
+### 4. `AIManager` Component (Navigation)
+- **`TargetPosition`:** `AIManager + 0x34` [Type: `Vec3`]
+- **`Velocity`:** `AIManager + 0x318` [Type: `Vec3`]
+- **`IsMoving`:** `AIManager + 0x31C` [Type: `bool`]
+- **`PathStart`:** `AIManager + 0x330` [Type: `Vec3`]
+- **`PathEnd`:** `AIManager + 0x33C` [Type: `Vec3`]
+- **`SegmentsCount`:** `AIManager + 0x350` [Type: `int`]
+- **`DashSpeed`:** `AIManager + 0x360` [Type: `float`]
+- **`IsDashing`:** `AIManager + 0x384` [Type: `bool`]
+- **`ServerPos`:** `AIManager + 0x474` [Type: `Vec3`]
+
+### 5. `HeroInventoryClient` Component (Inventory)
+- **`SlotInfo` Array:** `HeroInventoryClient + 0x10` [Type: `ItemSlot[7]` array]
+- **`ItemSlot::ItemData`:** `ItemSlot + 0x38` [Type: `ItemData*`]
+- **`ItemSlot::Stacks`:** `ItemSlot + 0x64` [Type: `int`]
+- **`ItemData::ItemID`:** `ItemData + 0xB4` [Type: `int`]
+
+### 6. `HudInstance` (Camera & UI Layout)
+- **`Camera` Pointer:** `HudInstance + 0x18` (24)
+- **`CameraZoom`:** `Camera + 0x324` (804) [Type: `float`]
+- **`CameraZoomLimits`:** `Camera + 0x310` (784) [Type: `float`]
+- **`SelectedObjNetId`:** `HudInstance + 0x28` (40) [Type: `uint32_t`]
+- **`MouseWorldPos`:** `HudInstance + 0x34` (52) [Type: `Vec3`]
+- **`ChatOpen` Wrapper:** `HudInstance + 0x10` (16)
+
+### 7. `QuestEntry` Structure
 - **`QuestEntry` Size (Stride):** `0x18` bytes
 - **`QuestEntry::QuestDef`:** `QuestEntry + 0x00` [Type: `void*` pointer to quest definition]
 - **`QuestEntry::QuestType`:** `QuestEntry + 0x08` [Type: `uint8_t` / stat type ID]
 - **`QuestEntry::Mode`:** `QuestEntry + 0x09` [Type: `uint8_t` mode/behavior flag]
 - **`QuestEntry::QuestTier`:** `QuestEntry + 0x0C` [Type: `uint32_t` current tier index]
 - **`QuestEntry::Target`:** `QuestEntry + 0x10` [Type: `uint32_t` threshold / requirement limit]
-
-```cpp
-// Quick Usage:
-void* questComp = ComponentRegistry::Lookup(gameObject + 0xE0, g_RoleQuestKey); // Key: 0x1E66700
-uint32_t current = GetQuestValue(entry->questDef, entry->questType, entry->questTier); // Fn: 0x529C70
-uint32_t remaining = entry->target - current;
-```
