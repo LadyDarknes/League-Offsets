@@ -82,8 +82,13 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **IsTurret** (fn entry)               | `40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27`                                              | Function entry                                  |
 | **IsTurret** (caller ctx)             | `E8 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 83 ?? ?? ?? ?? 48 8D 8B`                               | Resolve E8                                      |
 | **IsBuilding** (caller ctx)           | `E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??` | Resolve E8                                      |
-| **IsAlive**                           | `E8 ? ? ? ? 84 C0 74 ? 48 8B 83 ? ? ? ? 48 8D 8B`                                        | Caller ctx                                      |
-| **GameObject::IsType**                | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                                               | Helper function to check classification flags   |
+| **IsAlive** (fn entry)              | `53 48 83 EC 20 48 8B 18 48 8B CB FF 53 38`                              | Use caller ctx below for safety |
+| **IsAlive** (caller ctx)            | `E8 ? ? ? ? 84 C0 74 ? 48 8B 83 ? ? ? ? 48 8D 8B`                        | Caller ctx |
+| **IsVisible** (fn entry)            | `80 B9 68 01 00 00 00 75 ?? 80 B9 6A 01 00 00 00`                         | Checks all 3 visibility bytes at +0x168/+0x169/+0x16A |
+| **IsVisible** (disasm confirmed)    | `80 B9 68 01 00 00 00`                                                   | `cmp byte ptr [rcx+168h], 0` — first byte of fn |
+| **GameObject::IsType**              | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                               | Helper function to check classification flags   |
+| **GetAIManager** (fn entry)         | `48 8B 81 70 40 00 00 48 85 C0 74 ?? 48 8B 40 28`                        | Reads `[rcx+4070h]` then deref +0x28 |
+| **NavPath waypoints** (read ctx)    | `48 8B 40 28 48 8D 04 C0`                                                | WaypointArray read from NavPath+0x28 |
 
 ---
 
@@ -91,14 +96,21 @@ if somebody need another pattern/offsets that I never write down, please contact
 
 | Name                | Offset   | Type           | Description                 |
 | ------------------- | -------- | -------------- | --------------------------- |
-| OFF_POS             | `0x200`  | Vec3 (float×3) | World position XYZ          |
-| OFF_TEAM            | `0x259`  | uint8          | 100=Blue, 200=Red           |
+| OFF_POS             | `0x25C`  | Vec3 (float×3) | **Position.X** — IDA confirmed via distance fn |
+| OFF_POS_Y           | `0x260`  | float          | Position.Y |
+| OFF_POS_Z           | `0x264`  | float          | Position.Z |
+| OFF_TEAM            | `0x259`  | uint8          | 100=Blue, 200=Red — `movzx [r15+259h]` |
+| OFF_VISIBLE_0       | `0x168`  | bool           | Primary visibility — `cmp [rcx+168h],0` |
+| OFF_VISIBLE_FOG     | `0x169`  | bool           | Fog-of-war bit (0 = visible) |
+| OFF_VISIBLE_ALT     | `0x16A`  | bool           | Alternate visibility source |
 | OFF_HP              | `0x1080` | float          | Current health              |
 | OFF_HP_MAX          | `0x10A8` | float          | Max health                  |
 | OFF_AS_MULTIPLIER   | `0x17B0` | float          | Attack speed multiplier     |
 | OFF_ATK_RANGE       | `0x17FC` | float          | Attack range                |
 | OFF_BOUNDING_RADIUS | `0x6F8`  | float          | Bounding / collision radius |
 | OFF_SPELLBOOK       | `0x5960` | QWORD*         | SpellBook pointer           |
+| OFF_AIMANAGER_PTR   | `0x4070` | QWORD*         | AIManager ptr — `cmp qword ptr [rcx+4070h],0` |
+| OFF_HEROCLIENT_PTR  | `0x4230` | QWORD*         | HeroInventoryClient wrapper (NOT AIManager) |
 
 ## HeroManager Struct Offsets
 
@@ -179,6 +191,19 @@ Actualy I am not sure about them because, I didnt look those since 3 month or st
 | OFF_TFT_EXP         | `0x4CE8`      | float | Player XP                            |
 | OFF_TFT_LEVEL       | `0x4D10`      | int   | Player level                         |
 |                     |               |       |                                      |
+
+## Prediction — NavPath Struct AOB Patterns
+| Name | AOB Pattern | Notes |
+| ---- | ----------- | ----- |
+| **GetAIManager ptr** | `48 8B 81 70 40 00 00 48 85 C0 74` | `mov rax,[rcx+4070h]` + null check |
+| **NavAgent deref** | `48 8B 40 28 48 85 C0` | `mov rax,[rax+28h]` from AIManager |
+| **NavPath base** | `48 8D B0 5C 04 00 00` | `lea rsi,[rax+45Ch]` — path struct offset |
+| **WaypointArray** | `48 8B 40 28 48 8D 04 C0` | `[navPath+0x28]` = float* array |
+| **WaypointCount** | `8B 40 30` | `mov eax,[rax+30h]` from NavPath |
+| **CurrentNodeIdx** | `8B 08` | `mov ecx,[rax]` from NavPath base |
+| **DistanceSq fn** | `F3 0F 10 81 5C 02 00 00` | Reads Position.X at +0x25C — unique |
+| **IsVisible fn** | `80 B9 68 01 00 00 00 75 ?? 80 B9 6A 01 00 00 00` | All 3 visibility bytes check |
+| **EntityList stride** | `48 69 ?? D8 01 00 00` | `imul reg, 472` — entity slot multiply |
 
 ---
 
