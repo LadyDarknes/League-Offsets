@@ -10,7 +10,7 @@
 star for support ⭐
 
 RVA offsets, AOB patterns, and struct layouts extracted manually from the league.  
-All reversing is my own work. Vibe coded with AI assistance.
+All reversing is my own work. AI was only used for table formatting and some code.
 
 </div>
 
