@@ -105,10 +105,21 @@ if somebody need another pattern/offsets that I never write down, please contact
 | OFF_VISIBLE_ALT     | `0x16A`  | bool           | Alternate visibility source |
 | OFF_HP              | `0x1080` | float          | Current health              |
 | OFF_HP_MAX          | `0x10A8` | float          | Max health                  |
+| OFF_MANA            | `0x360`  | float          | Current mana/resource       |
+| OFF_MANA_MAX        | `0x388`  | float          | Max mana/resource           |
+| OFF_MANA_ENABLED    | `0x3B0`  | bool           | Primary resource enabled    |
+| OFF_LEVEL           | `0x4D58` | int            | Champion level (mLevelRef)  |
+| OFF_NAME            | `0x68`   | std::string    | Character name string       |
+| OFF_MOVE_SPEED      | `0x5000` | float          | Movement speed              |
+| OFF_ARMOR           | `0x4F38` | float          | Physical defense (armor)    |
+| OFF_MAGIC_RES       | `0x4CB8` | float          | Magic resistance            |
+| OFF_ALL_SHIELD      | `0x1120` | float          | Total shield                |
+| OFF_PHYS_SHIELD     | `0x1148` | float          | Physical damage shield      |
+| OFF_MAG_SHIELD      | `0x1170` | float          | Magical damage shield       |
 | OFF_AS_MULTIPLIER   | `0x17B0` | float          | Attack speed multiplier     |
 | OFF_ATK_RANGE       | `0x17FC` | float          | Attack range                |
 | OFF_BOUNDING_RADIUS | `0x6F8`  | float          | Bounding / collision radius |
-| OFF_SPELLBOOK       | `0x5960` | QWORD*         | SpellBook pointer           |
+| OFF_SPELLBOOK       | `0x3128` | QWORD*         | SpellBook pointer           |
 | OFF_AIMANAGER_PTR   | `0x4070` | QWORD*         | AIManager ptr — `cmp qword ptr [rcx+4070h],0` |
 | OFF_HEROCLIENT_PTR  | `0x4230` | QWORD*         | HeroInventoryClient wrapper (NOT AIManager) |
 
