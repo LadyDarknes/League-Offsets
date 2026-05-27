@@ -74,6 +74,19 @@ This document records the global addresses, function entry points, and internal 
 - **`IsVisible`:** `GameObject + 0x168` (360) [Type: `bool` × 3 — see below]
 - **`StatusFlags`:** `GameObject + 0xF8` (248) [Type: `uint32_t*` — lea getter]
 - **`TypeFlags` Obfuscated Field:** `GameObject + 0x4C` (76) (XOR-obfuscated classification bitmask)
+- **`Name`:** `GameObject + 0x68` (104) [Type: `std::string` — MSVC layout]
+- **`HP`:** `GameObject + 0x1080` (4224) [Type: `float`]
+- **`HPMax`:** `GameObject + 0x10A8` (4264) [Type: `float`]
+- **`Mana`:** `GameObject + 0x360` (864) [Type: `float`]
+- **`ManaMax`:** `GameObject + 0x388` (904) [Type: `float`]
+- **`ManaEnabled`:** `GameObject + 0x3B0` (944) [Type: `bool`]
+- **`Level`:** `GameObject + 0x4D58` (19800) [Type: `int`]
+- **`Armor`:** `GameObject + 0x4F38` (20280) [Type: `float`]
+- **`MagicResist`:** `GameObject + 0x4CB8` (19640) [Type: `float`]
+- **`MoveSpeed`:** `GameObject + 0x5000` (20480) [Type: `float`]
+- **`AllShield`:** `GameObject + 0x1120` (4384) [Type: `float`]
+- **`PhysicalShield`:** `GameObject + 0x1148` (4424) [Type: `float`]
+- **`MagicalShield`:** `GameObject + 0x1170` (4464) [Type: `float`]
 - **`SpellBook` Component:** `GameObject + 0x3128` (12584)
 - **`BuffManager` Wrapper:** `GameObject + 0x2B0` (688) (Calling `vtable[21]` returns the `BuffManagerClient*` pointer)
 - **`BuffManagerClient` Direct Pointer:** `AIBaseClient + 0x28F0` (10480) (Direct pointer without wrapper calls)
