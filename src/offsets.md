@@ -51,14 +51,14 @@ This document records the global addresses, function entry points, and internal 
 | `GetCollisionFlags` | `0x12170b0` | `0x7ff7c6ee70b0` | Retrieves terrain collision byte at coordinates |
 | `IsTurret` | `0x32e100` | `0x7ff7c5ffe100` | Returns true if the entity is an active defense tower |
 | `IsAlive` | `0x30a040` | `0x7ff7c5fda040` | Returns true if target HP > 0 |
-| `IsVisible` | `0x4e1340` | `0x7ff7c61b1340` | Returns true if entity is visible — checks `+0x168/+0x169/+0x16A` |
+| `IsVisible` | `0x4e1340` | `0x7ff7c61b1340` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
 | `GameObject::IsType` | `0x2bc530` | `0x7ff7c5f8c530` | Helper function to check classification flags (TypeFlags) |
-| `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` | Retrieves `SpellSlot*` from the array at `SpellBook + 0xAE0` |
+| `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` | Retrieves SpellSlot* from the array at SpellBook + 0xAE0 |
 | `SpellSlot::GetCooldown` | `0x92cc40` | `0x7ff7c65fcc40` | Calculates remaining cooldown time for a spell slot |
-| `SpellSlot::Cast` | `0x70ac00` | `0x7ff7c63dac00` | Triggers a spell cast request (`vtable[4]`) |
+| `SpellSlot::Cast` | `0x70ac00` | `0x7ff7c63dac00` | Triggers a spell cast request (vtable[4]) |
 | `BuffManagerClient::OnBuffAdd` | `0x93fb00` | `0x7ff7c660fb00` | Inserts a buff into client container |
 | `BuffManagerClient::OnBuffRemove` | `0x9405c0` | `0x7ff7c66105c0` | Evicts/destroys a buff in client container |
-| `RoleBound::Init` | `0x10efa0` | `0x7ff7c5ddefa0` | Registers the custom `RoleBound` system |
+| `RoleBound::Init` | `0x10efa0` | `0x7ff7c5ddefa0` | Registers the custom RoleBound system |
 | `QuestProgress::Calculate` | `0x520550` | `0x7ff7c61f0550` | Processes a quest entry to compute requirement & tier |
 | `QuestProgress::GetQuestValue` | `0x529c70` | `0x7ff7c61f9c70` | Queries quest values dynamically |
 | `QuestProgress::LookupMap` | `0x51ad70` | `0x7ff7c61ead70` | Performs map lookup for quest definitions |
