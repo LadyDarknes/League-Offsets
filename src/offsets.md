@@ -4,13 +4,13 @@ This document records the global addresses, function entry points, and internal 
 
 | Field | Value |
 | ----- | ----- |
-| SHA-256 | `AD9A3C2B9F1FAAE9BC013C4598F74EA3EB1B16FC90EF7FB2FB496E771803E390` |
-| MD5 | `CAE7B6864A09A08974E229CDF43A339A` |
-| CRC32 | `3540AE51` |
+| SHA-256 | `6F460B721D6B5997839AEB57A11432B8EEA4128992E8821F64F08C7A9CD5F392` |
+| MD5 | `7AF934464747DDB6490C800FA37D5402` |
+| CRC32 | `A3A274DE` |
 | Compiler | Visual C++ |
 | Format | Portable executable for AMD64 (PE) |
-| Imagebase | `7FF7C5CD0000` |
-| Timestamp | 6A0507E6 (Wed May 13 23:23:18 2026) |
+| Imagebase | `7FF7F8E80000` |
+| Timestamp | 6A0F8BDE (Thu May 21 22:49:02 2026) |
 
 ---
 
@@ -18,24 +18,24 @@ This document records the global addresses, function entry points, and internal 
 
 | Name | RVA | Address | Description |
 | ---- | --- | ------- | ----------- |
-| `LocalPlayer` | `0x1e73448` | `0x7ff7c7b43448` | Local player champion object |
-| `HeroManager` | `0x1e3a418` | `0x7ff7c7b0a418` | List of all hero game objects |
-| `ViewPort` | `0x1e4e870` | `0x7ff7c7b1e870` | Camera viewport configuration |
-| `GameTime` | `0x1e49ac0` | `0x7ff7c7b19ac0` | Floating-point match game time in seconds |
-| `EntityList` | `0x1e3a430` | `0x7ff7c7b0a430` | Main game object array |
-| `ObjectManager` | `0x1e3a3c0` | `0x7ff7c7b0a3c0` | Hash map of network-registered entities |
-| `MissileManager` | `0x1e3a480` | `0x7ff7c7b0a480` | List of active active spell projectiles |
-| `NavGrid` | `0x1e3e3f0` | `0x7ff7c7b0e3f0` | 2D pathfinding and cell height map grid |
-| `HudInstance` | `0x1e3a560` | `0x7ff7c7b0a560` | GUI and user input controller |
-| `r3dRenderer` | `0x1f0b248` | `0x7ff7c7bdb248` | Render engine singleton |
-| `NetInstance` | `0x1e3a3d0` | `0x7ff7c7b0a3d0` | Game client communication network layer |
-| `NetClient` | `0x1e3a3b8` | `0x7ff7c7b0a3b8` | Ping/latency network structure |
-| `UnderMouseObj` | `0x1e3e690` | `0x7ff7c7b0e690` | Current entity highlighted under mouse cursor |
-| `ChatClient` | `0x1f09da8` | `0x7ff7c7bd9da8` | Game chat history and UI controller |
-| `g_QuestManager` | `0x1e66440` | `0x7ff7c7b36440` | Global manager for narrative/stat quests |
-| `g_RoleQuestKey` | `0x1e66700` | `0x7ff7c7b36700` | Component registry key for Role Bound quests |
-| `g_RoleBoundQuestController` | `0x1e411d8` | `0x7ff7c7b111d8` | Controller handling RoleBound buttons & state |
-| `g_RoleBoundRegistry` | `0x1e6c5b8` | `0x7ff7c7b3c5b8` | Registry holding RoleBound configurations |
+| `LocalPlayer` | `0x1ea0528` | `0x7ff7fad20528` | Local player champion object |
+| `HeroManager` | `0x1e62de8` | `0x7ff7face2de8` | List of all hero game objects |
+| `ViewPort` | `0x1e68340` | `0x7ff7face8340` | Camera viewport configuration |
+| `GameTime` | `0x1e74d80` | `0x7ff7facf4d80` | Floating-point match game time in seconds |
+| `EntityList` | `0x1e62e00` | `0x7ff7face2e00` | Main game object array |
+| `ObjectManager` | `0x1e62da8` | `0x7ff7face2da8` | Hash map of network-registered entities |
+| `MissileManager` | `0x1e62e50` | `0x7ff7face2e50` | List of active active spell projectiles |
+| `NavGrid` | `0x1e68280` | `0x7ff7face8280` | 2D pathfinding and cell height map grid |
+| `HudInstance` | `0x1e682a8` | `0x7ff7face82a8` | GUI and user input controller |
+| `r3dRenderer` | `0x1f3a1e8` | `0x7ff7fadba1e8` | Render engine singleton |
+| `NetInstance` | `0x1e62db8` | `0x7ff7face2db8` | Game client communication network layer |
+| `NetClient` | `0x1e62da0` | `0x7ff7face2da0` | Ping/latency network structure |
+| `UnderMouseObj` | `0x1e6b188` | `0x7ff7faceb188` | Current entity highlighted under mouse cursor |
+| `ChatClient` | `0x1f38088` | `0x7ff7fadb8088` | Game chat history and UI controller |
+| `g_QuestManager` | `0x1e94130` | `0x7ff7fad14130` | Global manager for narrative/stat quests |
+| `g_RoleQuestKey` | `0x1e933f0` | `0x7ff7fad133f0` | Component registry key for Role Bound quests |
+| `g_RoleBoundQuestController` | `0x1e90fe0` | `0x7ff7fad10fe0` | Controller handling RoleBound buttons & state |
+| `g_RoleBoundRegistry` | `0x1e99498` | `0x7ff7fad19498` | Registry holding RoleBound configurations |
 
 ---
 
@@ -43,26 +43,26 @@ This document records the global addresses, function entry points, and internal 
 
 | Name | RVA | Address | Description |
 | ---- | --- | ------- | ----------- |
-| `IssueOrderCore` | `0x2bf6c0` | `0x7ff7c5f8f6c0` | Core action handler (move, attack, interact) |
-| `WorldToScreen` | `0x12c9c20` | `0x7ff7c6f99c20` | Projects 3D world positions to 2D screen space |
-| `GetBoundingRadius` | `0x2a3f20` | `0x7ff7c5f73f20` | Returns physical collision radius of GameObject |
-| `GetAttackWindup` | `0x55d3e0` | `0x7ff7c622d3e0` | Calculates current champion auto-attack windup duration |
-| `GetAttackDelay` | `0x55d4e0` | `0x7ff7c622d4e0` | Calculates basic attack cooldown based on AS |
-| `GetCollisionFlags` | `0x12170b0` | `0x7ff7c6ee70b0` | Retrieves terrain collision byte at coordinates |
-| `IsTurret` | `0x32e100` | `0x7ff7c5ffe100` | Returns true if the entity is an active defense tower |
-| `IsAlive` | `0x30a040` | `0x7ff7c5fda040` | Returns true if target HP > 0 |
-| `IsVisible` | `0x4e1340` | `0x7ff7c61b1340` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
-| `GameObject::IsType` | `0x2bc530` | `0x7ff7c5f8c530` | Helper function to check classification flags (TypeFlags) |
-| `SpellBook::GetSpellSlot` | `0x98c480` | `0x7ff7c665c480` | Retrieves SpellSlot* from the array at SpellBook + 0xAE0 |
-| `SpellSlot::GetCooldown` | `0x92cc40` | `0x7ff7c65fcc40` | Calculates remaining cooldown time for a spell slot |
-| `SpellSlot::Cast` | `0x70ac00` | `0x7ff7c63dac00` | Triggers a spell cast request (vtable[4]) |
-| `BuffManagerClient::OnBuffAdd` | `0x93fb00` | `0x7ff7c660fb00` | Inserts a buff into client container |
-| `BuffManagerClient::OnBuffRemove` | `0x9405c0` | `0x7ff7c66105c0` | Evicts/destroys a buff in client container |
-| `RoleBound::Init` | `0x10efa0` | `0x7ff7c5ddefa0` | Registers the custom RoleBound system |
-| `QuestProgress::Calculate` | `0x520550` | `0x7ff7c61f0550` | Processes a quest entry to compute requirement & tier |
-| `QuestProgress::GetQuestValue` | `0x529c70` | `0x7ff7c61f9c70` | Queries quest values dynamically |
-| `QuestProgress::LookupMap` | `0x51ad70` | `0x7ff7c61ead70` | Performs map lookup for quest definitions |
-| `ComponentRegistry::Lookup` | `0x115d9c0` | `0x7ff7c6e2d9c0` | Generic component registry lookup function |
+| `IssueOrderCore` | `0x2db830` | `0x7ff7f915b830` | Core action handler (move, attack, interact) |
+| `WorldToScreen` | `0x12ea440` | `0x7ff7fa16a440` | Projects 3D world positions to 2D screen space |
+| `GetBoundingRadius` | `0x2525e0` | `0x7ff7f90d25e0` | Returns physical collision radius of GameObject |
+| `GetAttackWindup` | `0x5681c0` | `0x7ff7f93e81c0` | Calculates current champion auto-attack windup duration |
+| `GetAttackDelay` | `0x5682c0` | `0x7ff7f93e82c0` | Calculates basic attack cooldown based on AS |
+| `GetCollisionFlags` | `0x1237540` | `0x7ff7fa0b7540` | Retrieves terrain collision byte at coordinates |
+| `IsTurret` | `0x27da20` | `0x7ff7f90fda20` | Returns true if the entity is an active defense tower |
+| `IsAlive` | `0x31b570` | `0x7ff7f919b570` | Returns true if target HP > 0 |
+| `IsVisible` | `0xb7e050` | `0x7ff7f99fe050` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
+| `GameObject::IsType` | `0x263150` | `0x7ff7f90e3150` | Helper function to check classification flags (TypeFlags) |
+| `SpellBook::GetSpellSlot` | `0x966d50` | `0x7ff7f97e6d50` | Retrieves SpellSlot* from the array at SpellBook + 0xAE0 |
+| `SpellSlot::GetCooldown` | `0x92d820` | `0x7ff7f97ad820` | Calculates remaining cooldown time for a spell slot |
+| `SpellSlot::Cast` | `0x740170` | `0x7ff7f95c0170` | Triggers a spell cast request (vtable[4]) |
+| `BuffManagerClient::OnBuffAdd` | `0x937f00` | `0x7ff7f97b7f00` | Inserts a buff into client container |
+| `BuffManagerClient::OnBuffRemove` | `0x938a60` | `0x7ff7f97b8a60` | Evicts/destroys a buff in client container |
+| `RoleBound::Init` | `0x110a50` | `0x7ff7f8f90a50` | Registers the custom RoleBound system |
+| `QuestProgress::Calculate` | `0x50c2c0` | `0x7ff7f938c2c0` | Processes a quest entry to compute requirement & tier |
+| `QuestProgress::GetQuestValue` | `0x50f8a0` | `0x7ff7f938f8a0` | Queries quest values dynamically |
+| `QuestProgress::LookupMap` | `0x5092b0` | `0x7ff7f93892b0` | Performs map lookup for quest definitions |
+| `ComponentRegistry::Lookup` | `0x117d4a0` | `0x7ff7f9ffd4a0` | Generic component registry lookup function |
 
 ---
 
