@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1179" height="1374" alt="image" src="https://github.com/user-attachments/assets/dffea345-d475-4415-a93b-8e55a55a6a61" /><div align="center">
 
 # League of Legends — Offset Reference
 
@@ -64,3 +64,7 @@ League-Offsets/
 
 Discord — **swansizz**  
 Or open an [issue](../../issues) if a pattern is missing or broken.
+
+Thank you for sharing guys, but please star this repo 🥰
+<img width="1179" height="1374" alt="image" src="https://github.com/user-attachments/assets/14696c5a-06f6-4295-b774-bcf300463763" />
+
