@@ -47,7 +47,7 @@ void TraverseMap(MapNode* node, MapNode* sentinel, std::vector<void*>& out_objec
 
 std::vector<void*> GetActiveEntities(uintptr_t base_addr) {
     std::vector<void*> objects;
-    void* object_manager = *(void**)(base_addr + 0x1E3A3C0);
+    void* object_manager = *(void**)(base_addr + 0x1E62DA8);
     if (!object_manager) return objects;
 
     void* map_allocator = *(void**)((char*)object_manager + 0x38);
@@ -66,7 +66,7 @@ std::vector<void*> GetActiveEntities(uintptr_t base_addr) {
 
 std::vector<void*> GetChampions(uintptr_t base_addr) {
     std::vector<void*> heroes;
-    void* hero_manager = *(void**)(base_addr + 0x1E3A418);
+    void* hero_manager = *(void**)(base_addr + 0x1E62DE8);
     if (hero_manager) {
         void** list = *(void***)((char*)hero_manager + 0x08);
         uint32_t count = *(uint32_t*)((char*)hero_manager + 0x10);
@@ -80,7 +80,7 @@ std::vector<void*> GetChampions(uintptr_t base_addr) {
 }
 
 void ProcessEntitiesExample(uintptr_t base_addr) {
-    is_type_t is_type = (is_type_t)(base_addr + 0x2BC530);
+    is_type_t is_type = (is_type_t)(base_addr + 0x263150);
     std::vector<void*> entities = GetActiveEntities(base_addr);
 
     for (void* obj : entities) {
