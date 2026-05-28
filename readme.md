@@ -1,6 +1,6 @@
 <div align="center">
 
-# League of Legends — Offset Reference
+# League of (removed) — Offset Reference
 
 ![Patch](https://img.shields.io/badge/Patch-26.11-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
