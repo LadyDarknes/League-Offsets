@@ -5,7 +5,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | ----------------------- | --------------------------------------------------------------------- |
 | **LocalPlayer**         | `48 8B 0D ? ? ? ? 4C ? ? 74 ? 49`                                     |
 | **HeroManager**         | `48 8B 0D ? ? ? ? 0F 85 ? ? ? ? 83`                                   |
-| **ViewPort**            | `48 8B 05 ? ? ? ? 48 8B 88 08 01 00 00`                               |
+| **ViewPort**            | `48 8B 3D ? ? ? ? 80 78 22 00 74`                                     |
 | **GameTime**            | `F3 0F 5C 35 ? ? ? ? 0F 28 F8`                                        |
 | **EntityList**          | `E8 ?? ?? ?? ?? 48 8B 1D ?? ?? ?? ?? 48 8D 55 48`                     |
 | **ObjectManager**       | `48 8B 0D ? ? ? ? 8B 10 E8`                                           |
@@ -56,7 +56,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **SpellSlot::GetLevel**               | `CC CC CC CC CC 8B 41 28 C3`                                                             | Prefix: CC CC CC CC CC, Offset: +5              |
 | **SpellSlot::GetCooldown**            | `40 53 48 83 EC 40 48 8B D9 0F 29 74 24 30 48 8B 0D ? ? ? ? 0F 29`                       | Function entry                                  |
 | **SpellSlot::Cast**                    | `48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00`                      | Virtual function table [4]                      |
-| **BuffManagerClient::OnBuffAdd**       | `40 55 53 56 41 56 48 8D 6C 24 C1 48 81 EC D8 00 00 00 48 8B 01 48 8B F2`                | Core buff add function                          |
+| **BuffManagerClient::OnBuffAdd**       | `40 55 53 56 48 8D 6C 24 B9 48 81 EC E0 00 00 00 48 8B 01 48 8B F2`                      | Core buff add function                          |
 | **BuffManagerClient::OnBuffRemove**    | `40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1`                   | Core buff remove function                       |
 | **QuestProgress::Calculate**           | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` | Calculates quest tier, target, and progress     |
 | **QuestProgress::GetQuestValue**       | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`                             | Retrieves quest progress value                  |
@@ -84,7 +84,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **IsBuilding** (caller ctx)           | `E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??` | Resolve E8                                      |
 | **IsAlive** (fn entry)              | `53 48 83 EC 20 48 8B 18 48 8B CB FF 53 38`                              | Use caller ctx below for safety |
 | **IsAlive** (caller ctx)            | `E8 ? ? ? ? 84 C0 74 ? 48 8B 83 ? ? ? ? 48 8D 8B`                        | Caller ctx |
-| **IsVisible** (fn entry)            | `80 B9 68 01 00 00 00 75 ?? 80 B9 6A 01 00 00 00`                         | Checks all 3 visibility bytes at +0x168/+0x169/+0x16A |
+| **IsVisible** (fn entry)            | `40 53 48 83 EC 20 80 B9 68 01 00 00 00 48 8B D9 0F 84 ? ? ? ? 48 8B 05`                 | Checks all 3 visibility bytes at +0x168/+0x169/+0x16A |
 | **IsVisible** (disasm confirmed)    | `80 B9 68 01 00 00 00`                                                   | `cmp byte ptr [rcx+168h], 0` — first byte of fn |
 | **GameObject::IsType**              | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                               | Helper function to check classification flags   |
 | **GetAIManager** (fn entry)         | `48 8B 81 70 40 00 00 48 85 C0 74 ?? 48 8B 40 28`                        | Reads `[rcx+4070h]` then deref +0x28 |
@@ -213,7 +213,7 @@ Actualy I am not sure about them because, I didnt look those since 3 month or st
 | **WaypointCount** | `8B 40 30` | `mov eax,[rax+30h]` from NavPath |
 | **CurrentNodeIdx** | `8B 08` | `mov ecx,[rax]` from NavPath base |
 | **DistanceSq fn** | `F3 0F 10 81 5C 02 00 00` | Reads Position.X at +0x25C — unique |
-| **IsVisible fn** | `80 B9 68 01 00 00 00 75 ?? 80 B9 6A 01 00 00 00` | All 3 visibility bytes check |
+| **IsVisible fn** | `40 53 48 83 EC 20 80 B9 68 01 00 00 00 48 8B D9 0F 84 ? ? ? ? 48 8B 05` | All 3 visibility bytes check |
 | **EntityList stride** | `48 69 ?? D8 01 00 00` | `imul reg, 472` — entity slot multiply |
 
 ---
