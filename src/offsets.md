@@ -1,6 +1,6 @@
-# League of Legends — Scripting Offsets
+# League of (removed) — Scripting Offsets
 
-This document records the global addresses, function entry points, and internal structure member offsets reversed from the League of Legends binary.
+This document records the global addresses, function entry points, and internal structure member offsets reversed from the League of Removed binary.
 
 | Field | Value |
 | ----- | ----- |
