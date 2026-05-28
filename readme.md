@@ -1,6 +1,6 @@
 # League of Legends — Offset Reference
 
-![Patch](https://img.shields.io/badge/Patch-26.10-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.11-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
@@ -50,10 +50,10 @@ League-Offsets/
 | Field | Value |
 | ----- | ----- |
 | Patch | 26.10 |
-| Timestamp | `6A0507E6` — Wed May 13 23:23:18 2026 |
-| SHA-256 | `AD9A3C2B9F1FAAE9BC013C4598F74EA3EB1B16FC90EF7FB2FB496E771803E390` |
-| MD5 | `CAE7B6864A09A08974E229CDF43A339A` |
-| Imagebase | `0x7FF7C5CD0000` |
+| Timestamp | `6A0F8BDE` — Thu May 21 22:49:02 2026 |
+| SHA-256 | `6F460B721D6B5997839AEB57A11432B8EEA4128992E8821F64F08C7A9CD5F392` |
+| MD5 | `7AF934464747DDB6490C800FA37D5402` |
+| Imagebase | `0x7FF7F8E80000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
