@@ -1,3 +1,5 @@
+<div align="center">
+
 # League of Legends — Offset Reference
 
 ![Patch](https://img.shields.io/badge/Patch-26.11-blue?style=flat-square)
@@ -49,7 +51,7 @@ League-Offsets/
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.10 |
+| Patch | 26.11 |
 | Timestamp | `6A0F8BDE` — Thu May 21 22:49:02 2026 |
 | SHA-256 | `6F460B721D6B5997839AEB57A11432B8EEA4128992E8821F64F08C7A9CD5F392` |
 | MD5 | `7AF934464747DDB6490C800FA37D5402` |
