@@ -1,4 +1,4 @@
-# League of Legends — Dynamic Reflection Offsets
+# League of (removed) — Dynamic Reflection Offsets
 
 leverage it to dynamically extract member variable offsets for core classes like AIHero, AIMinionCommon, AITurretCommon, etc.
 
