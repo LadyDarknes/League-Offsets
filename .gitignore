@@ -1,3 +1,4 @@
 src/ida_dumper.py
+src/__pycache__/
 dump/*
 sync.bat
