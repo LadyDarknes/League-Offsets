@@ -70,7 +70,7 @@ This document records the global addresses, function entry points, and internal 
 
 ### 1. GameObject & Character Components
 - **`Position`:** `GameObject + 0x25C` (604) [Type: `Vec3` — X=`+0x25C`, Y=`+0x260`, Z=`+0x264`]
-- **`TeamID`:** `GameObject + 0x259` (601) [Type: `uint8_t` — 100=Blue, 200=Red]
+- **`TeamID`:** `GameObject + 0x259` (601) [Type: `uint8_t` — 1=Blue, 0=Red]
 - **`IsVisible`:** `GameObject + 0x168` (360) [Type: `bool` × 3 — see below]
 - **`StatusFlags`:** `GameObject + 0xF8` (248) [Type: `uint32_t*` — lea getter]
 - **`TypeFlags` Obfuscated Field:** `GameObject + 0x4C` (76) (XOR-obfuscated classification bitmask)
@@ -94,13 +94,16 @@ This document records the global addresses, function entry points, and internal 
 - **`AIManager` Ptr:** `*(QWORD*)(GameObject + 0x4070)` (16496) — IDA confirmed: `cmp qword ptr [rcx+4070h], 0`
 - **`HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (inventory wrapper — not AIManager)
 - **`JungleTypeOffset`:** `GameObject + 0x4484` (17540) (Jungle creep classification type ID)
-- **`NetVisibilityObjectClient` Component:** `GameObject + 0x308` (776) (Visibility component; contains a flag where `0` means the entity is visible)
+- **`NetVisibilityObjectClient` Component:** `GameObject + 0x308` (776) (Visibility component; contains the team mask at `+0x30C` where bit 0 is Blue team fog and bit 1 is Red team fog)
 
 ### Visibility bytes (IsVisible)
-- **`+0x168`** — primary visibility flag
-- **`+0x169`** — fog-of-war bit (0 = visible)
+- **`+0x168`** — primary visibility flag (stale/cached if unit is in fog of war)
+- **`+0x169`** — team visibility flag (stale/cached if unit is in fog of war)
 - **`+0x16A`** — alternate visibility source
-- Logic: `(+0x168 || +0x16A) && !+0x169`
+- **`+0x30C`** — robust team visibility bitmask (updated directly by network packets, guards against client caching bugs)
+  - Bit 0: Blue Team (1 = in fog, 0 = visible)
+  - Bit 1: Red Team (1 = in fog, 0 = visible)
+  - Logic: `(vis_mask & (1 << team_bit)) == 0`
 
 ### 2. `SpellBook` & `SpellSlot`
 - **`SpellSlots` Array:** `SpellBook + 0xAE0` (2784) (Array of 64 pointers to `SpellSlot` structures)

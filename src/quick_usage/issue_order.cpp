@@ -35,23 +35,28 @@ void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) {
 }
 
 
-// If your visibility check returns false even when a unit is visible on the screen,
-// it is because +0x169 is NOT a "hidden in fog" flag, but is actually the 
-// Team Visibility flag (updated by the game client's visibility loop).
+// Since the client caching bug causes the +0x168/+0x169 visibility bytes to remain
+// stale (not updating to False when the unit goes in fog of war, because the client
+// stops running the IsVisible update loop for culled objects), a more robust check is
+// to read the NetVisibilityObjectClient team mask at GameObject + 0x30C.
 //
-// - +0x168 (OFF_VISIBLE_0): Base object active/render flag.
-// - +0x169 (OFF_VISIBLE_1): Active team visibility state (True = visible, False = hidden in fog).
+// - GameObject + 0x30C: Team visibility bitmask (updated directly by network packets).
+//   - Bit 0: Blue team fog (1 = in fog, 0 = visible).
+//   - Bit 1: Red team fog (1 = in fog, 0 = visible).
 //
-// If you write `!*(bool*)(obj + 0x169)`, it will return FALSE when the entity is visible
-// and TRUE when the entity is hidden! The logic must not be inverted.
-//
-bool IsUnitVisible(void* obj) {
-    if (!obj) return false;
+bool IsUnitVisible(void* obj, void* local_player) {
+    if (!obj || !local_player) return false;
     
-    bool vis_0 = *(bool*)((char*)obj + 0x168);
-    bool vis_1 = *(bool*)((char*)obj + 0x169); // True when visible to player's team, False when in FOW
+    // Get local player's team ID (100 = Blue, 200 = Red)
+    uint8_t local_team = *(uint8_t*)((char*)local_player + 0x259);
+    uint32_t team_bit = (local_team == 100) ? 0 : 1;
     
-    return vis_0 && vis_1;
+    // Read the NetVisibilityObjectClient visibility mask
+    uint32_t vis_mask = *(uint32_t*)((char*)obj + 0x30C);
+    
+    // A bit of 0 means the team has visibility (visible).
+    // A bit of 1 means the team does not have visibility (in fog of war).
+    return (vis_mask & (1 << team_bit)) == 0;
 }
 
 
