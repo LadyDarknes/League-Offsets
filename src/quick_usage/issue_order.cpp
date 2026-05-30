@@ -35,26 +35,23 @@ void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) {
 }
 
 
-// If your visibility check returns true even when a unit has walked into the
-// fog of war... it is because the game client caches entities and keeps their
-// primary visibility flag active.
+// If your visibility check returns false even when a unit is visible on the screen,
+// it is because +0x169 is NOT a "hidden in fog" flag, but is actually the 
+// Team Visibility flag (updated by the game client's visibility loop).
 //
-// To check if a unit is actively visible right now, you must query three
-// sequential bytes starting at GameObject + 0x168:
+// - +0x168 (OFF_VISIBLE_0): Base object active/render flag.
+// - +0x169 (OFF_VISIBLE_1): Active team visibility state (True = visible, False = hidden in fog).
 //
-// - +0x168 (OFF_VISIBLE_0): Primary visibility flag.
-// - +0x169 (OFF_VISIBLE_FOG): Fog-of-War state (0 if visible, 1 if hidden in FOW).
-// - +0x16A (OFF_VISIBLE_ALT): Alternate visibility flag.
+// If you write `!*(bool*)(obj + 0x169)`, it will return FALSE when the entity is visible
+// and TRUE when the entity is hidden! The logic must not be inverted.
 //
 bool IsUnitVisible(void* obj) {
     if (!obj) return false;
     
     bool vis_0 = *(bool*)((char*)obj + 0x168);
-    bool vis_fog = *(bool*)((char*)obj + 0x169);
-    bool vis_alt = *(bool*)((char*)obj + 0x16A);
+    bool vis_1 = *(bool*)((char*)obj + 0x169); // True when visible to player's team, False when in FOW
     
-    // Logic: Must have primary/alternate visibility active, AND must NOT be in the fog of war.
-    return (vis_0 || vis_alt) && !vis_fog;
+    return vis_0 && vis_1;
 }
 
 

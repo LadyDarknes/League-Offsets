@@ -138,9 +138,8 @@ void ProcessEntitiesExample(uintptr_t base_addr) {
         Vec3 pos = *(Vec3*)((char*)obj + 0x25C);
 
         bool vis_0 = *(bool*)((char*)obj + 0x168);
-        bool vis_fog = *(bool*)((char*)obj + 0x169);
-        bool vis_alt = *(bool*)((char*)obj + 0x16A);
-        bool is_visible = (vis_0 || vis_alt) && !vis_fog;
+        bool vis_1 = *(bool*)((char*)obj + 0x169); // True when visible, False when hidden in Fog of War, not reverse!!!!!
+        bool is_visible = vis_0 && vis_1;
 
         float mana = *(float*)((char*)obj + 0x360);
         float mana_max = *(float*)((char*)obj + 0x388);

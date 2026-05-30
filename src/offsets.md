@@ -94,6 +94,7 @@ This document records the global addresses, function entry points, and internal 
 - **`AIManager` Ptr:** `*(QWORD*)(GameObject + 0x4070)` (16496) — IDA confirmed: `cmp qword ptr [rcx+4070h], 0`
 - **`HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (inventory wrapper — not AIManager)
 - **`JungleTypeOffset`:** `GameObject + 0x4484` (17540) (Jungle creep classification type ID)
+- **`NetVisibilityObjectClient` Component:** `GameObject + 0x308` (776) (Visibility component; contains a flag where `0` means the entity is visible)
 
 ### Visibility bytes (IsVisible)
 - **`+0x168`** — primary visibility flag
