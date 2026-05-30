@@ -79,6 +79,33 @@ std::vector<void*> GetChampions(uintptr_t base_addr) {
     return heroes;
 }
 
+std::vector<void*> GetMinions(uintptr_t base_addr) {
+    std::vector<void*> minions;
+    is_type_t is_type = (is_type_t)(base_addr + 0x263150);
+    std::vector<void*> entities = GetActiveEntities(base_addr);
+    for (void* obj : entities) {
+        if (obj && is_type(obj, 0x800)) { // TypeMinion = 0x800
+            minions.push_back(obj);
+        }
+    }
+    return minions;
+}
+
+std::vector<void*> GetJungleMonsters(uintptr_t base_addr) {
+    std::vector<void*> monsters;
+    is_type_t is_type = (is_type_t)(base_addr + 0x263150);
+    std::vector<void*> entities = GetActiveEntities(base_addr);
+    for (void* obj : entities) {
+        if (obj && is_type(obj, 0x800)) { // Minion type
+            uint8_t team_id = *(uint8_t*)((char*)obj + 0x259);
+            if (team_id != 100 && team_id != 200) { // Neutral (not Blue 100 or Red 200)
+                monsters.push_back(obj);
+            }
+        }
+    }
+    return monsters;
+}
+
 void ProcessEntitiesExample(uintptr_t base_addr) {
     is_type_t is_type = (is_type_t)(base_addr + 0x263150);
     std::vector<void*> entities = GetActiveEntities(base_addr);
