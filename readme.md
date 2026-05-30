@@ -25,13 +25,6 @@ League-Offsets/
 │   ├── patterns.md            ← AOB byte patterns for every global and function
 │   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
 │   └── quick_usage/           ← ready-to-use C++ snippets for each system (most of it Vibe Coded!)
-│       ├── w2s.h              ← world-to-screen header (view / proj matrix math)
-│       ├── ai_manager.cpp     ← navigation / movement (AIManager)
-│       ├── buff_manager.cpp   ← buff iteration and lookup
-│       ├── hud.cpp            ← HudInstance and camera access
-│       ├── is_type.cpp        ← type classification helpers
-│       └── quest.cpp          ← quest progress and RoleBound system
-└── dump/                      ← IDA Pro database files (.i64 · .id0 · .id1 · .nam · .til)
 ```
 
 ---
