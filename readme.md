@@ -58,6 +58,3 @@ League-Offsets/
 Discord — **swansizz**  
 Or open an [issue](../../issues) if a pattern is missing or broken.
 
-Thank you for sharing guys, but please star this repo 🥰
-<img width="1179" height="1374" alt="image" src="https://github.com/user-attachments/assets/14696c5a-06f6-4295-b774-bcf300463763" />
-
