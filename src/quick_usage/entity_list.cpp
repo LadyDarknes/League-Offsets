@@ -92,6 +92,13 @@ std::vector<void*> GetMinions(uintptr_t base_addr) {
 }
 
 std::vector<void*> GetJungleMonsters(uintptr_t base_addr) {
+    // Common Neutral/Jungle Monster Names (accessible at GameObject + 0x68):
+    // - Baron Nashor: "SRU_Baron"
+    // - Rift Herald: "SRU_Herald"
+    // - Red Brambleback (Red Buff): "SRU_Red"
+    // - Blue Sentinel (Blue Buff): "SRU_Blue"
+    // - Scuttle Crab: "Sru_Crab"
+    // - Dragon: "SRU_Dragon" (Elements: SRU_Dragon_Fire, SRU_Dragon_Water, SRU_Dragon_Earth, SRU_Dragon_Air, SRU_Dragon_Elder, SRU_Dragon_Chemtech, SRU_Dragon_Hextech)
     std::vector<void*> monsters;
     is_type_t is_type = (is_type_t)(base_addr + 0x263150);
     std::vector<void*> entities = GetActiveEntities(base_addr);
