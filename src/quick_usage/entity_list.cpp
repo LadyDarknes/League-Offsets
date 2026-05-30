@@ -116,6 +116,9 @@ std::vector<void*> GetJungleMonsters(uintptr_t base_addr) {
 void ProcessEntitiesExample(uintptr_t base_addr) {
     is_type_t is_type = (is_type_t)(base_addr + 0x263150);
     std::vector<void*> entities = GetActiveEntities(base_addr);
+    void* local_player = *(void**)(base_addr + 0x1EA0528);
+    uint8_t local_team = local_player ? *(uint8_t*)((char*)local_player + 0x259) : 100;
+    uint32_t team_bit = (local_team == 100) ? 0 : 1;
 
     for (void* obj : entities) {
         if (!obj) continue;
@@ -137,9 +140,8 @@ void ProcessEntitiesExample(uintptr_t base_addr) {
 
         Vec3 pos = *(Vec3*)((char*)obj + 0x25C);
 
-        bool vis_0 = *(bool*)((char*)obj + 0x168);
-        bool vis_1 = *(bool*)((char*)obj + 0x169); // True when visible, False when hidden in Fog of War, not reverse!!!!!
-        bool is_visible = vis_0 && vis_1;
+        uint32_t vis_mask = *(uint32_t*)((char*)obj + 0x30C);
+        bool is_visible = (vis_mask & (1 << team_bit)) == 0;
 
         float mana = *(float*)((char*)obj + 0x360);
         float mana_max = *(float*)((char*)obj + 0x388);
