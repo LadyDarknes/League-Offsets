@@ -64,6 +64,13 @@ This document records the global addresses, function entry points, and internal 
 | `QuestProgress::GetQuestValue` | `0x5237e0` | `0x7ff7e70b37e0` | Queries quest values dynamically |
 | `QuestProgress::LookupMap` | `0x5092b0` | `0x7ff7f93892b0` | Performs map lookup for quest definitions |
 | `ComponentRegistry::Lookup` | `0x1189220` | `0x7ff7e7d19220` | Generic component registry lookup function |
+| `ClientMainLoop` | `0x5eec00` | `0x7ff7e717ec00` | Frame update main loop |
+| `OnWndProc` | `0x5f0780` | `0x7ff7e7180780` | Windows message procedure |
+| `OnProcessSpell` | `0x984d20` | `0x7ff7e7514d20` | Triggered on spell cast request |
+| `OnSpellImpact` | `0x97d6e0` | `0x7ff7e750d6e0` | Triggered when spell hits/impacts |
+| `OnDoCast` | `0x97f2f0` | `0x7ff7e750f2f0` | Triggered when spell is executed/sent |
+| `OnStopCast` | `0x985460` | `0x7ff7e7515460` | Triggered when spell cast is cancelled |
+| `OnCreateObject` | `0x55b330` | `0x7ff7e70eb330` | Triggered when new GameObject is created |
 
 ---
 
@@ -165,5 +172,10 @@ This document records the global addresses, function entry points, and internal 
 - **`QuestEntry::QuestDef`:** `QuestEntry + 0x00` [Type: `void*` pointer to quest definition]
 - **`QuestEntry::QuestType`:** `QuestEntry + 0x08` [Type: `uint8_t` / stat type ID]
 - **`QuestEntry::Mode`:** `QuestEntry + 0x09` [Type: `uint8_t` mode/behavior flag]
-- **`QuestEntry::QuestTier`:** `QuestEntry + 0x0C` [Type: `uint32_t` current tier index]
-- **`QuestEntry::Target`:** `QuestEntry + 0x10` [Type: `uint32_t` threshold / requirement limit]
+- **`QuestEntry`::QuestTier:** `QuestEntry + 0x0C` [Type: `uint32_t` current tier index]
+- **`QuestEntry`::Target:** `QuestEntry + 0x10` [Type: `uint32_t` threshold / requirement limit]
+
+### 8. ChatClient & Focus Array Details
+- **`ChatClient` Focus Array:** `0x1f48e50` (Array of active GUI window pointers)
+- **`ChatClient` Focus Count:** `0x1f48e58` (Number of active GUI windows)
+- **`ChatClient` Focus Logic:** The `ChatClient` pointer (`0x1eae6a0`) is checked against this list to determine if the chat interface currently has keyboard focus.
