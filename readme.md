@@ -22,6 +22,8 @@ All reversing is my own work. AI was only used for table formatting and some cod
 League-Offsets/
 ├── src/
 │   ├── offsets.md             ← global RVAs, function entries, struct field offsets
+│   ├── offsets.hpp            ← generated C++ header file for ready inclusion
+│   ├── offsets.json           ← JSON dump of resolved RVAs & member offsets
 │   ├── patterns.md            ← AOB byte patterns for every global and function
 │   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
 │   └── quick_usage/           ← ready-to-use C++ snippets for each system (most of it Vibe Coded!)
@@ -33,6 +35,8 @@ League-Offsets/
 
 | File | Contents |
 | ---- | -------- |
+| [`src/offsets.hpp`](src/offsets.hpp) | Generated C++ header enclosing all resolved global, function, and structure member offsets |
+| [`src/offsets.json`](src/offsets.json) | Exported JSON format tree of all resolved fields for multi-language ingestion |
 | [`src/offsets.md`](src/offsets.md) | RVA values for all global pointers and function entries, plus per-struct field offsets — `GameObject`, `HeroManager`, `Camera`, `SpellBook`, `NavGrid`, and more |
 | [`src/patterns.md`](src/patterns.md) | AOB signatures for everything in `offsets.md`. Multiple caller-context variants per entry so you can resolve through `E8` calls |
 | [`src/reflection_offsets.md`](src/reflection_offsets.md) | Dynamic reflection offsets for `AIHero`, `AIMinionCommon`, `AITurretCommon`, `Barracks`, `HQ`, and more — extracted from getter functions |
