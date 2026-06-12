@@ -7,8 +7,6 @@
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
-Note: Today wil lbe updated I had school sorry!
-
 star for support ⭐
 
 RVA offsets, AOB patterns, and struct layouts extracted manually from the league.  

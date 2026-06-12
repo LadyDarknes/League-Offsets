@@ -7,7 +7,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **HeroManager**         | `48 8B 0D ? ? ? ? 0F 85 ? ? ? ? 83`                                   |
 | **ViewPort**            | `48 8B 3D ? ? ? ? 80 78 22 00 74`                                     |
 | **GameTime**            | `F3 0F 5C 35 ? ? ? ? 0F 28 F8`                                        |
-| **EntityList**          | `E8 ?? ?? ?? ?? 48 8B 1D ?? ?? ?? ?? 48 8D 55 48`                     |
+| **EntityList**          | `0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00`                 |
 | **ObjectManager**       | `48 8B 0D ? ? ? ? 8B 10 E8`                                           |
 | **MissileManager**      | `48 8B 0D ? ? ? ? 48 8D 55 ? E8`                                      |
 | **NavGrid**             | `48 8B 05 ? ? ? ? 0F 28 DA`                                           |
@@ -22,7 +22,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **MouseScreenVec2**     | `48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 8B 01`               |
 | **CastSpellFlag**       | `C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?`                                  |
 | **IssueOrderFlag**      | `C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24`  |
-| **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 75 ? 48 8B 0D` |
+| **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D` |
 | **QuestProgressFn**     | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` |
 | **QuestValueFn**        | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`          |
 | **ComponentLookupFn**   | `48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D`                    |
@@ -77,17 +77,17 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **SpellCastMap hash fn**              | `48 83 EC ? 4C 8B D2 4C 8B D9`                                                           | Bucket index fn                                 |
 | **SpellCastMap key cmp**              | `8B 41 ? 39 42 ? 75 ? 48 8B 01`                                                          | strcmp + hash check                             |
 | **CastSpellWrapper**                  | `48 89 48 ? 55 56 57 41 54 41 55`                                                        | Internal-call fn                                |
-| **PrintChat**                         | `E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 85 C9 74 ? E8 ? ? ? ? 83 F8`                             | Caller ctx                                      |
+| **PrintChat**                         | `40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF` | Function entry |
 | **IsHero**                            | `E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B`                    | Caller ctx                                      |
 | **IsTurret** (fn entry)               | `40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27`                                              | Function entry                                  |
 | **IsTurret** (caller ctx)             | `E8 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 83 ?? ?? ?? ?? 48 8D 8B`                               | Resolve E8                                      |
 | **IsBuilding** (caller ctx)           | `E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??` | Resolve E8                                      |
-| **IsAlive** (fn entry)              | `53 48 83 EC 20 48 8B 18 48 8B CB FF 53 38`                              | Use caller ctx below for safety |
+| **IsAlive** (fn entry)              | `40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 38 01 00 00 84 C0 74 ? 48 8D 8B A8 02 00 00 48 8B 01 FF 50 10 84 C0 75` | Function entry |
 | **IsAlive** (caller ctx)            | `E8 ? ? ? ? 84 C0 74 ? 48 8B 83 ? ? ? ? 48 8D 8B`                        | Caller ctx |
-| **IsVisible** (fn entry)            | `40 53 48 83 EC 20 80 B9 68 01 00 00 00 48 8B D9 0F 84 ? ? ? ? 48 8B 05`                 | Checks all 3 visibility bytes at +0x168/+0x169/+0x16A |
-| **IsVisible** (disasm confirmed)    | `80 B9 68 01 00 00 00`                                                   | `cmp byte ptr [rcx+168h], 0` — first byte of fn |
+| **IsVisible** (fn entry)            | `48 83 EC 38 80 B9 6C 01 00 00 00 0F 29 74 24 ? 0F 28 ? 7F ? 80 B9 ? ? 00 00 00`          | Checks primary visibility byte at +0x16C |
+| **IsVisible** (disasm confirmed)    | `80 B9 6C 01 00 00 00`                                                   | `cmp byte ptr [rcx+16Ch], 0` — first byte of fn |
 | **GameObject::IsType**              | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                               | Helper function to check classification flags   |
-| **GetAIManager** (fn entry)         | `48 8B 81 70 40 00 00 48 85 C0 74 ?? 48 8B 40 28`                        | Reads `[rcx+4070h]` then deref +0x28 |
+| **GetAIManager** (fn entry)         | `48 8B 89 70 40 00 00 48 85 C9 74`                                       | Reads `[rcx+4070h]` and checks null |
 | **NavPath waypoints** (read ctx)    | `48 8B 40 28 48 8D 04 C0`                                                | WaypointArray read from NavPath+0x28 |
 
 ---
@@ -206,14 +206,14 @@ Actualy I am not sure about them because, I didnt look those since 3 month or st
 ## Prediction — NavPath Struct AOB Patterns
 | Name | AOB Pattern | Notes |
 | ---- | ----------- | ----- |
-| **GetAIManager ptr** | `48 8B 81 70 40 00 00 48 85 C0 74` | `mov rax,[rcx+4070h]` + null check |
+| **GetAIManager ptr** | `48 8B 89 70 40 00 00 48 85 C9 74` | `mov rcx,[rcx+4070h]` + null check |
 | **NavAgent deref** | `48 8B 40 28 48 85 C0` | `mov rax,[rax+28h]` from AIManager |
 | **NavPath base** | `48 8D B0 5C 04 00 00` | `lea rsi,[rax+45Ch]` — path struct offset |
 | **WaypointArray** | `48 8B 40 28 48 8D 04 C0` | `[navPath+0x28]` = float* array |
 | **WaypointCount** | `8B 40 30` | `mov eax,[rax+30h]` from NavPath |
 | **CurrentNodeIdx** | `8B 08` | `mov ecx,[rax]` from NavPath base |
 | **DistanceSq fn** | `F3 0F 10 81 5C 02 00 00` | Reads Position.X at +0x25C — unique |
-| **IsVisible fn** | `40 53 48 83 EC 20 80 B9 68 01 00 00 00 48 8B D9 0F 84 ? ? ? ? 48 8B 05` | All 3 visibility bytes check |
+| **IsVisible fn** | `48 83 EC 38 80 B9 6C 01 00 00 00 0F 29 74 24 ? 0F 28 ? 7F ? 80 B9 ? ? 00 00 00` | Checks primary visibility byte at +0x16C |
 | **EntityList stride** | `48 69 ?? D8 01 00 00` | `imul reg, 472` — entity slot multiply |
 
 ---
