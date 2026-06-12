@@ -2,7 +2,7 @@
 
 # League of (removed) — Offset Reference
 
-![Patch](https://img.shields.io/badge/Patch-26.11-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.12-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
@@ -46,11 +46,11 @@ League-Offsets/
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.11 |
-| Timestamp | `6A0F8BDE` — Thu May 21 22:49:02 2026 |
-| SHA-256 | `6F460B721D6B5997839AEB57A11432B8EEA4128992E8821F64F08C7A9CD5F392` |
-| MD5 | `7AF934464747DDB6490C800FA37D5402` |
-| Imagebase | `0x7FF7F8E80000` |
+| Patch | 26.12 |
+| Timestamp | `6A2B43A1` — Thu Jun 11 23:24:17 2026 |
+| SHA-256 | `42DBD44CAA08B20102BED923A22BE1386EE5370EDB90DA90F4EC0F93821DFF79` |
+| MD5 | `4090434E4ADCE3F9689E4D92EA92FBCE` |
+| Imagebase | `0x7FF7E6B90000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
