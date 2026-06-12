@@ -22,7 +22,7 @@ This document records the global addresses, function entry points, and internal 
 | `HeroManager` | `0x1e76da0` | `0x7ff7e8a06da0` | List of all hero game objects |
 | `ViewPort` | `0x1e79d20` | `0x7ff7e8a09d20` | Camera viewport configuration |
 | `GameTime` | `0x1e855a0` | `0x7ff7e8a155a0` | Floating-point match game time in seconds |
-| `EntityList` | `0x238aec` | `0x7ff7e6dc8aec` | Main game object array |
+| `EntityList` | `0x1e76e20` | `0x7ff7e8a06e20` | Main game object array |
 | `ObjectManager` | `0x1e76c80` | `0x7ff7e8a06c80` | Hash map of network-registered entities |
 | `MissileManager` | `0x1e76d10` | `0x7ff7e8a06d10` | List of active active spell projectiles |
 | `NavGrid` | `0x1e79cc0` | `0x7ff7e8a09cc0` | 2D pathfinding and cell height map grid |
@@ -31,7 +31,7 @@ This document records the global addresses, function entry points, and internal 
 | `NetInstance` | `0x1e76c90` | `0x7ff7e8a06c90` | Game client communication network layer |
 | `NetClient` | `0x1e76c78` | `0x7ff7e8a06c78` | Ping/latency network structure |
 | `UnderMouseObj` | `0x1e79f78` | `0x7ff7e8a09f78` | Current entity highlighted under mouse cursor |
-| `ChatClient` | `0x1f38088` | `0x7ff7fadb8088` | Game chat history and UI controller |
+| `ChatClient` | `0x1eae6a0` | `0x7ff7e8a3e6a0` | Game chat history and UI controller |
 | `g_QuestManager` | `0x1e94130` | `0x7ff7fad14130` | Global manager for narrative/stat quests |
 | `g_RoleQuestKey` | `0x1e933f0` | `0x7ff7fad133f0` | Component registry key for Role Bound quests |
 | `g_RoleBoundQuestController` | `0x1e90fe0` | `0x7ff7fad10fe0` | Controller handling RoleBound buttons & state |
@@ -47,11 +47,12 @@ This document records the global addresses, function entry points, and internal 
 | `WorldToScreen` | `0x12f6a90` | `0x7ff7e7e86a90` | Projects 3D world positions to 2D screen space |
 | `GetBoundingRadius` | `0x27eb60` | `0x7ff7e6e0eb60` | Returns physical collision radius of GameObject |
 | `GetAttackWindup` | `0x5725a0` | `0x7ff7e71025a0` | Calculates current champion auto-attack windup duration |
-| `GetAttackDelay` | `0x5726b0` | `0x7ff7e71026b0` | Calculates basic attack cooldown based on AS |
+| `GetAttackDelay` | `0x5726a0` | `0x7ff7e71026a0` | Calculates basic attack cooldown based on AS |
 | `GetCollisionFlags` | `0x1243ca0` | `0x7ff7e7dd3ca0` | Retrieves terrain collision byte at coordinates |
-| `IsTurret` | `0x2b79d0` | `0x7ff7e6e479d0` | Returns true if the entity is an active defense tower |
+| `IsTurret` | `0x2ccae0` | `0x7ff7e6e5cae0` | Returns true if the entity is an active defense tower |
 | `IsAlive` | `0x2b79d0` | `0x7ff7e6e479d0` | Returns true if target HP > 0 |
-| `IsVisible` | `0xb7e050` | `0x7ff7f99fe050` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
+| `IsVisible` | `0x217f90` | `0x7ff7e6da7f90` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
+| `GetAIManager` | `0x27d9d0` | `0x7ff7e6e0d9d0` | Returns the AIManager component of a GameObject |
 | `GameObject::IsType` | `0x28f150` | `0x7ff7e6e1f150` | Helper function to check classification flags (TypeFlags) |
 | `SpellBook::GetSpellSlot` | `0x966d50` | `0x7ff7f97e6d50` | Retrieves SpellSlot* from the array at SpellBook + 0xAE0 |
 | `SpellSlot::GetCooldown` | `0x932c70` | `0x7ff7e74c2c70` | Calculates remaining cooldown time for a spell slot |
