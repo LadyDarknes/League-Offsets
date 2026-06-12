@@ -89,6 +89,13 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **GameObject::IsType**              | `40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C`                               | Helper function to check classification flags   |
 | **GetAIManager** (fn entry)         | `48 8B 89 70 40 00 00 48 85 C9 74`                                       | Reads `[rcx+4070h]` and checks null |
 | **NavPath waypoints** (read ctx)    | `48 8B 40 28 48 8D 04 C0`                                                | WaypointArray read from NavPath+0x28 |
+| **ClientMainLoop**                    | `48 83 EC 48 80 3D ? ? ? ? 00 48 89 5C 24 50`                                            | Frame update main loop                          |
+| **OnWndProc**                         | `48 89 5C 24 18 55 56 57 48 8D 6C 24 B9 48 81 EC C0 00 00 00 48 8B 05 ? ? ? ?`           | Windows message procedure                       |
+| **OnProcessSpell**                    | `40 55 56 48 81 EC 88 00 00 00 48 83 79 28 00`                                           | Triggered on spell cast request                 |
+| **OnSpellImpact**                     | `48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 49 8B 01`                                  | Triggered when spell hits/impacts               |
+| **OnDoCast**                          | `40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00` | Triggered when spell is executed/sent |
+| **OnStopCast**                        | `40 53 56 57 48 83 EC 40 F3 0F 10 81 E4 00 00 00`                                        | Triggered when spell cast is cancelled          |
+| **OnCreateObject**                    | `48 89 5C 24 18 56 48 83 EC 30 80 B9 EC 01 00 00 00`                                     | Triggered when new GameObject is created        |
 
 ---
 
