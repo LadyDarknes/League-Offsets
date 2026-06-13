@@ -40,7 +40,7 @@ League-Offsets/
 | [`src/offsets.md`](src/offsets.md) | RVA values for all global pointers and function entries, plus per-struct field offsets — `GameObject`, `HeroManager`, `Camera`, `SpellBook`, `NavGrid`, and more |
 | [`src/patterns.md`](src/patterns.md) | AOB signatures for everything in `offsets.md`. Multiple caller-context variants per entry so you can resolve through `E8` calls |
 | [`src/reflection_offsets.md`](src/reflection_offsets.md) | Dynamic reflection offsets for `AIHero`, `AIMinionCommon`, `AITurretCommon`, `Barracks`, `HQ`, and more — extracted from getter functions |
-| [`src/quick_usage/`](src/quick_usage/) | Ready-to-paste C++ snippets covering W2S, navigation, buffs, HUD, type checks, and quest system |
+| [`src/quick_usage/`](src/quick_usage/) | Ready-to-paste C++ snippets covering W2S, navigation, buffs, HUD, type checks, quest system, and event hooks (WndProc, ProcessSpell, DoCast, etc.) |
 
 ---
 
