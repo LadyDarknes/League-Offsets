@@ -96,6 +96,10 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **OnDoCast**                          | `40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00` | Triggered when spell is executed/sent |
 | **OnStopCast**                        | `40 53 56 57 48 83 EC 40 F3 0F 10 81 E4 00 00 00`                                        | Triggered when spell cast is cancelled          |
 | **OnCreateObject**                    | `48 89 5C 24 18 56 48 83 EC 30 80 B9 EC 01 00 00 00`                                     | Triggered when new GameObject is created        |
+| **OnDeleteObject**                    | `40 53 48 83 EC 20 33 D2 48 8B D9 E8 ? ? ? ? 48 8B 0D`                                  | `AIHeroClient::OnDestroyUnit` — PKT_S2C handler |
+| **OnPlayAnimation**                   | `48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 20 48 8B 4B 18`                    | `AIBaseClient::OnPlayAnimation` — PKT_S2C handler |
+| **MinimapMoveSelf**                   | `83 FA 01 0F 85 ? ? ? ? 4C 8B DC`                                                       | `evtPlayerMoveMinimap` handler                  |
+| **MinimapHudInit**                    | `48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00` | `TacticalMap` (Minimap HUD) constructor        |
 
 ---
 

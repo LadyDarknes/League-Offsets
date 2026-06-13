@@ -1,10 +1,9 @@
+// this file generateded by ai!
 #include <stdint.h>
 #include <windows.h>
 
-// Standard 3D Vector structure
 struct Vec3 { float x, y, z; };
 
-// MSVC String layout used by the game engine
 struct MsvcString {
     union {
         char buffer[16];
@@ -18,13 +17,11 @@ struct MsvcString {
     }
 };
 
-// SpellData structure containing static spell information
 struct SpellData {
     char padding_0[0x28];
     MsvcString spell_name; // SpellData + 0x28 (e.g. "AlphaStrike")
 };
 
-// SpellSlotInfo structure containing active cast parameters
 struct SpellSlotInfo {
     char padding_0[0x8];
     SpellData* spell_data; // SpellSlotInfo + 0x8

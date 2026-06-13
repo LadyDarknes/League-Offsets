@@ -71,6 +71,11 @@ This document records the global addresses, function entry points, and internal 
 | `OnDoCast` | `0x97f2f0` | `0x7ff7e750f2f0` | Triggered when spell is executed/sent |
 | `OnStopCast` | `0x985460` | `0x7ff7e7515460` | Triggered when spell cast is cancelled |
 | `OnCreateObject` | `0x55b330` | `0x7ff7e70eb330` | Triggered when new GameObject is created |
+| `OnDeleteObject` | `0x322640` | `0x7ff7e6eb2640` | `AIHeroClient::OnDestroyUnit` — handles `PKT_S2C_DestroyUnit_s` |
+| `OnPlayAnimation` | `0x29BF90` | `0x7ff7e6e2bf90` | `AIBaseClient::OnPlayAnimation` — handles `PKT_S2C_PlayAnimation_s` |
+| `OnDestroyMissile` | `0x985940` | `0x7ff7e7515940` | `MissileClient::OnDestroyMissile` — handles `PKT_S2C_DestroyClientMissile_s` |
+| `MinimapMoveSelf` | `0x5A2880` | `0x7ff7e7132880` | `evtPlayerMoveMinimap` event handler |
+| `MinimapHudInit` | `0xC29C70` | `0x7ff7e77b9c70` | `TacticalMap` (Minimap HUD) constructor/init |
 
 ---
 
