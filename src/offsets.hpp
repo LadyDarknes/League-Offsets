@@ -217,5 +217,7 @@ namespace Offsets {
             constexpr uintptr_t mIsTargetable = 0x64;
             constexpr uintptr_t mIsTargetableToTeamFlags = 0x38;
         }
+        namespace How Offsets are Resolved {
+        }
     }
 }
