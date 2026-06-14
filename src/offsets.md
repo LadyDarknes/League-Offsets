@@ -66,16 +66,17 @@ This document records the global addresses, function entry points, and internal 
 | `ComponentRegistry::Lookup` | `0x1189220` | `0x7ff7e7d19220` | Generic component registry lookup function |
 | `ClientMainLoop` | `0x5eec00` | `0x7ff7e717ec00` | Frame update main loop |
 | `OnWndProc` | `0x5f0780` | `0x7ff7e7180780` | Windows message procedure |
+| `PrintChat` | `0x112c8e0` | `0x7ff7e7cbc8e0` | Prints message to in-game chat window |
 | `OnProcessSpell` | `0x984d20` | `0x7ff7e7514d20` | Triggered on spell cast request |
 | `OnSpellImpact` | `0x97d6e0` | `0x7ff7e750d6e0` | Triggered when spell hits/impacts |
 | `OnDoCast` | `0x97f2f0` | `0x7ff7e750f2f0` | Triggered when spell is executed/sent |
 | `OnStopCast` | `0x985460` | `0x7ff7e7515460` | Triggered when spell cast is cancelled |
 | `OnCreateObject` | `0x55b330` | `0x7ff7e70eb330` | Triggered when new GameObject is created |
-| `OnDeleteObject` | `0x322640` | `0x7ff7e6eb2640` | `AIHeroClient::OnDestroyUnit` — handles `PKT_S2C_DestroyUnit_s` |
-| `OnPlayAnimation` | `0x29BF90` | `0x7ff7e6e2bf90` | `AIBaseClient::OnPlayAnimation` — handles `PKT_S2C_PlayAnimation_s` |
+| `OnDeleteObject` | `0x5612e0` | `0x7ff7e70f12e0` | `AIHeroClient::OnDestroyUnit` — handles `PKT_S2C_DestroyUnit_s` |
+| `OnPlayAnimation` | `0x29bf90` | `0x7ff7e6e2bf90` | `AIBaseClient::OnPlayAnimation` — handles `PKT_S2C_PlayAnimation_s` |
 | `OnDestroyMissile` | `0x985940` | `0x7ff7e7515940` | `MissileClient::OnDestroyMissile` — handles `PKT_S2C_DestroyClientMissile_s` |
-| `MinimapMoveSelf` | `0x5A2880` | `0x7ff7e7132880` | `evtPlayerMoveMinimap` event handler |
-| `MinimapHudInit` | `0xC29C70` | `0x7ff7e77b9c70` | `TacticalMap` (Minimap HUD) constructor/init |
+| `MinimapMoveSelf` | `0x57a7e0` | `0x7ff7e710a7e0` | `evtPlayerMoveMinimap` event handler |
+| `MinimapHudInit` | `0x940bf0` | `0x7ff7e74d0bf0` | `TacticalMap` (Minimap HUD) constructor/init |
 
 ---
 
@@ -108,6 +109,15 @@ This document records the global addresses, function entry points, and internal 
 - **`HeroInventoryClient` Wrapper:** `GameObject + 0x4230` (16944) (inventory wrapper — not AIManager)
 - **`JungleTypeOffset`:** `GameObject + 0x4484` (17540) (Jungle creep classification type ID)
 - **`NetVisibilityObjectClient` Component:** `GameObject + 0x308` (776) (Visibility component; contains the team mask at `+0x30C` where bit 0 is Blue team fog and bit 1 is Red team fog)
+- **`PetOwner` / `mOwner` Pointer:** `AIBaseClient + 0x4D18` (19736) [Type: `std::shared_ptr<AIBaseClient>`]
+- **`CharacterDataStack` Component:** `AIBaseClient + 0x1270` (4720) [Pointer/VTable wrapper]
+  - **`oSkinName` (String):** `CharacterDataStack + 0x18` (24) [Type: `std::string`]
+  - **`oModelIndex` (Int):** `CharacterDataStack + 0xC4` (196) [Type: `int`]
+- **`CharacterDataStack` Base Pointer:** `AIBaseClient + 0x2C88` (11400) [Type: `CharacterData*` overridden]
+- **`oModelInstance` / Mesh:** `AIBaseClient + 0x44F0` (17648) [Type: `ModelInstance*` encrypted/obfuscated pointer]
+- **`HeroList` (Array):** `HeroManager + 0x8` (8) [Type: `AIBaseClient**` array of hero pointers]
+- **`HeroCount` (Size):** `HeroManager + 0x10` (16) [Type: `int`]
+
 
 ### Visibility bytes (IsVisible)
 - **`+0x168`** — primary visibility flag (stale/cached if unit is in fog of war)

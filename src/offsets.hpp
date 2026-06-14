@@ -55,9 +55,13 @@ namespace Offsets {
         constexpr uintptr_t IsTurret = 0x2CCAE0;
         constexpr uintptr_t IsVisible = 0x217F90;
         constexpr uintptr_t IssueOrderCore = 0x290940;
+        constexpr uintptr_t MinimapHudInit = 0x940BF0;
+        constexpr uintptr_t MinimapMoveSelf = 0x57A7E0;
         constexpr uintptr_t NavAgent = 0x591F10;
         constexpr uintptr_t OnCreateObject = 0x55B330;
+        constexpr uintptr_t OnDeleteObject = 0x5612E0;
         constexpr uintptr_t OnDoCast = 0x97F2F0;
+        constexpr uintptr_t OnPlayAnimation = 0x29BF90;
         constexpr uintptr_t OnProcessSpell = 0x984D20;
         constexpr uintptr_t OnSpellImpact = 0x97D6E0;
         constexpr uintptr_t OnStopCast = 0x985460;
@@ -218,6 +222,23 @@ namespace Offsets {
             constexpr uintptr_t mIsTargetableToTeamFlags = 0x38;
         }
         namespace How Offsets are Resolved {
+        }
+    }
+
+    namespace Standard {
+        namespace AIBaseClient {
+            constexpr uintptr_t oPetOwner = 0x4D18;
+            constexpr uintptr_t oModelInstance = 0x44F0;
+            constexpr uintptr_t oCharacterDataStack = 0x1270;
+            constexpr uintptr_t oCharacterDataStackBase = 0x2C88;
+        }
+        namespace CharacterDataStack {
+            constexpr uintptr_t oSkinName = 0x18;
+            constexpr uintptr_t oModelIndex = 0xC4;
+        }
+        namespace HeroManager {
+            constexpr uintptr_t oHeroList = 0x8;
+            constexpr uintptr_t oHeroCount = 0x10;
         }
     }
 }
