@@ -230,6 +230,22 @@
             "oIsDashing": 840,
             "oDashSpeed": 992,
             "oNavPath": 1168
+        },
+        "CameraData": {
+            "oCamPos": 8,
+            "oCamRotation": 24,
+            "oCamAttached": 40,
+            "oCamMoveSpeed": 44,
+            "oCamLookSpeed": 52,
+            "oFieldOfView": 60,
+            "oNearClip": 68,
+            "oFarClip": 76,
+            "oOutlineSelect": 84,
+            "oOutlineHover": 86,
+            "oFloatingText": 88,
+            "oFogOfWar": 90,
+            "oNavGridOffset": 92,
+            "oSimulateOffScreenParticles": 100
         }
     }
 }

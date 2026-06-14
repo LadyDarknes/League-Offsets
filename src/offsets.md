@@ -183,6 +183,26 @@ This document records the global addresses, function entry points, and internal 
 - **`MouseWorldPos`:** `HudInstance + 0x34` (52) [Type: `Vec3`]
 - **`ChatOpen` Wrapper:** `HudInstance + 0x10` (16)
 
+### 6b. `CameraData` (HudCameraLogic — Property Registration)
+Extracted from the `HudCameraLogic` property registration function (`sub_7FF7E72A8D50`).
+The `r9d` values passed to `sub_7FF7E7C90540` encode the struct-internal offset for each property.
+These offsets describe the internal camera logic struct accessible through scripting/rendering systems.
+
+- **`camPos`:** `CameraData + 0x08` (8) [Type: `Vec3` — X=`+0x08`, Y=`+0x0C`, Z=`+0x10`] — Camera world position
+- **`camRotation`:** `CameraData + 0x18` (24) [Type: `Vec3` — Yaw=`+0x18`, Pitch=`+0x1C`, Roll=`+0x20`] — Euler rotation in degrees
+- **`camAttached`:** `CameraData + 0x28` (40) [Type: `bool`] — True if camera is attached to an object
+- **`camMoveSpeed`:** `CameraData + 0x2C` (44) [Type: `float`] — Camera movement speed multiplier
+- **`camLookSpeed`:** `CameraData + 0x34` (52) [Type: `float`] — Mouse look speed (FPS/TPS modes)
+- **`fieldOfView`:** `CameraData + 0x3C` (60) [Type: `float`] — Camera FOV in degrees (default 56)
+- **`nearClip`:** `CameraData + 0x44` (68) [Type: `float`] — Near clipping plane distance
+- **`farClip`:** `CameraData + 0x4C` (76) [Type: `float`] — Far clipping plane distance
+- **`outlineSelect`:** `CameraData + 0x54` (84) [Type: `bool`] — Display outlines on selected champions
+- **`outlineHover`:** `CameraData + 0x56` (86) [Type: `bool`] — Display outlines on hovered champions
+- **`floatingText`:** `CameraData + 0x58` (88) [Type: `bool`] — Display floating text notifications
+- **`fogOfWar`:** `CameraData + 0x5A` (90) [Type: `bool`] — Display fog of war
+- **`navGridOffset`:** `CameraData + 0x5C` (92) [Type: `float`] — Height offset for champion/minion placement on navgrid
+- **`simulateOffScreenParticles`:** `CameraData + 0x64` (100) [Type: `bool`] — Simulate particles while off screen
+
 ### 7. `QuestEntry` Structure
 - **`QuestEntry` Size (Stride):** `0x18` bytes
 - **`QuestEntry::QuestDef`:** `QuestEntry + 0x00` [Type: `void*` pointer to quest definition]
