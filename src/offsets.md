@@ -149,21 +149,22 @@ This document records the global addresses, function entry points, and internal 
 - **`BuffInstance::EndTime`:** `BuffInstance + 0x90` (144) [Type: `float`]
 - **`BuffInstance::Stacks` / Count:** `BuffInstance + 0x94` (148) [Type: `byte`]
 
-### 4. `AIManager` Component (Navigation)
-- **`AIManager` Ptr:** `*(QWORD*)(GameObject + 0x4070)` → `navInner = *(QWORD*)(AIManager + 0x40)` → `navPath = navInner + 0x45C`
-- **`TargetPosition`:** `AIManager + 0x34` [Type: `Vec3`]
-- **`Velocity`:** `AIManager + 0x318` [Type: `Vec3`]
-- **`IsMoving`:** `AIManager + 0x31C` [Type: `bool`]
-- **`PathStart`:** `AIManager + 0x330` [Type: `Vec3`]
-- **`PathEnd`:** `AIManager + 0x33C` [Type: `Vec3`]
-- **`SegmentsCount`:** `AIManager + 0x350` [Type: `int`]
-- **`DashSpeed`:** `AIManager + 0x360` [Type: `float`]
-- **`IsDashing`:** `AIManager + 0x384` [Type: `bool`]
-- **`ServerPos`:** `AIManager + 0x474` [Type: `Vec3`]
+### 4. AIManager Component (Navigation)
+- **`AIManagerWrapper` Ptr:** `*(QWORD*)(GameObject + 0x4070)` (16496)
+- **`AIManager` Ptr:** `*(QWORD*)(AIManagerWrapper + 0x28)` (40)
+- **`navInner` Ptr:** `*(QWORD*)(AIManagerWrapper + 0x40)` (64)
+- **`ServerPos`:** `AIManager + 0x08` (8) [Type: `Vec3`]
+- **`Velocity`:** `AIManager + 0x18` (24) [Type: `Vec3`]
+- **`TargetPosition`:** `AIManager + 0x24` (36) [Type: `Vec3`]
+- **`IsMoving`:** `navInner + 0x320` (800) [Type: `bool`]
+- **`PathStart`:** `navInner + 0x328` (808) [Type: `Vec3`]
+- **`PathEnd`:** `navInner + 0x338` (824) [Type: `Vec3`]
+- **`IsDashing`:** `navInner + 0x348` (840) [Type: `bool`]
+- **`DashSpeed`:** `navInner + 0x3E0` (992) [Type: `float`]
 - **`IsMovingFlag`:** `GameObject + 0x452` (1106) [Type: `bool`]
 - **`PathBufferSelector`:** `GameObject + 0x478` (1144) [Type: `bool`]
 
-### NavPath Struct (navInner + 0x45C)
+### NavPath Struct (navInner + 0x490)
 - **`CurrentNodeIndex`:** `NavPath + 0x00` [Type: `int`]
 - **`WaypointArray`:** `NavPath + 0x28` [Type: `Vec3*` — each entry 12 bytes]
 - **`WaypointCount`:** `NavPath + 0x30` [Type: `int`]

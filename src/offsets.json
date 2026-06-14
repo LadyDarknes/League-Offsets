@@ -203,5 +203,33 @@
             "mIsTargetableToTeamFlags": 56
         }
     },
-    "Standard": {}
+    "Standard": {
+        "AIBaseClient": {
+            "oPetOwner": 19736,
+            "oModelInstance": 17648,
+            "oCharacterDataStack": 4720,
+            "oCharacterDataStackBase": 11400
+        },
+        "CharacterDataStack": {
+            "oSkinName": 24,
+            "oModelIndex": 196
+        },
+        "HeroManager": {
+            "oHeroList": 8,
+            "oHeroCount": 16
+        },
+        "AIManager": {
+            "oServerPos": 8,
+            "oVelocity": 24,
+            "oTargetPosition": 36
+        },
+        "navInner": {
+            "oIsMoving": 800,
+            "oPathStart": 808,
+            "oPathEnd": 824,
+            "oIsDashing": 840,
+            "oDashSpeed": 992,
+            "oNavPath": 1168
+        }
+    }
 }

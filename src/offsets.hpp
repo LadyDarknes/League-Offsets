@@ -240,5 +240,18 @@ namespace Offsets {
             constexpr uintptr_t oHeroList = 0x8;
             constexpr uintptr_t oHeroCount = 0x10;
         }
+        namespace AIManager {
+            constexpr uintptr_t oServerPos = 0x08;
+            constexpr uintptr_t oVelocity = 0x18;
+            constexpr uintptr_t oTargetPosition = 0x24;
+        }
+        namespace navInner {
+            constexpr uintptr_t oIsMoving = 0x320;
+            constexpr uintptr_t oPathStart = 0x328;
+            constexpr uintptr_t oPathEnd = 0x338;
+            constexpr uintptr_t oIsDashing = 0x348;
+            constexpr uintptr_t oDashSpeed = 0x3E0;
+            constexpr uintptr_t oNavPath = 0x490;
+        }
     }
 }
