@@ -67,6 +67,10 @@
         "OnDoCast": 9958128,
         "OnStopCast": 9983072,
         "OnCreateObject": 5616432,
+        "OnDeleteObject": 5640928,
+        "OnPlayAnimation": 2736016,
+        "MinimapMoveSelf": 5744608,
+        "MinimapHudInit": 9702384,
         "NavAgent": 5840656,
         "WaypointCount": 235696,
         "CurrentNodeIdx": 233583,
@@ -198,5 +202,6 @@
             "mIsTargetable": 100,
             "mIsTargetableToTeamFlags": 56
         }
-    }
+    },
+    "Standard": {}
 }
