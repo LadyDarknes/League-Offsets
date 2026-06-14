@@ -253,5 +253,21 @@ namespace Offsets {
             constexpr uintptr_t oDashSpeed = 0x3E0;
             constexpr uintptr_t oNavPath = 0x490;
         }
+        namespace CameraData {
+            constexpr uintptr_t oCamPos = 0x08;
+            constexpr uintptr_t oCamRotation = 0x18;
+            constexpr uintptr_t oCamAttached = 0x28;
+            constexpr uintptr_t oCamMoveSpeed = 0x2C;
+            constexpr uintptr_t oCamLookSpeed = 0x34;
+            constexpr uintptr_t oFieldOfView = 0x3C;
+            constexpr uintptr_t oNearClip = 0x44;
+            constexpr uintptr_t oFarClip = 0x4C;
+            constexpr uintptr_t oOutlineSelect = 0x54;
+            constexpr uintptr_t oOutlineHover = 0x56;
+            constexpr uintptr_t oFloatingText = 0x58;
+            constexpr uintptr_t oFogOfWar = 0x5A;
+            constexpr uintptr_t oNavGridOffset = 0x5C;
+            constexpr uintptr_t oSimulateOffScreenParticles = 0x64;
+        }
     }
 }
