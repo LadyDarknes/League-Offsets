@@ -5,7 +5,7 @@ struct Vec3 { float x, y, z; };
 
 typedef bool(__fastcall* IssueOrderCore_t)(
     void* hud_input_logic,      // HudInputLogic pointer (typically HudInstance + 0x20 or 0x24)
-    uint32_t order_type,        // 1 = Attack, 2 = Move, 3 = Stop/Hold or maybe buy item depens on context
+    uint32_t order_type,        // 1 = Attack, 2 = Move, 3 = Stop/Hold or maybe buy item depens on context, also for tft buy something on the shop 
     Vec3* order_pos,            // Pointer to target world coordinates
     void* target_obj,           // Pointer to target GameObject (null if moving)
     bool is_triggered_by_user,  // Typically false/true (indicates manual source)
@@ -13,7 +13,8 @@ typedef bool(__fastcall* IssueOrderCore_t)(
     bool queue_order            // True to queue, false to issue immediately
 );
 
-void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) {
+void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) 
+{
     IssueOrderCore_t IssueOrder = (IssueOrderCore_t)(base_addr + 0x2DB830); // IssueOrderCore RVA
 
     void* hud_instance = *(void**)(base_addr + 0x1E682A8); // HudInstance RVA
@@ -47,7 +48,7 @@ void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) {
 bool IsUnitVisible(void* obj, void* local_player) {
     if (!obj || !local_player) return false;
     
-    // Get local player's team ID (100 = Blue, 200 = Red)
+    // Get local player's team ID (100 = Blue, 200 = Red) also can usable for teamcheck
     uint8_t local_team = *(uint8_t*)((char*)local_player + 0x259);
     uint32_t team_bit = (local_team == 100) ? 0 : 1;
     
@@ -81,20 +82,24 @@ bool IsUnitVisible(void* obj, void* local_player) {
 //
 // C++ Reference Implementation:
 
-struct MsvcString {
-    union {
+struct MsvcString 
+{
+    union 
+    {
         char buffer[16];
         char* pointer;
     };
     uint64_t length;
     uint64_t capacity;
 
-    const char* c_str() const {
+    const char* c_str() const 
+    {
         return capacity > 15 ? pointer : buffer;
     }
 };
 
-struct SpellData {
+struct SpellData 
+{
     char padding_0[0x28];
     MsvcString spell_name; // SpellData + 0x28
 };
@@ -104,7 +109,8 @@ struct SpellCastInfo {
     SpellData* spell_data; // SpellCastInfo + 0x8 (varies)
 };
 
-bool IsCastingAlphaStrike(void* local_player) {
+bool IsCastingAlphaStrike(void* local_player) 
+{
     if (!local_player) return false;
 
     void* spell_book = *(void**)((char*)local_player + 0x3128);
@@ -118,7 +124,7 @@ bool IsCastingAlphaStrike(void* local_player) {
 
     MsvcString* name_str = (MsvcString*)((char*)spell_data + 0x28);
     if (name_str && name_str->c_str()) {
-        // usually "AlphaStrike" or "AlphaStrikeAttack"
+        // its "AlphaStrike" I looked.
         const char* name = name_str->c_str();
         if (name && (name[0] == 'A' && name[1] == 'l')) {
             return true;

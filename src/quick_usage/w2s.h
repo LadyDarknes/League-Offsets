@@ -27,7 +27,8 @@ struct ScreenCoord {
     bool onScreen;
 };
 
-inline bool W2S(const CameraData& cam, const Vec3& w, ScreenCoord& out) {
+inline bool W2S(const CameraData& cam, const Vec3& w, ScreenCoord& out) 
+{
     if (!cam.valid) return false;
     // camera world position
     float dx = w.x - cam.camPos[0];

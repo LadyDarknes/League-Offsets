@@ -3,11 +3,13 @@
 #include <iostream>
 #include <windows.h>
 
-struct Vec3 { 
+struct Vec3 
+{ 
     float x, y, z; 
 };
 
-struct MsvcString {
+struct MsvcString 
+{
     union {
         char buffer[16];
         char* pointer;
@@ -15,7 +17,8 @@ struct MsvcString {
     uint64_t length;
     uint64_t capacity;
 
-    const char* c_str() const {
+    const char* c_str() const 
+    {
         return capacity > 15 ? pointer : buffer;
     }
 };

@@ -93,7 +93,7 @@ std::vector<void*> GetMinions(uintptr_t base_addr)
     std::vector<void*> entities = GetActiveEntities(base_addr);
     for (void* obj : entities) 
     {
-        if (obj && is_type(obj, 0x800)) // TypeMinion = 0x800, others are (deleted)
+        if (obj && is_type(obj, 0x800)) // TypeMinion = 0x800, others are TypeHero = 0x1000, TypeTurret = 0x2000
         { 
             minions.push_back(obj);
         }
