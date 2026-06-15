@@ -246,6 +246,19 @@
             "oFogOfWar": 90,
             "oNavGridOffset": 92,
             "oSimulateOffScreenParticles": 100
+        },
+        "SpellBook": {
+            "oActiveSpellCast": 2776,
+            "oSpellSlots": 2784
+        },
+        "SpellSlot": {
+            "oLevel": 40,
+            "oCooldown": 48,
+            "oCharges": 100,
+            "oChargeCooldown": 104
+        },
+        "SpellData": {
+            "oName": 40
         }
     }
 }
