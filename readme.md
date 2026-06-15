@@ -16,7 +16,6 @@ RVA offsets, AOB patterns, and structure layouts manually reversed from the game
 ## 📂 Repository Index
 
 ### ⚙️ Core Offsets & Patterns
-*   [**`ida_dumper.py`**](file:///c:/Users/Administrator/Desktop/League-Offsets/ida_dumper.py) — IDA Python script to scan patterns and dump offsets to headers/JSON.
 *   [**`src/offsets.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/offsets.md) — Reference documentation of all resolved RVAs and structure offsets.
 *   [**`src/patterns.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/patterns.md) — AOB signature byte patterns for global objects and functions.
 *   [**`src/reflection_offsets.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/reflection_offsets.md) — Dynamic reflection-based member offsets.
