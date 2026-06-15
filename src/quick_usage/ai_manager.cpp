@@ -1,10 +1,12 @@
 struct Vec3 { float x, y, z; };
 
 void* ai_mgr_wrapper = *(void**)((char*)obj + 0x4070);
-if (ai_mgr_wrapper) {
+if (ai_mgr_wrapper) 
+{
     void* ai_mgr = *(void**)((char*)ai_mgr_wrapper + 0x28);
     void* nav_inner = *(void**)((char*)ai_mgr_wrapper + 0x40);
-    if (ai_mgr && nav_inner) {
+    if (ai_mgr && nav_inner) 
+    {
         bool is_moving = *(bool*)((char*)nav_inner + 0x320);
         bool is_dashing = *(bool*)((char*)nav_inner + 0x348);
         float dash_speed = *(float*)((char*)nav_inner + 0x3E0);

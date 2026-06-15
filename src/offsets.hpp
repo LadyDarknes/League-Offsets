@@ -269,5 +269,18 @@ namespace Offsets {
             constexpr uintptr_t oNavGridOffset = 0x5C;
             constexpr uintptr_t oSimulateOffScreenParticles = 0x64;
         }
+        namespace SpellBook {
+            constexpr uintptr_t oActiveSpellCast = 0xAD8;
+            constexpr uintptr_t oSpellSlots = 0xAE0;
+        }
+        namespace SpellSlot {
+            constexpr uintptr_t oLevel = 0x28;
+            constexpr uintptr_t oCooldown = 0x30;
+            constexpr uintptr_t oCharges = 0x64;
+            constexpr uintptr_t oChargeCooldown = 0x68;
+        }
+        namespace SpellData {
+            constexpr uintptr_t oName = 0x28;
+        }
     }
 }
