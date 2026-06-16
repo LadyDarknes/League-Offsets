@@ -2,7 +2,7 @@
 #include <cstdint>
 
 namespace Offsets {
-    constexpr uintptr_t ImageBase = 0x7FF7E6B90000;
+    constexpr uintptr_t ImageBase = 0x7FF69D8A0000;
 
     namespace Globals {
         constexpr uintptr_t CastSpellFlag = 0x1DD8F70;
