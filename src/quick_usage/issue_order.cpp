@@ -12,12 +12,12 @@ typedef bool(__fastcall* IssueOrderCore_t)(
     bool shift_held,            // True if shift modifier is active (attack-move)
     bool queue_order            // True to queue, false to issue immediately
 );
-
+//offsets may can be old check offsets.md
 void IssueOrderExample(uintptr_t base_addr, void* enemy_champion) 
 {
     IssueOrderCore_t IssueOrder = (IssueOrderCore_t)(base_addr + 0x2DB830); // IssueOrderCore RVA
 
-    void* hud_instance = *(void**)(base_addr + 0x1E682A8); // HudInstance RVA
+    void* hud_instance = *(void**)(base_addr + 0x1e76e08); // HudInstance RVA
     if (!hud_instance) return;
 
     // hud_input_logic is retrieved at HudInstance + 0x24 (or 0x20 depending on compiler offset)
