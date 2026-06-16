@@ -9,7 +9,7 @@ This document records the global addresses, function entry points, and internal 
 | CRC32 | `E17A5127` |
 | Compiler | Visual C++ |
 | Format | Portable executable for AMD64 (PE) |
-| Imagebase | 7FF7E6B90000|
+| Imagebase | 7FF69D8A0000|
 | Timestamp | 6A2B43A1 (Thu Jun 11 23:24:17 2026) |
 
 ---
@@ -18,20 +18,20 @@ This document records the global addresses, function entry points, and internal 
 
 | Name | RVA | Address | Description |
 | ---- | --- | ------- | ----------- |
-| `LocalPlayer` | `0x1eb2020` | `0x7ff7e8a42020` | Local player champion object |
-| `HeroManager` | `0x1e76da0` | `0x7ff7e8a06da0` | List of all hero game objects |
-| `ViewPort` | `0x1e79d20` | `0x7ff7e8a09d20` | Camera viewport configuration |
-| `GameTime` | `0x1e855a0` | `0x7ff7e8a155a0` | Floating-point match game time in seconds |
-| `EntityList` | `0x1e76e20` | `0x7ff7e8a06e20` | Main game object array |
-| `ObjectManager` | `0x1e76c80` | `0x7ff7e8a06c80` | Hash map of network-registered entities |
-| `MissileManager` | `0x1e76d10` | `0x7ff7e8a06d10` | List of active active spell projectiles |
-| `NavGrid` | `0x1e79cc0` | `0x7ff7e8a09cc0` | 2D pathfinding and cell height map grid |
-| `HudInstance` | `0x1e76e08` | `0x7ff7e8a06e08` | GUI and user input controller |
-| `r3dRenderer` | `0x1f4c598` | `0x7ff7e8adc598` | Render engine singleton |
-| `NetInstance` | `0x1e76c90` | `0x7ff7e8a06c90` | Game client communication network layer |
-| `NetClient` | `0x1e76c78` | `0x7ff7e8a06c78` | Ping/latency network structure |
-| `UnderMouseObj` | `0x1e79f78` | `0x7ff7e8a09f78` | Current entity highlighted under mouse cursor |
-| `ChatClient` | `0x1eae6a0` | `0x7ff7e8a3e6a0` | Game chat history and UI controller |
+| `LocalPlayer` | `0x1eb2020` | `0x7ff69f752020` | Local player champion object |
+| `HeroManager` | `0x1e76da0` | `0x7ff69f716da0` | List of all hero game objects |
+| `ViewPort` | `0x1e79d20` | `0x7ff69f719d20` | Camera viewport configuration |
+| `GameTime` | `0x1e855a0` | `0x7ff69f7255a0` | Floating-point match game time in seconds |
+| `EntityList` | `0x1e76e20` | `0x7ff69f716e20` | Main game object array |
+| `ObjectManager` | `0x1e76c80` | `0x7ff69f716c80` | Hash map of network-registered entities |
+| `MissileManager` | `0x1e76d10` | `0x7ff69f716d10` | List of active active spell projectiles |
+| `NavGrid` | `0x1e79cc0` | `0x7ff69f719cc0` | 2D pathfinding and cell height map grid |
+| `HudInstance` | `0x1e76e08` | `0x7ff69f716e08` | GUI and user input controller |
+| `r3dRenderer` | `0x1f4c598` | `0x7ff69f7ec598` | Render engine singleton |
+| `NetInstance` | `0x1e76c90` | `0x7ff69f716c90` | Game client communication network layer |
+| `NetClient` | `0x1e76c78` | `0x7ff69f716c78` | Ping/latency network structure |
+| `UnderMouseObj` | `0x1e79f78` | `0x7ff69f719f78` | Current entity highlighted under mouse cursor |
+| `ChatClient` | `0x1eae6a0` | `0x7ff69f74e6a0` | Game chat history and UI controller |
 | `g_QuestManager` | `0x1e94130` | `0x7ff7fad14130` | Global manager for narrative/stat quests |
 | `g_RoleQuestKey` | `0x1e933f0` | `0x7ff7fad133f0` | Component registry key for Role Bound quests |
 | `g_RoleBoundQuestController` | `0x1e90fe0` | `0x7ff7fad10fe0` | Controller handling RoleBound buttons & state |
@@ -43,40 +43,40 @@ This document records the global addresses, function entry points, and internal 
 
 | Name | RVA | Address | Description |
 | ---- | --- | ------- | ----------- |
-| `IssueOrderCore` | `0x290940` | `0x7ff7e6e20940` | Core action handler (move, attack, interact) |
-| `WorldToScreen` | `0x12f6a90` | `0x7ff7e7e86a90` | Projects 3D world positions to 2D screen space |
-| `GetBoundingRadius` | `0x27eb60` | `0x7ff7e6e0eb60` | Returns physical collision radius of GameObject |
-| `GetAttackWindup` | `0x5725a0` | `0x7ff7e71025a0` | Calculates current champion auto-attack windup duration |
-| `GetAttackDelay` | `0x5726a0` | `0x7ff7e71026a0` | Calculates basic attack cooldown based on AS |
-| `GetCollisionFlags` | `0x1243ca0` | `0x7ff7e7dd3ca0` | Retrieves terrain collision byte at coordinates |
-| `IsTurret` | `0x2ccae0` | `0x7ff7e6e5cae0` | Returns true if the entity is an active defense tower |
-| `IsAlive` | `0x2b79d0` | `0x7ff7e6e479d0` | Returns true if target HP > 0 |
-| `IsVisible` | `0x217f90` | `0x7ff7e6da7f90` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
-| `GetAIManager` | `0x27d9d0` | `0x7ff7e6e0d9d0` | Returns the AIManager component of a GameObject |
-| `GameObject::IsType` | `0x28f150` | `0x7ff7e6e1f150` | Helper function to check classification flags (TypeFlags) |
+| `IssueOrderCore` | `0x290940` | `0x7ff69db30940` | Core action handler (move, attack, interact) |
+| `WorldToScreen` | `0x12f6a90` | `0x7ff69eb96a90` | Projects 3D world positions to 2D screen space |
+| `GetBoundingRadius` | `0x27eb60` | `0x7ff69db1eb60` | Returns physical collision radius of GameObject |
+| `GetAttackWindup` | `0x5725a0` | `0x7ff69de125a0` | Calculates current champion auto-attack windup duration |
+| `GetAttackDelay` | `0x5726a0` | `0x7ff69de126a0` | Calculates basic attack cooldown based on AS |
+| `GetCollisionFlags` | `0x1243ca0` | `0x7ff69eae3ca0` | Retrieves terrain collision byte at coordinates |
+| `IsTurret` | `0x2ccae0` | `0x7ff69db6cae0` | Returns true if the entity is an active defense tower |
+| `IsAlive` | `0x2b79d0` | `0x7ff69db579d0` | Returns true if target HP > 0 |
+| `IsVisible` | `0x217f90` | `0x7ff69dab7f90` | Returns true if entity is visible — checks +0x168/+0x169/+0x16A |
+| `GetAIManager` | `0x27d9d0` | `0x7ff69db1d9d0` | Returns the AIManager component of a GameObject |
+| `GameObject::IsType` | `0x28f150` | `0x7ff69db2f150` | Helper function to check classification flags (TypeFlags) |
 | `SpellBook::GetSpellSlot` | `0x966d50` | `0x7ff7f97e6d50` | Retrieves SpellSlot* from the array at SpellBook + 0xAE0 |
-| `SpellSlot::GetCooldown` | `0x932c70` | `0x7ff7e74c2c70` | Calculates remaining cooldown time for a spell slot |
-| `SpellSlot::Cast` | `0x747f70` | `0x7ff7e72d7f70` | Triggers a spell cast request (vtable[4]) |
-| `BuffManagerClient::OnBuffAdd` | `0x93dfb0` | `0x7ff7e74cdfb0` | Inserts a buff into client container |
-| `BuffManagerClient::OnBuffRemove` | `0x93eb00` | `0x7ff7e74ceb00` | Evicts/destroys a buff in client container |
-| `RoleBound::Init` | `0x10fbdb0` | `0x7ff7e7c8bdb0` | Registers the custom RoleBound system |
-| `QuestProgress::Calculate` | `0x51e700` | `0x7ff7e70ae700` | Processes a quest entry to compute requirement & tier |
-| `QuestProgress::GetQuestValue` | `0x5237e0` | `0x7ff7e70b37e0` | Queries quest values dynamically |
+| `SpellSlot::GetCooldown` | `0x932c70` | `0x7ff69e1d2c70` | Calculates remaining cooldown time for a spell slot |
+| `SpellSlot::Cast` | `0x747f70` | `0x7ff69dfe7f70` | Triggers a spell cast request (vtable[4]) |
+| `BuffManagerClient::OnBuffAdd` | `0x93dfb0` | `0x7ff69e1ddfb0` | Inserts a buff into client container |
+| `BuffManagerClient::OnBuffRemove` | `0x93eb00` | `0x7ff69e1deb00` | Evicts/destroys a buff in client container |
+| `RoleBound::Init` | `0x10fbdb0` | `0x7ff69e99bdb0` | Registers the custom RoleBound system |
+| `QuestProgress::Calculate` | `0x51e700` | `0x7ff69ddbe700` | Processes a quest entry to compute requirement & tier |
+| `QuestProgress::GetQuestValue` | `0x5237e0` | `0x7ff69ddc37e0` | Queries quest values dynamically |
 | `QuestProgress::LookupMap` | `0x5092b0` | `0x7ff7f93892b0` | Performs map lookup for quest definitions |
-| `ComponentRegistry::Lookup` | `0x1189220` | `0x7ff7e7d19220` | Generic component registry lookup function |
-| `ClientMainLoop` | `0x5eec00` | `0x7ff7e717ec00` | Frame update main loop |
-| `OnWndProc` | `0x5f0780` | `0x7ff7e7180780` | Windows message procedure |
-| `PrintChat` | `0x112c8e0` | `0x7ff7e7cbc8e0` | Prints message to in-game chat window |
-| `OnProcessSpell` | `0x984d20` | `0x7ff7e7514d20` | Triggered on spell cast request |
-| `OnSpellImpact` | `0x97d6e0` | `0x7ff7e750d6e0` | Triggered when spell hits/impacts |
-| `OnDoCast` | `0x97f2f0` | `0x7ff7e750f2f0` | Triggered when spell is executed/sent |
-| `OnStopCast` | `0x985460` | `0x7ff7e7515460` | Triggered when spell cast is cancelled |
-| `OnCreateObject` | `0x55b330` | `0x7ff7e70eb330` | Triggered when new GameObject is created |
-| `OnDeleteObject` | `0x5612e0` | `0x7ff7e70f12e0` | `AIHeroClient::OnDestroyUnit` — handles `PKT_S2C_DestroyUnit_s` |
-| `OnPlayAnimation` | `0x29bf90` | `0x7ff7e6e2bf90` | `AIBaseClient::OnPlayAnimation` — handles `PKT_S2C_PlayAnimation_s` |
+| `ComponentRegistry::Lookup` | `0x1189220` | `0x7ff69ea29220` | Generic component registry lookup function |
+| `ClientMainLoop` | `0x5eec00` | `0x7ff69de8ec00` | Frame update main loop |
+| `OnWndProc` | `0x5f0780` | `0x7ff69de90780` | Windows message procedure |
+| `PrintChat` | `0x112c8e0` | `0x7ff69e9cc8e0` | Prints message to in-game chat window |
+| `OnProcessSpell` | `0x984d20` | `0x7ff69e224d20` | Triggered on spell cast request |
+| `OnSpellImpact` | `0x97d6e0` | `0x7ff69e21d6e0` | Triggered when spell hits/impacts |
+| `OnDoCast` | `0x97f2f0` | `0x7ff69e21f2f0` | Triggered when spell is executed/sent |
+| `OnStopCast` | `0x985460` | `0x7ff69e225460` | Triggered when spell cast is cancelled |
+| `OnCreateObject` | `0x55b330` | `0x7ff69ddfb330` | Triggered when new GameObject is created |
+| `OnDeleteObject` | `0x5612e0` | `0x7ff69de012e0` | `AIHeroClient::OnDestroyUnit` — handles `PKT_S2C_DestroyUnit_s` |
+| `OnPlayAnimation` | `0x29bf90` | `0x7ff69db3bf90` | `AIBaseClient::OnPlayAnimation` — handles `PKT_S2C_PlayAnimation_s` |
 | `OnDestroyMissile` | `0x985940` | `0x7ff7e7515940` | `MissileClient::OnDestroyMissile` — handles `PKT_S2C_DestroyClientMissile_s` |
-| `MinimapMoveSelf` | `0x57a7e0` | `0x7ff7e710a7e0` | `evtPlayerMoveMinimap` event handler |
-| `MinimapHudInit` | `0x940bf0` | `0x7ff7e74d0bf0` | `TacticalMap` (Minimap HUD) constructor/init |
+| `MinimapMoveSelf` | `0x57a7e0` | `0x7ff69de1a7e0` | `evtPlayerMoveMinimap` event handler |
+| `MinimapHudInit` | `0x940bf0` | `0x7ff69e1e0bf0` | `TacticalMap` (Minimap HUD) constructor/init |
 
 ---
 
