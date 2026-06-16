@@ -7,23 +7,27 @@
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
-RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
+star for support ⭐
 
+RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
+AI was only used for table formatting and some code.
 </div>
 
+## Repository Layout
+
+```
+League-Offsets/
+├── src/
+│   ├── offsets.md             ← global RVAs, function entries, struct field offsets
+│   ├── offsets.hpp            ← generated C++ header file for ready inclusion
+│   ├── offsets.json           ← JSON dump of resolved RVAs & member offsets
+│   ├── patterns.md            ← AOB byte patterns for every global and function
+│   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
+│   └── quick_usage/           ← ready-to-use C++ snippets for each system (most of it Vibe Coded!)
+```
+
 ---
-
-## 📂 Repository Index
-
-### ⚙️ Core Offsets & Patterns
-*   [**`ida_dumper.py`**](file:///c:/Users/Administrator/Desktop/League-Offsets/ida_dumper.py) — IDA Python script to scan patterns and dump offsets to headers/JSON.
-*   [**`src/offsets.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/offsets.md) — Reference documentation of all resolved RVAs and structure offsets.
-*   [**`src/patterns.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/patterns.md) — AOB signature byte patterns for global objects and functions.
-*   [**`src/reflection_offsets.md`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/reflection_offsets.md) — Dynamic reflection-based member offsets.
-*   [**`src/offsets.hpp`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/offsets.hpp) — C++ header containing resolved offsets.
-*   [**`src/offsets.json`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/offsets.json) — JSON dump of all resolved variables and arrays.
-
-### 💻 Quick Usage Snippets (`src/quick_usage/`)
+### Quick Usage Snippets (`src/quick_usage/`)
 Click on any implementation file to view clean C++ code examples:
 *   [**`spellcast.cpp`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/quick_usage/spellcast.cpp) — Querying spell maps, tracking active spell casts, and hooking `OnProcessSpell`.
 *   [**`camera.cpp`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/quick_usage/camera.cpp) — Extracting and setting camera positions, Zoom, FOV, and rendering flags.
@@ -52,3 +56,5 @@ Click on any implementation file to view clean C++ code examples:
 
 ## 📬 Contact
 Discord — **swansizz**
+Or open an [issue](../../issues) if a pattern is missing or broken.
+
