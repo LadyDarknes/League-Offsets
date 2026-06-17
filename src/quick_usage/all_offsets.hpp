@@ -137,6 +137,17 @@ struct LeagueEngine {
             void* list_end = *(void**)((char*)buff_mgr + 0x98);
         }
     }
+    typedef bool(__fastcall* IssueOrder_t)(void*, int, Vec3*, void*, bool, bool, bool);
+   
+    void IssueOrder(uintptr_t base, int type, Vec3 pos, void* target = nullptr) {
+        auto* hud = *(char**)(base + 0x1E76E08);
+        auto* logic = *(void**)(hud + 0x24); // HudInputLogic
+        if (logic) ((IssueOrder_t)(base + 0x290920))(logic, type, &pos, target, 0, 0, 1);
+    }
+    // stop 1
+    // moveTo 2
+    // AttackUnit 3
+    // AttackMove 4
 
     std::vector<void*> GetActiveEntities() {
         std::vector<void*> out;

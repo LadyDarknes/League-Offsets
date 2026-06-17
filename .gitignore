@@ -1,3 +1,4 @@
 ida_dumper.py
+ida_master_check.py
 src/__pycache__/
 dump/*
