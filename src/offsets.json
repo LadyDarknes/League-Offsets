@@ -20,7 +20,10 @@
         "MouseScreenVec2": 31956264,
         "CastSpellFlag": 31297392,
         "IssueOrderFlag": 31297496,
-        "ChatClient": 32171680
+        "ChatClient": 32171680,
+        "LocalPlayer": 32186400,
+        "r3dRenderer": 32818584,
+        "HudInstance": 31944200
     },
     "Functions": {
         "QuestProgressFn": 5367568,
@@ -204,11 +207,33 @@
         }
     },
     "Standard": {
+        "GameObject": {
+            "oIndex": 8,
+            "oNetworkID": 16,
+            "oTeamID": 537,
+            "oPosition": 604
+        },
         "AIBaseClient": {
             "oPetOwner": 19736,
             "oModelInstance": 17648,
             "oCharacterDataStack": 4720,
-            "oCharacterDataStackBase": 11400
+            "oCharacterDataStackBase": 11400,
+            "oCombatStats": 18920
+        },
+        "CombatStats": {
+            "mLevel": 40,
+            "mBaseAD": 36,
+            "mFlatADMod": 476,
+            "mFlatAPMod": 28,
+            "mAttackSpeedMod": 424,
+            "mAttackRange": 92,
+            "mCrit": 456,
+            "mArmor": 280,
+            "mBonusArmor": 372,
+            "mSpellBlock": 384,
+            "mBonusSpellBlock": 512,
+            "mMoveSpeed": 588,
+            "mCombatType": 516
         },
         "CharacterDataStack": {
             "oSkinName": 24,
@@ -259,6 +284,13 @@
         },
         "SpellData": {
             "oName": 40
+        },
+        "MissileClient": {
+            "oCasterNetID": 72,
+            "oTargetNetID": 76,
+            "oStartPos": 36,
+            "oEndPos": 48,
+            "oSpeed": 1040
         }
     }
 }

@@ -82,159 +82,34 @@ namespace Offsets {
         constexpr uintptr_t WorldToScreen = 0x12F6B20;
     }
 
-    namespace Reflections {
-        namespace AIGenericCommon {
-            // constexpr uintptr_t ActionState = 0x0; // Failed to resolve
-            constexpr uintptr_t ActionState2 = 0x20;
-            constexpr uintptr_t StatusFlags = 0x5C;
-            constexpr uintptr_t mIsTargetable = 0x64;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x3C;
-            constexpr uintptr_t BerserkInstigator = 0x44;
-            // constexpr uintptr_t mStopShieldFade = 0x0; // Failed to resolve
-        }
-        namespace AIHero {
-            constexpr uintptr_t ActionState = 0xEC;
-            constexpr uintptr_t ActionState2 = 0x164;
-            constexpr uintptr_t ManaCost_Ex6 = 0x1B4;
-            constexpr uintptr_t mLevelRef = 0x28;
-            constexpr uintptr_t mPARState = 0x214;
-            constexpr uintptr_t mFlatPhysicalDamageMod = 0x1DC;
-            constexpr uintptr_t mFlatBaseSpellBlockMod = 0x180;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x130;
-            constexpr uintptr_t ManaCost_Ex4 = 0x184;
-            constexpr uintptr_t mAbilityHasteMod = 0x224;
-            constexpr uintptr_t mFlatMagicDamageMod = 0x1C;
-            constexpr uintptr_t mIncomingHealingAllied = 0x38;
-            constexpr uintptr_t mFlatArmorPenetration = 0x148;
-            constexpr uintptr_t ManaCost_Ex5 = 0x124;
-            constexpr uintptr_t mGold = 0x16C;
-            constexpr uintptr_t mMediumPipBitField = 0x84;
-            constexpr uintptr_t mHPMaxPenalty = 0xD4;
-            constexpr uintptr_t mFlatBubbleRadiusMod = 0xF0;
-            constexpr uintptr_t mFlatMagicPenetration = 0x17C;
-            constexpr uintptr_t ManaCost_Ex8 = 0x23C;
-            constexpr uintptr_t mAttackRange = 0x5C;
-            // constexpr uintptr_t mExp = 0x0; // Failed to resolve
-            constexpr uintptr_t mIncomingDamage = 0x1AC;
-            // constexpr uintptr_t mHP = 0x0; // Failed to resolve
-            constexpr uintptr_t mFlatBaseArmorMod = 0x9C;
-            constexpr uintptr_t mFlatBaseHPPoolMod = 0x154;
-            constexpr uintptr_t mChampSpecificHealth = 0x1B0;
-            constexpr uintptr_t mPAREnabled = 0x15C;
-            constexpr uintptr_t SlotEvolveAvailability0 = 0x210;
-            constexpr uintptr_t ManaCost_Ex13 = 0x190;
-            constexpr uintptr_t mCrit = 0x1C8;
-            constexpr uintptr_t mBaseGoldGivenOnDeath = 0x228;
-            constexpr uintptr_t mBaseAttackDamageSansPercentScale = 0x114;
-            constexpr uintptr_t mBonusSpellBlock = 0x200;
-            constexpr uintptr_t mGoldTotal = 0xA0;
-            constexpr uintptr_t mIsTargetable = 0x248;
-            constexpr uintptr_t StatusFlags = 0x150;
-            constexpr uintptr_t SlotEvolveAvailability1 = 0x14C;
-            constexpr uintptr_t ManaCost_Ex3 = 0x88;
-            constexpr uintptr_t mArmor = 0x118;
-            constexpr uintptr_t mPercentAbilityHasteMod = 0x58;
-            constexpr uintptr_t mHPRegenRate = 0xFC;
-            constexpr uintptr_t mFlatMagicReduction = 0x1A0;
-            constexpr uintptr_t mAllShield = 0x20C;
-            constexpr uintptr_t mAutobuildItemId = 0x1CC;
-            constexpr uintptr_t ReplicatedSecondWordSpellCanCastBitsLower1 = 0x7C;
-            constexpr uintptr_t mSAREnabled = 0x1E0;
-            constexpr uintptr_t mBaseAbilityDamage = 0x108;
-            constexpr uintptr_t mLargePipBitField = 0x40;
-            constexpr uintptr_t mCombatType = 0x204;
-            constexpr uintptr_t mFlags = 0x1D0;
-            constexpr uintptr_t BerserkInstigator = 0x198;
-            constexpr uintptr_t mNumNeutralMinionsKilled = 0x54;
-            constexpr uintptr_t mStopShieldFade = 0x208;
-            constexpr uintptr_t ManaCost_Ex14 = 0x1EC;
-            constexpr uintptr_t ManaCost_Ex12 = 0x19C;
-            constexpr uintptr_t mReplicatedSpellCanCastBitsUpper1 = 0xBC;
-            constexpr uintptr_t ManaCost_Ex10 = 0x80;
-            constexpr uintptr_t ManaCost_Ex0 = 0x94;
-            constexpr uintptr_t mBaseHPRegenRate = 0xE8;
-            constexpr uintptr_t ManaCost_Ex1 = 0xAC;
-            constexpr uintptr_t SlotEvolveAvailability3 = 0xB4;
-            constexpr uintptr_t ManaCost_0 = 0x170;
-            constexpr uintptr_t mReplicatedSpellCanCastBitsLower1 = 0x238;
-            constexpr uintptr_t mInputLocks = 0x1A4;
-            constexpr uintptr_t ManaCost_Ex2 = 0x194;
-            constexpr uintptr_t mEvolvePoints = 0xDC;
-            constexpr uintptr_t ManaCost_2 = 0x168;
-            constexpr uintptr_t mBaseAttackDamage = 0x24;
-            constexpr uintptr_t ManaCost_Ex11 = 0xE4;
-            constexpr uintptr_t SlotEvolveAvailability2 = 0x120;
-            constexpr uintptr_t mFlatCastRangeMod = 0x138;
-            constexpr uintptr_t mDodge = 0x140;
-            constexpr uintptr_t mFlatBaseAttackDamageMod = 0x68;
-            constexpr uintptr_t ManaCost_Ex7 = 0x1C0;
-            constexpr uintptr_t ManaCost_Ex15 = 0xE0;
-            constexpr uintptr_t mSARState = 0x60;
-            constexpr uintptr_t mBonusArmor = 0x174;
-            constexpr uintptr_t ManaCost_Ex9 = 0xD8;
-            constexpr uintptr_t mCritDamageMultiplier = 0x10C;
-            constexpr uintptr_t mSkillUpLevelDeltaReplicate = 0x14;
-            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
-            constexpr uintptr_t ManaCost_3 = 0x220;
-            constexpr uintptr_t ManaCost_1 = 0xF8;
-        }
-        namespace AIMinionCommon {
-            // constexpr uintptr_t ActionState = 0x0; // Failed to resolve
-            constexpr uintptr_t ActionState2 = 0x5C;
-            constexpr uintptr_t mSARState = 0x88;
-            constexpr uintptr_t mIsTargetable = 0x1C;
-            constexpr uintptr_t mFollowTargetNetID = 0x10;
-            constexpr uintptr_t StatusFlags = 0xF4;
-            // constexpr uintptr_t mPARState = 0x0; // Failed to resolve
-            constexpr uintptr_t mPAREnabled = 0x90;
-            constexpr uintptr_t mSAREnabled = 0xE0;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x78;
-            constexpr uintptr_t mStopShieldFade = 0x74;
-        }
-        namespace AITurretCommon {
-            // constexpr uintptr_t ActionState = 0x0; // Failed to resolve
-            constexpr uintptr_t ActionState2 = 0x88;
-            // constexpr uintptr_t mStopShieldFade = 0x0; // Failed to resolve
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x2C;
-            constexpr uintptr_t StatusFlags = 0x60;
-            constexpr uintptr_t mPalisadesCount = 0x94;
-            constexpr uintptr_t mMaxPalisadesCount = 0x50;
-            constexpr uintptr_t mIsTargetable = 0x64;
-        }
-        namespace Barracks {
-            // constexpr uintptr_t mStopShieldFade = 0x0; // Failed to resolve
-            constexpr uintptr_t mIsTargetable = 0x64;
-            constexpr uintptr_t StatusFlags = 0x18;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x30;
-        }
-        namespace BarracksDampenerCommon {
-            constexpr uintptr_t StatusFlags = 0x2C;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x10;
-            constexpr uintptr_t mIsTargetable = 0x64;
-            // constexpr uintptr_t mStopShieldFade = 0x0; // Failed to resolve
-        }
-        namespace Class Instance Adjustment Offset {
-        }
-        namespace HQCommon {
-            // constexpr uintptr_t mStopShieldFade = 0x0; // Failed to resolve
-            constexpr uintptr_t StatusFlags = 0x14;
-            constexpr uintptr_t mIsTargetable = 0x64;
-            constexpr uintptr_t mIsTargetableToTeamFlags = 0x38;
-        }
-        namespace How Offsets are Resolved {
-        }
-    }
-
     namespace Standard {
+        namespace GameObject {
+            constexpr uintptr_t oIndex = 0x8;
+            constexpr uintptr_t oNetworkID = 0x10;
+            constexpr uintptr_t oTeamID = 0x259;
+            constexpr uintptr_t oPosition = 0x25C;
+        }
         namespace AIBaseClient {
             constexpr uintptr_t oPetOwner = 0x4D18;
             constexpr uintptr_t oModelInstance = 0x44F0;
             constexpr uintptr_t oCharacterDataStack = 0x1270;
             constexpr uintptr_t oCharacterDataStackBase = 0x2C88;
+            constexpr uintptr_t oCombatStats = 0x49E8;
         }
-        namespace CharacterDataStack {
-            constexpr uintptr_t oSkinName = 0x18;
-            constexpr uintptr_t oModelIndex = 0xC4;
+        namespace CombatStats {
+            constexpr uintptr_t mLevel = 0x28;
+            constexpr uintptr_t mBaseAD = 0x24;
+            constexpr uintptr_t mFlatADMod = 0x1DC;
+            constexpr uintptr_t mFlatAPMod = 0x1C;
+            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mAttackRange = 0x5C;
+            constexpr uintptr_t mCrit = 0x1C8;
+            constexpr uintptr_t mArmor = 0x118;
+            constexpr uintptr_t mBonusArmor = 0x174;
+            constexpr uintptr_t mSpellBlock = 0x180;
+            constexpr uintptr_t mBonusSpellBlock = 0x200;
+            constexpr uintptr_t mMoveSpeed = 0x24C;
+            constexpr uintptr_t mCombatType = 0x204;
         }
         namespace HeroManager {
             constexpr uintptr_t oHeroList = 0x8;
@@ -281,6 +156,13 @@ namespace Offsets {
         }
         namespace SpellData {
             constexpr uintptr_t oName = 0x28;
+        }
+        namespace MissileClient {
+            constexpr uintptr_t oCasterNetID = 0x48;
+            constexpr uintptr_t oTargetNetID = 0x4C;
+            constexpr uintptr_t oStartPos = 0x24;
+            constexpr uintptr_t oEndPos = 0x30;
+            constexpr uintptr_t oSpeed = 0x410;
         }
     }
 }
