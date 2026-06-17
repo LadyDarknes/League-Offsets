@@ -9,6 +9,7 @@
 
 
 Star For Support ⭐
+
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
 </div>
 
