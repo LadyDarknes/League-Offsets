@@ -20,15 +20,19 @@ namespace Offsets {
         constexpr uintptr_t UnderMouseObj = 0x1E79F78;
         constexpr uintptr_t ChatClient = 0x1EAE6A0;
         constexpr uintptr_t SpellCastMap = 0x1E9F6C0;
+        constexpr uintptr_t ConnSlotSentinel = 0x1EB6124;
+        constexpr uintptr_t TimingTable = 0x1EB6DF0;
+        constexpr uintptr_t CastSpellFlag = 0x1DD8F70;
+        constexpr uintptr_t IssueOrderFlag = 0x1DD8FD8;
     }
 
     namespace Functions {
         constexpr uintptr_t IssueOrderCore = 0x290920;
         constexpr uintptr_t WorldToScreen = 0x12F6B00;
-        constexpr uintptr_t GetPing = 0x6C1760;
-        constexpr uintptr_t PrintChat = 0x112C950;
-        constexpr uintptr_t IsVisible = 0x217F70;
-        constexpr uintptr_t OnProcessSpell = 0x984D20;
+        constexpr uintptr_t GetPing = 0x6C1780;
+        constexpr uintptr_t PrintChat = 0x112C970;
+        constexpr uintptr_t IsVisible = 0x217F90;
+        constexpr uintptr_t OnProcessSpell = 0x984D40;
         constexpr uintptr_t BuffManagerClient__OnBuffAdd = 0x93DFD0;
         constexpr uintptr_t BuffManagerClient__OnBuffRemove = 0x93EB20;
         constexpr uintptr_t GetAttackWindup = 0x5725B0;
@@ -39,13 +43,38 @@ namespace Offsets {
         constexpr uintptr_t IsTurret = 0x2CCAE0;
         constexpr uintptr_t IsBuilding = 0x2CCD90;
         constexpr uintptr_t IsAlive = 0x2B79D0;
+        constexpr uintptr_t GetSpellCastInfo = 0x652CC0;
+        constexpr uintptr_t GetSpellSlot = 0x96E180;
+        constexpr uintptr_t QuestProgress__Calculate = 0x51E710;
+        constexpr uintptr_t QuestProgress__GetQuestValue = 0x5237F0;
+        constexpr uintptr_t ComponentRegistry__Lookup = 0x11892B0;
+        constexpr uintptr_t ClientMainLoop = 0x5EEC20;
+        constexpr uintptr_t OnWndProc = 0x5F07A0;
+        constexpr uintptr_t OnSpellImpact = 0x97D700;
+        constexpr uintptr_t OnDoCast = 0x97F310;
+        constexpr uintptr_t OnStopCast = 0x985480;
+        constexpr uintptr_t OnCreateObject = 0x55B340;
+        constexpr uintptr_t OnDeleteObject = 0x5612F0;
+        constexpr uintptr_t OnPlayAnimation = 0x29BF90;
+        constexpr uintptr_t MinimapMoveSelf = 0x57A7F0;
     }
 
     namespace Reflections {
         namespace AIHero {
-            constexpr uintptr_t mFlatMagicDamageMod = 0x1C;
+            constexpr uintptr_t ActionState = 0xEC;
+            constexpr uintptr_t ActionState2 = 0x164;
+            constexpr uintptr_t ManaCost_Ex6 = 0x1B4;
             constexpr uintptr_t mLevelRef = 0x28;
-            constexpr uintptr_t mBaseAttackDamage = 0x24;
+            constexpr uintptr_t mPARState = 0x214;
+            constexpr uintptr_t mFlatPhysicalDamageMod = 0x1DC;
+            constexpr uintptr_t mFlatBaseSpellBlockMod = 0x180;
+            constexpr uintptr_t mIsTargetableToTeamFlags = 0x130;
+            constexpr uintptr_t ManaCost_Ex4 = 0x184;
+            constexpr uintptr_t mAbilityHasteMod = 0x224;
+            constexpr uintptr_t mFlatMagicDamageMod = 0x1C;
+            constexpr uintptr_t mIncomingHealingAllied = 0x38;
+            constexpr uintptr_t mFlatArmorPenetration = 0x148;
+            constexpr uintptr_t mGold = 0x16C;
             constexpr uintptr_t mAttackRange = 0x5C;
             constexpr uintptr_t mArmor = 0x118;
             constexpr uintptr_t mBonusArmor = 0x174;
@@ -57,17 +86,34 @@ namespace Offsets {
 
     namespace Standard {
         namespace GameObject {
-            constexpr uintptr_t oNetworkID = 0x10;
             constexpr uintptr_t oIndex = 0x8;
+            constexpr uintptr_t oNetworkID = 0x10;
             constexpr uintptr_t oTeamID = 0x259;
             constexpr uintptr_t oPosition = 0x25C;
             constexpr uintptr_t oSpellBook = 0x3128;
             constexpr uintptr_t oAIManager = 0x4070;
         }
         namespace AIBaseClient {
-            constexpr uintptr_t oCombatStats = 0x49E8;
+            constexpr uintptr_t oPetOwner = 0x4D18;
+            constexpr uintptr_t oModelInstance = 0x44F0;
             constexpr uintptr_t oCharacterDataStack = 0x1270;
             constexpr uintptr_t oCharacterDataStackBase = 0x2C88;
+            constexpr uintptr_t oCombatStats = 0x49E8;
+        }
+        namespace CombatStats {
+            constexpr uintptr_t mLevel = 0x28;
+            constexpr uintptr_t mBaseAD = 0x24;
+            constexpr uintptr_t mFlatADMod = 0x1DC;
+            constexpr uintptr_t mFlatAPMod = 0x1C;
+            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mAttackRange = 0x5C;
+            constexpr uintptr_t mCrit = 0x1C8;
+            constexpr uintptr_t mArmor = 0x118;
+            constexpr uintptr_t mBonusArmor = 0x174;
+            constexpr uintptr_t mSpellBlock = 0x180;
+            constexpr uintptr_t mBonusSpellBlock = 0x200;
+            constexpr uintptr_t mMoveSpeed = 0x24C;
+            constexpr uintptr_t mCombatType = 0x204;
         }
         namespace AIManager {
             constexpr uintptr_t oServerPos = 0x08;
@@ -76,7 +122,7 @@ namespace Offsets {
             constexpr uintptr_t oNavPath = 0x40;
         }
         namespace navInner {
-            constexpr uintptr_t oPath = 0x45C; // navInner + 0x45C = NavPath
+            constexpr uintptr_t oPath = 0x45C;
         }
         namespace NavPath {
             constexpr uintptr_t oCurrentNode = 0x00;
@@ -90,6 +136,11 @@ namespace Offsets {
         namespace SpellSlot {
             constexpr uintptr_t oLevel = 0x28;
             constexpr uintptr_t oCooldown = 0x30;
+            constexpr uintptr_t oCharges = 0x64;
+            constexpr uintptr_t oChargeCooldown = 0x68;
+        }
+        namespace SpellData {
+            constexpr uintptr_t oName = 0x28;
         }
         namespace MissileClient {
             constexpr uintptr_t oCasterNetID = 0x48;
