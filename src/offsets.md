@@ -12,6 +12,8 @@ This document contains the primary offsets for the current version of the game.
 | **ChatClient** | `0x1EAE6A0` | Handles chat history and UI |
 | **HudInstance** | `0x1E76E08` | Global GUI and user input control |
 | **MissileManager** | `0x1E76D10` | Manager for all projectiles |
+| **BlueMinionManager** | `0x1E29D68` | Blue team (100) minion list manager |
+| **RedMinionManager** | `0x1E29D70` | Red team (200) minion list manager |
 
 ## Combat Stats (Reflection)
 
