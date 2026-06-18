@@ -6,6 +6,8 @@
 #include <cmath>
 #include <string.h>
 
+// those offsets might be wrong, check offsets.hpp
+
 struct Vec3 {
     float x, y, z;
     float dist2d(const Vec3& o) const {
@@ -43,6 +45,11 @@ struct ScreenCoord {
 struct SpellData {
     char padding_0[0x28];
     MsvcString spell_name;
+    // SpellData + 0x28, 
+    // you can find the spell name here:
+    // https://raw.communitydragon.org/latest/game/data/characters/character_name/character_name.bin.json
+    // write character name here to your character name, for example: https://raw.communitydragon.org/latest/game/data/characters/ahri/ahri.bin.json
+    // Then you can find the spell name in the spells array.
 };
 
 struct SpellSlotInfo {
@@ -50,9 +57,13 @@ struct SpellSlotInfo {
     SpellData* spell_data;
 };
 
+
+
+
 struct SpellCastInfo {
     char padding_0[0x8];
     uint32_t slot_index;
+
     char padding_1[0x18];
     Vec3 start_pos;
     Vec3 end_pos;
@@ -81,6 +92,75 @@ struct CombatStats {
     char pad2[0x1D8];
     float as_mod;
 };
+
+void ProcessEntitiesExample(uintptr_t base_addr) 
+{
+    is_type_t is_type = (is_type_t)(base_addr + 0x263150);
+    std::vector<void*> entities = GetActiveEntities(base_addr);
+    void* local_player = *(void**)(base_addr + 0x1EA0528);
+    uint8_t local_team = local_player ? *(uint8_t*)((char*)local_player + 0x259) : 100;
+    uint32_t team_bit = (local_team == 100) ? 0 : 1;
+
+    for (void* obj : entities) 
+    {
+        if (!obj) continue;
+
+        bool is_hero = is_type(obj, 0x1000);
+        bool is_minion = is_type(obj, 0x800);
+        bool is_turret = is_type(obj, 0x2000);
+
+        if (!is_hero && !is_minion && !is_turret) continue;
+
+        float hp = *(float*)((char*)obj + 0x1080);
+        float hp_max = *(float*)((char*)obj + 0x10A8);
+        if (hp <= 0.0f) continue;
+
+        MsvcString* name_str = (MsvcString*)((char*)obj + 0x68);
+        const char* name = name_str->c_str();
+
+        uint8_t team_id = *(uint8_t*)((char*)obj + 0x259);
+
+        Vec3 pos = *(Vec3*)((char*)obj + 0x25C);
+
+        uint32_t vis_mask = *(uint32_t*)((char*)obj + 0x30C);
+        bool is_visible = (vis_mask & (1 << team_bit)) == 0;
+
+        float mana = *(float*)((char*)obj + 0x360);
+        float mana_max = *(float*)((char*)obj + 0x388);
+        bool mana_enabled = *(bool*)((char*)obj + 0x3B0);
+
+        int level = *(int*)((char*)obj + 0x4D58);
+
+        float armor = *(float*)((char*)obj + 0x4F38);
+        float mr = *(float*)((char*)obj + 0x4CB8);
+        float move_speed = *(float*)((char*)obj + 0x5000);
+
+        float all_shield = *(float*)((char*)obj + 0x1120);
+        float phys_shield = *(float*)((char*)obj + 0x1148);
+        float mag_shield = *(float*)((char*)obj + 0x1170);
+
+        void* ai_mgr_wrapper = *(void**)((char*)obj + 0x4070);
+        if (ai_mgr_wrapper) 
+        {
+            void* ai_mgr = *(void**)((char*)ai_mgr_wrapper + 0x28);
+            void* nav_inner = *(void**)((char*)ai_mgr_wrapper + 0x40);
+            if (ai_mgr && nav_inner) 
+            {
+                bool is_moving = *(bool*)((char*)nav_inner + 0x320);
+                bool is_dashing = *(bool*)((char*)nav_inner + 0x348);
+                float dash_speed = *(float*)((char*)nav_inner + 0x3E0);
+                Vec3 target_pos = *(Vec3*)((char*)ai_mgr + 0x24);
+                Vec3 velocity = *(Vec3*)((char*)ai_mgr + 0x18);
+                Vec3 server_pos = *(Vec3*)((char*)ai_mgr + 0x08);
+
+                void* nav_path = (char*)nav_inner + 0x490;
+                int current_node_idx = *(int*)((char*)nav_path + 0x00);
+                int waypoint_count = *(int*)((char*)nav_path + 0x30);
+                Vec3* waypoints = *(Vec3**)((char*)nav_path + 0x28);
+            }
+        }
+    }
+
 
 inline bool W2S(const CameraData& cam, const Vec3& w, ScreenCoord& out) {
     if (!cam.valid) return false;
@@ -122,10 +202,14 @@ struct LeagueEngine {
         if (ai_mgr && nav_inner) {
             bool is_moving = *(bool*)((char*)nav_inner + 0x320);
             bool is_dashing = *(bool*)((char*)nav_inner + 0x348);
-            float speed = *(float*)((char*)nav_inner + 0x3E0);
+            float Dashspeed = *(float*)((char*)nav_inner + 0x3E0);
+            Vec3 target_pos = *(Vec3*)((char*)ai_mgr + 0x24);
             Vec3 dst = *(Vec3*)((char*)ai_mgr + 0x24);
             void* path = (char*)nav_inner + 0x490;
-            int count = *(int*)((char*)path + 0x30);
+            Vec3 path_start = *(Vec3*)((char*)nav_inner + 0x328);
+            Vec3 path_end = *(Vec3*)((char*)nav_inner + 0x338);
+            int current_node_idx = *(int*)((char*)path + 0x00);
+            int waypoint_count = *(int*)((char*)path + 0x30);
             Vec3* waypoints = *(Vec3**)((char*)path + 0x28);
         }
     }
@@ -178,6 +262,47 @@ struct LeagueEngine {
         }
         return heroes;
     }
+    std::vector<void*> GetMinions(uintptr_t base_addr) {
+    std::vector<void*> minions;
+    is_type_t is_type = (is_type_t)(base_addr + 0x28F150);
+    std::vector<void*> entities = GetActiveEntities(base_addr);
+    for (void* obj : entities) 
+    {
+        if (obj && is_type(obj, 0x800)) // TypeMinion = 0x800, others are TypeHero = 0x1000, TypeTurret = 0x2000
+        { 
+            minions.push_back(obj);
+        }
+    }
+    return minions;
+    }
+
+    std::vector<void*> GetJungleMonsters(uintptr_t base_addr) {
+    // Common Neutral/Jungle Monster Names (accessible at GameObject + 0x68):
+    // - Baron Nashor: "SRU_Baron"
+    // - Rift Herald: "SRU_Herald"
+    // - Red Brambleback (Red Buff): "SRU_Red"
+    // - Blue Sentinel (Blue Buff): "SRU_Blue"
+    // - Scuttle Crab: "Sru_Crab"
+    // - Dragon: "SRU_Dragon" (Elements: SRU_Dragon_Fire, SRU_Dragon_Water, SRU_Dragon_Earth, SRU_Dragon_Air, SRU_Dragon_Elder, SRU_Dragon_Chemtech, SRU_Dragon_Hextech)
+    std::vector<void*> monsters;
+    is_type_t is_type = (is_type_t)(base_addr + 0x28F150);
+    std::vector<void*> entities = GetActiveEntities(base_addr);
+    for (void* obj : entities) 
+    {
+        if (obj && is_type(obj, 0x800)) // Minion type
+        { 
+            uint8_t team_id = *(uint8_t*)((char*)obj + 0x259);
+            if (team_id != 100 && team_id != 200) // Neutral (not Blue 100 or Red 200)
+            { 
+                monsters.push_back(obj);
+            }
+        }
+    }
+    return monsters;
+    }
+
+
+
 
     bool IsType(void* obj, uint32_t flag) {
         typedef bool(__fastcall* is_type_t)(void*, uint32_t);
@@ -199,6 +324,35 @@ struct LeagueEngine {
         uint32_t mask = *(uint32_t*)((char*)obj + 0x30C);
         return (mask & (1 << team_bit)) == 0;
     }
+    void UpdateCamera(uintptr_t base_addr) {
+    void* hud = *(void**)(base_addr + 0x1E76E08); // HudInstance global
+    if (!hud) return;
+
+    void* cam = *(void**)((char*)hud + 0x18); // Camera pointer
+    if (!cam) return;
+
+    Vec3 cam_pos = *(Vec3*)((char*)cam + 0x08);
+    Vec3 cam_rot = *(Vec3*)((char*)cam + 0x18);
+    float fov = *(float*)((char*)cam + 0x3C);
+    float near_clip = *(float*)((char*)cam + 0x44);
+    float far_clip  = *(float*)((char*)cam + 0x4C);
+    float zoom      = *(float*)((char*)cam + 0x324);
+    float min_zoom  = *(float*)((char*)cam + 0x310);
+    bool attached = *(bool*)((char*)cam + 0x28);
+    float move_speed = *(float*)((char*)cam + 0x2C);
+    float look_speed = *(float*)((char*)cam + 0x34);
+
+    Vec3* cam_pos_ptr = (Vec3*)((char*)cam + 0x08);
+    cam_pos_ptr->x = 7500.0f;
+    cam_pos_ptr->y = 200.0f;
+    cam_pos_ptr->z = 7500.0f;
+
+    bool fog_enabled      = *(bool*)((char*)cam + 0x5A);
+    bool outline_select   = *(bool*)((char*)cam + 0x54);
+    bool outline_hover    = *(bool*)((char*)cam + 0x56);
+    bool floating_text    = *(bool*)((char*)cam + 0x58);
+    float navgrid_offset  = *(float*)((char*)cam + 0x5C);
+}
 
     void PrintChat(const char* text, int color = 0xFFFFFF) {
         typedef void(__fastcall* PrintChat_t)(void*, MsvcString*, int);
