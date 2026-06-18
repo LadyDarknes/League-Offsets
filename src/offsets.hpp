@@ -12,6 +12,8 @@ namespace Offsets {
         constexpr uintptr_t EntityList = 0x1E76E20;
         constexpr uintptr_t ObjectManager = 0x1E76C80;
         constexpr uintptr_t MissileManager = 0x1E76D10;
+        constexpr uintptr_t BlueMinionManager = 0x1E29D68;
+        constexpr uintptr_t RedMinionManager = 0x1E29D70;
         constexpr uintptr_t NavGrid = 0x1E79CC0;
         constexpr uintptr_t HudInstance = 0x1E76E08;
         constexpr uintptr_t r3dRenderer = 0x1F4C598;
