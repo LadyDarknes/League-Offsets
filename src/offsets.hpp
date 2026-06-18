@@ -87,7 +87,7 @@ namespace Offsets {
     namespace Standard {
         namespace GameObject {
             constexpr uintptr_t oIndex = 0x8;
-            constexpr uintptr_t oNetworkID = 0x10;
+            constexpr uintptr_t oNetworkID = 0xBC;
             constexpr uintptr_t oTeamID = 0x259;
             constexpr uintptr_t oPosition = 0x25C;
             constexpr uintptr_t oSpellBook = 0x3128;
@@ -143,8 +143,8 @@ namespace Offsets {
             constexpr uintptr_t oName = 0x28;
         }
         namespace MissileClient {
-            constexpr uintptr_t oCasterNetID = 0x48;
-            constexpr uintptr_t oTargetNetID = 0x4C;
+            constexpr uintptr_t oCasterNetID = 0x30;
+            constexpr uintptr_t oTargetNetID = 0x34;
             constexpr uintptr_t oStartPos = 0x24;
             constexpr uintptr_t oEndPos = 0x30;
             constexpr uintptr_t oSpeed = 0x410;
