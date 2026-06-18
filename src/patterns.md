@@ -10,6 +10,8 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **EntityList**          | `0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00`                 |
 | **ObjectManager**       | `48 8B 0D ? ? ? ? 8B 10 E8`                                           |
 | **MissileManager**      | `48 8B 0D ? ? ? ? 48 8D 55 ? E8`                                      |
+| **BlueMinionManager**   | `8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?`                               |
+| **RedMinionManager**    | `EB 22 E8 ? ? ? ? 8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?`              |
 | **NavGrid**             | `48 8B 05 ? ? ? ? 0F 28 DA`                                           |
 | **HudInstance**         | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 49 ? 48 8D`                     |
 | **r3dRenderer**         | `4C 8B 3D ? ? ? ? 48 03 ? 49`                                         |
