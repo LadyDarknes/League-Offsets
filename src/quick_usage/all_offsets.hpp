@@ -18,6 +18,12 @@ struct Vec3 {
     }
 };
 
+struct Matrix44 {
+    float m[4][4];
+};
+
+
+
 struct MsvcString {
     union { char buf[16]; char* ptr; } u;
     uint64_t len, cap;
@@ -29,23 +35,7 @@ struct MsvcString {
     ~MsvcString() { if (cap > 15) free(u.ptr); }
     const char* c_str() const { return cap > 15 ? u.ptr : u.buf; }
 };
-uint32_t GetDecryptedNetworkID(uintptr_t gameObject) {
-    if (!gameObject) return 0;
-    
-    // GameObject + 0x2A8
-    uintptr_t sub_obj = gameObject + 0x2A8; 
-    uintptr_t* vtable = *(uintptr_t**)sub_obj;
-    if (!vtable) return 0;
-    
-    // vtable[5] (index 5, offset 0x28 / 40) virtual function
-    typedef uint32_t*(__fastcall* GetNetIDFn_t)(uintptr_t);
-    GetNetIDFn_t get_netid = (GetNetIDFn_t)vtable[5];
-    
-    
-    uint32_t* pNetID = get_netid(sub_obj);
-    if (pNetID) return *pNetID; // Function called and uint32_t NetworkID read from returned address
-    return 0;
-}
+
 
 struct CameraData {
     float viewMtx[16];
@@ -74,8 +64,6 @@ struct SpellSlotInfo {
     char padding_0[0x8];
     SpellData* spell_data;
 };
-
-
 
 
 struct SpellCastInfo {
@@ -110,6 +98,56 @@ struct CombatStats {
     char pad2[0x1D8];
     float as_mod;
 };
+
+
+uint32_t GetDecryptedNetworkID(uintptr_t gameObject) {
+    if (!gameObject) return 0;
+    
+    // GameObject + 0x2A8
+    uintptr_t sub_obj = gameObject + 0x2A8; 
+    uintptr_t* vtable = *(uintptr_t**)sub_obj;
+    if (!vtable) return 0;
+    
+    // vtable[5] (index 5, offset 0x28 / 40) virtual function
+    typedef uint32_t*(__fastcall* GetNetIDFn_t)(uintptr_t);
+    GetNetIDFn_t get_netid = (GetNetIDFn_t)vtable[5];
+    
+    
+    uint32_t* pNetID = get_netid(sub_obj);
+    if (pNetID) return *pNetID; // Function called and uint32_t NetworkID read from returned address
+    return 0;
+}
+
+typedef __int64(__fastcall* GetBoneMatrixFn)(void* model_instance, Matrix44* out_matrix, int bone_index);
+bool GetHeadPosition(uintptr_t game_object, Vec3& out_head_pos) {
+    if (!game_object) return false;
+
+    void* model_instance = *(void**)(game_object + Offsets::Standard::AIBaseClient::oModelInstance);
+    if (!model_instance) return false;
+
+    uintptr_t bone_array = *(uintptr_t*)((char*)model_instance + 0x28);  // maybe 20???
+    if (!bone_array) return false;
+
+    GetBoneMatrixFn GetBoneMatrix = (GetBoneMatrixFn)(Offsets::ImageBase + Offsets::Functions::RemapBoneIndex);
+
+    Matrix44 bone_matrix;
+    // '6' or '8' is head
+    int head_bone_index = 6; 
+
+    GetBoneMatrix(model_instance, &bone_matrix, head_bone_index);
+
+    //  (X, Y, Z) 
+    out_head_pos.x = bone_matrix.m[3][0];
+    out_head_pos.y = bone_matrix.m[3][1];
+    out_head_pos.z = bone_matrix.m[3][2];
+
+    if (out_head_pos.x == 0.0f && out_head_pos.y == 0.0f) {
+        out_head_pos = *(Vec3*)(game_object + 0x25C); // oPosition fall-back
+        out_head_pos.y += 180.0f;
+    }
+
+    return true;
+}
 
 void ProcessEntitiesExample(uintptr_t base_addr) 
 {
@@ -407,15 +445,20 @@ struct LeagueEngine {
 
         if (pos) {
             // CastSpellPosition
-            typedef void(__fastcall* CastSpellPos_t)(void*, void*, int, Vec3*, Vec3*, int);
+            // Arguments: SpellBook, SpellSlot, slotIndex, targetPos, startPos, targetNetworkID
+            typedef void(__fastcall* CastSpellPos_t)(void*, void*, int, Vec3*, Vec3*, uint32_t);
             auto cast_pos_fn = (CastSpellPos_t)(base + Offsets::Functions::CastSpellPosition);
             Vec3 start_pos = *(Vec3*)((char*)local_player + 0x25C);
-            cast_pos_fn(spell_book, local_player, slot, pos, &start_pos, 0);
+            cast_pos_fn(spell_book, spell_slot, slot, pos, &start_pos, target_netid);
         } else {
             // CastSpellTarget
+            // Arguments: SpellBook, SpellSlot, slotIndex, spellNamePtr, targetNetworkID, unused1, unused2
+            void* spell_data = *reinterpret_cast<void**>(reinterpret_cast<char*>(spell_slot) + 0x128);
+            void* spell_name_ptr = spell_data ? (reinterpret_cast<char*>(spell_data) + 8) : nullptr;
+
             typedef void(__fastcall* CastSpellTarget_t)(void*, void*, int, void*, uint32_t, char, char);
             auto cast_target_fn = (CastSpellTarget_t)(base + Offsets::Functions::CastSpellTarget);
-            cast_target_fn(spell_book, local_player, slot, spell_slot, target_netid, 0, 0);
+            cast_target_fn(spell_book, spell_slot, slot, spell_name_ptr, target_netid, 0, 0);
         }
     }
 

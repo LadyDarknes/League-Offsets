@@ -10,6 +10,7 @@ namespace Offsets {
         constexpr uintptr_t ChatClient = 0x1EAE6A0;
         constexpr uintptr_t ConnSlotSentinel = 0x1EB6124;
         constexpr uintptr_t EntityList = 0x1E76E20;
+        constexpr uintptr_t GameClient = 0x1E920B0;
         constexpr uintptr_t GameTime = 0x1E855A0;
         constexpr uintptr_t HeroManager = 0x1E76DA0;
         constexpr uintptr_t HudInstance = 0x1E76E08;
@@ -48,6 +49,7 @@ namespace Offsets {
         constexpr uintptr_t GetCollisionFlags = 0x1243D30;
         constexpr uintptr_t GetFirstObject = 0x54FA50;
         constexpr uintptr_t GetMapID = 0x2852C0;
+        constexpr uintptr_t GetModelInstance = 0x29BF90;
         constexpr uintptr_t GetNextObject = 0x5509E0;
         constexpr uintptr_t GetPing = 0x6C1780;
         constexpr uintptr_t GetSpellCastInfo = 0x652CC0;
@@ -76,6 +78,7 @@ namespace Offsets {
         constexpr uintptr_t QuestProgress__GetQuestValue = 0x5237F0;
         constexpr uintptr_t QuestProgressFn = 0x51E710;
         constexpr uintptr_t QuestValueFn = 0x5237F0;
+        constexpr uintptr_t RemapBoneIndex = 0x2D21E0;
         constexpr uintptr_t RoleBound__Init = 0x10FBE40;
         constexpr uintptr_t RoleBoundInit = 0x10FBE40;
         constexpr uintptr_t SpellSlot__Cast = 0x747F90;
@@ -90,5 +93,56 @@ namespace Offsets {
     }
 
     namespace Standard {
+        namespace MissileClient {
+            constexpr uintptr_t oCasterNetID = 0x30;
+            constexpr uintptr_t oTargetNetID = 0x34;
+            constexpr uintptr_t oStartPos = 0x24;
+            constexpr uintptr_t oEndPos = 0x30;
+        }
+        namespace AIBaseClient {
+            constexpr uintptr_t oModelInstance = 0x44D0;
+        }
+        namespace SpellSlot {
+            constexpr uintptr_t oLevel = 0x28;
+            constexpr uintptr_t oCooldown = 0x30;
+            constexpr uintptr_t oCharges = 0x64;
+            constexpr uintptr_t oChargeCooldown = 0x68;
+        }
+        namespace CameraData {
+            constexpr uintptr_t oCamPos = 0x8;
+            constexpr uintptr_t oCamRotation = 0x18;
+            constexpr uintptr_t oCamMoveSpeed = 0x2C;
+            constexpr uintptr_t oFieldOfView = 0x3C;
+            constexpr uintptr_t oNearClip = 0x44;
+            constexpr uintptr_t oFarClip = 0x4C;
+        }
+        namespace SpellBook {
+            constexpr uintptr_t oSpellSlots = 0xAE0;
+        }
+        namespace AIManager {
+            constexpr uintptr_t oServerPos = 0x8;
+            constexpr uintptr_t oVelocity = 0x18;
+            constexpr uintptr_t oTargetPosition = 0x24;
+            constexpr uintptr_t oNavPath = 0x40;
+        }
+        namespace GameObject {
+            constexpr uintptr_t oIndex = 0x8;
+            constexpr uintptr_t oNetworkID = 0xBC;
+            constexpr uintptr_t oTeamID = 0x259;
+            constexpr uintptr_t oPosition = 0x25C;
+        }
+        namespace SpellData {
+            constexpr uintptr_t oName = 0x28;
+        }
+        namespace CombatStats {
+            constexpr uintptr_t mLevel = 0x28;
+            constexpr uintptr_t mBaseAD = 0x24;
+            constexpr uintptr_t mFlatAPMod = 0x1C;
+            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mAttackRange = 0x5C;
+            constexpr uintptr_t mArmor = 0x118;
+            constexpr uintptr_t mBonusArmor = 0x174;
+            constexpr uintptr_t mCombatType = 0x204;
+        }
     }
 }
