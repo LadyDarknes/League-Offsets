@@ -28,6 +28,23 @@ struct MsvcString {
     ~MsvcString() { if (cap > 15) free(u.ptr); }
     const char* c_str() const { return cap > 15 ? u.ptr : u.buf; }
 };
+uint32_t GetDecryptedNetworkID(uintptr_t gameObject) {
+    if (!gameObject) return 0;
+    
+    // GameObject + 0x2A8
+    uintptr_t sub_obj = gameObject + 0x2A8; 
+    uintptr_t* vtable = *(uintptr_t**)sub_obj;
+    if (!vtable) return 0;
+    
+    // vtable[5] (index 5, offset 0x28 / 40) virtual function
+    typedef uint32_t*(__fastcall* GetNetIDFn_t)(uintptr_t);
+    GetNetIDFn_t get_netid = (GetNetIDFn_t)vtable[5];
+    
+    
+    uint32_t* pNetID = get_netid(sub_obj);
+    if (pNetID) return *pNetID; // Function called and uint32_t NetworkID read from returned address
+    return 0;
+}
 
 struct CameraData {
     float viewMtx[16];
