@@ -53,3 +53,14 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **nIndex** | `0x8` | `WORD` | Index in the EntityList |
 | **nTeamID** | `0x259` | `byte` | Team ID (100 Blue, 200 Red) |
 | **oPosition** | `0x25C` | `Vector3` | World position |
+
+## Camera (HudInstance + 0x18)
+
+| Name | Offset | Type | Description |
+| :--- | :--- | :--- | :--- |
+| **Position** | `0x10` | `Vector3` | Camera World Position |
+| **Rotation** | `0x40` | `Vector3` | Camera Rotation (Yaw, Pitch, Roll) |
+| **fieldOfView** | `0x1DC` | `float` | Camera Field of View in degrees |
+| **nearClip** | `0x1F4` | `float` | Near clipping plane |
+| **farClip** | `0x1F8` | `float` | Far clipping plane |
+

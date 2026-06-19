@@ -109,12 +109,12 @@ namespace Offsets {
             constexpr uintptr_t oChargeCooldown = 0x68;
         }
         namespace CameraData {
-            constexpr uintptr_t oCamPos = 0x8;
-            constexpr uintptr_t oCamRotation = 0x18;
-            constexpr uintptr_t oCamMoveSpeed = 0x2C;
-            constexpr uintptr_t oFieldOfView = 0x3C;
-            constexpr uintptr_t oNearClip = 0x44;
-            constexpr uintptr_t oFarClip = 0x4C;
+            constexpr uintptr_t oCamPos = 0x10;
+            constexpr uintptr_t oCamRotation = 0x40;
+            constexpr uintptr_t oCamMoveSpeed = 0xC;
+            constexpr uintptr_t oFieldOfView = 0x1DC;
+            constexpr uintptr_t oNearClip = 0x1F4;
+            constexpr uintptr_t oFarClip = 0x1F8;
         }
         namespace SpellBook {
             constexpr uintptr_t oSpellSlots = 0xAE0;
