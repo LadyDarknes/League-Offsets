@@ -32,6 +32,8 @@ namespace Offsets {
     namespace Functions {
         constexpr uintptr_t BuffManagerClient__OnBuffAdd = 0x93DFD0;
         constexpr uintptr_t BuffManagerClient__OnBuffRemove = 0x93EB20;
+        constexpr uintptr_t CastSpellPosition = 0x97E9D0;
+        constexpr uintptr_t CastSpellTarget = 0x97E110;
         constexpr uintptr_t CastSpellWrapper = 0x20AC40;
         constexpr uintptr_t ClientMainLoop = 0x5EEC20;
         constexpr uintptr_t ComponentLookupFn = 0x11892B0;
