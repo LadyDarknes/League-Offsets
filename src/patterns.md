@@ -107,6 +107,8 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **RemapBoneIndex**                    | `48 89 5C 24 ? 55 56 57 41 54 41 57 48 8D AC 24 ? ? ? ? B8 60 25 00 00`                  | Map bone name hash to bone index                |
 | **MinimapMoveSelf**                   | `83 FA 01 0F 85 ? ? ? ? 4C 8B DC`                                                       | `evtPlayerMoveMinimap` handler                  |
 | **MinimapHudInit**                    | `48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00` | `TacticalMap` (Minimap HUD) constructor        |
+| **UpdateCamera**                      | `48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC`                                         | Synchronizes settings with camera               |
+| **fieldOfView (settings)**            | `48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00`                                       | Setting registration for camera FOV             |
 
 ---
 
@@ -156,6 +158,11 @@ if somebody need another pattern/offsets that I never write down, please contact
 | OFF_PROJ_MTX      | `0x224` (548) | camEnt | float[16] | Projection matrix      |
 | camMgr → camEnt   | `0x2F8`       | camMgr | QWORD*    | Camera entity pointer  |
 | camMgr → viewport | `0x300`       | camMgr | int[4]    | Left/Top/Right/Bottom  |
+| OFF_CAM_POS       | `0x10`        | cam    | Vector3   | Camera position        |
+| OFF_CAM_ROT       | `0x40`        | cam    | Vector3   | Camera rotation        |
+| OFF_CAM_FOV       | `0x1DC`       | cam    | float     | Field of View          |
+| OFF_CAM_NEAR_CLIP | `0x1F4`       | cam    | float     | Near Camera Clip       |
+| OFF_CAM_FAR_CLIP  | `0x1F8`       | cam    | float     | Far Camera Clip        |
 
 ## SpellBook / SpellSlot Offsets
 

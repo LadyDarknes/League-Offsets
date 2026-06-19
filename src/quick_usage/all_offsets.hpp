@@ -356,7 +356,21 @@ struct LeagueEngine {
     }
     return monsters;
     }
-
+    void camera(uintptr_t baseAddress) {
+    uintptr_t hudInstanceAddr = *reinterpret_cast<uintptr_t*>(baseAddress + 0x1E76E08);
+    if (!hudInstanceAddr) return;
+    uintptr_t cameraPtr = *reinterpret_cast<uintptr_t*>(hudInstanceAddr + 0x18);
+    if (!cameraPtr) return;
+    Vector3 camPos = *reinterpret_cast<Vector3*>(cameraPtr + 0x10);
+    Vector3 camRot = *reinterpret_cast<Vector3*>(cameraPtr + 0x40);
+    float currentFOV = *reinterpret_cast<float*>(cameraPtr + 0x1DC);
+    float nearClip = *reinterpret_cast<float*>(cameraPtr + 0x1F4);
+    float farClip = *reinterpret_cast<float*>(cameraPtr + 0x1F8);
+    std::cout << "[+] Camera Position: X: " << camPos.x << ", Y: " << camPos.y << ", Z: " << camPos.z << "\n";
+    std::cout << "[+] Camera FOV: " << currentFOV << " (default: 45.0)\n";
+    // zoom hack:
+     *reinterpret_cast<float*>(cameraPtr + 0x1DC) = 55.0f; 
+    }
 
 
 
@@ -387,18 +401,18 @@ struct LeagueEngine {
     void* cam = *(void**)((char*)hud + 0x18); // Camera pointer
     if (!cam) return;
 
-    Vec3 cam_pos = *(Vec3*)((char*)cam + 0x08);
-    Vec3 cam_rot = *(Vec3*)((char*)cam + 0x18);
-    float fov = *(float*)((char*)cam + 0x3C);
-    float near_clip = *(float*)((char*)cam + 0x44);
-    float far_clip  = *(float*)((char*)cam + 0x4C);
+    Vec3 cam_pos = *(Vec3*)((char*)cam + 0x10);
+    Vec3 cam_rot = *(Vec3*)((char*)cam + 0x40);
+    float fov = *(float*)((char*)cam + 0x1DC);
+    float near_clip = *(float*)((char*)cam + 0x1F4);
+    float far_clip  = *(float*)((char*)cam + 0x1F8);
     float zoom      = *(float*)((char*)cam + 0x324);
     float min_zoom  = *(float*)((char*)cam + 0x310);
     bool attached = *(bool*)((char*)cam + 0x28);
-    float move_speed = *(float*)((char*)cam + 0x2C);
+    float move_speed = *(float*)((char*)cam + 0x0C);
     float look_speed = *(float*)((char*)cam + 0x34);
 
-    Vec3* cam_pos_ptr = (Vec3*)((char*)cam + 0x08);
+    Vec3* cam_pos_ptr = (Vec3*)((char*)cam + 0x10);
     cam_pos_ptr->x = 7500.0f;
     cam_pos_ptr->y = 200.0f;
     cam_pos_ptr->z = 7500.0f;
