@@ -383,11 +383,39 @@ struct LeagueEngine {
         return ((lookup_t)(base + 0x1189220))((char*)obj + 0xE0, key);
     }
 
-    void CastSpell(void* spell_book, int slot, uint32_t target_id = 0, Vec3* pos = nullptr) {
+    uint32_t GetDecryptedNetworkID(void* gameObject) {
+        if (!gameObject) return 0;
+        void* sub_obj = (char*)gameObject + 0x2A8;
+        void** vtable = *(void***)sub_obj;
+        if (!vtable) return 0;
+        typedef uint32_t*(__fastcall* GetNetIDFn_t)(void*);
+        GetNetIDFn_t get_netid = (GetNetIDFn_t)vtable[5];
+        uint32_t* pNetID = get_netid(sub_obj);
+        return pNetID ? *pNetID : 0;
+    }
+
+    void CastSpell(void* spell_book, int slot, uint32_t target_netid = 0, Vec3* pos = nullptr) {
         if (!spell_book) return;
-        SpellSlot* spell = (*(SpellSlot***)((char*)spell_book + 0xAE0))[slot];
-        typedef void(__fastcall* CastSpell_t)(SpellSlot*, int, uint32_t, Vec3*, Vec3*, uint32_t);
-        if (spell) ((CastSpell_t)spell->vtable[4])(spell, slot, target_id, &Vec3{0,0,0}, pos ? pos : &Vec3{0,0,0}, 0);
+        void* local_player = *(void**)(base + 0x1EB2020);
+        if (!local_player) return;
+        void* spell_slot = (*(void***)((char*)spell_book + 0xAE0))[slot];
+        if (!spell_slot) return;
+
+        // Set CastSpellFlag = 1 before casting (resets to 0 inside function call)
+        *reinterpret_cast<uint8_t*>(base + 0x1DD8F70) = 1;
+
+        if (pos) {
+            // CastSpellPosition RVA: 0x97E9D0 (sub_7FF64192E9D0)
+            typedef void(__fastcall* CastSpellPos_t)(void*, void*, int, Vec3*, Vec3*, int);
+            auto cast_pos_fn = (CastSpellPos_t)(base + 0x97E9D0);
+            Vec3 start_pos = *(Vec3*)((char*)local_player + 0x25C);
+            cast_pos_fn(spell_book, local_player, slot, pos, &start_pos, 0);
+        } else {
+            // CastSpellTarget RVA: 0x97E110 (sub_7FF64192E110)
+            typedef void(__fastcall* CastSpellTarget_t)(void*, void*, int, void*, uint32_t, char, char);
+            auto cast_target_fn = (CastSpellTarget_t)(base + 0x97E110);
+            cast_target_fn(spell_book, local_player, slot, spell_slot, target_netid, 0, 0);
+        }
     }
 
     bool CanCast(void* spell_book, int slot, float time) {
