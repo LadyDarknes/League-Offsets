@@ -79,6 +79,8 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **SpellCastMap hash fn**              | `48 83 EC ? 4C 8B D2 4C 8B D9`                                                           | Bucket index fn                                 |
 | **SpellCastMap key cmp**              | `8B 41 ? 39 42 ? 75 ? 48 8B 01`                                                          | strcmp + hash check                             |
 | **CastSpellWrapper**                  | `48 89 48 ? 55 56 57 41 54 41 55`                                                        | Internal-call fn                                |
+| **CastSpellTarget**                   | `48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 55 41 56 48 8D A8 ? ? ? ? 48 81 EC A0 01 00 00` | Target-based cast fn                             |
+| **CastSpellPosition**                 | `48 8B C4 4C 89 48 ? 48 89 48 ? 55 53`                                                   | Position-based cast fn                           |
 | **PrintChat**                         | `40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF` | Function entry |
 | **IsHero**                            | `E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B`                    | Caller ctx                                      |
 | **IsTurret** (fn entry)               | `40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27`                                              | Function entry                                  |

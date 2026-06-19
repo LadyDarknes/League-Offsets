@@ -5,6 +5,7 @@
 #include <vector>
 #include <cmath>
 #include <string.h>
+#include "../offsets.hpp"
 
 // those offsets might be wrong, check offsets.hpp
 
@@ -396,24 +397,24 @@ struct LeagueEngine {
 
     void CastSpell(void* spell_book, int slot, uint32_t target_netid = 0, Vec3* pos = nullptr) {
         if (!spell_book) return;
-        void* local_player = *(void**)(base + 0x1EB2020);
+        void* local_player = *(void**)(base + Offsets::Globals::LocalPlayer);
         if (!local_player) return;
         void* spell_slot = (*(void***)((char*)spell_book + 0xAE0))[slot];
         if (!spell_slot) return;
 
         // Set CastSpellFlag = 1 before casting (resets to 0 inside function call)
-        *reinterpret_cast<uint8_t*>(base + 0x1DD8F70) = 1;
+        *reinterpret_cast<uint8_t*>(base + Offsets::Globals::CastSpellFlag) = 1;
 
         if (pos) {
-            // CastSpellPosition RVA: 0x97E9D0 (sub_7FF64192E9D0)
+            // CastSpellPosition
             typedef void(__fastcall* CastSpellPos_t)(void*, void*, int, Vec3*, Vec3*, int);
-            auto cast_pos_fn = (CastSpellPos_t)(base + 0x97E9D0);
+            auto cast_pos_fn = (CastSpellPos_t)(base + Offsets::Functions::CastSpellPosition);
             Vec3 start_pos = *(Vec3*)((char*)local_player + 0x25C);
             cast_pos_fn(spell_book, local_player, slot, pos, &start_pos, 0);
         } else {
-            // CastSpellTarget RVA: 0x97E110 (sub_7FF64192E110)
+            // CastSpellTarget
             typedef void(__fastcall* CastSpellTarget_t)(void*, void*, int, void*, uint32_t, char, char);
-            auto cast_target_fn = (CastSpellTarget_t)(base + 0x97E110);
+            auto cast_target_fn = (CastSpellTarget_t)(base + Offsets::Functions::CastSpellTarget);
             cast_target_fn(spell_book, local_player, slot, spell_slot, target_netid, 0, 0);
         }
     }
