@@ -53,6 +53,8 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **nIndex** | `0x8` | `WORD` | Index in the EntityList |
 | **nTeamID** | `0x259` | `byte` | Team ID (100 Blue, 200 Red) |
 | **oPosition** | `0x25C` | `Vector3` | World position |
+| **oPlayerStatsComponent** | `0x2A8` | `pointer` | Component containing player stats (summoner name) |
+| **oCharacterDataStack** | `0x1288` | `pointer` | Character data stack component (champion name) |
 
 ## Camera (HudInstance + 0x18)
 

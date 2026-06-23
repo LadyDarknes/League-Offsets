@@ -103,8 +103,8 @@ struct CombatStats {
 uint32_t GetDecryptedNetworkID(uintptr_t gameObject) {
     if (!gameObject) return 0;
     
-    // GameObject + 0x2A8
-    uintptr_t sub_obj = gameObject + 0x2A8; 
+    // GameObject + oPlayerStatsComponent
+    uintptr_t sub_obj = gameObject + Offsets::Standard::GameObject::oPlayerStatsComponent; 
     uintptr_t* vtable = *(uintptr_t**)sub_obj;
     if (!vtable) return 0;
     
@@ -142,7 +142,7 @@ bool GetHeadPosition(uintptr_t game_object, Vec3& out_head_pos) {
     out_head_pos.z = bone_matrix.m[3][2];
 
     if (out_head_pos.x == 0.0f && out_head_pos.y == 0.0f) {
-        out_head_pos = *(Vec3*)(game_object + 0x25C); // oPosition fall-back
+        out_head_pos = *(Vec3*)(game_object + Offsets::Standard::GameObject::oPosition); // oPosition fall-back
         out_head_pos.y += 180.0f;
     }
 
@@ -154,7 +154,7 @@ void ProcessEntitiesExample(uintptr_t base_addr)
     is_type_t is_type = (is_type_t)(base_addr + 0x263150);
     std::vector<void*> entities = GetActiveEntities(base_addr);
     void* local_player = *(void**)(base_addr + 0x1EA0528);
-    uint8_t local_team = local_player ? *(uint8_t*)((char*)local_player + 0x259) : 100;
+    uint8_t local_team = local_player ? *(uint8_t*)((char*)local_player + Offsets::Standard::GameObject::oTeamID) : 100;
     uint32_t team_bit = (local_team == 100) ? 0 : 1;
 
     for (void* obj : entities) 
@@ -171,12 +171,32 @@ void ProcessEntitiesExample(uintptr_t base_addr)
         float hp_max = *(float*)((char*)obj + 0x10A8);
         if (hp <= 0.0f) continue;
 
-        MsvcString* name_str = (MsvcString*)((char*)obj + 0x68);
-        const char* name = name_str->c_str();
+        // ponytail: get champion name for heroes via CharacterDataStack, else fallback to standard object name
+        const char* champ_name = "";
+        if (is_hero) {
+            char* charDataStack = (char*)obj + Offsets::Standard::AIBaseClient::oCharacterDataStack;
+            void** charVtable = *(void***)charDataStack;
+            if (charVtable) {
+                typedef const char*(__fastcall* GetCharacterNameFn_t)(void*);
+                GetCharacterNameFn_t get_name = (GetCharacterNameFn_t)charVtable[17];
+                champ_name = get_name(charDataStack);
+            }
+        } else {
+            MsvcString* name_str = (MsvcString*)((char*)obj + 0x68);
+            champ_name = name_str->c_str();
+        }
+        const char* summoner_name = "";
+        if (is_hero) {
+            char* statsComponent = *(char**)((char*)obj + Offsets::Standard::GameObject::oPlayerStatsComponent);
+            if (statsComponent) {
+                MsvcString* nameStr = (MsvcString*)(statsComponent + 0x80);
+                summoner_name = nameStr->c_str();
+            }
+        }
 
-        uint8_t team_id = *(uint8_t*)((char*)obj + 0x259);
+        uint8_t team_id = *(uint8_t*)((char*)obj + Offsets::Standard::GameObject::oTeamID);
 
-        Vec3 pos = *(Vec3*)((char*)obj + 0x25C);
+        Vec3 pos = *(Vec3*)((char*)obj + Offsets::Standard::GameObject::oPosition);
 
         uint32_t vis_mask = *(uint32_t*)((char*)obj + 0x30C);
         bool is_visible = (vis_mask & (1 << team_bit)) == 0;
@@ -347,7 +367,7 @@ struct LeagueEngine {
     {
         if (obj && is_type(obj, 0x800)) // Minion type
         { 
-            uint8_t team_id = *(uint8_t*)((char*)obj + 0x259);
+            uint8_t team_id = *(uint8_t*)((char*)obj + Offsets::Standard::GameObject::oTeamID);
             if (team_id != 100 && team_id != 200) // Neutral (not Blue 100 or Red 200)
             { 
                 monsters.push_back(obj);
@@ -389,7 +409,7 @@ struct LeagueEngine {
 
     bool IsUnitVisible(void* obj, void* local_player) {
         if (!obj || !local_player) return false;
-        uint8_t team = *(uint8_t*)((char*)local_player + 0x259);
+        uint8_t team = *(uint8_t*)((char*)local_player + Offsets::Standard::GameObject::oTeamID);
         uint32_t team_bit = (team == 100) ? 0 : 1;
         uint32_t mask = *(uint32_t*)((char*)obj + 0x30C);
         return (mask & (1 << team_bit)) == 0;
