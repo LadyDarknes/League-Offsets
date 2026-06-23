@@ -34,6 +34,17 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **mBonusSpellBlock** | `0x200` | `0x4BE8` | Bonus Magic Resist |
 | **mMoveSpeed** | `0x24C` | `0x4C34` | Movement Speed |
 | **mCombatType** | `0x204` | `0x4BEC` | Ranged (2) / Melee (1) |
+| **oBuffManager** | `0x28F0` | `0x78D8` | Active Buff list pointer |
+| **oFacing** | `0x1C0` | `0x1C0` | Look / facing direction vector |
+
+## Primary Functions
+
+| Name | RVA | Description |
+| :--- | :--- | :--- |
+| **CanCast** | `0x2CC9F0` | Checks if a spell slot can be cast |
+| **GetObjectByID** | `0x54EF70` | Retrieves object from ObjectManager by ID/Index |
+| **NavMesh::CreatePath** | `0x236CD0` | Computes movement path on the NavGrid |
+| **OnNewPath** | `0x2E5960` | Triggered when a new path is created |
 
 ## Missile Struct (MissileClient)
 

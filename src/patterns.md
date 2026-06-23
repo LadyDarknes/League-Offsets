@@ -109,6 +109,10 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **MinimapHudInit**                    | `48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00` | `TacticalMap` (Minimap HUD) constructor        |
 | **UpdateCamera**                      | `48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC`                                         | Synchronizes settings with camera               |
 | **fieldOfView (settings)**            | `48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00`                                       | Setting registration for camera FOV             |
+| **CanCast**                           | `40 53 48 83 EC ? 48 8B D9 48 85 C9 74 ? 48 8B`                                          | Checks if spell slot can be cast                |
+| **GetObjectByID**                     | `48 85 D2 74 ? 48 8B 41 20 48 8D`                                                        | Resolves Object by NetID / Index                |
+| **NavMesh::CreatePath**               | `48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC`                                | Pathfinding and path generation                 |
+| **OnNewPath**                         | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 54`                       | Triggered on new movement path                  |
 
 ---
 
