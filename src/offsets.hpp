@@ -129,6 +129,8 @@ namespace Offsets {
             constexpr uintptr_t oPosition = 0x25C;
             constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
             constexpr uintptr_t oIsDeleted = 0x110;
+            constexpr uintptr_t oSpellBook = 0x3128;
+            constexpr uintptr_t oAIManager = 0x4070;
         }
         namespace SpellBook {
             constexpr uintptr_t oSpellSlots = 0xAE0;
@@ -145,6 +147,8 @@ namespace Offsets {
             constexpr uintptr_t oCharacterDataStack = 0x1288;
             constexpr uintptr_t oBuffManager = 0x28F0;
             constexpr uintptr_t oFacing = 0x1C0;
+            constexpr uintptr_t oCombatStats = 0x4428;
+            constexpr uintptr_t oPetOwner = 0x4D18;
         }
         namespace CombatStats {
             constexpr uintptr_t mLevel = 0x28;
