@@ -39,8 +39,8 @@ Click on the unified header file to view clean C++ code examples:
 | Field | Value |
 | ----- | ----- |
 | Patch | 26.13 |
-| Timestamp | `6A347AA0` — Thu Jun 18 23:09:20 2026 |
-| Imagebase | `0x7FF7E6500000` |
+| Timestamp | `6A3B418B` — Wed Jun 24 02:31:39 2026 |
+| Imagebase | `0x7FF701D60000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
