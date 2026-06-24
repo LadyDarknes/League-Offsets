@@ -2,7 +2,7 @@
 
 # League of Legends — Offset & Pattern Database
 
-![Patch](https://img.shields.io/badge/Patch-26.12-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.13-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
@@ -38,9 +38,9 @@ Click on the unified header file to view clean C++ code examples:
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.12 |
-| Timestamp | `6A2B43A1` — Thu Jun 11 23:24:17 2026 |
-| Imagebase | `0x7FF7E6B90000` |
+| Patch | 26.13 |
+| Timestamp | `6A347AA0` — Thu Jun 18 23:09:20 2026 |
+| Imagebase | `0x7FF7E6500000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
