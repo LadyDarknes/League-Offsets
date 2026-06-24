@@ -8,7 +8,7 @@ This document contains the primary offsets for the current version of the game.
 | :--- | :--- | :--- |
 | **LocalPlayer** | `0x1EDB378` | Pointer to the local player object |
 | **HeroManager** | `0x1E9D0D8` | Manager for all champions in the game |
-| **r3dRenderer** | `0x1F7CD18` | Global renderer singleton |
+| **r3dRenderer** | `0x1F7CD08` | Global renderer singleton |
 | **ChatClient** | `0x1ED6E88` | Handles chat history and UI |
 | **HudInstance** | `0x1E9D148` | Global GUI and user input control |
 | **MissileManager** | `0x1E9D048` | Manager for all projectiles |
@@ -41,7 +41,7 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 
 | Name | RVA | Description |
 | :--- | :--- | :--- |
-| **CanCast** | `0x2C4F90` | Checks if a spell slot can be cast |
+| **CanCast** | `0x2C50A0` | Checks if a spell slot can be cast |
 | **GetObjectByID** | `0x54EF70` | Retrieves object from ObjectManager by ID/Index |
 | **NavMesh::CreatePath** | `0x2309B0` | Computes movement path on the NavGrid |
 | **OnNewPath** | `0x2E5960` | Triggered when a new path is created |
@@ -73,7 +73,7 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | :--- | :--- | :--- | :--- |
 | **Position** | `0x25C` | `Vector3` | Camera World Position |
 | **Rotation** | `0x18` | `Vector3` | Camera Rotation (Yaw, Pitch, Roll) |
-| **fieldOfView** | `0x749940` | `float` | Camera Field of View in degrees |
+| **fieldOfView** | `0x749A00` | `float` | Camera Field of View in degrees |
 | **nearClip** | `0x44` | `float` | Near clipping plane |
 | **farClip** | `0x4C` | `float` | Far clipping plane |
 
