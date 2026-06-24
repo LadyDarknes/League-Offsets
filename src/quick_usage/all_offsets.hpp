@@ -171,7 +171,6 @@ void ProcessEntitiesExample(uintptr_t base_addr)
         float hp_max = *(float*)((char*)obj + 0x10A8);
         if (hp <= 0.0f) continue;
 
-        // ponytail: get champion name for heroes via CharacterDataStack, else fallback to standard object name
         const char* champ_name = "";
         if (is_hero) {
             char* charDataStack = (char*)obj + Offsets::Standard::AIBaseClient::oCharacterDataStack;
@@ -508,6 +507,88 @@ struct LeagueEngine {
         if (cast && cast->slot_info && cast->slot_info->spell_data) {
             std::cout << "Casting: " << cast->slot_info->spell_data->spell_name.c_str() << "\n";
         }
+    }
+
+    bool IsCCd(void* obj, float game_time) {
+        if (!obj) return false;
+        void* buff_mgr = *(void**)((char*)obj + Offsets::Standard::AIBaseClient::oBuffManager);
+        if (!buff_mgr) return false;
+        void** list_start = *(void***)((char*)buff_mgr + 0x90);
+        void** list_end = *(void***)((char*)buff_mgr + 0x98);
+        if (!list_start || !list_end) return false;
+
+        for (void** it = list_start; it < list_end; ++it) {
+            void* buff = *it;
+            if (!buff) continue;
+
+            // ponytail: buff active check using start and end times
+            float start = *reinterpret_cast<float*>((char*)buff + 0x18);
+            float end = *reinterpret_cast<float*>((char*)buff + 0x1C);
+            if (game_time < start || game_time > end) continue;
+
+            void** vtable = *(void***)buff;
+            if (!vtable || !vtable[2]) continue;
+
+            auto get_type = reinterpret_cast<uint8_t(__fastcall*)(void*)>(vtable[2]);
+            uint8_t type = get_type(buff);
+
+            // ponytail: verified CC BuffType values (Stun=5, Silence=7, Taunt=8, Snare=12, Fear=22, Charm=23, Suppression=25, etc.)
+            if (type == 5 || type == 7 || type == 8 || type == 9 || type == 10 ||
+                type == 11 || type == 12 || type == 22 || type == 23 || type == 25 ||
+                type == 29 || type == 30 || type == 31 || type == 32 || type == 33 ||
+                type == 34 || type == 35) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool GetSpellCastGeometry(void* obj, Vec3& out_start, Vec3& out_end, float& out_windup, uint32_t& out_target_netid) {
+        if (!obj) return false;
+        void* sb = *(void**)((char*)obj + 0x3128); // ponytail: hardcoded spellbook offset
+        if (!sb) return false;
+        auto* cast = *reinterpret_cast<SpellCastInfo**>((char*)sb + Offsets::Standard::SpellBook::oActiveSpellCast);
+        if (!cast) return false;
+        out_start = cast->start_pos;
+        out_end = cast->end_pos;
+        out_windup = cast->windup_time;
+        out_target_netid = cast->target_netid;
+        return true;
+    }
+
+    bool GetChargedSpellInfo(void* spell_book, int slot, int& out_charge_level, float& out_charge_start_time) {
+        if (!spell_book) return false;
+        void** slots = *(void***)((char*)spell_book + Offsets::Standard::SpellBook::oSpellSlots);
+        if (!slots || !slots[slot]) return false;
+        void* s = slots[slot];
+        out_charge_level = *reinterpret_cast<int*>((char*)s + Offsets::Standard::SpellSlot::oChargeLevel);
+        out_charge_start_time = *reinterpret_cast<float*>((char*)s + Offsets::Standard::SpellSlot::oChargeStartTime);
+        return true;
+    }
+
+    Vec3 GetFacingDirection(void* obj) {
+        if (!obj) return { 0, 0, 0 };
+        return *reinterpret_cast<Vec3*>((char*)obj + Offsets::Standard::AIBaseClient::oFacing);
+    }
+
+    bool IsObjectValid(void* obj) {
+        if (!obj) return false;
+        bool is_deleted = *reinterpret_cast<bool*>((char*)obj + Offsets::Standard::GameObject::oIsDeleted);
+        if (is_deleted) return false;
+
+        uint16_t index = *reinterpret_cast<uint16_t*>((char*)obj + Offsets::Standard::GameObject::oIndex);
+        typedef void*(__fastcall* GetObjectByIDFn)(uint32_t);
+        auto get_obj_by_id = reinterpret_cast<GetObjectByIDFn>(base + Offsets::Functions::GetObjectByID);
+        return get_obj_by_id(index) == obj;
+    }
+
+    bool CreatePath(const Vec3& start, const Vec3& end, std::vector<Vec3>& out_path) {
+        void* nav_mesh = *reinterpret_cast<void**>(base + Offsets::Globals::NavGrid);
+        if (!nav_mesh) return false;
+
+        typedef bool(__fastcall* CreatePathFn)(void*, const Vec3*, const Vec3*, std::vector<Vec3>*);
+        auto create_path_fn = reinterpret_cast<CreatePathFn>(base + Offsets::Functions::NavMesh__CreatePath);
+        return create_path_fn(nav_mesh, &start, &end, &out_path);
     }
 };
 
