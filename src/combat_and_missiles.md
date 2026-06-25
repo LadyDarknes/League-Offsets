@@ -39,6 +39,6 @@ These are used for tracking skillshots and projectiles.
 
 | Field | Offset | Type | Description |
 | :--- | :--- | :--- | :--- |
-| **NetworkID** | `0xBC` | `DWORD` | Unique global ID for the object |
+| **NetworkID** | `0xCC` | `DWORD` | Unique global ID for the object |
 | **nIndex** | `0x8` | `WORD` | Index in the EntityList / ObjectManager |
 | **nTeamID** | `0x259` | `byte` | Team ID (100 Blue, 200 Red, 300 Neutral) |
