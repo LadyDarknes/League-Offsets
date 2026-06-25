@@ -11,11 +11,12 @@ This document contains the primary offsets for the current version of the game.
 | **r3dRenderer** | `0x1F7CD08` | Global renderer singleton |
 | **ChatClient** | `0x1ED6E88` | Handles chat history and UI |
 | **HudInstance** | `0x1E9D148` | Global GUI and user input control |
-| **MissileManager** | `0x1E9D048` | Manager for all projectiles |
+| **MissileManager** | `0x1EA0250` | Manager for all projectiles |
 | **BlueMinionManager** | `0x1EA0240` | Blue team (100) minion list manager |
 | **RedMinionManager** | `0x1EA0248` | Red team (200) minion list manager |
 | **r3dRenderLayer** | `0x1F7AA08` | Core rendering layer object pointer |
 | **SwapChain** | `0x1F7B178` | Direct3D11 swap chain wrapper pointer |
+| **ZoomAnomalyLatch** | `0x1F187E4` | Zoom flag check |
 
 ## Combat Stats (Reflection)
 
@@ -36,7 +37,7 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **mBonusSpellBlock** | `0x200` | `0x4628` | Bonus Magic Resist |
 | **mMoveSpeed** | `0x24C` | `0x4674` | Movement Speed |
 | **mCombatType** | `0x204` | `0x462C` | Ranged (2) / Melee (1) |
-| **oBuffManager** | `0x28F0` | `0x6D18` | Active Buff list pointer |
+| **oBuffManager** | `0x2E78` | `0x72A0` | Active Buff list pointer |
 | **oFacing** | `0x1C0` | `0x45E8` | Look / facing direction vector |
 
 ## Primary Functions
@@ -44,7 +45,7 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | Name | RVA | Description |
 | :--- | :--- | :--- |
 | **CanCast** | `0x2C50A0` | Checks if a spell slot can be cast |
-| **GetObjectByID** | `0x54EF70` | Retrieves object from ObjectManager by ID/Index |
+| **GetObjectByID** | `0x5521B0` | Retrieves object from ObjectManager by ID/Index |
 | **NavMesh::CreatePath** | `0x2309B0` | Computes movement path on the NavGrid |
 | **OnNewPath** | `0x2E5960` | Triggered when a new path is created |
 
@@ -58,16 +59,34 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **EndPos** | `0x30` | `Vector3` | Destination position |
 | **Speed** | `0x410` | `float` | Travel speed |
 
-## Network & Identity
+## GameObject
 
 | Field | Offset | Type | Description |
 | :--- | :--- | :--- | :--- |
-| **NetworkID** | `0xBC` | `DWORD` | Unique global ID |
-| **nIndex** | `0x8` | `WORD` | Index in the EntityList |
-| **nTeamID** | `0x259` | `byte` | Team ID (100 Blue, 200 Red) |
+| **oIndex** | `0x20` | `WORD` | Index in the EntityList |
+| **oTeamID** | `0x259` | `byte` | Team ID (100 Blue, 200 Red) |
+| **oName** | `0x68` | `std::string` | Internal object name |
+| **oNetworkID** | `0xCC` | `DWORD` | Unique global network ID |
+| **oNetId** | `0x20` | `DWORD` | Network ID (backward compat) |
+| **oSourceNetworkId** | `0xF4` | `DWORD` | Source network ID (CreateClientEffect path) |
+| **oDead** | `0x250` | `bool` | Dead status |
 | **oPosition** | `0x25C` | `Vector3` | World position |
-| **oPlayerStatsComponent** | `0x2A8` | `pointer` | Component containing player stats (summoner name) |
-| **oCharacterDataStack** | `0x1288` | `pointer` | Character data stack component (champion name) |
+| **oVisibility** | `0x2E0` | `byte` | Visibility byte |
+| **oVisible** | `0x308` | `byte` | Visible status |
+| **oRadius** | `0x6F8` | `float` | Bounding / collision radius |
+| **oModelScaleComponent** | `0x2C88` | `pointer` | Model scale component |
+| **oCharacterData** | `0x4078` | `pointer` | Character data pointer |
+| **oCharacterName** | `0x4370` | `std::string` | Character/champion name |
+| **oDirection** | `0x0` | `float` | Direction |
+| **oEffectEmitterHandle** | `0x258` | `DWORD` | Effect emitter handle |
+| **oMissileClientHandle** | `0x2D8` | `DWORD` | Missile client handle |
+| **oTargetableComponent** | `0x2A8` | `pointer` | Targetable component |
+| **oIsTargetable** | `0xED0` | `byte` | AIBase targetable byte |
+| **oTargetableState** | `0xEF8` | `DWORD` | Targetable state (enum) |
+| **oItemList** | `0x4490` | `pointer` | Inventory item list |
+| **oSpellBook** | `0x3128` | `pointer` | SpellBook pointer |
+| **oAIManager** | `0x4070` | `pointer` | AIManager pointer |
+| **oCharacterDataStack** | `0x1288` | `pointer` | Character data stack component |
 
 ## Camera (HudInstance + 0x18)
 
@@ -79,3 +98,8 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **nearClip** | `0x44` | `float` | Near clipping plane |
 | **farClip** | `0x4C` | `float` | Far clipping plane |
 
+## SpellDataResource
+
+| Field | Offset | Type | Description |
+| :--- | :--- | :--- | :--- |
+| **oMissileSpeed** | `0x408` | `float` | Missile travel speed |

@@ -9,7 +9,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **GameTime**            | `F3 0F 5C 35 ? ? ? ? 0F 28 F8`                                        |
 | **EntityList**          | `0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00`                 |
 | **ObjectManager**       | `48 8B 0D ? ? ? ? 8B 10 E8`                                           |
-| **MissileManager**      | `48 8B 0D ? ? ? ? 48 8D 55 ? E8`                                      |
+| **MissileManager**      | `48 8B 0D ? ? ? ? E9 ? ? ? ? 33 C0 C3 CC CC CC`                       |
 | **BlueMinionManager**   | `8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?`                               |
 | **RedMinionManager**    | `EB 22 E8 ? ? ? ? 8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?`              |
 | **NavGrid**             | `48 8B 05 ? ? ? ? 0F 28 DA`                                           |
@@ -28,6 +28,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D` |
 | **r3dRenderLayer**      | `48 8B 1D ? ? ? ? 80 BB 84 00 00 00 00`                               |
 | **SwapChain**           | `48 8B 05 ? ? ? ? 48 85 C0 75 0E 48 8B 0D ? ? ? ? 48 8B 01 48 FF 60 28 C3` |
+| **ZoomAnomalyLatch**   | `80 3D ? ? ? ? ? 0F 85 ? ? ? ? C6 05`                                 |
 | **QuestProgressFn**     | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` |
 | **QuestValueFn**        | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`          |
 | **ComponentLookupFn**   | `48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D`                    |
@@ -84,6 +85,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **CastSpellWrapper**                  | `48 89 48 ? 55 56 57 41 54 41 55`                                                        | Internal-call fn                                |
 | **CastSpellTarget**                   | `48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 55 41 56 48 8D A8 ? ? ? ? 48 81 EC A0 01 00 00` | Target-based cast fn                             |
 | **CastSpellPosition**                 | `48 8B C4 4C 89 48 ? 48 89 48 ? 55 53`                                                   | Position-based cast fn                           |
+| **CastSpellSafe**                     | `40 57 41 54 48 83 EC ? 4C 8B E2`                                                       | Function entry                                   |
 | **PrintChat**                         | `40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF` | Function entry |
 | **IsHero**                            | `E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B`                    | Caller ctx                                      |
 | **IsTurret** (fn entry)               | `40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27`                                              | Function entry                                  |
@@ -103,7 +105,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **OnDoCast**                          | `40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00` | Triggered when spell is executed/sent |
 | **OnStopCast**                        | `40 53 56 57 48 83 EC 40 F3 0F 10 81 E4 00 00 00`                                        | Triggered when spell cast is cancelled          |
 | **OnCreateObject**                    | `48 89 5C 24 18 56 48 83 EC 30 80 B9 EC 01 00 00 00`                                     | Triggered when new GameObject is created        |
-| **OnDeleteObject**                    | `40 53 48 83 EC 20 33 D2 48 8B D9 E8 ? ? ? ? 48 8B 0D`                                  | `AIHeroClient::OnDestroyUnit` — PKT_S2C handler |
+| **OnDeleteObject**                    | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 48 8B FA 48 8B CA E8 ? ? ? ? 84 C0`   | `AIHeroClient::OnDestroyUnit` — PKT_S2C handler |
 | **OnPlayAnimation**                   | `48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 20 48 8B 4B 18`                    | `AIBaseClient::OnPlayAnimation` — PKT_S2C handler |
 | **GetModelInstance**                  | `48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 ? 48 8B 4B`                        | Alias of OnPlayAnimation                        |
 | **RemapBoneIndex**                    | `48 89 5C 24 ? 55 56 57 41 54 41 57 48 8D AC 24 ? ? ? ? B8 60 25 00 00`                  | Map bone name hash to bone index                |
@@ -112,7 +114,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **UpdateCamera**                      | `48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC`                                         | Synchronizes settings with camera               |
 | **fieldOfView (settings)**            | `48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00`                                       | Setting registration for camera FOV             |
 | **CanCast**                           | `40 53 48 83 EC ? 48 8B D9 48 85 C9 74 ? 48 8B`                                          | Checks if spell slot can be cast                |
-| **GetObjectByID**                     | `48 85 D2 74 ? 48 8B 41 20 48 8D`                                                        | Resolves Object by NetID / Index                |
+| **GetObjectByID**                     | `4C 8B C1 85 D2 74 ? 49 8B 40 20`                                                        | Resolves Object by NetID / Index                |
 | **NavMesh::CreatePath**               | `48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC`                                | Pathfinding and path generation                 |
 | **OnNewPath**                         | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 54`                       | Triggered on new movement path                  |
 | **CharacterDataStack::Push**          | `48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F2 48 8B F9 49 8B D0`                 | Push character data (change model/skin)         |
