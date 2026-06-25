@@ -26,6 +26,8 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **IssueOrderFlag**      | `C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24`  |
 | **GameClient**          | `48 8B 05 ? ? ? ? 48 8B F2 83 78 10 02`                               |
 | **ChatClient**          | `48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D` |
+| **r3dRenderLayer**      | `48 8B 1D ? ? ? ? 80 BB 84 00 00 00 00`                               |
+| **SwapChain**           | `48 8B 05 ? ? ? ? 48 85 C0 75 0E 48 8B 0D ? ? ? ? 48 8B 01 48 FF 60 28 C3` |
 | **QuestProgressFn**     | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2` |
 | **QuestValueFn**        | `48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA`          |
 | **ComponentLookupFn**   | `48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D`                    |

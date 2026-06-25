@@ -14,6 +14,8 @@ This document contains the primary offsets for the current version of the game.
 | **MissileManager** | `0x1E9D048` | Manager for all projectiles |
 | **BlueMinionManager** | `0x1EA0240` | Blue team (100) minion list manager |
 | **RedMinionManager** | `0x1EA0248` | Red team (200) minion list manager |
+| **r3dRenderLayer** | `0x1F7AA08` | Core rendering layer object pointer |
+| **SwapChain** | `0x1F7B178` | Direct3D11 swap chain wrapper pointer |
 
 ## Combat Stats (Reflection)
 
