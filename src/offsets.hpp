@@ -24,9 +24,11 @@ namespace Offsets {
         constexpr uintptr_t ObjectManager = 0x1E9CFB8;
         constexpr uintptr_t RedMinionManager = 0x1EA0248;
         constexpr uintptr_t SpellCastMap = 0x1EC70D0;
+        constexpr uintptr_t SwapChain = 0x1F7B178;
         constexpr uintptr_t TimingTable = 0x1EE0740;
         constexpr uintptr_t UnderMouseObj = 0x1EA0448;
         constexpr uintptr_t ViewPort = 0x1EA01F8;
+        constexpr uintptr_t r3dRenderLayer = 0x1F7AA08;
         constexpr uintptr_t r3dRenderer = 0x1F7CD08;
     }
 
@@ -94,6 +96,22 @@ namespace Offsets {
     }
 
     namespace Standard {
+        namespace SpellData {
+            constexpr uintptr_t oName = 0x28;
+        }
+        namespace CharacterData {
+            constexpr uintptr_t oSkinID = 0x14;
+        }
+        namespace SpellBook {
+            constexpr uintptr_t oSpellSlots = 0xAE0;
+            constexpr uintptr_t oActiveSpellCast = 0xAD8;
+        }
+        namespace AIManager {
+            constexpr uintptr_t oServerPos = 0x8;
+            constexpr uintptr_t oVelocity = 0x18;
+            constexpr uintptr_t oTargetPosition = 0x24;
+            constexpr uintptr_t oNavPath = 0x40;
+        }
         namespace AIBaseClient {
             constexpr uintptr_t oModelInstance = 0x44D0;
             constexpr uintptr_t oCharacterDataStack = 0x1288;
@@ -102,43 +120,15 @@ namespace Offsets {
             constexpr uintptr_t oCombatStats = 0x4428;
             constexpr uintptr_t oPetOwner = 0x4D18;
         }
-        namespace SpellData {
-            constexpr uintptr_t oName = 0x28;
-        }
-        namespace AIManager {
-            constexpr uintptr_t oServerPos = 0x8;
-            constexpr uintptr_t oVelocity = 0x18;
-            constexpr uintptr_t oTargetPosition = 0x24;
-            constexpr uintptr_t oNavPath = 0x40;
-        }
-        namespace CameraData {
-            constexpr uintptr_t oCamPos = 0x8;
-            constexpr uintptr_t oCamRotation = 0x18;
-            constexpr uintptr_t oCamMoveSpeed = 0x2C;
-            constexpr uintptr_t oFieldOfView = 0x3C;
-            constexpr uintptr_t oNearClip = 0x44;
-            constexpr uintptr_t oFarClip = 0x4C;
-        }
-        namespace SpellBook {
-            constexpr uintptr_t oSpellSlots = 0xAE0;
-            constexpr uintptr_t oActiveSpellCast = 0xAD8;
-        }
-        namespace MissileClient {
-            constexpr uintptr_t oCasterNetID = 0x30;
-            constexpr uintptr_t oTargetNetID = 0x34;
-            constexpr uintptr_t oStartPos = 0x24;
-            constexpr uintptr_t oEndPos = 0x30;
-        }
-        namespace CharacterData {
-            constexpr uintptr_t oSkinID = 0x14;
-        }
-        namespace SpellSlot {
-            constexpr uintptr_t oLevel = 0x28;
-            constexpr uintptr_t oCooldown = 0x30;
-            constexpr uintptr_t oCharges = 0x64;
-            constexpr uintptr_t oChargeCooldown = 0x68;
-            constexpr uintptr_t oChargeLevel = 0x6C;
-            constexpr uintptr_t oChargeStartTime = 0x74;
+        namespace GameObject {
+            constexpr uintptr_t oIndex = 0x8;
+            constexpr uintptr_t oNetworkID = 0xBC;
+            constexpr uintptr_t oTeamID = 0x259;
+            constexpr uintptr_t oPosition = 0x25C;
+            constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
+            constexpr uintptr_t oIsDeleted = 0x110;
+            constexpr uintptr_t oSpellBook = 0x3128;
+            constexpr uintptr_t oAIManager = 0x4070;
         }
         namespace CombatStats {
             constexpr uintptr_t mLevel = 0x28;
@@ -150,15 +140,27 @@ namespace Offsets {
             constexpr uintptr_t mBonusArmor = 0x174;
             constexpr uintptr_t mCombatType = 0x204;
         }
-        namespace GameObject {
-            constexpr uintptr_t oIndex = 0x8;
-            constexpr uintptr_t oNetworkID = 0xBC;
-            constexpr uintptr_t oTeamID = 0x259;
-            constexpr uintptr_t oPosition = 0x25C;
-            constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
-            constexpr uintptr_t oIsDeleted = 0x110;
-            constexpr uintptr_t oSpellBook = 0x3128;
-            constexpr uintptr_t oAIManager = 0x4070;
+        namespace SpellSlot {
+            constexpr uintptr_t oLevel = 0x28;
+            constexpr uintptr_t oCooldown = 0x30;
+            constexpr uintptr_t oCharges = 0x64;
+            constexpr uintptr_t oChargeCooldown = 0x68;
+            constexpr uintptr_t oChargeLevel = 0x6C;
+            constexpr uintptr_t oChargeStartTime = 0x74;
+        }
+        namespace CameraData {
+            constexpr uintptr_t oCamPos = 0x8;
+            constexpr uintptr_t oCamRotation = 0x18;
+            constexpr uintptr_t oCamMoveSpeed = 0x2C;
+            constexpr uintptr_t oFieldOfView = 0x3C;
+            constexpr uintptr_t oNearClip = 0x44;
+            constexpr uintptr_t oFarClip = 0x4C;
+        }
+        namespace MissileClient {
+            constexpr uintptr_t oCasterNetID = 0x30;
+            constexpr uintptr_t oTargetNetID = 0x34;
+            constexpr uintptr_t oStartPos = 0x24;
+            constexpr uintptr_t oEndPos = 0x30;
         }
     }
 }
