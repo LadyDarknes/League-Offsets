@@ -120,6 +120,10 @@ if somebody need another pattern/offsets that I never write down, please contact
 | **OnNewPath**                         | `48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 54`                       | Triggered on new movement path                  |
 | **CharacterDataStack::Push**          | `48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F2 48 8B F9 49 8B D0`                 | Push character data (change model/skin)         |
 | **CharacterDataStack::Update**        | `4C 8B DC 55 57 48 8B EC 48 83 EC 78 48 8B 41 40 48 8B F9 48 85 C0`                       | Update character model/skin                     |
+| **TranslateString**                  | `40 53 48 83 EC ? 80 39 ? 48 8B C1 8B D1 74`                                             | Riot string translation                         |
+| **CharacterDataStackPush**           | `48 89 5C 24 ? 48 89 74 24 ? 55 57 41 54 41 56 41 57 48 8D 6C 24`                        | Push character data stack (R3nzSkin style)      |
+| **CharacterDataStackUpdate**         | `88 54 24 10 55 53 56 57 41 54 41 55 41 56 41 57`                                        | Update character data stack (R3nzSkin style)    |
+| **GetGoldRedirectTarget**             | `48 81 C1 ? ? ? ? E9 ? ? ? ? CC CC CC CC`                                                | Redirect gold target                            |
 
 ---
 

@@ -42,6 +42,8 @@ namespace Offsets {
         constexpr uintptr_t CastSpellWrapper = 0x2045D0;
         constexpr uintptr_t CharacterDataStack__Push = 0x3F22D0;
         constexpr uintptr_t CharacterDataStack__Update = 0x3F3170;
+        constexpr uintptr_t CharacterDataStackPush = 0x22B750;
+        constexpr uintptr_t CharacterDataStackUpdate = 0x210F70;
         constexpr uintptr_t ComponentLookupFn = 0x11AA460;
         constexpr uintptr_t ComponentRegistry__Lookup = 0x11AA460;
         constexpr uintptr_t CurrentNodeIdx = 0x3906F;
@@ -53,6 +55,7 @@ namespace Offsets {
         constexpr uintptr_t GetBoundingRadius = 0x278010;
         constexpr uintptr_t GetCollisionFlags = 0x126A150;
         constexpr uintptr_t GetFirstObject = 0x552DC0;
+        constexpr uintptr_t GetGoldRedirectTarget = 0x209B20;
         constexpr uintptr_t GetMapID = 0x27E660;
         constexpr uintptr_t GetModelInstance = 0x295080;
         constexpr uintptr_t GetNextObject = 0x553C30;
@@ -90,6 +93,7 @@ namespace Offsets {
         constexpr uintptr_t SpellSlot__GetCooldown = 0x912EF0;
         constexpr uintptr_t SpellSlot__GetLevel = 0x3A8B8B;
         constexpr uintptr_t TransformVec3 = 0x1318100;
+        constexpr uintptr_t TranslateString = 0x11A9BA0;
         constexpr uintptr_t UpdateCamera = 0x2F89D0;
         constexpr uintptr_t WaypointCount = 0x398B0;
         constexpr uintptr_t WorldToScreen = 0x13161A0;
@@ -100,6 +104,50 @@ namespace Offsets {
     }
 
     namespace Standard {
+        namespace SpellSlot {
+            constexpr uintptr_t oLevel = 0x28;
+            constexpr uintptr_t oCooldown = 0x30;
+            constexpr uintptr_t oCharges = 0x64;
+            constexpr uintptr_t oChargeCooldown = 0x68;
+            constexpr uintptr_t oChargeLevel = 0x6C;
+            constexpr uintptr_t oChargeStartTime = 0x74;
+        }
+        namespace AIManager {
+            constexpr uintptr_t oServerPos = 0x8;
+            constexpr uintptr_t oVelocity = 0x18;
+            constexpr uintptr_t oTargetPosition = 0x24;
+            constexpr uintptr_t oNavPath = 0x40;
+        }
+        namespace CharacterData {
+            constexpr uintptr_t oSkinID = 0x14;
+        }
+        namespace MissileClient {
+            constexpr uintptr_t oCasterNetID = 0x30;
+            constexpr uintptr_t oTargetNetID = 0x34;
+            constexpr uintptr_t oStartPos = 0x24;
+            constexpr uintptr_t oEndPos = 0x30;
+        }
+        namespace CombatStats {
+            constexpr uintptr_t mLevel = 0x28;
+            constexpr uintptr_t mBaseAD = 0x24;
+            constexpr uintptr_t mFlatAPMod = 0x1C;
+            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mAttackRange = 0x5C;
+            constexpr uintptr_t mArmor = 0x118;
+            constexpr uintptr_t mBonusArmor = 0x174;
+            constexpr uintptr_t mCombatType = 0x204;
+        }
+        namespace AIBaseClient {
+            constexpr uintptr_t oModelInstance = 0x44D8;
+            constexpr uintptr_t oCharacterDataStack = 0x1288;
+            constexpr uintptr_t oBuffManager = 0x2E78;
+            constexpr uintptr_t oFacing = 0x1C0;
+            constexpr uintptr_t oCombatStats = 0x4428;
+            constexpr uintptr_t oPetOwner = 0x4D18;
+            constexpr uintptr_t oHeroInventoryClient = 0x4230;
+            constexpr uintptr_t SkinId = 0x1334;
+            constexpr uintptr_t CharacterData = 0x4108;
+        }
         namespace GameObject {
             constexpr uintptr_t oIndex = 0x20;
             constexpr uintptr_t oTeamID = 0x259;
@@ -126,51 +174,25 @@ namespace Offsets {
             constexpr uintptr_t oAIManager = 0x4070;
             constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
         }
-        namespace AIManager {
-            constexpr uintptr_t oServerPos = 0x8;
-            constexpr uintptr_t oVelocity = 0x18;
-            constexpr uintptr_t oTargetPosition = 0x24;
-            constexpr uintptr_t oNavPath = 0x40;
-        }
-        namespace AIBaseClient {
-            constexpr uintptr_t oModelInstance = 0x44D8;
-            constexpr uintptr_t oCharacterDataStack = 0x1288;
-            constexpr uintptr_t oBuffManager = 0x2E78;
-            constexpr uintptr_t oFacing = 0x1C0;
-            constexpr uintptr_t oCombatStats = 0x4428;
-            constexpr uintptr_t oPetOwner = 0x4D18;
-            constexpr uintptr_t oHeroInventoryClient = 0x4230;
+        namespace SpellDataResource {
+            constexpr uintptr_t oMissileSpeed = 0x408;
         }
         namespace SpellBook {
             constexpr uintptr_t oSpellSlots = 0xAE0;
             constexpr uintptr_t oActiveSpellCast = 0xAD8;
         }
-        namespace CharacterData {
-            constexpr uintptr_t oSkinID = 0x14;
+        namespace SkinResource {
+            constexpr uintptr_t skin_id = 0x0;
+            constexpr uintptr_t skin_name = 0x8;
+        }
+        namespace ChampionManager {
+            constexpr uintptr_t champions = 0x18;
         }
         namespace SpellData {
             constexpr uintptr_t oName = 0x28;
         }
-        namespace SpellDataResource {
-            constexpr uintptr_t oMissileSpeed = 0x408;
-        }
-        namespace SpellSlot {
-            constexpr uintptr_t oLevel = 0x28;
-            constexpr uintptr_t oCooldown = 0x30;
-            constexpr uintptr_t oCharges = 0x64;
-            constexpr uintptr_t oChargeCooldown = 0x68;
-            constexpr uintptr_t oChargeLevel = 0x6C;
-            constexpr uintptr_t oChargeStartTime = 0x74;
-        }
-        namespace CombatStats {
-            constexpr uintptr_t mLevel = 0x28;
-            constexpr uintptr_t mBaseAD = 0x24;
-            constexpr uintptr_t mFlatAPMod = 0x1C;
-            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
-            constexpr uintptr_t mAttackRange = 0x5C;
-            constexpr uintptr_t mArmor = 0x118;
-            constexpr uintptr_t mBonusArmor = 0x174;
-            constexpr uintptr_t mCombatType = 0x204;
+        namespace ChampionResource {
+            constexpr uintptr_t skins = 0xC8;
         }
         namespace CameraData {
             constexpr uintptr_t oCamPos = 0x8;
@@ -179,12 +201,6 @@ namespace Offsets {
             constexpr uintptr_t oFieldOfView = 0x3C;
             constexpr uintptr_t oNearClip = 0x44;
             constexpr uintptr_t oFarClip = 0x4C;
-        }
-        namespace MissileClient {
-            constexpr uintptr_t oCasterNetID = 0x30;
-            constexpr uintptr_t oTargetNetID = 0x34;
-            constexpr uintptr_t oStartPos = 0x24;
-            constexpr uintptr_t oEndPos = 0x30;
         }
     }
 }
