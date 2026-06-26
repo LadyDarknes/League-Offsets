@@ -44,6 +44,7 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 
 | Name | RVA | Description |
 | :--- | :--- | :--- |
+| **GetRenderPipeline** | `0x4B6960` | Retrieves the RenderPipeline shared_ptr |
 | **CanCast** | `0x2C50A0` | Checks if a spell slot can be cast |
 | **GetObjectByID** | `0x5521B0` | Retrieves object from ObjectManager by ID/Index |
 | **NavMesh::CreatePath** | `0x2309B0` | Computes movement path on the NavGrid |
