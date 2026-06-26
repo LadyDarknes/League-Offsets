@@ -49,6 +49,10 @@ These offsets are relative to the **Stats Sub-structure** which is located at `[
 | **GetObjectByID** | `0x5521B0` | Retrieves object from ObjectManager by ID/Index |
 | **NavMesh::CreatePath** | `0x2309B0` | Computes movement path on the NavGrid |
 | **OnNewPath** | `0x2E5960` | Triggered when a new path is created |
+| **TranslateString** | `0x11A9BA0` | Translates Riot string |
+| **CharacterDataStackPush** | `0x22B750` | Push character data stack |
+| **CharacterDataStackUpdate** | `0x210F70` | Update character data stack |
+| **GetGoldRedirectTarget** | `0x209B20` | Redirect gold target |
 
 ## Missile Struct (MissileClient)
 
