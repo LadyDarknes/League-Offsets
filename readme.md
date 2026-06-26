@@ -11,6 +11,9 @@ Star For Support ⭐
 
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
 Ai used for formating, not for reversing.
+
+
+Special thanks to everyone who supported this project: "Raphael, Wasik, hernos, IA20201"
 </div>
 
 ## Repository Layout
