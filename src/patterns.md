@@ -40,6 +40,7 @@ if somebody need another pattern/offsets that I never write down, please contact
 
 | Name                                  | AOB Pattern                                                                              | Notes                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| **GetRenderPipeline**                 | `48 83 EC 28 8B 0D ? ? ? ? 65 48 8B 04 25 58 00 00 00 BA 40 01 00 00 48 8B 04 C8 8B 04 02 39 05 ? ? ? ? 7F 47 48 8D 05 ? ? ? ? 48 83 C4 28 C3` | Retrieves the RenderPipeline shared_ptr |
 | **IssueOrderCore**                    | `4C 89 4C 24 ? 4C 89 44 24 ? 88 54 24 ? 55`                                              | Function entry                                  |
 | **IssueOrderCore** (caller ctx)       | `89 05 ? ? ? ? E8 ? ? ? ? 8D 43`                                                         | Resolve E8 to get fn addr                       |
 | **IssueOrderPacketWrapper**           | `E8 ? ? ? ? 80 BD ? ? ? ? ? 74 ? 4C 8B 8D ? ? ? ? 4C 8B C7`                              | Final packet-wrapper call inside IssueOrderCore |
