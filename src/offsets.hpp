@@ -78,17 +78,15 @@ namespace Offsets {
         constexpr uintptr_t OnCreateObject = 0x55D860;
         constexpr uintptr_t OnDeleteObject = 0x2869C0;
         constexpr uintptr_t OnDoCast = 0x97B2D0;
+        constexpr uintptr_t OnNewPath = 0x2E5960;
         constexpr uintptr_t OnProcessSpell = 0x981C50;
         constexpr uintptr_t OnSpellImpact = 0x979640;
         constexpr uintptr_t PrintChat = 0x114EC00;
         constexpr uintptr_t ProjectAndClip = 0x13160C0;
         constexpr uintptr_t QuestProgress__Calculate = 0x522410;
         constexpr uintptr_t QuestProgress__GetQuestValue = 0x526560;
-        constexpr uintptr_t QuestProgressFn = 0x522410;
-        constexpr uintptr_t QuestValueFn = 0x526560;
         constexpr uintptr_t RemapBoneIndex = 0x2CAFF0;
         constexpr uintptr_t RoleBound__Init = 0x111E610;
-        constexpr uintptr_t RoleBoundInit = 0x111E610;
         constexpr uintptr_t SpellSlot__Cast = 0x755450;
         constexpr uintptr_t SpellSlot__GetCooldown = 0x912EF0;
         constexpr uintptr_t SpellSlot__GetLevel = 0x3A8B8B;
@@ -120,66 +118,109 @@ namespace Offsets {
         }
         namespace CharacterData {
             constexpr uintptr_t oSkinID = 0x14;
+            constexpr uintptr_t OFF_CHARDATA_CAST_TIME = 0x9C4;
+            constexpr uintptr_t OFF_CHARDATA_DELAY_SCALE = 0x9C8;
         }
         namespace MissileClient {
+            constexpr uintptr_t CasterNetID = 0x30;
+            constexpr uintptr_t TargetNetID = 0x34;
+            constexpr uintptr_t StartPos = 0x24;
+            constexpr uintptr_t EndPos = 0x30;
+            constexpr uintptr_t Speed = 0x410;
+            constexpr uintptr_t CurrentPos = 0x25C;
             constexpr uintptr_t oCasterNetID = 0x30;
             constexpr uintptr_t oTargetNetID = 0x34;
             constexpr uintptr_t oStartPos = 0x24;
             constexpr uintptr_t oEndPos = 0x30;
+            constexpr uintptr_t oSpeed = 0x0;
         }
         namespace CombatStats {
-            constexpr uintptr_t mLevel = 0x28;
-            constexpr uintptr_t mBaseAD = 0x24;
             constexpr uintptr_t mFlatAPMod = 0x1C;
-            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mBaseAD = 0x24;
+            constexpr uintptr_t mLevel = 0x28;
             constexpr uintptr_t mAttackRange = 0x5C;
             constexpr uintptr_t mArmor = 0x118;
             constexpr uintptr_t mBonusArmor = 0x174;
+            constexpr uintptr_t mSpellBlock = 0x180;
+            constexpr uintptr_t mAttackSpeedMod = 0x1A8;
+            constexpr uintptr_t mCrit = 0x1C8;
+            constexpr uintptr_t mFlatADMod = 0x1DC;
+            constexpr uintptr_t mBonusSpellBlock = 0x200;
             constexpr uintptr_t mCombatType = 0x204;
+            constexpr uintptr_t mMoveSpeed = 0x24C;
+            constexpr uintptr_t oBuffManager = 0x2E78;
+            constexpr uintptr_t oFacing = 0x1C0;
         }
         namespace AIBaseClient {
+            constexpr uintptr_t oCombatStats = 0x4428;
             constexpr uintptr_t oModelInstance = 0x44D8;
             constexpr uintptr_t oCharacterDataStack = 0x1288;
             constexpr uintptr_t oBuffManager = 0x2E78;
             constexpr uintptr_t oFacing = 0x1C0;
-            constexpr uintptr_t oCombatStats = 0x4428;
             constexpr uintptr_t oPetOwner = 0x4D18;
             constexpr uintptr_t oHeroInventoryClient = 0x4230;
             constexpr uintptr_t SkinId = 0x1334;
             constexpr uintptr_t CharacterData = 0x4108;
+            constexpr uintptr_t oCharacterDataStackBase = 0x2C88;
         }
         namespace GameObject {
             constexpr uintptr_t oIndex = 0x20;
+            constexpr uintptr_t oNetId = 0x20;
             constexpr uintptr_t oTeamID = 0x259;
             constexpr uintptr_t oName = 0x68;
             constexpr uintptr_t oNetworkID = 0xCC;
-            constexpr uintptr_t oNetId = 0x20;
             constexpr uintptr_t oSourceNetworkId = 0xF4;
             constexpr uintptr_t oDead = 0x250;
+            constexpr uintptr_t oEffectEmitterHandle = 0x258;
             constexpr uintptr_t oPosition = 0x25C;
+            constexpr uintptr_t oDirection = 0x0;
             constexpr uintptr_t oVisibility = 0x2E0;
             constexpr uintptr_t oVisible = 0x308;
-            constexpr uintptr_t oRadius = 0x6F8;
-            constexpr uintptr_t oModelScaleComponent = 0x2C88;
-            constexpr uintptr_t oCharacterData = 0x4078;
-            constexpr uintptr_t oCharacterName = 0x4370;
-            constexpr uintptr_t oDirection = 0x0;
-            constexpr uintptr_t oEffectEmitterHandle = 0x258;
             constexpr uintptr_t oMissileClientHandle = 0x2D8;
             constexpr uintptr_t oTargetableComponent = 0x2A8;
+            constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
             constexpr uintptr_t oIsTargetable = 0xED0;
             constexpr uintptr_t oTargetableState = 0xEF8;
-            constexpr uintptr_t oItemList = 0x4490;
-            constexpr uintptr_t oSpellBook = 0x3128;
+            constexpr uintptr_t oRadius = 0x6F8;
+            constexpr uintptr_t oModelScaleComponent = 0x2C88;
             constexpr uintptr_t oAIManager = 0x4070;
-            constexpr uintptr_t oPlayerStatsComponent = 0x2A8;
+            constexpr uintptr_t oCharacterData = 0x4078;
+            constexpr uintptr_t oSpellBook = 0x3128;
+            constexpr uintptr_t oCharacterName = 0x4370;
+            constexpr uintptr_t oItemList = 0x4490;
+            constexpr uintptr_t oCharacterDataStack = 0x1288;
+            constexpr uintptr_t OFF_POS_X = 0x25C;
+            constexpr uintptr_t OFF_POS_Y = 0x260;
+            constexpr uintptr_t OFF_POS_Z = 0x264;
+            constexpr uintptr_t OFF_VISIBLE_0 = 0x168;
+            constexpr uintptr_t OFF_VISIBLE_FOG = 0x169;
+            constexpr uintptr_t OFF_VISIBLE_ALT = 0x16A;
+            constexpr uintptr_t OFF_HP = 0x1080;
+            constexpr uintptr_t OFF_HP_MAX = 0x10A8;
+            constexpr uintptr_t OFF_MANA = 0x360;
+            constexpr uintptr_t OFF_MANA_MAX = 0x388;
+            constexpr uintptr_t OFF_MANA_ENABLED = 0x3B0;
+            constexpr uintptr_t OFF_LEVEL = 0x4D58;
+            constexpr uintptr_t OFF_MOVE_SPEED = 0x5000;
+            constexpr uintptr_t OFF_ARMOR = 0x4F38;
+            constexpr uintptr_t OFF_MAGIC_RES = 0x4CB8;
+            constexpr uintptr_t OFF_ALL_SHIELD = 0x1120;
+            constexpr uintptr_t OFF_PHYS_SHIELD = 0x1148;
+            constexpr uintptr_t OFF_MAG_SHIELD = 0x1170;
+            constexpr uintptr_t OFF_AS_MULTIPLIER = 0x17B0;
+            constexpr uintptr_t OFF_ATK_RANGE = 0x17FC;
+            constexpr uintptr_t OFF_BOUNDING_RADIUS = 0x6F8;
+            constexpr uintptr_t OFF_SPELLBOOK = 0x3128;
+            constexpr uintptr_t OFF_AIMANAGER_PTR = 0x4070;
+            constexpr uintptr_t OFF_HEROCLIENT_PTR = 0x4230;
         }
         namespace SpellDataResource {
             constexpr uintptr_t oMissileSpeed = 0x408;
         }
         namespace SpellBook {
-            constexpr uintptr_t oSpellSlots = 0xAE0;
             constexpr uintptr_t oActiveSpellCast = 0xAD8;
+            constexpr uintptr_t oSpellSlots = 0xAE0;
+            constexpr uintptr_t OFF_SB_DELAY_PCT = 0x308;
         }
         namespace SkinResource {
             constexpr uintptr_t skin_id = 0x0;
@@ -197,10 +238,12 @@ namespace Offsets {
         namespace CameraData {
             constexpr uintptr_t oCamPos = 0x8;
             constexpr uintptr_t oCamRotation = 0x18;
+            constexpr uintptr_t oCamAttached = 0x0;
             constexpr uintptr_t oCamMoveSpeed = 0x2C;
             constexpr uintptr_t oFieldOfView = 0x3C;
             constexpr uintptr_t oNearClip = 0x44;
             constexpr uintptr_t oFarClip = 0x4C;
+            constexpr uintptr_t oFogOfWar = 0x5A;
         }
     }
 }
