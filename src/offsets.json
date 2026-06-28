@@ -1,9 +1,9 @@
 {
   "meta": {
     "patch": "26.13",
-    "timestamp": "6A3B418B \u00e2\u20ac\u201d Wed Jun 24 02:31:39 2026",
+    "timestamp": "6A3B418B â€” Wed Jun 24 02:31:39 2026",
     "imagebase": "0x7FF701D60000",
-    "compiler": "Visual C++ \u00c2\u00b7 x64 PE",
+    "compiler": "Visual C++ Â· x64 PE",
     "generated_by": "ida_dumper.py",
     "description": "League of Legends offset database. AI used for formatting, not for reversing."
   },
@@ -163,6 +163,42 @@
       "rva": "0x1F7CD08",
       "pattern": "4C 8B 3D ? ? ? ? 48 03 ? 49",
       "description": "Global renderer singleton"
+    },
+    {
+      "name": "g_thread_device",
+      "rva": "0x1F7AA18",
+      "pattern": "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81",
+      "description": "D3D11 device ptr, returned by GetThreadDevice()"
+    },
+    {
+      "name": "g_current_x3d_device_override",
+      "rva": "0x1F7B178",
+      "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? ? ? ? C3 CC CC 48 8D 81",
+      "description": "X3D device override ptr (was SwapChain)"
+    },
+    {
+      "name": "g_x3d_d3d11_backend",
+      "rva": "0x1F7AA38",
+      "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? ? ? ? C3 CC 48 8D 81",
+      "description": "X3D D3D11 backend instance, assigned in X3DDeviceD3D11_Initialize"
+    },
+    {
+      "name": "g_d3dcompiler47_module",
+      "rva": "0x1F7B1F0",
+      "pattern": "",
+      "description": "LoadLibraryA('d3dcompiler_47.dll') result"
+    },
+    {
+      "name": "g_D3DReflect",
+      "rva": "0x1F7B1F8",
+      "pattern": "",
+      "description": "GetProcAddress('D3DReflect') result"
+    },
+    {
+      "name": "X3DDeviceD3D11_vtable",
+      "rva": "0x1B00890",
+      "pattern": "",
+      "description": "X3DDeviceD3D11 vtable, installed at object+0"
     }
   ],
   "functions": [
@@ -507,7 +543,7 @@
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 48 8B FA 48 8B CA E8 ? ? ? ? 84 C0"
       ],
-      "description": "AIHeroClient::OnDestroyUnit \u00e2\u20ac\u201d PKT_S2C handler"
+      "description": "AIHeroClient::OnDestroyUnit â€” PKT_S2C handler"
     },
     {
       "name": "OnDoCast",
@@ -691,7 +727,7 @@
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 20 48 8B 4B 18"
       ],
-      "description": "AIBaseClient::OnPlayAnimation \u00e2\u20ac\u201d PKT_S2C handler"
+      "description": "AIBaseClient::OnPlayAnimation â€” PKT_S2C handler"
     },
     {
       "name": "BuffManagerClient__OnBuffAdd",
@@ -708,6 +744,206 @@
         "E8 ? ? ? ? 80 BD ? ? ? ? ? 74 ? 4C 8B 8D ? ? ? ? 4C 8B C7"
       ],
       "description": "Final packet-wrapper call inside IssueOrderCore"
+    },
+    {
+      "name": "GetThreadDevice",
+      "rva": "0x13BA550",
+      "patterns": [
+        "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81"
+      ],
+      "description": "Returns g_thread_device"
+    },
+    {
+      "name": "X3DDeviceD3D11_Initialize",
+      "rva": "0x13A7BF0",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 54 41 55 41 56 41 57 48 83 EC ? 41 8B D9 49 8B E8"
+      ],
+      "description": "X3D device initialization"
+    },
+    {
+      "name": "X3DDeviceD3D11_Release",
+      "rva": "0x13AAC40",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 05 ? ? ? ? 48 8B F9 48 89 01"
+      ],
+      "description": "X3D device release"
+    },
+    {
+      "name": "ConstantBuffer_CreateD3D11DynamicBuffer",
+      "rva": "0x13A7AA0",
+      "patterns": [
+        "48 89 5C 24 ? 55 56 57 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4"
+      ],
+      "description": "Create D3D11 dynamic constant buffer"
+    },
+    {
+      "name": "D3D11TextureView_CreateShaderResourceView",
+      "rva": "0x13A8520",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 55 41 56 41 57 48 8B EC"
+      ],
+      "description": "Create shader resource view for texture"
+    },
+    {
+      "name": "DX11Backend_CreateDeviceAndSwapChain",
+      "rva": "0x13B9860",
+      "patterns": [
+        "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC"
+      ],
+      "description": "Create D3D11 device and swap chain"
+    },
+    {
+      "name": "GraphicsPipelineD3D11_InitFromDesc",
+      "rva": "0x13B8D40",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 89 51"
+      ],
+      "description": "Init graphics pipeline from descriptor"
+    },
+    {
+      "name": "X3DDeviceD3D11_SetGraphicsPipeline",
+      "rva": "0x13ADFF0",
+      "patterns": [
+        "44 88 44 24 ? 53 55 57 41 54"
+      ],
+      "description": "Set active graphics pipeline (vtable+0x058)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateGraphicsPipeline",
+      "rva": "0x13B05C0",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? B9 ? ? ? ? 49 8B F8"
+      ],
+      "description": "Create graphics pipeline (vtable+0x060)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateVertexBuffer",
+      "rva": "0x13B4190",
+      "patterns": [
+        "40 55 53 56 57 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC"
+      ],
+      "description": "Create vertex buffer (vtable+0x088)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateIndexBuffer",
+      "rva": "0x13B1240",
+      "patterns": [
+        "40 55 53 56 57 41 54 41 56 41 57 48 8D 6C 24 ? 48 81 EC"
+      ],
+      "description": "Create index buffer (vtable+0x098)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateDataBuffer",
+      "rva": "0x13B02D0",
+      "patterns": [
+        "40 55 56 57 41 54 41 56 41 57 48 8B EC"
+      ],
+      "description": "Create data buffer (vtable+0x0B8)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateTexture2D",
+      "rva": "0x13B3510",
+      "patterns": [
+        "40 53 55 56 57 41 55 41 56 41 57 48 81 EC ? ? ? ? 48 8B 05"
+      ],
+      "description": "Create 2D texture (vtable+0x0C8)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateVertexProgram",
+      "rva": "0x13B19E0",
+      "patterns": [
+        "40 55 56 41 54 41 55 41 57 48 8D AC 24"
+      ],
+      "description": "Create vertex program (vtable+0x100)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreatePixelProgram",
+      "rva": "0x13B1810",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 57 48 83 EC ? 48 8B 89"
+      ],
+      "description": "Create pixel program (vtable+0x118)"
+    },
+    {
+      "name": "X3DDeviceD3D11_CreateShaderProgram",
+      "rva": "0x13B21B0",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? B9 ? ? ? ? 49 8B F0"
+      ],
+      "description": "Create shader program (vtable+0x128)"
+    },
+    {
+      "name": "X3DDeviceD3D11_ClearFramebuffer",
+      "rva": "0x13AF110",
+      "patterns": [
+        "40 53 56 57 41 56 41 57 48 83 EC ? 48 8B 05 ? ? ? ? 48 33 C4"
+      ],
+      "description": "Clear framebuffer (vtable+0x160)"
+    },
+    {
+      "name": "X3DDeviceD3D11_BeginFrame",
+      "rva": "0x13AC670",
+      "patterns": [
+        "48 89 5C 24 ? 57 48 83 EC ? 4C 8B 41 ? 48 8B F9 C6 81"
+      ],
+      "description": "Begin frame (vtable+0x180)"
+    },
+    {
+      "name": "X3DDeviceD3D11_EndFrame",
+      "rva": "0x13B5A20",
+      "patterns": [
+        "40 53 48 83 EC ? 48 8B D9 E8 ? ? ? ? C6 83 ? ? ? ? ?"
+      ],
+      "description": "End frame (vtable+0x188)"
+    },
+    {
+      "name": "X3DDeviceD3D11_BeginRenderPass",
+      "rva": "0x13AC750",
+      "patterns": [
+        "48 8B C4 55 53 57 48 8B EC 48 81 EC"
+      ],
+      "description": "Begin render pass (vtable+0x190)"
+    },
+    {
+      "name": "X3DDeviceD3D11_EndRenderPass",
+      "rva": "0x13B5A60",
+      "patterns": [
+        "40 53 48 83 EC ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? C6 81"
+      ],
+      "description": "End render pass (vtable+0x198)"
+    },
+    {
+      "name": "X3DDeviceD3D11_IsRenderPassActive",
+      "rva": "0x13BA560",
+      "patterns": [
+        "0F B6 81 ? ? ? ? C3"
+      ],
+      "description": "Is render pass active (vtable+0x1A0)"
+    },
+    {
+      "name": "X3DDeviceD3D11_IsFrameActive",
+      "rva": "0x13BA6C0",
+      "patterns": [
+        "0F B6 81 ? ? ? ? C3"
+      ],
+      "description": "Is frame active (vtable+0x1A8)"
+    },
+    {
+      "name": "X3DDeviceD3D11_Draw",
+      "rva": "0x13BC7A0",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 81"
+      ],
+      "description": "Draw (vtable+0x1C0)"
+    },
+    {
+      "name": "X3DDeviceD3D11_DrawIndexed",
+      "rva": "0x13BC870",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 81"
+      ],
+      "description": "Draw indexed (vtable+0x1C8)"
     }
   ],
   "structs": {
@@ -891,7 +1127,7 @@
         "OFF_POS_X": {
           "offset": "0x25C",
           "type": "float",
-          "description": "Position.X \u00e2\u20ac\u201d IDA confirmed via distance fn",
+          "description": "Position.X â€” IDA confirmed via distance fn",
           "pattern": "41 B8 ?? ?? ?? ?? E8 FF 6F 0E",
           "op": 1
         },
@@ -912,7 +1148,7 @@
         "OFF_VISIBLE_0": {
           "offset": "0x168",
           "type": "bool",
-          "description": "Primary visibility \u00e2\u20ac\u201d cmp [rcx+168h],0",
+          "description": "Primary visibility â€” cmp [rcx+168h],0",
           "pattern": "48 03 84 24 ?? ??",
           "op": 1
         },
@@ -1037,7 +1273,7 @@
         "OFF_AIMANAGER_PTR": {
           "offset": "0x4070",
           "type": "QWORD*",
-          "description": "AIManager ptr \u00e2\u20ac\u201d cmp qword ptr [rcx+4070h],0",
+          "description": "AIManager ptr â€” cmp qword ptr [rcx+4070h],0",
           "pattern": "48 8B 98 ?? 40 00",
           "op": 1
         },
@@ -3396,6 +3632,159 @@
           "op": 0
         }
       }
+    },
+    "X3DDeviceD3D11": {
+      "fields": {
+        "vtable": {
+          "offset": "0x0",
+          "pattern": "",
+          "description": "X3DDeviceD3D11 vtable ptr"
+        },
+        "device": {
+          "offset": "0x1E0",
+          "pattern": "",
+          "description": "ID3D11Device*"
+        },
+        "feature_level": {
+          "offset": "0x1E8",
+          "pattern": "",
+          "description": "D3D_FEATURE_LEVEL"
+        },
+        "adapter": {
+          "offset": "0x210",
+          "pattern": "",
+          "description": "IDXGIAdapter*"
+        },
+        "swapchain": {
+          "offset": "0x218",
+          "pattern": "",
+          "description": "IDXGISwapChain*"
+        },
+        "swapchain_desc": {
+          "offset": "0x240",
+          "pattern": "",
+          "description": "DXGI_SWAP_CHAIN_DESC"
+        },
+        "width": {
+          "offset": "0x2A8",
+          "pattern": "",
+          "description": "Screen width"
+        },
+        "height": {
+          "offset": "0x2AC",
+          "pattern": "",
+          "description": "Screen height"
+        },
+        "context": {
+          "offset": "0x2B0",
+          "pattern": "",
+          "description": "ID3D11DeviceContext*"
+        },
+        "active_pipeline": {
+          "offset": "0x728",
+          "pattern": "",
+          "description": "X3DGraphicsPipeline*"
+        }
+      }
+    },
+    "X3DDeviceD3D11Vtable": {
+      "fields": {
+        "Release": {
+          "offset": "0x0",
+          "pattern": "",
+          "description": ""
+        },
+        "SetGraphicsPipeline": {
+          "offset": "0x58",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateGraphicsPipeline": {
+          "offset": "0x60",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateVertexBuffer": {
+          "offset": "0x88",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateIndexBuffer": {
+          "offset": "0x98",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateDataBuffer": {
+          "offset": "0xB8",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateTexture2D": {
+          "offset": "0xC8",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateVertexProgram": {
+          "offset": "0x100",
+          "pattern": "",
+          "description": ""
+        },
+        "CreatePixelProgram": {
+          "offset": "0x118",
+          "pattern": "",
+          "description": ""
+        },
+        "CreateShaderProgram": {
+          "offset": "0x128",
+          "pattern": "",
+          "description": ""
+        },
+        "ClearFramebuffer": {
+          "offset": "0x160",
+          "pattern": "",
+          "description": ""
+        },
+        "BeginFrame": {
+          "offset": "0x180",
+          "pattern": "",
+          "description": ""
+        },
+        "EndFrame": {
+          "offset": "0x188",
+          "pattern": "",
+          "description": ""
+        },
+        "BeginRenderPass": {
+          "offset": "0x190",
+          "pattern": "",
+          "description": ""
+        },
+        "EndRenderPass": {
+          "offset": "0x198",
+          "pattern": "",
+          "description": ""
+        },
+        "IsRenderPassActive": {
+          "offset": "0x1A0",
+          "pattern": "",
+          "description": ""
+        },
+        "IsFrameActive": {
+          "offset": "0x1A8",
+          "pattern": "",
+          "description": ""
+        },
+        "Draw": {
+          "offset": "0x1C0",
+          "pattern": "",
+          "description": ""
+        },
+        "DrawIndexed": {
+          "offset": "0x1C8",
+          "pattern": "",
+          "description": ""
+        }
+      }
     }
   },
   "camera": {
@@ -3474,7 +3863,7 @@
     }
   },
   "tft": {
-    "description": "TFT-specific offsets. May not be accurate \u00e2\u20ac\u201d not checked recently.",
+    "description": "TFT-specific offsets. May not be accurate â€” not checked recently.",
     "fields": {
       "OFF_TFT_ENTITY_SIZE": {
         "offset": "0x1D8",
@@ -3502,7 +3891,7 @@
     "EntityList_stride": {
       "offset": "472",
       "type": "int",
-      "description": "imul reg, 472 \u00e2\u20ac\u201d entity slot multiply"
+      "description": "imul reg, 472 â€” entity slot multiply"
     },
     "SPELLSLOT_MAX_IDX": {
       "offset": "63",
