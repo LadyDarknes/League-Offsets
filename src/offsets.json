@@ -1,0 +1,1741 @@
+{
+  "meta": {
+    "patch": "26.13",
+    "timestamp": "6A3B418B — Wed Jun 24 02:31:39 2026",
+    "imagebase": "0x7FF701D60000",
+    "compiler": "Visual C++ · x64 PE",
+    "generated_by": "ida_dumper.py",
+    "description": "League of Legends offset database. AI used for formatting, not for reversing."
+  },
+  "globals": [
+    {
+      "name": "BlueMinionManager",
+      "rva": "0x1EA0240",
+      "pattern": "8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?",
+      "description": "Blue team (100) minion list manager"
+    },
+    {
+      "name": "CastSpellFlag",
+      "rva": "0x1DFEF70",
+      "pattern": "C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?",
+      "description": "Spell cast flag"
+    },
+    {
+      "name": "ChatClient",
+      "rva": "0x1ED6E88",
+      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D",
+      "description": "Handles chat history and UI"
+    },
+    {
+      "name": "ConnSlotSentinel",
+      "rva": "0x1EDED88",
+      "pattern": "0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
+      "description": "Connection slot sentinel"
+    },
+    {
+      "name": "EntityList",
+      "rva": "0x1E9D160",
+      "pattern": "0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00",
+      "description": "Entity list array"
+    },
+    {
+      "name": "GameClient",
+      "rva": "0x1EB97F8",
+      "pattern": "48 8B 05 ? ? ? ? 48 8B F2 83 78 10 02",
+      "description": "Game client"
+    },
+    {
+      "name": "GameTime",
+      "rva": "0x1EABFF0",
+      "pattern": "F3 0F 5C 35 ? ? ? ? 0F 28 F8",
+      "description": "Game time"
+    },
+    {
+      "name": "HeroManager",
+      "rva": "0x1E9D0D8",
+      "pattern": "48 8B 0D ? ? ? ? 0F 85 ? ? ? ? 83",
+      "description": "Manager for all champions in the game"
+    },
+    {
+      "name": "HudInstance",
+      "rva": "0x1E9D148",
+      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 49 ? 48 8D",
+      "description": "Global GUI and user input control"
+    },
+    {
+      "name": "IssueOrderFlag",
+      "rva": "0x1DFEFD8",
+      "pattern": "C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24",
+      "description": "Issue order flag"
+    },
+    {
+      "name": "LocalPlayer",
+      "rva": "0x1EDB378",
+      "pattern": "48 8B 0D ? ? ? ? 4C ? ? 74 ? 49",
+      "description": "Pointer to the local player object"
+    },
+    {
+      "name": "MissileManager",
+      "rva": "0x1EA0250",
+      "pattern": "48 8B 0D ? ? ? ? E9 ? ? ? ? 33 C0 C3 CC CC CC",
+      "description": "Manager for all projectiles"
+    },
+    {
+      "name": "MouseScreenVec2",
+      "rva": "0x1EA0200",
+      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 8B 01",
+      "description": "Mouse screen position"
+    },
+    {
+      "name": "NavGrid",
+      "rva": "0x1EA0198",
+      "pattern": "48 8B 05 ? ? ? ? 0F 28 DA",
+      "description": "Navigation grid"
+    },
+    {
+      "name": "NetClient",
+      "rva": "0x1E9CFB0",
+      "pattern": "48 8B 05 ? ? ? ? 0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
+      "description": "Net client"
+    },
+    {
+      "name": "NetInstance",
+      "rva": "0x1E9CFC8",
+      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 74 ? 80 78",
+      "description": "Net instance"
+    },
+    {
+      "name": "ObjectManager",
+      "rva": "0x1E9CFB8",
+      "pattern": "48 8B 0D ? ? ? ? 8B 10 E8",
+      "description": "Object manager"
+    },
+    {
+      "name": "RedMinionManager",
+      "rva": "0x1EA0248",
+      "pattern": "EB 22 E8 ? ? ? ? 8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?",
+      "description": "Red team (200) minion list manager"
+    },
+    {
+      "name": "SpellCastMap",
+      "rva": "0x1EC70D0",
+      "pattern": "48 8B 05 ?? ?? ?? ?? 48 8B 88 ?? ?? ?? ?? 48 85 C9 74",
+      "description": "Spell cast hashmap"
+    },
+    {
+      "name": "SwapChain",
+      "rva": "0x1F7B178",
+      "pattern": "48 8B 05 ? ? ? ? 48 85 C0 75 0E 48 8B 0D ? ? ? ? 48 8B 01 48 FF 60 28 C3",
+      "description": "Direct3D11 swap chain wrapper pointer"
+    },
+    {
+      "name": "TimingTable",
+      "rva": "0x1EE0740",
+      "pattern": "48 8D 05 ? ? ? ? 48 69 D1",
+      "description": "Timing table"
+    },
+    {
+      "name": "UnderMouseObj",
+      "rva": "0x1EA0448",
+      "pattern": "48 89 0D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 33 D2",
+      "description": "Object under mouse cursor"
+    },
+    {
+      "name": "ViewPort",
+      "rva": "0x1EA01F8",
+      "pattern": "48 8B 3D ? ? ? ? 80 78 22 00 74",
+      "description": "Viewport"
+    },
+    {
+      "name": "ZoomAnomalyLatch",
+      "rva": "0x1F187E4",
+      "pattern": "80 3D ? ? ? ? ? 0F 85 ? ? ? ? C6 05",
+      "description": "Zoom flag check"
+    },
+    {
+      "name": "r3dRenderLayer",
+      "rva": "0x1F7AA08",
+      "pattern": "48 8B 1D ? ? ? ? 80 BB 84 00 00 00 00",
+      "description": "Core rendering layer object pointer"
+    },
+    {
+      "name": "r3dRenderer",
+      "rva": "0x1F7CD08",
+      "pattern": "4C 8B 3D ? ? ? ? 48 03 ? 49",
+      "description": "Global renderer singleton"
+    }
+  ],
+  "functions": [
+    {
+      "name": "BuffManagerClient__OnBuffRemove",
+      "rva": "0x920320",
+      "patterns": [
+        "40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1"
+      ],
+      "description": "Core buff remove function"
+    },
+    {
+      "name": "CanCast",
+      "rva": "0x2C50A0",
+      "patterns": [
+        "40 53 48 83 EC ? 48 8B D9 48 85 C9 74 ? 48 8B"
+      ],
+      "description": "Checks if a spell slot can be cast"
+    },
+    {
+      "name": "CastSpellPosition",
+      "rva": "0x97A980",
+      "patterns": [
+        "48 8B C4 4C 89 48 ? 48 89 48 ? 55 53"
+      ],
+      "description": "Position-based cast function"
+    },
+    {
+      "name": "CastSpellSafe",
+      "rva": "0xC130F0",
+      "patterns": [
+        "40 57 41 54 48 83 EC ? 4C 8B E2"
+      ],
+      "description": "Safe spell cast function"
+    },
+    {
+      "name": "CastSpellTarget",
+      "rva": "0x97A0B0",
+      "patterns": [
+        "48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 55 41 56 48 8D A8 ? ? ? ? 48 81 EC A0 01 00 00"
+      ],
+      "description": "Target-based cast function"
+    },
+    {
+      "name": "CastSpellWrapper",
+      "rva": "0x2045D0",
+      "patterns": [
+        "48 89 48 ? 55 56 57 41 54 41 55"
+      ],
+      "description": "Internal-call function"
+    },
+    {
+      "name": "CharacterDataStack__Push",
+      "rva": "0x3F22D0",
+      "patterns": [
+        "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F2 48 8B F9 49 8B D0"
+      ],
+      "description": "Push character data (change model/skin)"
+    },
+    {
+      "name": "CharacterDataStack__Update",
+      "rva": "0x3F3170",
+      "patterns": [
+        "4C 8B DC 55 57 48 8B EC 48 83 EC 78 48 8B 41 40 48 8B F9 48 85 C0"
+      ],
+      "description": "Update character model/skin"
+    },
+    {
+      "name": "CharacterDataStackPush",
+      "rva": "0x22B750",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 55 57 41 54 41 56 41 57 48 8D 6C 24"
+      ],
+      "description": "Push character data stack (R3nzSkin style)"
+    },
+    {
+      "name": "CharacterDataStackUpdate",
+      "rva": "0x210F70",
+      "patterns": [
+        "88 54 24 10 55 53 56 57 41 54 41 55 41 56 41 57"
+      ],
+      "description": "Update character data stack (R3nzSkin style)"
+    },
+    {
+      "name": "ComponentLookupFn",
+      "rva": "0x11AA460",
+      "patterns": [
+        "48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D"
+      ],
+      "description": "Generic component lookup by key"
+    },
+    {
+      "name": "ComponentRegistry__Lookup",
+      "rva": "0x11AA460",
+      "patterns": [],
+      "description": "Alias for ComponentLookupFn"
+    },
+    {
+      "name": "CurrentNodeIdx",
+      "rva": "0x3906F",
+      "patterns": [
+        "8B 08"
+      ],
+      "description": "Current nav node index"
+    },
+    {
+      "name": "DistanceSq",
+      "rva": "0x21A6D0",
+      "patterns": [
+        "F3 0F 10 81 5C 02 00 00"
+      ],
+      "description": "Distance squared function"
+    },
+    {
+      "name": "GameObject__IsType",
+      "rva": "0x2881F0",
+      "patterns": [
+        "40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C"
+      ],
+      "description": "Helper to check classification flags"
+    },
+    {
+      "name": "GetAIManager",
+      "rva": "0x276E70",
+      "patterns": [
+        "48 8B 89 70 40 00 00 48 85 C9 74"
+      ],
+      "description": "Reads AIManager from object"
+    },
+    {
+      "name": "GetAttackDelay",
+      "rva": "0x573590",
+      "patterns": [
+        "E8 ? ? ? ? 33 C0 F3 0F 11 83 ? ? ? ?"
+      ],
+      "description": "Gets attack delay"
+    },
+    {
+      "name": "GetAttackWindup",
+      "rva": "0x573490",
+      "patterns": [
+        "48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 60 48 8B 01 8B DA 0F 29 74 24 ??"
+      ],
+      "description": "Gets attack windup time"
+    },
+    {
+      "name": "GetBoundingRadius",
+      "rva": "0x278010",
+      "patterns": [
+        "40 53 48 83 EC ? 48 83 B9 ? ? ? ? 00 48 8B D9 0F 29 74 24 20"
+      ],
+      "description": "Gets bounding radius"
+    },
+    {
+      "name": "GetCollisionFlags",
+      "rva": "0x126A150",
+      "patterns": [
+        "48 83 EC 28 48 8B D1 48 8B 0D ? ? ? ? 48 8B 49 08"
+      ],
+      "description": "Gets collision flags"
+    },
+    {
+      "name": "GetFirstObject",
+      "rva": "0x552DC0",
+      "patterns": [
+        "48 83 EC ? 48 8B 51 ? 8B 41 ? 48 8D 0C C2"
+      ],
+      "description": "Gets first object in manager"
+    },
+    {
+      "name": "GetGoldRedirectTarget",
+      "rva": "0x209B20",
+      "patterns": [
+        "48 81 C1 ? ? ? ? E9 ? ? ? ? CC CC CC CC"
+      ],
+      "description": "Redirect gold target"
+    },
+    {
+      "name": "GetMapID",
+      "rva": "0x27E660",
+      "patterns": [
+        "E8 ? ? ? ? 4C 89 7C 24 40 48 8D 4C 24 70"
+      ],
+      "description": "Gets map ID"
+    },
+    {
+      "name": "GetModelInstance",
+      "rva": "0x295080",
+      "patterns": [
+        "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 ? 48 8B 4B"
+      ],
+      "description": "Gets model instance (alias of OnPlayAnimation)"
+    },
+    {
+      "name": "GetNextObject",
+      "rva": "0x553C30",
+      "patterns": [
+        "0F B7 42 ? 44 8B 41"
+      ],
+      "description": "Gets next object in manager"
+    },
+    {
+      "name": "GetObjectByID",
+      "rva": "0x5521B0",
+      "patterns": [
+        "4C 8B C1 85 D2 74 ? 49 8B 40 20"
+      ],
+      "description": "Retrieves object from ObjectManager by ID/Index"
+    },
+    {
+      "name": "GetPing",
+      "rva": "0x6CC720",
+      "patterns": [
+        "48 83 EC ? 0F B6 81 ? ? ? ? 3A 05"
+      ],
+      "description": "Gets network ping"
+    },
+    {
+      "name": "GetRenderPipeline",
+      "rva": "0x4B6960",
+      "patterns": [
+        "48 83 EC 28 8B 0D ? ? ? ? 65 48 8B 04 25 58 00 00 00 BA 40 01 00 00 48 8B 04 C8 8B 04 02 39 05 ? ? ? ? 7F 47 48 8D 05 ? ? ? ? 48 83 C4 28 C3"
+      ],
+      "description": "Retrieves the RenderPipeline shared_ptr"
+    },
+    {
+      "name": "GetSpellCastInfo",
+      "rva": "0x659420",
+      "patterns": [
+        "E8 ?? ?? ?? ?? 48 85 C0 74 ?? 0F B6 40 ?? 84 C0"
+      ],
+      "description": "Gets spell cast info"
+    },
+    {
+      "name": "GetSpellSlot",
+      "rva": "0x969340",
+      "patterns": [
+        "48 63 C2 48 8B 84 C1 ?? ?? ?? ?? C3",
+        "83 FA ? 77 ? 48 63 C2 48 8B 84 C1"
+      ],
+      "description": "Gets spell slot by index"
+    },
+    {
+      "name": "GetSubObjAiMgr",
+      "rva": "0x53DB50",
+      "patterns": [
+        "E8 ? ? ? ? 48 85 C0 74 ? F3 0F 10 70"
+      ],
+      "description": "Gets sub-object AI manager"
+    },
+    {
+      "name": "IsAlive",
+      "rva": "0x2B0C10",
+      "patterns": [
+        "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 38 01 00 00 84 C0 74 ? 48 8D 8B A8 02 00 00 48 8B 01 FF 50 10 84 C0 75"
+      ],
+      "description": "Checks if object is alive"
+    },
+    {
+      "name": "IsBuilding",
+      "rva": "0x2C5440",
+      "patterns": [
+        "E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"
+      ],
+      "description": "Checks if object is a building"
+    },
+    {
+      "name": "IsHero",
+      "rva": "0x2C5290",
+      "patterns": [
+        "E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B"
+      ],
+      "description": "Checks if object is a hero"
+    },
+    {
+      "name": "IsTurret",
+      "rva": "0x2C5190",
+      "patterns": [
+        "40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27"
+      ],
+      "description": "Checks if object is a turret"
+    },
+    {
+      "name": "IsVisible",
+      "rva": "0x211CA0",
+      "patterns": [
+        "48 83 EC 38 80 B9 6C 01 00 00 00 0F 29 74 24 ? 0F 28 ? 7F ? 80 B9 ? ? 00 00 00"
+      ],
+      "description": "Checks if object is visible"
+    },
+    {
+      "name": "IssueOrderCore",
+      "rva": "0x2899D0",
+      "patterns": [
+        "4C 89 4C 24 ? 4C 89 44 24 ? 88 54 24 ? 55"
+      ],
+      "description": "Core issue order function"
+    },
+    {
+      "name": "MinimapHudInit",
+      "rva": "0x9221E0",
+      "patterns": [
+        "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00"
+      ],
+      "description": "TacticalMap (Minimap HUD) constructor"
+    },
+    {
+      "name": "MinimapMoveSelf",
+      "rva": "0x599950",
+      "patterns": [
+        "83 FA 01 0F 85 ? ? ? ? 4C 8B DC"
+      ],
+      "description": "evtPlayerMoveMinimap handler"
+    },
+    {
+      "name": "NavAgent",
+      "rva": "0x58EEC0",
+      "patterns": [
+        "48 8B 40 28 48 85 C0"
+      ],
+      "description": "NavAgent dereference from AIManager"
+    },
+    {
+      "name": "NavMesh__CreatePath",
+      "rva": "0x2309B0",
+      "patterns": [
+        "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC"
+      ],
+      "description": "Pathfinding and path generation"
+    },
+    {
+      "name": "OnCreateObject",
+      "rva": "0x55D860",
+      "patterns": [
+        "48 89 5C 24 18 56 48 83 EC 30 80 B9 EC 01 00 00 00"
+      ],
+      "description": "Triggered when new GameObject is created"
+    },
+    {
+      "name": "OnDeleteObject",
+      "rva": "0x2869C0",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 48 8B FA 48 8B CA E8 ? ? ? ? 84 C0"
+      ],
+      "description": "AIHeroClient::OnDestroyUnit — PKT_S2C handler"
+    },
+    {
+      "name": "OnDoCast",
+      "rva": "0x97B2D0",
+      "patterns": [
+        "40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00"
+      ],
+      "description": "Triggered when spell is executed/sent"
+    },
+    {
+      "name": "OnNewPath",
+      "rva": "0x2E5960",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 54"
+      ],
+      "description": "Triggered on new movement path"
+    },
+    {
+      "name": "OnProcessSpell",
+      "rva": "0x981C50",
+      "patterns": [
+        "40 55 56 48 81 EC 88 00 00 00 48 83 79 28 00"
+      ],
+      "description": "Triggered on spell cast request"
+    },
+    {
+      "name": "OnSpellImpact",
+      "rva": "0x979640",
+      "patterns": [
+        "48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 49 8B 01"
+      ],
+      "description": "Triggered when spell hits/impacts"
+    },
+    {
+      "name": "PrintChat",
+      "rva": "0x114EC00",
+      "patterns": [
+        "40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF"
+      ],
+      "description": "Print chat message"
+    },
+    {
+      "name": "ProjectAndClip",
+      "rva": "0x13160C0",
+      "patterns": [
+        "48 89 5C 24 ? 57 48 83 EC ? 48 8B BC 24 ? ? ? ? 48 8D 05"
+      ],
+      "description": "Sub-function of WorldToScreen"
+    },
+    {
+      "name": "QuestProgress__Calculate",
+      "rva": "0x522410",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2"
+      ],
+      "description": "Calculates quest tier, target, and progress"
+    },
+    {
+      "name": "QuestProgress__GetQuestValue",
+      "rva": "0x526560",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA"
+      ],
+      "description": "Retrieves quest progress value"
+    },
+    {
+      "name": "RemapBoneIndex",
+      "rva": "0x2CAFF0",
+      "patterns": [
+        "48 89 5C 24 ? 55 56 57 41 54 41 57 48 8D AC 24 ? ? ? ? B8 60 25 00 00"
+      ],
+      "description": "Map bone name hash to bone index"
+    },
+    {
+      "name": "RoleBound__Init",
+      "rva": "0x111E610",
+      "patterns": [
+        "48 83 EC ? 48 8D 15 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? 48 83 C4 ? E9 ? ? ? ?"
+      ],
+      "description": "RoleBound type registration initialization"
+    },
+    {
+      "name": "SpellSlot__Cast",
+      "rva": "0x755450",
+      "patterns": [
+        "48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00"
+      ],
+      "description": "Virtual function table [4] cast"
+    },
+    {
+      "name": "SpellSlot__GetCooldown",
+      "rva": "0x912EF0",
+      "patterns": [
+        "40 53 48 83 EC 40 48 8B D9 0F 29 74 24 30 48 8B 0D ? ? ? ? 0F 29"
+      ],
+      "description": "Gets spell cooldown"
+    },
+    {
+      "name": "SpellSlot__GetLevel",
+      "rva": "0x3A8B8B",
+      "patterns": [
+        "CC CC CC CC CC 8B 41 28 C3"
+      ],
+      "description": "Gets spell level (prefix: 5 CC bytes)"
+    },
+    {
+      "name": "TransformVec3",
+      "rva": "0x1318100",
+      "patterns": [
+        "48 83 EC ? 48 8B 44 24 ? 4C 8B D1"
+      ],
+      "description": "Innermost math sub-function"
+    },
+    {
+      "name": "TranslateString",
+      "rva": "0x11A9BA0",
+      "patterns": [
+        "40 53 48 83 EC ? 80 39 ? 48 8B C1 8B D1 74"
+      ],
+      "description": "Riot string translation"
+    },
+    {
+      "name": "UpdateCamera",
+      "rva": "0x2F89D0",
+      "patterns": [
+        "48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC"
+      ],
+      "description": "Synchronizes settings with camera"
+    },
+    {
+      "name": "WaypointCount",
+      "rva": "0x398B0",
+      "patterns": [
+        "8B 40 30"
+      ],
+      "description": "Waypoint count from NavPath"
+    },
+    {
+      "name": "WorldToScreen",
+      "rva": "0x13161A0",
+      "patterns": [
+        "48 83 EC ? F3 0F 10 02 48 8D 41 ? F3 0F 10 4A"
+      ],
+      "description": "World to screen projection"
+    },
+    {
+      "name": "fieldOfView",
+      "rva": "0x749A00",
+      "patterns": [
+        "48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00"
+      ],
+      "description": "Setting registration for camera FOV"
+    },
+    {
+      "name": "ClientMainLoop",
+      "rva": null,
+      "patterns": [
+        "48 83 EC 48 80 3D ? ? ? ? 00 48 89 5C 24 50"
+      ],
+      "description": "Frame update main loop"
+    },
+    {
+      "name": "OnWndProc",
+      "rva": null,
+      "patterns": [
+        "48 89 5C 24 18 55 56 57 48 8D 6C 24 B9 48 81 EC C0 00 00 00 48 8B 05 ? ? ? ?"
+      ],
+      "description": "Windows message procedure"
+    },
+    {
+      "name": "OnStopCast",
+      "rva": null,
+      "patterns": [
+        "40 53 56 57 48 83 EC 40 F3 0F 10 81 E4 00 00 00"
+      ],
+      "description": "Triggered when spell cast is cancelled"
+    },
+    {
+      "name": "OnPlayAnimation",
+      "rva": null,
+      "patterns": [
+        "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 20 48 8B 4B 18"
+      ],
+      "description": "AIBaseClient::OnPlayAnimation — PKT_S2C handler"
+    },
+    {
+      "name": "BuffManagerClient__OnBuffAdd",
+      "rva": null,
+      "patterns": [
+        "40 55 53 56 48 8D 6C 24 B9 48 81 EC E0 00 00 00 48 8B 01 48 8B F2"
+      ],
+      "description": "Core buff add function"
+    },
+    {
+      "name": "IssueOrderPacketWrapper",
+      "rva": null,
+      "patterns": [
+        "E8 ? ? ? ? 80 BD ? ? ? ? ? 74 ? 4C 8B 8D ? ? ? ? 4C 8B C7"
+      ],
+      "description": "Final packet-wrapper call inside IssueOrderCore"
+    }
+  ],
+  "structs": {
+    "GameObject": {
+      "description": "Base game object structure",
+      "base": null,
+      "fields": {
+        "oIndex": {
+          "offset": "0x20",
+          "type": "WORD",
+          "description": "Index in the EntityList",
+          "pattern": "0F B7 41 20",
+          "op": 1
+        },
+        "oNetId": {
+          "offset": "0x20",
+          "type": "DWORD",
+          "description": "Network ID (backward compat)"
+        },
+        "oTeamID": {
+          "offset": "0x259",
+          "type": "byte",
+          "description": "Team ID (100 Blue, 200 Red)",
+          "pattern": "0F B6 81 59 02 00 00",
+          "op": 1
+        },
+        "oName": {
+          "offset": "0x68",
+          "type": "std::string",
+          "description": "Internal object name"
+        },
+        "oNetworkID": {
+          "offset": "0xCC",
+          "type": "DWORD",
+          "description": "Unique global network ID",
+          "pattern": "8B 81 CC 00 00 00",
+          "op": 1
+        },
+        "oSourceNetworkId": {
+          "offset": "0xF4",
+          "type": "DWORD",
+          "description": "Source network ID (CreateClientEffect path)"
+        },
+        "oDead": {
+          "offset": "0x250",
+          "type": "bool",
+          "description": "Dead status"
+        },
+        "oEffectEmitterHandle": {
+          "offset": "0x258",
+          "type": "DWORD",
+          "description": "Effect emitter handle"
+        },
+        "oPosition": {
+          "offset": "0x25C",
+          "type": "Vector3",
+          "description": "World position",
+          "pattern": "F3 0F 10 81 5C 02 00 00",
+          "op": 1
+        },
+        "oDirection": {
+          "offset": "0x0",
+          "type": "float",
+          "description": "Direction"
+        },
+        "oVisibility": {
+          "offset": "0x2E0",
+          "type": "byte",
+          "description": "Visibility byte"
+        },
+        "oVisible": {
+          "offset": "0x308",
+          "type": "byte",
+          "description": "Visible status"
+        },
+        "oMissileClientHandle": {
+          "offset": "0x2D8",
+          "type": "DWORD",
+          "description": "Missile client handle"
+        },
+        "oTargetableComponent": {
+          "offset": "0x2A8",
+          "type": "pointer",
+          "description": "Targetable component"
+        },
+        "oPlayerStatsComponent": {
+          "offset": "0x2A8",
+          "type": "pointer",
+          "description": "Player stats component",
+          "pattern": "48 8B 81 A8 02 00 00",
+          "op": 1
+        },
+        "oIsTargetable": {
+          "offset": "0xED0",
+          "type": "byte",
+          "description": "AIBase targetable byte",
+          "pattern": "0F B6 83 ?? ?? ?? ?? 48 83 C4 20 5B C3",
+          "op": 1
+        },
+        "oTargetableState": {
+          "offset": "0xEF8",
+          "type": "DWORD",
+          "description": "Targetable state (enum)",
+          "pattern": "49 8D 9D ?? ?? ?? ?? C6 44 24 20 00 4C 8B C3",
+          "op": 1
+        },
+        "oRadius": {
+          "offset": "0x6F8",
+          "type": "float",
+          "description": "Bounding / collision radius"
+        },
+        "oModelScaleComponent": {
+          "offset": "0x2C88",
+          "type": "pointer",
+          "description": "Model scale component",
+          "pattern": "48 8B B9 ?? ?? ?? ?? C7 44 24 30 00 00 00 00",
+          "op": 1
+        },
+        "oAIManager": {
+          "offset": "0x4070",
+          "type": "pointer",
+          "description": "AIManager pointer",
+          "pattern": "48 8B 89 ?? ?? ?? ?? 48 85 C9 74 21 FF 81",
+          "op": 1
+        },
+        "oCharacterData": {
+          "offset": "0x4078",
+          "type": "pointer",
+          "description": "Character data pointer",
+          "pattern": "48 8B 8B ?? ?? ?? ?? 48 85 C9 74 05 E8 ?? ?? ?? ?? 48 8B 8B 70 40 00 00",
+          "op": 1
+        },
+        "oSpellBook": {
+          "offset": "0x3128",
+          "type": "pointer",
+          "description": "SpellBook pointer",
+          "pattern": "49 8D B5 ?? ?? ?? ?? 48 89 00 48 89 40 08 48 89 40 10",
+          "op": 1
+        },
+        "oCharacterName": {
+          "offset": "0x4370",
+          "type": "std::string",
+          "description": "Character/champion name",
+          "pattern": "48 8D B9 ?? ?? ?? ?? 48 83 7F 18 0F",
+          "op": 1
+        },
+        "oItemList": {
+          "offset": "0x4490",
+          "type": "pointer",
+          "description": "Inventory item list",
+          "pattern": "48 8B 81 ?? ?? ?? ?? 4C 8B F1 0F 29 74 24",
+          "op": 1
+        },
+        "oCharacterDataStack": {
+          "offset": "0x1288",
+          "type": "pointer",
+          "description": "Character data stack component"
+        },
+        "OFF_POS_X": {
+          "offset": "0x25C",
+          "type": "float",
+          "description": "Position.X — IDA confirmed via distance fn"
+        },
+        "OFF_POS_Y": {
+          "offset": "0x260",
+          "type": "float",
+          "description": "Position.Y"
+        },
+        "OFF_POS_Z": {
+          "offset": "0x264",
+          "type": "float",
+          "description": "Position.Z"
+        },
+        "OFF_VISIBLE_0": {
+          "offset": "0x168",
+          "type": "bool",
+          "description": "Primary visibility — cmp [rcx+168h],0"
+        },
+        "OFF_VISIBLE_FOG": {
+          "offset": "0x169",
+          "type": "bool",
+          "description": "Fog-of-war bit (0 = visible)"
+        },
+        "OFF_VISIBLE_ALT": {
+          "offset": "0x16A",
+          "type": "bool",
+          "description": "Alternate visibility source"
+        },
+        "OFF_HP": {
+          "offset": "0x1080",
+          "type": "float",
+          "description": "Current health"
+        },
+        "OFF_HP_MAX": {
+          "offset": "0x10A8",
+          "type": "float",
+          "description": "Max health"
+        },
+        "OFF_MANA": {
+          "offset": "0x360",
+          "type": "float",
+          "description": "Current mana/resource"
+        },
+        "OFF_MANA_MAX": {
+          "offset": "0x388",
+          "type": "float",
+          "description": "Max mana/resource"
+        },
+        "OFF_MANA_ENABLED": {
+          "offset": "0x3B0",
+          "type": "bool",
+          "description": "Primary resource enabled"
+        },
+        "OFF_LEVEL": {
+          "offset": "0x4D58",
+          "type": "int",
+          "description": "Champion level (mLevelRef)"
+        },
+        "OFF_MOVE_SPEED": {
+          "offset": "0x5000",
+          "type": "float",
+          "description": "Movement speed"
+        },
+        "OFF_ARMOR": {
+          "offset": "0x4F38",
+          "type": "float",
+          "description": "Physical defense (armor)"
+        },
+        "OFF_MAGIC_RES": {
+          "offset": "0x4CB8",
+          "type": "float",
+          "description": "Magic resistance"
+        },
+        "OFF_ALL_SHIELD": {
+          "offset": "0x1120",
+          "type": "float",
+          "description": "Total shield"
+        },
+        "OFF_PHYS_SHIELD": {
+          "offset": "0x1148",
+          "type": "float",
+          "description": "Physical damage shield"
+        },
+        "OFF_MAG_SHIELD": {
+          "offset": "0x1170",
+          "type": "float",
+          "description": "Magical damage shield"
+        },
+        "OFF_AS_MULTIPLIER": {
+          "offset": "0x17B0",
+          "type": "float",
+          "description": "Attack speed multiplier"
+        },
+        "OFF_ATK_RANGE": {
+          "offset": "0x17FC",
+          "type": "float",
+          "description": "Attack range"
+        },
+        "OFF_BOUNDING_RADIUS": {
+          "offset": "0x6F8",
+          "type": "float",
+          "description": "Bounding / collision radius"
+        },
+        "OFF_SPELLBOOK": {
+          "offset": "0x3128",
+          "type": "QWORD*",
+          "description": "SpellBook pointer"
+        },
+        "OFF_AIMANAGER_PTR": {
+          "offset": "0x4070",
+          "type": "QWORD*",
+          "description": "AIManager ptr — cmp qword ptr [rcx+4070h],0"
+        },
+        "OFF_HEROCLIENT_PTR": {
+          "offset": "0x4230",
+          "type": "QWORD*",
+          "description": "HeroInventoryClient wrapper (NOT AIManager)"
+        }
+      }
+    },
+    "AIBaseClient": {
+      "description": "AI base client structure (inherits from GameObject)",
+      "base": "GameObject",
+      "fields": {
+        "oCombatStats": {
+          "offset": "0x4428",
+          "type": "pointer",
+          "description": "Combat stats sub-structure",
+          "pattern": "4C 8D 8F ?? ?? ?? ?? 41 0F B6 51 15 45 33 C0",
+          "op": 1
+        },
+        "oModelInstance": {
+          "offset": "0x44D8",
+          "type": "pointer",
+          "description": "Model instance",
+          "pattern": "48 8D 93 ?? ?? 00 00 48 8B 08",
+          "op": 1
+        },
+        "oCharacterDataStack": {
+          "offset": "0x1288",
+          "type": "pointer",
+          "description": "Character data stack component",
+          "pattern": "48 8D 8B ?? ?? ?? ?? 48 8B 01 48 8D 54 24",
+          "op": 1
+        },
+        "oBuffManager": {
+          "offset": "0x2E78",
+          "type": "pointer",
+          "description": "Active Buff list pointer",
+          "pattern": "48 8D 8B ?? ?? ?? ?? E8 ?? ?? ?? ?? 39 AB ?? ?? ?? ?? 7C",
+          "op": 1
+        },
+        "oFacing": {
+          "offset": "0x1C0",
+          "type": "Vector3",
+          "description": "Look / facing direction vector"
+        },
+        "oPetOwner": {
+          "offset": "0x4D18",
+          "type": "pointer",
+          "description": "Pet owner",
+          "pattern": "8B 99 ?? ?? ?? ?? 48 8B F9 85 DB 74 2A",
+          "op": 1
+        },
+        "oHeroInventoryClient": {
+          "offset": "0x4230",
+          "type": "pointer",
+          "description": "Hero inventory client",
+          "pattern": "48 8D 93 ?? ?? ?? ?? 48 8B CD 0F B6 42",
+          "op": 1
+        },
+        "SkinId": {
+          "offset": "0x1334",
+          "type": "int",
+          "description": "Skin ID",
+          "pattern": "88 86 ?? ?? 00 00 48 89 45 ?? 0F B6 45 A8 88 86 ?? 13",
+          "op": 0
+        },
+        "CharacterData": {
+          "offset": "0x4108",
+          "type": "pointer",
+          "description": "Character data",
+          "pattern": "48 8D 8D ?? ?? 00 00 44 8B 8C 24 ?? 00 00 00 45 8B C7",
+          "op": 1
+        },
+        "oCharacterDataStackBase": {
+          "offset": "0x2C88",
+          "type": "pointer",
+          "description": "Character data stack base",
+          "pattern": "48 8D 81 88 2C 00 00",
+          "op": 1
+        }
+      }
+    },
+    "CombatStats": {
+      "description": "Combat stats sub-structure. Relative to [AIBaseClient + 0x4428]",
+      "base": "0x4428",
+      "fields": {
+        "mFlatAPMod": {
+          "offset": "0x1C",
+          "type": "float",
+          "description": "Ability Power (Flat)",
+          "pattern": "F3 0F 10 41 1C",
+          "op": 1
+        },
+        "mBaseAD": {
+          "offset": "0x24",
+          "type": "float",
+          "description": "Base Attack Damage",
+          "pattern": "F3 0F 10 41 24",
+          "op": 1
+        },
+        "mLevel": {
+          "offset": "0x28",
+          "type": "int",
+          "description": "Champion Level",
+          "pattern": "8B 41 28",
+          "op": 1
+        },
+        "mAttackRange": {
+          "offset": "0x5C",
+          "type": "float",
+          "description": "Basic Attack Range",
+          "pattern": "F3 0F 10 41 5C",
+          "op": 1
+        },
+        "mArmor": {
+          "offset": "0x118",
+          "type": "float",
+          "description": "Total Armor",
+          "pattern": "F3 0F 10 81 18 01 00 00",
+          "op": 1
+        },
+        "mBonusArmor": {
+          "offset": "0x174",
+          "type": "float",
+          "description": "Bonus Armor",
+          "pattern": "F3 0F 10 81 74 01 00 00",
+          "op": 1
+        },
+        "mSpellBlock": {
+          "offset": "0x180",
+          "type": "float",
+          "description": "Magic Resist",
+          "pattern": "F3 0F 10 81 80 01 00 00",
+          "op": 1
+        },
+        "mAttackSpeedMod": {
+          "offset": "0x1A8",
+          "type": "float",
+          "description": "Attack Speed Multiplier",
+          "pattern": "F3 0F 10 81 A8 01 00 00",
+          "op": 1
+        },
+        "mCrit": {
+          "offset": "0x1C8",
+          "type": "float",
+          "description": "Critical Strike Chance",
+          "pattern": "F3 0F 10 81 C8 01 00 00",
+          "op": 1
+        },
+        "mFlatADMod": {
+          "offset": "0x1DC",
+          "type": "float",
+          "description": "Bonus Attack Damage (Flat)",
+          "pattern": "F3 0F 10 81 DC 01 00 00",
+          "op": 1
+        },
+        "mBonusSpellBlock": {
+          "offset": "0x200",
+          "type": "float",
+          "description": "Bonus Magic Resist",
+          "pattern": "F3 0F 10 81 00 02 00 00",
+          "op": 1
+        },
+        "mCombatType": {
+          "offset": "0x204",
+          "type": "int",
+          "description": "Ranged (2) / Melee (1)",
+          "pattern": "8B 81 04 02 00 00",
+          "op": 1
+        },
+        "mMoveSpeed": {
+          "offset": "0x24C",
+          "type": "float",
+          "description": "Movement Speed",
+          "pattern": "F3 0F 10 81 4C 02 00 00",
+          "op": 1
+        },
+        "oBuffManager": {
+          "offset": "0x2E78",
+          "type": "pointer",
+          "description": "Active Buff list pointer"
+        },
+        "oFacing": {
+          "offset": "0x1C0",
+          "type": "Vector3",
+          "description": "Look / facing direction vector"
+        }
+      }
+    },
+    "MissileClient": {
+      "description": "Missile/projectile client structure",
+      "base": "GameObject",
+      "fields": {
+        "CasterNetID": {
+          "offset": "0x30",
+          "type": "DWORD",
+          "description": "Network ID of the unit that fired the missile",
+          "pattern": "8B 41 30"
+        },
+        "TargetNetID": {
+          "offset": "0x34",
+          "type": "DWORD",
+          "description": "Network ID of the target unit (if targeted)",
+          "pattern": "8B 41 34"
+        },
+        "StartPos": {
+          "offset": "0x24",
+          "type": "Vector3",
+          "description": "Starting position of the missile",
+          "pattern": "F3 0F 10 41 24"
+        },
+        "EndPos": {
+          "offset": "0x30",
+          "type": "Vector3",
+          "description": "Destination position",
+          "pattern": "F3 0F 10 41 30"
+        },
+        "Speed": {
+          "offset": "0x410",
+          "type": "float",
+          "description": "Travel speed",
+          "pattern": "F3 0F 10 81 10 04 00 00"
+        },
+        "CurrentPos": {
+          "offset": "0x25C",
+          "type": "Vector3",
+          "description": "Inherited from GameObject"
+        },
+        "oCasterNetID": {
+          "offset": "0x30",
+          "type": "",
+          "description": "",
+          "pattern": "8B 41 30",
+          "op": 1
+        },
+        "oTargetNetID": {
+          "offset": "0x34",
+          "type": "",
+          "description": "",
+          "pattern": "8B 41 34",
+          "op": 1
+        },
+        "oStartPos": {
+          "offset": "0x24",
+          "type": "",
+          "description": "",
+          "pattern": "F3 0F 10 41 24",
+          "op": 1
+        },
+        "oEndPos": {
+          "offset": "0x30",
+          "type": "",
+          "description": "",
+          "pattern": "F3 0F 10 41 30",
+          "op": 1
+        },
+        "oSpeed": {
+          "offset": "0x0",
+          "type": "",
+          "description": "",
+          "pattern": "F3 0F 10 81 10 04 00 00",
+          "op": 1
+        }
+      }
+    },
+    "SpellSlot": {
+      "description": "Individual spell slot within SpellBook",
+      "fields": {
+        "oLevel": {
+          "offset": "0x28",
+          "type": "int",
+          "description": "Spell level",
+          "pattern": "8B 41 28",
+          "op": 1
+        },
+        "oCooldown": {
+          "offset": "0x30",
+          "type": "float",
+          "description": "Current cooldown",
+          "pattern": "F3 0F 10 41 30",
+          "op": 1
+        },
+        "oCharges": {
+          "offset": "0x64",
+          "type": "int",
+          "description": "Number of charges",
+          "pattern": "8B 41 64",
+          "op": 1
+        },
+        "oChargeCooldown": {
+          "offset": "0x68",
+          "type": "float",
+          "description": "Charge cooldown",
+          "pattern": "F3 0F 10 41 68",
+          "op": 1
+        },
+        "oChargeLevel": {
+          "offset": "0x6C",
+          "type": "int",
+          "description": "Charge level"
+        },
+        "oChargeStartTime": {
+          "offset": "0x74",
+          "type": "float",
+          "description": "Charge start time"
+        }
+      }
+    },
+    "SpellBook": {
+      "description": "Spell book structure",
+      "fields": {
+        "oActiveSpellCast": {
+          "offset": "0xAD8",
+          "type": "pointer",
+          "description": "Active spell cast info",
+          "pattern": "48 8B 81 D8 0A 00 00",
+          "op": 1
+        },
+        "oSpellSlots": {
+          "offset": "0xAE0",
+          "type": "pointer",
+          "description": "Spell slot pointer array [64]",
+          "pattern": "48 8B 81 E0 0A 00 00",
+          "op": 1
+        },
+        "OFF_SB_DELAY_PCT": {
+          "offset": "0x308",
+          "type": "float",
+          "description": "Delay percent in SpellSlot"
+        }
+      }
+    },
+    "AIManager": {
+      "description": "AI manager for movement/pathfinding",
+      "fields": {
+        "oServerPos": {
+          "offset": "0x8",
+          "type": "Vector3",
+          "description": "Server position",
+          "pattern": "F3 0F 10 41 08",
+          "op": 1
+        },
+        "oVelocity": {
+          "offset": "0x18",
+          "type": "Vector3",
+          "description": "Velocity",
+          "pattern": "F3 0F 10 41 18",
+          "op": 1
+        },
+        "oTargetPosition": {
+          "offset": "0x24",
+          "type": "Vector3",
+          "description": "Target position",
+          "pattern": "F3 0F 10 41 24",
+          "op": 1
+        },
+        "oNavPath": {
+          "offset": "0x40",
+          "type": "pointer",
+          "description": "Nav path",
+          "pattern": "48 8B 41 40",
+          "op": 1
+        }
+      }
+    },
+    "CameraData": {
+      "description": "Camera data (non-HudInstance based)",
+      "fields": {
+        "oCamPos": {
+          "offset": "0x8",
+          "type": "Vector3",
+          "description": "Camera position",
+          "pattern": "F3 0F 10 40 08",
+          "op": 1
+        },
+        "oCamRotation": {
+          "offset": "0x18",
+          "type": "Vector3",
+          "description": "Camera rotation",
+          "pattern": "F3 0F 10 40 18",
+          "op": 1
+        },
+        "oCamAttached": {
+          "offset": "0x28",
+          "type": "bool",
+          "description": "Is camera attached",
+          "pattern": "80 78 28 00",
+          "op": 0
+        },
+        "oCamMoveSpeed": {
+          "offset": "0x2C",
+          "type": "float",
+          "description": "Camera move speed",
+          "pattern": "F3 0F 10 40 2C",
+          "op": 1
+        },
+        "oFieldOfView": {
+          "offset": "0x3C",
+          "type": "float",
+          "description": "Field of view",
+          "pattern": "F3 0F 10 40 3C",
+          "op": 1
+        },
+        "oNearClip": {
+          "offset": "0x44",
+          "type": "float",
+          "description": "Near clip plane",
+          "pattern": "F3 0F 10 40 44",
+          "op": 1
+        },
+        "oFarClip": {
+          "offset": "0x4C",
+          "type": "float",
+          "description": "Far clip plane",
+          "pattern": "F3 0F 10 40 4C",
+          "op": 1
+        },
+        "oFogOfWar": {
+          "offset": "0x5A",
+          "type": "byte",
+          "description": "Fog of war",
+          "pattern": "0F B6 40 5A",
+          "op": 1
+        }
+      }
+    },
+    "CharacterData": {
+      "description": "Character data structure",
+      "fields": {
+        "oSkinID": {
+          "offset": "0x14",
+          "type": "int",
+          "description": "Skin ID"
+        },
+        "OFF_CHARDATA_CAST_TIME": {
+          "offset": "0x9C4",
+          "type": "float",
+          "description": "Base cast time"
+        },
+        "OFF_CHARDATA_DELAY_SCALE": {
+          "offset": "0x9C8",
+          "type": "float",
+          "description": "Delay scale factor"
+        }
+      }
+    },
+    "SpellData": {
+      "description": "Spell data structure",
+      "fields": {
+        "oName": {
+          "offset": "0x28",
+          "type": "std::string",
+          "description": "Spell name",
+          "pattern": "48 8B 41 28",
+          "op": 1
+        }
+      }
+    },
+    "SpellDataResource": {
+      "description": "Spell data resource",
+      "fields": {
+        "oMissileSpeed": {
+          "offset": "0x408",
+          "type": "float",
+          "description": "Missile travel speed",
+          "pattern": "F3 0F 10 80 ?? ?? ?? ?? F3 0F 58 83",
+          "op": 1
+        }
+      }
+    },
+    "SkinResource": {
+      "description": "Skin resource",
+      "fields": {
+        "skin_id": {
+          "offset": "0x0",
+          "type": "int",
+          "description": "Skin ID"
+        },
+        "skin_name": {
+          "offset": "0x8",
+          "type": "std::string",
+          "description": "Skin name"
+        }
+      }
+    },
+    "ChampionManager": {
+      "description": "Champion manager",
+      "fields": {
+        "champions": {
+          "offset": "0x18",
+          "type": "pointer",
+          "description": "Champion pointer array"
+        }
+      }
+    },
+    "ChampionResource": {
+      "description": "Champion resource",
+      "fields": {
+        "skins": {
+          "offset": "0xC8",
+          "type": "pointer",
+          "description": "Skins array"
+        }
+      }
+    },
+    "HeroManager": {
+      "description": "Hero/champion manager",
+      "fields": {
+        "OFF_HEROMGR_LIST": {
+          "offset": "0x8",
+          "type": "QWORD*",
+          "description": "Pointer to champion pointer array"
+        },
+        "OFF_HEROMGR_COUNT": {
+          "offset": "0x10",
+          "type": "uint32",
+          "description": "Number of champions"
+        }
+      }
+    },
+    "NavGrid": {
+      "description": "Navigation grid data",
+      "fields": {
+        "OFF_NAV_WIDTH": {
+          "offset": "0x710",
+          "type": "int",
+          "description": "Map width in cells"
+        },
+        "OFF_NAV_HEIGHT": {
+          "offset": "0x714",
+          "type": "int",
+          "description": "Map height in cells"
+        },
+        "OFF_NAV_ORIGIN": {
+          "offset": "0xF4",
+          "type": "Vec3",
+          "description": "Grid origin world position"
+        },
+        "OFF_NAV_CELLSIZE": {
+          "offset": "0x71C",
+          "type": "float",
+          "description": "Cell size (inverse)"
+        },
+        "OFF_NAV_DATA": {
+          "offset": "0x118",
+          "type": "QWORD*",
+          "description": "Cell data array (stride 0x10)"
+        }
+      }
+    },
+    "SpellCastInfo": {
+      "description": "Spell cast info hashmap structure",
+      "fields": {
+        "HASHMAP_OFF_SENTINEL": {
+          "offset": "0x70",
+          "type": "QWORD*",
+          "description": "End-of-list sentinel node ptr"
+        },
+        "HASHMAP_OFF_BUCKETS": {
+          "offset": "0x80",
+          "type": "QWORD*",
+          "description": "Bucket array pointer"
+        },
+        "HASHMAP_OFF_MASK": {
+          "offset": "0x98",
+          "type": "QWORD",
+          "description": "Bucket count mask (count-1)"
+        },
+        "NODE_OFF_NEXT": {
+          "offset": "0x8",
+          "type": "QWORD*",
+          "description": "Next node in bucket chain"
+        },
+        "NODE_OFF_KEY_STR": {
+          "offset": "0x10",
+          "type": "QWORD*",
+          "description": "Pointer to key string"
+        },
+        "NODE_OFF_KEY_HASH": {
+          "offset": "0x18",
+          "type": "DWORD",
+          "description": "Hash seed"
+        },
+        "NODE_OFF_VALUE": {
+          "offset": "0x20",
+          "type": "QWORD*",
+          "description": "SpellCastInfo object pointer"
+        }
+      }
+    },
+    "TimingPing": {
+      "description": "GetPing timing tree structure",
+      "fields": {
+        "OFF_A1_CONN_SLOT": {
+          "offset": "0x423",
+          "type": "uint8",
+          "description": "NetClient connection slot index"
+        },
+        "OFF_A1_TREE_LINK": {
+          "offset": "0x0C8",
+          "type": "QWORD*",
+          "description": "Timing tree root pointer"
+        },
+        "OFF_NODE_NEXT_LEFT": {
+          "offset": "0x000",
+          "type": "QWORD*",
+          "description": "Skip-list: follow when key >= target"
+        },
+        "OFF_NODE_NEXT_RIGHT": {
+          "offset": "0x010",
+          "type": "QWORD*",
+          "description": "Skip-list: follow when key < target"
+        },
+        "OFF_NODE_END_FLAG": {
+          "offset": "0x019",
+          "type": "uint8",
+          "description": "Non-zero = sentinel/end"
+        },
+        "OFF_NODE_KEY": {
+          "offset": "0x020",
+          "type": "QWORD",
+          "description": "Send-timestamp key"
+        },
+        "OFF_NODE_DATA": {
+          "offset": "0x028",
+          "type": "QWORD*",
+          "description": "Data region base (node+40)"
+        },
+        "OFF_DATA_RTT_A": {
+          "offset": "328",
+          "type": "double",
+          "description": "Recv-side RTT component"
+        },
+        "OFF_DATA_RTT_B": {
+          "offset": "344",
+          "type": "double",
+          "description": "Send-side RTT component"
+        },
+        "TIMING_STRIDE_QWORDS": {
+          "offset": "33",
+          "type": "int",
+          "description": "QWORDs per timing-table slot"
+        }
+      }
+    }
+  },
+  "camera": {
+    "description": "Camera / Viewport offsets (HudInstance + 0x18 based)",
+    "fields": {
+      "Position": {
+        "offset": "0x25C",
+        "type": "Vector3",
+        "description": "Camera World Position"
+      },
+      "Rotation": {
+        "offset": "0x18",
+        "type": "Vector3",
+        "description": "Camera Rotation (Yaw, Pitch, Roll)"
+      },
+      "fieldOfView": {
+        "offset": "0x749A00",
+        "type": "float",
+        "description": "Camera Field of View in degrees"
+      },
+      "nearClip": {
+        "offset": "0x44",
+        "type": "float",
+        "description": "Near clipping plane"
+      },
+      "farClip": {
+        "offset": "0x4C",
+        "type": "float",
+        "description": "Far clipping plane"
+      },
+      "OFF_VIEW_MTX": {
+        "offset": "0x1E4",
+        "type": "float[16]",
+        "description": "View / rotation matrix"
+      },
+      "OFF_PROJ_MTX": {
+        "offset": "0x224",
+        "type": "float[16]",
+        "description": "Projection matrix"
+      },
+      "camMgr_to_camEnt": {
+        "offset": "0x2F8",
+        "type": "QWORD*",
+        "description": "Camera entity pointer"
+      },
+      "camMgr_to_viewport": {
+        "offset": "0x300",
+        "type": "int[4]",
+        "description": "Left/Top/Right/Bottom"
+      },
+      "OFF_CAM_POS": {
+        "offset": "0x10",
+        "type": "Vector3",
+        "description": "Camera position (direct)"
+      },
+      "OFF_CAM_ROT": {
+        "offset": "0x40",
+        "type": "Vector3",
+        "description": "Camera rotation (direct)"
+      },
+      "OFF_CAM_FOV": {
+        "offset": "0x1DC",
+        "type": "float",
+        "description": "Field of View (direct)"
+      },
+      "OFF_CAM_NEAR_CLIP": {
+        "offset": "0x1F4",
+        "type": "float",
+        "description": "Near Camera Clip"
+      },
+      "OFF_CAM_FAR_CLIP": {
+        "offset": "0x1F8",
+        "type": "float",
+        "description": "Far Camera Clip"
+      }
+    }
+  },
+  "tft": {
+    "description": "TFT-specific offsets. May not be accurate — not checked recently.",
+    "fields": {
+      "OFF_TFT_ENTITY_SIZE": {
+        "offset": "0x1D8",
+        "type": "int",
+        "description": "Bytes per player entry in EntityList"
+      },
+      "OFF_TFT_GOLD": {
+        "offset": "0x2830",
+        "type": "float",
+        "description": "Player gold"
+      },
+      "OFF_TFT_EXP": {
+        "offset": "0x4CE8",
+        "type": "float",
+        "description": "Player XP"
+      },
+      "OFF_TFT_LEVEL": {
+        "offset": "0x4D10",
+        "type": "int",
+        "description": "Player level"
+      }
+    }
+  },
+  "misc": {
+    "EntityList_stride": {
+      "offset": "472",
+      "type": "int",
+      "description": "imul reg, 472 — entity slot multiply"
+    },
+    "SPELLSLOT_MAX_IDX": {
+      "offset": "63",
+      "type": "int",
+      "description": "Max valid slot index"
+    }
+  }
+}
