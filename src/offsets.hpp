@@ -31,6 +31,12 @@ namespace Offsets {
         constexpr uintptr_t ZoomAnomalyLatch = 0x1F187E4;
         constexpr uintptr_t r3dRenderLayer = 0x1F7AA08;
         constexpr uintptr_t r3dRenderer = 0x1F7CD08;
+        constexpr uintptr_t g_thread_device = 0x1F7AA18;
+        constexpr uintptr_t g_current_x3d_device_override = 0x1F7B178;
+        constexpr uintptr_t g_x3d_d3d11_backend = 0x1F7AA38;
+        constexpr uintptr_t g_d3dcompiler47_module = 0x1F7B1F0;
+        constexpr uintptr_t g_D3DReflect = 0x1F7B1F8;
+        constexpr uintptr_t X3DDeviceD3D11_vtable = 0x1B00890;
     }
 
     namespace Functions {
@@ -96,6 +102,31 @@ namespace Offsets {
         constexpr uintptr_t WaypointCount = 0x398B0;
         constexpr uintptr_t WorldToScreen = 0x13161A0;
         constexpr uintptr_t fieldOfView = 0x749A00;
+        constexpr uintptr_t GetThreadDevice = 0x13BA550;
+        constexpr uintptr_t X3DDeviceD3D11_Initialize = 0x13A7BF0;
+        constexpr uintptr_t X3DDeviceD3D11_Release = 0x13AAC40;
+        constexpr uintptr_t ConstantBuffer_CreateD3D11DynamicBuffer = 0x13A7AA0;
+        constexpr uintptr_t D3D11TextureView_CreateShaderResourceView = 0x13A8520;
+        constexpr uintptr_t DX11Backend_CreateDeviceAndSwapChain = 0x13B9860;
+        constexpr uintptr_t GraphicsPipelineD3D11_InitFromDesc = 0x13B8D40;
+        constexpr uintptr_t X3DDeviceD3D11_SetGraphicsPipeline = 0x13ADFF0;
+        constexpr uintptr_t X3DDeviceD3D11_CreateGraphicsPipeline = 0x13B05C0;
+        constexpr uintptr_t X3DDeviceD3D11_CreateVertexBuffer = 0x13B4190;
+        constexpr uintptr_t X3DDeviceD3D11_CreateIndexBuffer = 0x13B1240;
+        constexpr uintptr_t X3DDeviceD3D11_CreateDataBuffer = 0x13B02D0;
+        constexpr uintptr_t X3DDeviceD3D11_CreateTexture2D = 0x13B3510;
+        constexpr uintptr_t X3DDeviceD3D11_CreateVertexProgram = 0x13B19E0;
+        constexpr uintptr_t X3DDeviceD3D11_CreatePixelProgram = 0x13B1810;
+        constexpr uintptr_t X3DDeviceD3D11_CreateShaderProgram = 0x13B21B0;
+        constexpr uintptr_t X3DDeviceD3D11_ClearFramebuffer = 0x13AF110;
+        constexpr uintptr_t X3DDeviceD3D11_BeginFrame = 0x13AC670;
+        constexpr uintptr_t X3DDeviceD3D11_EndFrame = 0x13B5A20;
+        constexpr uintptr_t X3DDeviceD3D11_BeginRenderPass = 0x13AC750;
+        constexpr uintptr_t X3DDeviceD3D11_EndRenderPass = 0x13B5A60;
+        constexpr uintptr_t X3DDeviceD3D11_IsRenderPassActive = 0x13BA560;
+        constexpr uintptr_t X3DDeviceD3D11_IsFrameActive = 0x13BA6C0;
+        constexpr uintptr_t X3DDeviceD3D11_Draw = 0x13BC7A0;
+        constexpr uintptr_t X3DDeviceD3D11_DrawIndexed = 0x13BC870;
     }
 
     namespace Reflections {
@@ -516,6 +547,39 @@ namespace Offsets {
         namespace HeroManager {
             constexpr uintptr_t OFF_HEROMGR_LIST = 0x8;
             constexpr uintptr_t OFF_HEROMGR_COUNT = 0x10;
+        }
+        namespace X3DDeviceD3D11 {
+            constexpr uintptr_t vtable = 0x0;
+            constexpr uintptr_t device = 0x1E0;
+            constexpr uintptr_t feature_level = 0x1E8;
+            constexpr uintptr_t adapter = 0x210;
+            constexpr uintptr_t swapchain = 0x218;
+            constexpr uintptr_t swapchain_desc = 0x240;
+            constexpr uintptr_t width = 0x2A8;
+            constexpr uintptr_t height = 0x2AC;
+            constexpr uintptr_t context = 0x2B0;
+            constexpr uintptr_t active_pipeline = 0x728;
+        }
+        namespace X3DDeviceD3D11Vtable {
+            constexpr uintptr_t Release = 0x0;
+            constexpr uintptr_t SetGraphicsPipeline = 0x58;
+            constexpr uintptr_t CreateGraphicsPipeline = 0x60;
+            constexpr uintptr_t CreateVertexBuffer = 0x88;
+            constexpr uintptr_t CreateIndexBuffer = 0x98;
+            constexpr uintptr_t CreateDataBuffer = 0xB8;
+            constexpr uintptr_t CreateTexture2D = 0xC8;
+            constexpr uintptr_t CreateVertexProgram = 0x100;
+            constexpr uintptr_t CreatePixelProgram = 0x118;
+            constexpr uintptr_t CreateShaderProgram = 0x128;
+            constexpr uintptr_t ClearFramebuffer = 0x160;
+            constexpr uintptr_t BeginFrame = 0x180;
+            constexpr uintptr_t EndFrame = 0x188;
+            constexpr uintptr_t BeginRenderPass = 0x190;
+            constexpr uintptr_t EndRenderPass = 0x198;
+            constexpr uintptr_t IsRenderPassActive = 0x1A0;
+            constexpr uintptr_t IsFrameActive = 0x1A8;
+            constexpr uintptr_t Draw = 0x1C0;
+            constexpr uintptr_t DrawIndexed = 0x1C8;
         }
     }
 }
