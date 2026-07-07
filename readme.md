@@ -9,6 +9,9 @@
 
 Star For Support ⭐
 
+Update 7.07.26:
+I quit playing league can you tell me when game updates, open issue or contact me on discord.
+
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
 Ai used for formating, not for reversing.
 
