@@ -1130,7 +1130,7 @@
           "op": 1
         },
         "oCharacterDataStack": {
-          "offset": "0x1",
+          "offset": "0x1270",
           "type": "pointer",
           "description": "Character data stack component",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1241,7 +1241,7 @@
           "op": 1
         },
         "OFF_PHYS_SHIELD": {
-          "offset": "0x9",
+          "offset": "0x1148",
           "type": "float",
           "description": "Physical damage shield",
           "pattern": "F3 41 ?? ?? ?? ??",
@@ -1485,49 +1485,49 @@
           "op": 1
         },
         "AllShield": {
-          "offset": "0x2688",
+          "offset": "0x1120",
           "type": "",
           "description": "",
           "pattern": "48 8D 85 20 11 00 00 C7 ?? ?? ?? ??",
           "op": 1
         },
         "HP": {
-          "offset": "0x25E8",
+          "offset": "0x1080",
           "type": "",
           "description": "",
           "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
           "op": 0
         },
         "IsTargetable": {
-          "offset": "0x2438",
+          "offset": "0xED0",
           "type": "",
           "description": "",
           "pattern": "48 89 85 ?? ?? ?? ?? 48 8D 54 24 28",
           "op": 0
         },
         "MagicalShield": {
-          "offset": "0x26D8",
+          "offset": "0x1170",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 70 11 ?? ?? ?? ??",
           "op": 1
         },
         "MaxHP": {
-          "offset": "0x2638",
+          "offset": "0x10D0",
           "type": "",
           "description": "",
           "pattern": "FF 80 ?? 10 00 00",
           "op": 0
         },
         "PhysicalShield": {
-          "offset": "0x1571",
+          "offset": "0x1148",
           "type": "",
           "description": "",
           "pattern": "F3 41 ?? ?? ?? ??",
           "op": 1
         },
         "TargetableFlags": {
-          "offset": "0x2460",
+          "offset": "0xEF8",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
@@ -1555,7 +1555,7 @@
           "op": 1
         },
         "ActionStateBase": {
-          "offset": "0x29D8",
+          "offset": "0x1470",
           "type": "",
           "description": "",
           "pattern": "48 89 85 70 14 ?? ?? ?? ??",
@@ -1590,7 +1590,7 @@
           "op": 1
         },
         "CharacterDataStack": {
-          "offset": "0x1",
+          "offset": "0x4108",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1604,7 +1604,7 @@
           "op": 1
         },
         "CharacterState": {
-          "offset": "0x1569",
+          "offset": "0x14A0",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1618,7 +1618,7 @@
           "op": 1
         },
         "DirectionComponent": {
-          "offset": "0x1",
+          "offset": "0x1270",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1674,7 +1674,7 @@
           "op": 1
         },
         "Inventory": {
-          "offset": "0x1",
+          "offset": "0x4DC8",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1688,7 +1688,7 @@
           "op": 0
         },
         "IsTargetableToTeamFlags": {
-          "offset": "0x2460",
+          "offset": "0xEF8",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
           "op": 1
         },
