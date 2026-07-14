@@ -2,7 +2,7 @@
 #include <cstdint>
 
 namespace Offsets {
-    constexpr uintptr_t ImageBase = 0x7FF701D60000;
+    constexpr uintptr_t ImageBase = 0x7FF6E4860000;
 
     namespace Globals {
         constexpr uintptr_t BlueMinionManager = 0x1EA0240;
@@ -104,29 +104,31 @@ namespace Offsets {
         constexpr uintptr_t fieldOfView = 0x749A00;
         constexpr uintptr_t GetThreadDevice = 0x13BA550;
         constexpr uintptr_t X3DDeviceD3D11_Initialize = 0x13A7BF0;
-        constexpr uintptr_t X3DDeviceD3D11_Release = 0x13AAC40;
-        constexpr uintptr_t ConstantBuffer_CreateD3D11DynamicBuffer = 0x13A7AA0;
-        constexpr uintptr_t D3D11TextureView_CreateShaderResourceView = 0x13A8520;
-        constexpr uintptr_t DX11Backend_CreateDeviceAndSwapChain = 0x13B9860;
-        constexpr uintptr_t GraphicsPipelineD3D11_InitFromDesc = 0x13B8D40;
+        constexpr uintptr_t X3DDeviceD3D11_Release = 0x20E420;
+        constexpr uintptr_t ConstantBuffer_CreateD3D11DynamicBuffer = 0x3748C0;
+        constexpr uintptr_t D3D11TextureView_CreateShaderResourceView = 0x30A9D0;
+        constexpr uintptr_t DX11Backend_CreateDeviceAndSwapChain = 0x2309B0;
+        constexpr uintptr_t GraphicsPipelineD3D11_InitFromDesc = 0xBBB470;
         constexpr uintptr_t X3DDeviceD3D11_SetGraphicsPipeline = 0x13ADFF0;
         constexpr uintptr_t X3DDeviceD3D11_CreateGraphicsPipeline = 0x13B05C0;
-        constexpr uintptr_t X3DDeviceD3D11_CreateVertexBuffer = 0x13B4190;
-        constexpr uintptr_t X3DDeviceD3D11_CreateIndexBuffer = 0x13B1240;
+        constexpr uintptr_t X3DDeviceD3D11_CreateVertexBuffer = 0x4A7E80;
+        constexpr uintptr_t X3DDeviceD3D11_CreateIndexBuffer = 0x1ED9E0;
         constexpr uintptr_t X3DDeviceD3D11_CreateDataBuffer = 0x13B02D0;
-        constexpr uintptr_t X3DDeviceD3D11_CreateTexture2D = 0x13B3510;
+        constexpr uintptr_t X3DDeviceD3D11_CreateTexture2D = 0x838ED0;
         constexpr uintptr_t X3DDeviceD3D11_CreateVertexProgram = 0x13B19E0;
         constexpr uintptr_t X3DDeviceD3D11_CreatePixelProgram = 0x13B1810;
-        constexpr uintptr_t X3DDeviceD3D11_CreateShaderProgram = 0x13B21B0;
-        constexpr uintptr_t X3DDeviceD3D11_ClearFramebuffer = 0x13AF110;
+        constexpr uintptr_t X3DDeviceD3D11_CreateShaderProgram = 0x44F9F0;
+        constexpr uintptr_t X3DDeviceD3D11_ClearFramebuffer = 0xB4A820;
         constexpr uintptr_t X3DDeviceD3D11_BeginFrame = 0x13AC670;
-        constexpr uintptr_t X3DDeviceD3D11_EndFrame = 0x13B5A20;
+        constexpr uintptr_t X3DDeviceD3D11_EndFrame = 0xCAB3D0;
         constexpr uintptr_t X3DDeviceD3D11_BeginRenderPass = 0x13AC750;
         constexpr uintptr_t X3DDeviceD3D11_EndRenderPass = 0x13B5A60;
-        constexpr uintptr_t X3DDeviceD3D11_IsRenderPassActive = 0x13BA560;
-        constexpr uintptr_t X3DDeviceD3D11_IsFrameActive = 0x13BA6C0;
+        constexpr uintptr_t X3DDeviceD3D11_IsRenderPassActive = 0x284510;
+        constexpr uintptr_t X3DDeviceD3D11_IsFrameActive = 0x284510;
         constexpr uintptr_t X3DDeviceD3D11_Draw = 0x13BC7A0;
-        constexpr uintptr_t X3DDeviceD3D11_DrawIndexed = 0x13BC870;
+        constexpr uintptr_t X3DDeviceD3D11_DrawIndexed = 0x13BC7A0;
+        constexpr uintptr_t g_thread_device = 0x13BA550;
+        constexpr uintptr_t g_x3d_d3d11_backend = 0x13B8690;
     }
 
     namespace Reflections {
@@ -150,10 +152,10 @@ namespace Offsets {
             constexpr uintptr_t Level = 0x28;
             constexpr uintptr_t MaxStacks = 0x64;
             constexpr uintptr_t Owner = 0x8;
-            constexpr uintptr_t SlotType = 0x2F;
+            constexpr uintptr_t SlotType = 0x31;
             constexpr uintptr_t SpellInfo = 0x128;
             constexpr uintptr_t SpellInstanceVars = 0x108;
-            constexpr uintptr_t SpellNameHash = 0x110;
+            constexpr uintptr_t SpellNameHash = 0x120;
             constexpr uintptr_t Stacks = 0x5C;
             constexpr uintptr_t Vtable = 0x0;
         }
@@ -165,22 +167,22 @@ namespace Offsets {
             constexpr uintptr_t AiManager = 0x4230;
             constexpr uintptr_t CurrentSegment = 0x320;
             constexpr uintptr_t DashSpeed = 0x360;
-            constexpr uintptr_t IsDashing = 0x384;
+            constexpr uintptr_t IsDashing = 0xF0;
             constexpr uintptr_t IsMoving = 0x31C;
             constexpr uintptr_t MoveVec3 = 0x480;
             constexpr uintptr_t NavArray = 0x348;
             constexpr uintptr_t ObjectOffset = 0x4230;
             constexpr uintptr_t PathState = 0x320;
             constexpr uintptr_t SegmentsCount = 0x350;
-            constexpr uintptr_t ServerPos = 0x474;
+            constexpr uintptr_t ServerPos = 0x80;
             constexpr uintptr_t StartPath = 0x330;
-            constexpr uintptr_t TargetPos = 0x34;
+            constexpr uintptr_t TargetPos = 0x14;
             constexpr uintptr_t TargetPosition = 0x33C;
             constexpr uintptr_t Velocity = 0x318;
         }
         namespace CharacterData {
             constexpr uintptr_t oSkinID = 0x14;
-            constexpr uintptr_t OFF_CHARDATA_CAST_TIME = 0x9C4;
+            constexpr uintptr_t OFF_CHARDATA_CAST_TIME = 0x25C;
             constexpr uintptr_t OFF_CHARDATA_DELAY_SCALE = 0x9C8;
         }
         namespace MissileClient {
@@ -226,7 +228,7 @@ namespace Offsets {
         namespace AIBaseClient {
             constexpr uintptr_t oCombatStats = 0x4428;
             constexpr uintptr_t oModelInstance = 0x44D8;
-            constexpr uintptr_t oCharacterDataStack = 0x1288;
+            constexpr uintptr_t oCharacterDataStack = 0x1270;
             constexpr uintptr_t oBuffManager = 0x2E78;
             constexpr uintptr_t oFacing = 0x1C0;
             constexpr uintptr_t oPetOwner = 0x4D18;
@@ -293,6 +295,7 @@ namespace Offsets {
             constexpr uintptr_t MinimumGold = 0x28B8;
             constexpr uintptr_t SkillUpLevelDelta = 0x4D88;
             constexpr uintptr_t SpellTrainingPoints = 0x4D88;
+            constexpr uintptr_t AutobuildItemId = 0x57B0;
         }
         namespace GameObject {
             constexpr uintptr_t oIndex = 0x20;
@@ -319,7 +322,7 @@ namespace Offsets {
             constexpr uintptr_t oSpellBook = 0x3128;
             constexpr uintptr_t oCharacterName = 0x4370;
             constexpr uintptr_t oItemList = 0x4490;
-            constexpr uintptr_t oCharacterDataStack = 0x1288;
+            constexpr uintptr_t oCharacterDataStack = 0x1;
             constexpr uintptr_t OFF_POS_X = 0x25C;
             constexpr uintptr_t OFF_POS_Y = 0x260;
             constexpr uintptr_t OFF_POS_Z = 0x264;
@@ -327,7 +330,7 @@ namespace Offsets {
             constexpr uintptr_t OFF_VISIBLE_FOG = 0x169;
             constexpr uintptr_t OFF_VISIBLE_ALT = 0x16A;
             constexpr uintptr_t OFF_HP = 0x1080;
-            constexpr uintptr_t OFF_HP_MAX = 0x10A8;
+            constexpr uintptr_t OFF_HP_MAX = 0x10D0;
             constexpr uintptr_t OFF_MANA = 0x360;
             constexpr uintptr_t OFF_MANA_MAX = 0x388;
             constexpr uintptr_t OFF_MANA_ENABLED = 0x3B0;
@@ -336,101 +339,102 @@ namespace Offsets {
             constexpr uintptr_t OFF_ARMOR = 0x4F38;
             constexpr uintptr_t OFF_MAGIC_RES = 0x4CB8;
             constexpr uintptr_t OFF_ALL_SHIELD = 0x1120;
-            constexpr uintptr_t OFF_PHYS_SHIELD = 0x1148;
+            constexpr uintptr_t OFF_PHYS_SHIELD = 0x9;
             constexpr uintptr_t OFF_MAG_SHIELD = 0x1170;
-            constexpr uintptr_t OFF_AS_MULTIPLIER = 0x17B0;
-            constexpr uintptr_t OFF_ATK_RANGE = 0x17FC;
+            constexpr uintptr_t OFF_AS_MULTIPLIER = 0x80;
+            constexpr uintptr_t OFF_ATK_RANGE = 0x7;
             constexpr uintptr_t OFF_BOUNDING_RADIUS = 0x6F8;
             constexpr uintptr_t OFF_SPELLBOOK = 0x3128;
             constexpr uintptr_t OFF_AIMANAGER_PTR = 0x4070;
             constexpr uintptr_t OFF_HEROCLIENT_PTR = 0x4230;
-            constexpr uintptr_t AbilityHaste = 0x1BC0;
-            constexpr uintptr_t Armor = 0x2098;
-            constexpr uintptr_t AttackRange = 0x21D8;
-            constexpr uintptr_t AttackSpeedMod = 0x1E68;
+            constexpr uintptr_t AbilityHaste = 0x20B0;
+            constexpr uintptr_t Armor = 0x1C50;
+            constexpr uintptr_t AttackRange = 0x1569;
+            constexpr uintptr_t AttackSpeedMod = 0x156B;
             constexpr uintptr_t BaseAttackDamage = 0x1F08;
-            constexpr uintptr_t Crit = 0x2048;
-            constexpr uintptr_t CritDamageMultiplier = 0x1FD0;
-            constexpr uintptr_t FlatArmorPen = 0x2250;
-            constexpr uintptr_t FlatMagicPen = 0x2340;
-            constexpr uintptr_t FlatPhysicalDmgMod = 0x1D00;
+            constexpr uintptr_t Crit = 0x2030;
+            constexpr uintptr_t CritDamageMultiplier = 0x1A90;
+            constexpr uintptr_t FlatArmorPen = 0x1DD0;
+            constexpr uintptr_t FlatMagicPen = 0x1;
+            constexpr uintptr_t FlatPhysicalDmgMod = 0x1;
             constexpr uintptr_t HPRegenRate = 0x2138;
             constexpr uintptr_t MP = 0x360;
             constexpr uintptr_t MagicLethality = 0x2368;
             constexpr uintptr_t MaxMP = 0x388;
             constexpr uintptr_t MoveSpeed = 0x2188;
-            constexpr uintptr_t PercentArmorPen = 0x22A0;
-            constexpr uintptr_t PercentAttackSpeedMod = 0x1E90;
+            constexpr uintptr_t PercentArmorPen = 0x1;
+            constexpr uintptr_t PercentAttackSpeedMod = 0x156B;
             constexpr uintptr_t PercentBonusArmorPen = 0x22C8;
             constexpr uintptr_t PercentBonusMagicPen = 0x23B8;
-            constexpr uintptr_t PercentCCReduction = 0x24A8;
-            constexpr uintptr_t PercentLifeSteal = 0x23E0;
-            constexpr uintptr_t PercentMagicPen = 0x2390;
-            constexpr uintptr_t PercentOmnivamp = 0x2430;
+            constexpr uintptr_t PercentCCReduction = 0x25F0;
+            constexpr uintptr_t PercentLifeSteal = 0x23F0;
+            constexpr uintptr_t PercentMagicPen = 0x1D90;
+            constexpr uintptr_t PercentOmnivamp = 0x2330;
             constexpr uintptr_t PercentSpellVamp = 0x2408;
             constexpr uintptr_t PhysicalLethality = 0x2278;
             constexpr uintptr_t SpellBlock = 0x20E8;
             constexpr uintptr_t CharacterName = 0x4370;
             constexpr uintptr_t Name = 0x4370;
-            constexpr uintptr_t AllShield = 0x1120;
-            constexpr uintptr_t HP = 0x1080;
-            constexpr uintptr_t IsTargetable = 0xED0;
-            constexpr uintptr_t MagicalShield = 0x1170;
-            constexpr uintptr_t MaxHP = 0x10A8;
-            constexpr uintptr_t PhysicalShield = 0x1148;
-            constexpr uintptr_t TargetableFlags = 0xEF8;
-            constexpr uintptr_t AbilityPower = 0x1DA0;
-            constexpr uintptr_t ActionState = 0x14A0;
-            constexpr uintptr_t ActionState2 = 0x14C8;
-            constexpr uintptr_t ActionStateBase = 0x1470;
-            constexpr uintptr_t BonusAttackDamage = 0x1D00;
+            constexpr uintptr_t AllShield = 0x2688;
+            constexpr uintptr_t HP = 0x25E8;
+            constexpr uintptr_t IsTargetable = 0x2438;
+            constexpr uintptr_t MagicalShield = 0x26D8;
+            constexpr uintptr_t MaxHP = 0x2638;
+            constexpr uintptr_t PhysicalShield = 0x1571;
+            constexpr uintptr_t TargetableFlags = 0x2460;
+            constexpr uintptr_t AbilityPower = 0x1C70;
+            constexpr uintptr_t ActionState = 0x19F0;
+            constexpr uintptr_t ActionState2 = 0x25D0;
+            constexpr uintptr_t ActionStateBase = 0x29D8;
+            constexpr uintptr_t BonusAttackDamage = 0x1569;
             constexpr uintptr_t ChampionName = 0x6B8;
-            constexpr uintptr_t CharData = 0x4078;
+            constexpr uintptr_t CharData = 0x4058;
             constexpr uintptr_t CharacterActionState = 0x14C8;
-            constexpr uintptr_t CharacterDataStack = 0x4108;
-            constexpr uintptr_t CharacterIntermediate = 0x1B98;
-            constexpr uintptr_t CharacterState = 0x14A0;
-            constexpr uintptr_t CombatStatsBase = 0x1B98;
-            constexpr uintptr_t DirectionComponent = 0x1288;
+            constexpr uintptr_t CharacterDataStack = 0x1;
+            constexpr uintptr_t CharacterIntermediate = 0x1568;
+            constexpr uintptr_t CharacterState = 0x1569;
+            constexpr uintptr_t CombatStatsBase = 0x1568;
+            constexpr uintptr_t DirectionComponent = 0x1;
             constexpr uintptr_t DirectionVFunc = 0xA8;
             constexpr uintptr_t DirectionVector = 0x20;
-            constexpr uintptr_t EvolvePoints = 0x4C48;
-            constexpr uintptr_t FlatArmorPenetration = 0x2250;
-            constexpr uintptr_t FlatMagicPenetration = 0x2340;
+            constexpr uintptr_t EvolvePoints = 0x1E70;
+            constexpr uintptr_t FlatArmorPenetration = 0x1DD0;
+            constexpr uintptr_t FlatMagicPenetration = 0x1890;
             constexpr uintptr_t Health = 0x1080;
             constexpr uintptr_t Index = 0x20;
-            constexpr uintptr_t Inventory = 0x4DC8;
-            constexpr uintptr_t IsBotVFunc = 0x770;
-            constexpr uintptr_t IsTargetableToTeamFlags = 0xEF8;
+            constexpr uintptr_t Inventory = 0x1;
+            constexpr uintptr_t IsBotVFunc = 0x88;
+            constexpr uintptr_t IsTargetableToTeamFlags = 0x2460;
             constexpr uintptr_t IsVisible = 0x310;
             constexpr uintptr_t IsZombie = 0x3A;
             constexpr uintptr_t Mana = 0x360;
-            constexpr uintptr_t MaxHealth = 0x10A8;
+            constexpr uintptr_t MaxHealth = 0x10D0;
             constexpr uintptr_t MaxMana = 0x388;
             constexpr uintptr_t OverrideCollisionHeight = 0x88;
             constexpr uintptr_t OverrideCollisionRadius = 0x758;
-            constexpr uintptr_t PARRegenRate = 0x2548;
-            constexpr uintptr_t PARState = 0x428;
+            constexpr uintptr_t PARRegenRate = 0x1BF0;
+            constexpr uintptr_t PARState = 0x2050;
             constexpr uintptr_t PathfindingCollisionRadius = 0x758;
-            constexpr uintptr_t PathfindingRadiusMod = 0x2480;
-            constexpr uintptr_t PercentArmorPenetration = 0x22A0;
+            constexpr uintptr_t PathfindingRadiusMod = 0x1CB0;
+            constexpr uintptr_t PercentArmorPenetration = 0x1930;
             constexpr uintptr_t PercentBonusArmorPenetration = 0x22C8;
             constexpr uintptr_t PercentBonusMagicPenetration = 0x23B8;
-            constexpr uintptr_t PercentHealingAmountMod = 0x1EE0;
-            constexpr uintptr_t PercentLifeStealMod = 0x23E0;
-            constexpr uintptr_t PercentMagicDamageMod = 0x1DC8;
-            constexpr uintptr_t PercentMagicPenetration = 0x2390;
-            constexpr uintptr_t PercentOmnivampMod = 0x2430;
-            constexpr uintptr_t PercentPhysicalDamageMod = 0x1D28;
-            constexpr uintptr_t PercentPhysicalVamp = 0x2458;
-            constexpr uintptr_t PercentSpellVampMod = 0x2408;
+            constexpr uintptr_t PercentHealingAmountMod = 0x1E90;
+            constexpr uintptr_t PercentLifeStealMod = 0x23F0;
+            constexpr uintptr_t PercentMagicDamageMod = 0x1;
+            constexpr uintptr_t PercentMagicPenetration = 0x1D90;
+            constexpr uintptr_t PercentOmnivampMod = 0x2330;
+            constexpr uintptr_t PercentPhysicalDamageMod = 0x1870;
+            constexpr uintptr_t PercentPhysicalVamp = 0x1F10;
+            constexpr uintptr_t PercentSpellVampMod = 0x2350;
             constexpr uintptr_t Position = 0x25C;
             constexpr uintptr_t SelectionHeight = 0x88;
             constexpr uintptr_t SelectionRadius = 0x8C;
             constexpr uintptr_t SkinName = 0x4370;
-            constexpr uintptr_t StatusFlags = 0x5C8;
+            constexpr uintptr_t StatusFlags = 0x2090;
             constexpr uintptr_t StatusFlagsInvulnerableMask = 0x1;
             constexpr uintptr_t Team = 0x259;
+            constexpr uintptr_t FlatPhysicalDamageMod = 0x1970;
         }
         namespace SpellDataResource {
             constexpr uintptr_t oMissileSpeed = 0x408;
@@ -438,8 +442,8 @@ namespace Offsets {
             constexpr uintptr_t ResAmmoRecharge = 0x408;
             constexpr uintptr_t ResCastRange = 0x478;
             constexpr uintptr_t ResCastRangeDisplayOverride = 0x548;
-            constexpr uintptr_t ResCastType = 0x2F;
-            constexpr uintptr_t ResCooldownTime = 0x6C8;
+            constexpr uintptr_t ResCastType = 0x31;
+            constexpr uintptr_t ResCooldownTime = 0x88;
             constexpr uintptr_t ResImgIconName = 0x2A0;
             constexpr uintptr_t ResLineWidth = 0x568;
             constexpr uintptr_t ResMaxAmmo = 0x3C0;
@@ -490,11 +494,11 @@ namespace Offsets {
         }
         namespace NavGrid {
             constexpr uintptr_t OFF_NAV_WIDTH = 0x710;
-            constexpr uintptr_t OFF_NAV_HEIGHT = 0x714;
+            constexpr uintptr_t OFF_NAV_HEIGHT = 0x604;
             constexpr uintptr_t OFF_NAV_ORIGIN = 0xF4;
             constexpr uintptr_t OFF_NAV_CELLSIZE = 0x71C;
             constexpr uintptr_t OFF_NAV_DATA = 0x118;
-            constexpr uintptr_t CellArray = 0x110;
+            constexpr uintptr_t CellArray = 0x120;
             constexpr uintptr_t CellCenterOffset = 0x718;
             constexpr uintptr_t CellCountX = 0x708;
             constexpr uintptr_t CellCountZ = 0x70C;
@@ -507,7 +511,7 @@ namespace Offsets {
             constexpr uintptr_t CellFlagWall = 0x2;
             constexpr uintptr_t CellFlags = 0x8;
             constexpr uintptr_t CellSize = 0x710;
-            constexpr uintptr_t CellSizeInv = 0x714;
+            constexpr uintptr_t CellSizeInv = 0x604;
             constexpr uintptr_t CellStride = 0x10;
             constexpr uintptr_t Grid = 0x8;
             constexpr uintptr_t WorldMaxX = 0xF8;
@@ -534,15 +538,15 @@ namespace Offsets {
         }
         namespace TimingPing {
             constexpr uintptr_t OFF_A1_CONN_SLOT = 0x423;
-            constexpr uintptr_t OFF_A1_TREE_LINK = 0x0C8;
+            constexpr uintptr_t OFF_A1_TREE_LINK = 0xC8;
             constexpr uintptr_t OFF_NODE_NEXT_LEFT = 0x000;
-            constexpr uintptr_t OFF_NODE_NEXT_RIGHT = 0x010;
-            constexpr uintptr_t OFF_NODE_END_FLAG = 0x019;
-            constexpr uintptr_t OFF_NODE_KEY = 0x020;
-            constexpr uintptr_t OFF_NODE_DATA = 0x028;
-            constexpr uintptr_t OFF_DATA_RTT_A = 328;
-            constexpr uintptr_t OFF_DATA_RTT_B = 344;
-            constexpr uintptr_t TIMING_STRIDE_QWORDS = 33;
+            constexpr uintptr_t OFF_NODE_NEXT_RIGHT = 0x10;
+            constexpr uintptr_t OFF_NODE_END_FLAG = 0x19;
+            constexpr uintptr_t OFF_NODE_KEY = 0x20;
+            constexpr uintptr_t OFF_NODE_DATA = 0x28;
+            constexpr uintptr_t OFF_DATA_RTT_A = 0x148;
+            constexpr uintptr_t OFF_DATA_RTT_B = 0x158;
+            constexpr uintptr_t TIMING_STRIDE_QWORDS = 0x21;
         }
         namespace HeroManager {
             constexpr uintptr_t OFF_HEROMGR_LIST = 0x8;

@@ -2,7 +2,7 @@
 
 # League of Legends — Offset & Pattern Database
 
-![Patch](https://img.shields.io/badge/Patch-26.13-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.14-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.3-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
@@ -15,8 +15,6 @@ I quit playing league can you tell me when game updates, open issue or contact m
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
 Ai used for formating, not for reversing.
 
-
-Special thanks to everyone who supported this project: "Raphael, Wasik, hernos, IA20201"
 </div>
 
 ## Repository Layout
@@ -44,9 +42,9 @@ Click on the unified header file to view clean C++ code examples:
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.13 |
-| Timestamp | `6A3B418B` — Wed Jun 24 02:31:39 2026 |
-| Imagebase | `0x7FF701D60000` |
+| Patch | 26.14 |
+| Timestamp | `6A3B22C0` — Wed Jun 24 00:20:16 2026 |
+| Imagebase | `0x7FF6E4860000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
