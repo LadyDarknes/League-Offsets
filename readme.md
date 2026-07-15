@@ -40,8 +40,8 @@ Click on the unified header file to view clean C++ code examples:
 | Field | Value |
 | ----- | ----- |
 | Patch | 26.14 |
-| Timestamp | `6A3B22C0` — Wed Jun 24 00:20:16 2026 |
-| Imagebase | `0x7FF6E4860000` |
+| Timestamp | `6A4EDF34` — Wed Jul 08 23:37:24 2026 |
+| Imagebase | `0x7FF7B90C0000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
