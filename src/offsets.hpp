@@ -2,7 +2,7 @@
 #include <cstdint>
 
 namespace Offsets {
-    constexpr uintptr_t ImageBase = 0x7FF6E4860000;
+    constexpr uintptr_t ImageBase = 0x7FF7B90C0000;
 
     namespace Globals {
         constexpr uintptr_t BlueMinionManager = 0x1EA0240;
@@ -11,17 +11,17 @@ namespace Offsets {
         constexpr uintptr_t ConnSlotSentinel = 0x1EDED88;
         constexpr uintptr_t EntityList = 0x1E9D160;
         constexpr uintptr_t GameClient = 0x1EB97F8;
-        constexpr uintptr_t GameTime = 0x1EABFF0;
-        constexpr uintptr_t HeroManager = 0x1E9D0D8;
-        constexpr uintptr_t HudInstance = 0x1E9D148;
+        constexpr uintptr_t GameTime = 0x1EE5D30;
+        constexpr uintptr_t HeroManager = 0x1ED6DB8;
+        constexpr uintptr_t HudInstance = 0x1ED6E28;
         constexpr uintptr_t IssueOrderFlag = 0x1DFEFD8;
-        constexpr uintptr_t LocalPlayer = 0x1EDB378;
-        constexpr uintptr_t MissileManager = 0x1EA0250;
+        constexpr uintptr_t LocalPlayer = 0x1F15390;
+        constexpr uintptr_t MissileManager = 0x1ED9FC0;
         constexpr uintptr_t MouseScreenVec2 = 0x1EA0200;
         constexpr uintptr_t NavGrid = 0x1EA0198;
         constexpr uintptr_t NetClient = 0x1E9CFB0;
         constexpr uintptr_t NetInstance = 0x1E9CFC8;
-        constexpr uintptr_t ObjectManager = 0x1E9CFB8;
+        constexpr uintptr_t ObjectManager = 0x1ED6C98;
         constexpr uintptr_t RedMinionManager = 0x1EA0248;
         constexpr uintptr_t SpellCastMap = 0x1EC70D0;
         constexpr uintptr_t SwapChain = 0x1F7B178;
