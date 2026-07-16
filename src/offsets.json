@@ -1,7 +1,7 @@
 {
   "meta": {
     "patch": "26.14",
-    "timestamp": "0X6A589646",
+    "timestamp": "0X6A593D0D",
     "imagebase": "0X7FF736E70000",
     "compiler": "Visual C++ Â· x64 PE",
     "generated_by": "ida_dumper.py",
@@ -1011,31 +1011,25 @@
           "op": 1
         },
         "oSourceNetworkId": {
-          "offset": "0X1",
+          "offset": "0xD4",
           "type": "DWORD",
-          "description": "Source network ID (CreateClientEffect path)",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 3B 33",
-          "op": 1
+          "description": "Source network ID (CreateClientEffect path)"
         },
         "oDead": {
-          "offset": "0X560",
+          "offset": "0x231",
           "type": "bool",
-          "description": "Dead status",
-          "pattern": "48 89 85 ?? ?? ?? ?? 48 8D 05 C7",
-          "op": 0
+          "description": "Dead status"
         },
         "oEffectEmitterHandle": {
-          "offset": "0X1",
+          "offset": "0x238",
           "type": "DWORD",
-          "description": "Effect emitter handle",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 4D 31",
-          "op": 1
+          "description": "Effect emitter handle"
         },
         "oPosition": {
-          "offset": "0X25C",
+          "offset": "0X23C",
           "type": "Vector3",
           "description": "World position",
-          "pattern": "F3 0F 10 81 5C 02 00 00",
+          "pattern": "F3 0F 10 81 3C 02 00 00",
           "op": 1
         },
         "oDirection": {
@@ -1044,32 +1038,24 @@
           "description": "Direction"
         },
         "oVisibility": {
-          "offset": "0X2E0",
+          "offset": "0x2C0",
           "type": "byte",
-          "description": "Visibility byte",
-          "pattern": "48 81 EC ?? ?? ?? ?? 48 81 E4 00 FC",
-          "op": 1
+          "description": "Visibility byte"
         },
         "oVisible": {
-          "offset": "0X308",
+          "offset": "0x2E8",
           "type": "byte",
-          "description": "Visible status",
-          "pattern": "C6 85 ?? ?? ?? ?? 0F C7 85 18",
-          "op": 0
+          "description": "Visible status"
         },
         "oMissileClientHandle": {
-          "offset": "0X1",
+          "offset": "0x2B8",
           "type": "DWORD",
-          "description": "Missile client handle",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 D7 93",
-          "op": 1
+          "description": "Missile client handle"
         },
         "oTargetableComponent": {
-          "offset": "0X1",
+          "offset": "0x288",
           "type": "pointer",
-          "description": "Targetable component",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 A5 A7",
-          "op": 1
+          "description": "Targetable component"
         },
         "oPlayerStatsComponent": {
           "offset": "0X2A8",
@@ -1093,11 +1079,9 @@
           "op": 1
         },
         "oRadius": {
-          "offset": "0X1",
+          "offset": "0x6D8",
           "type": "float",
-          "description": "Bounding / collision radius",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 AF 30",
-          "op": 1
+          "description": "Bounding / collision radius"
         },
         "oModelScaleComponent": {
           "offset": "0X2C68",
@@ -1189,39 +1173,29 @@
           "description": "Alternate visibility source"
         },
         "OFF_HP": {
-          "offset": "0X1080",
+          "offset": "0x1060",
           "type": "float",
-          "description": "Current health",
-          "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
-          "op": 0
+          "description": "Current health"
         },
         "OFF_HP_MAX": {
-          "offset": "0X10D0",
+          "offset": "0x10B0",
           "type": "float",
-          "description": "Max health",
-          "pattern": "FF 80 ?? 10 00 00",
-          "op": 0
+          "description": "Max health"
         },
         "OFF_MANA": {
-          "offset": "0X360",
+          "offset": "0x340",
           "type": "float",
-          "description": "Current mana/resource",
-          "pattern": "C7 85 ?? ?? ?? ?? 0F 00 00 00 C7 85 64",
-          "op": 0
+          "description": "Current mana/resource"
         },
         "OFF_MANA_MAX": {
-          "offset": "0X48",
+          "offset": "0x48",
           "type": "float",
-          "description": "Max mana/resource",
-          "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 52 F1 DC",
-          "op": 1
+          "description": "Max mana/resource"
         },
         "OFF_MANA_ENABLED": {
-          "offset": "0X1",
+          "offset": "0x1",
           "type": "bool",
-          "description": "Primary resource enabled",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 8C 94",
-          "op": 1
+          "description": "Primary resource enabled"
         },
         "OFF_LEVEL": {
           "offset": "0x4D58",
@@ -1246,25 +1220,19 @@
           "description": "Magic resistance"
         },
         "OFF_ALL_SHIELD": {
-          "offset": "0X1120",
+          "offset": "0x1100",
           "type": "float",
-          "description": "Total shield",
-          "pattern": "48 8D 85 20 11 00 00 C7 ?? ?? ?? ??",
-          "op": 1
+          "description": "Total shield"
         },
         "OFF_PHYS_SHIELD": {
-          "offset": "0X9",
+          "offset": "0x9",
           "type": "float",
-          "description": "Physical damage shield",
-          "pattern": "F3 41 ?? ?? ?? ??",
-          "op": 1
+          "description": "Physical damage shield"
         },
         "OFF_MAG_SHIELD": {
-          "offset": "0X1170",
+          "offset": "0x1150",
           "type": "float",
-          "description": "Magical damage shield",
-          "pattern": "48 C7 44 24 38 70 11 ?? ?? ?? ??",
-          "op": 1
+          "description": "Magical damage shield"
         },
         "OFF_AS_MULTIPLIER": {
           "offset": "0X80",
