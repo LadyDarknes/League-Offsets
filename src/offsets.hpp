@@ -165,10 +165,10 @@ namespace Offsets {
             constexpr uintptr_t oSpellBook = 0X3108;
             constexpr uintptr_t oCharacterName = 0X4380;
             constexpr uintptr_t oItemList = 0X44A0;
-            constexpr uintptr_t oCharacterDataStack = 0X1;
-            constexpr uintptr_t OFF_POS_X = 0X1;
-            constexpr uintptr_t OFF_POS_Y = 0X260;
-            constexpr uintptr_t OFF_POS_Z = 0X244;
+            constexpr uintptr_t oCharacterDataStack = 0x1270;
+            constexpr uintptr_t OFF_POS_X = 0x23C;
+            constexpr uintptr_t OFF_POS_Y = 0x240;
+            constexpr uintptr_t OFF_POS_Z = 0x244;
             constexpr uintptr_t OFF_VISIBLE_0 = 0X168;
             constexpr uintptr_t OFF_VISIBLE_FOG = 0X1;
             constexpr uintptr_t OFF_VISIBLE_ALT = 0x16A;
