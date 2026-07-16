@@ -1,6 +1,6 @@
 <div align="center">
 
-# League of Legends — Offset & Pattern Database
+# League — Offset & Pattern Database
 
 ![Patch](https://img.shields.io/badge/Patch-26.14-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
@@ -19,21 +19,12 @@ Ai used for formatting, not for reversing.
 ```
 League-Offsets/
 ├── src/
-│   ├── offsets.md             ← global RVAs, function entries, struct field offsets
 │   ├── offsets.hpp            ← generated C++ header file for ready inclusion
 │   ├── offsets.json           ← JSON dump of resolved RVAs & member offsets
-│   ├── patterns.md            ← AOB byte patterns for every global and function
-│   ├── reflection_offsets.md  ← dynamic reflection offsets (AIHero, AIMinionCommon, AITurretCommon…)
 │   └── quick_usage/           
 │       └── all_offsets.hpp    ← unified single header containing all C++ snippets & types
 ```
 
----
-### Quick Usage Snippets (`src/quick_usage/`)
-Click on the unified header file to view clean C++ code examples:
-*   [**`all_offsets.hpp`**](file:///c:/Users/Administrator/Desktop/League-Offsets/src/quick_usage/all_offsets.hpp) — Unified header containing W2S projection, ObjectManager navigation tree, spellcast mapping queries, active spell tracking, issue order wrappers, type flags checking, buff lists, and Hook setups.
-
----
 
 ## 🛠️ Build Info
 
