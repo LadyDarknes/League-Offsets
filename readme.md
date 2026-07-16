@@ -10,7 +10,7 @@
 Star For Support ⭐
 
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
-Ai used for formating, not for reversing.
+Ai used for formatting, not for reversing.
 
 </div>
 
