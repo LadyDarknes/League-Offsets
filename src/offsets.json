@@ -1,7 +1,7 @@
 {
   "meta": {
     "patch": "26.14",
-    "timestamp": "0X6A593D0D",
+    "timestamp": "0X6A593DC5",
     "imagebase": "0X7FF736E70000",
     "compiler": "Visual C++ Â· x64 PE",
     "generated_by": "ida_dumper.py",
@@ -1126,32 +1126,24 @@
           "op": 1
         },
         "oCharacterDataStack": {
-          "offset": "0X1",
+          "offset": "0x1270",
           "type": "pointer",
-          "description": "Character data stack component",
-          "pattern": "48 8D ?? ?? ?? ??",
-          "op": 1
+          "description": "Character data stack component"
         },
         "OFF_POS_X": {
-          "offset": "0X1",
+          "offset": "0x23C",
           "type": "float",
-          "description": "Position.X â€” IDA confirmed via distance fn",
-          "pattern": "41 B8 ?? ?? ?? ?? E8 FF 6F 0E",
-          "op": 1
+          "description": "Position.X — IDA confirmed via distance fn"
         },
         "OFF_POS_Y": {
-          "offset": "0X260",
+          "offset": "0x240",
           "type": "float",
-          "description": "Position.Y",
-          "pattern": "48 81 EC ?? ?? ?? ?? 48 C1 E2 04 48 81 E4 00 FC",
-          "op": 1
+          "description": "Position.Y"
         },
         "OFF_POS_Z": {
-          "offset": "0X244",
+          "offset": "0x244",
           "type": "float",
-          "description": "Position.Z",
-          "pattern": "8B 80 ?? ?? ?? ?? 4C 8D 4C 24 48",
-          "op": 1
+          "description": "Position.Z"
         },
         "OFF_VISIBLE_0": {
           "offset": "0X168",
