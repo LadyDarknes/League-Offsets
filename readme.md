@@ -32,7 +32,7 @@ League-Offsets/
 | ----- | ----- |
 | Patch | 26.14 |
 | Timestamp | `6A4EDF34` — Wed Jul 08 23:37:24 2026 |
-| Imagebase | `0x7FF7B90C0000` |
+| Imagebase | `7FF736E70000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
