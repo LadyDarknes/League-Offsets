@@ -31,7 +31,7 @@ League-Offsets/
 | Field | Value |
 | ----- | ----- |
 | Patch | 26.14 |
-| Timestamp | `6A4EDF34` — Wed Jul 08 23:37:24 2026 |
+| Timestamp | `6A593DC5` — Thu Jul 16 20:23:33 2026 |
 | Imagebase | `7FF736E70000` |
 | Compiler | Visual C++ · x64 PE |
 

@@ -1165,29 +1165,29 @@
           "description": "Alternate visibility source"
         },
         "OFF_HP": {
-          "offset": "0x1060",
+          "offset": "0x1080",
           "type": "float",
-          "description": "Current health"
+          "description": "Current health value (mHP + 0x20)"
         },
         "OFF_HP_MAX": {
-          "offset": "0x10B0",
+          "offset": "0x10A8",
           "type": "float",
-          "description": "Max health"
+          "description": "Max health value (mMaxHP + 0x20)"
         },
         "OFF_MANA": {
-          "offset": "0x340",
+          "offset": "0x360",
           "type": "float",
-          "description": "Current mana/resource"
+          "description": "Current mana/resource value (mPAR + 0x20)"
         },
         "OFF_MANA_MAX": {
-          "offset": "0x48",
+          "offset": "0x388",
           "type": "float",
-          "description": "Max mana/resource"
+          "description": "Max mana/resource value (mMaxPAR + 0x20)"
         },
         "OFF_MANA_ENABLED": {
-          "offset": "0x1",
+          "offset": "0x3B0",
           "type": "bool",
-          "description": "Primary resource enabled"
+          "description": "Primary resource enabled value (mPAREnabled + 0x20)"
         },
         "OFF_LEVEL": {
           "offset": "0x4D58",
@@ -1212,19 +1212,19 @@
           "description": "Magic resistance"
         },
         "OFF_ALL_SHIELD": {
-          "offset": "0x1100",
+          "offset": "0x1120",
           "type": "float",
-          "description": "Total shield"
+          "description": "Total shield value (mAllShield + 0x20)"
         },
         "OFF_PHYS_SHIELD": {
-          "offset": "0x9",
+          "offset": "0x1148",
           "type": "float",
-          "description": "Physical damage shield"
+          "description": "Physical damage shield value (mPhysicalShield + 0x20)"
         },
         "OFF_MAG_SHIELD": {
-          "offset": "0x1150",
+          "offset": "0x1170",
           "type": "float",
-          "description": "Magical damage shield"
+          "description": "Magical damage shield value (mMagicalShield + 0x20)"
         },
         "OFF_AS_MULTIPLIER": {
           "offset": "0X80",
@@ -1485,14 +1485,14 @@
           "op": 1
         },
         "MaxHP": {
-          "offset": "0X10D0",
+          "offset": "0X10A8",
           "type": "",
           "description": "",
           "pattern": "FF 80 ?? 10 00 00",
           "op": 0
         },
         "PhysicalShield": {
-          "offset": "0X9",
+          "offset": "0X1148",
           "type": "",
           "description": "",
           "pattern": "F3 41 ?? ?? ?? ??",
@@ -1686,14 +1686,14 @@
           "op": 0
         },
         "MaxHealth": {
-          "offset": "0X10D0",
+          "offset": "0X10A8",
           "type": "",
           "description": "",
           "pattern": "FF 80 ?? 10 00 00",
           "op": 0
         },
         "MaxMana": {
-          "offset": "0X48",
+          "offset": "0X388",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 52 F1 DC",
