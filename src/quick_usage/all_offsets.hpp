@@ -167,8 +167,8 @@ void ProcessEntitiesExample(uintptr_t base_addr)
 
         if (!is_hero && !is_minion && !is_turret) continue;
 
-        float hp = *(float*)((char*)obj + 0x1080);
-        float hp_max = *(float*)((char*)obj + 0x10A8);
+        float hp = *(float*)((char*)obj + 0x1060);
+        float hp_max = *(float*)((char*)obj + 0x1088);
         if (hp <= 0.0f) continue;
 
         const char* champ_name = "";
@@ -204,15 +204,15 @@ void ProcessEntitiesExample(uintptr_t base_addr)
         float mana_max = *(float*)((char*)obj + 0x388);
         bool mana_enabled = *(bool*)((char*)obj + 0x3B0);
 
-        int level = *(int*)((char*)obj + 0x4D58);
+        int level = *(int*)((char*)obj + 0x4D70);
 
-        float armor = *(float*)((char*)obj + 0x4F38);
-        float mr = *(float*)((char*)obj + 0x4CB8);
-        float move_speed = *(float*)((char*)obj + 0x5000);
+        float armor = *(float*)((char*)obj + 0x2078);
+        float mr = *(float*)((char*)obj + 0x20C8);
+        float move_speed = *(float*)((char*)obj + 0x2168);
 
-        float all_shield = *(float*)((char*)obj + 0x1120);
-        float phys_shield = *(float*)((char*)obj + 0x1148);
-        float mag_shield = *(float*)((char*)obj + 0x1170);
+        float all_shield = *(float*)((char*)obj + 0x1100);
+        float phys_shield = *(float*)((char*)obj + 0x1128);
+        float mag_shield = *(float*)((char*)obj + 0x1150);
 
         void* ai_mgr_wrapper = *(void**)((char*)obj + 0x4070);
         if (ai_mgr_wrapper) 
@@ -290,11 +290,10 @@ struct LeagueEngine {
     }
 
     void ReadBuffs(void* obj) {
-        void* buff_mgr = *(void**)((char*)obj + 0x28F0);
-        if (buff_mgr) {
-            void* list_start = *(void**)((char*)buff_mgr + 0x90);
-            void* list_end = *(void**)((char*)buff_mgr + 0x98);
-        }
+        // buff manager is embedded at obj+0x2E58 (vtable); buff vector at obj+0x2F00/0x2F08
+        void* list_start = *(void**)((char*)obj + 0x2F00);
+        void* list_end = *(void**)((char*)obj + 0x2F08);
+        (void)list_start; (void)list_end;
     }
     typedef bool(__fastcall* IssueOrder_t)(void*, int, Vec3*, void*, bool, bool, bool);
    
@@ -501,7 +500,7 @@ struct LeagueEngine {
     }
 
     void CheckActiveSpell(void* obj) {
-        void* sb = *(void**)((char*)obj + 0x3128);
+        void* sb = (char*)obj + 0x3108; // spellbook component is embedded, not a pointer
         if (!sb) return;
         SpellCastInfo* cast = *(SpellCastInfo**)((char*)sb + 0xAD8);
         if (cast && cast->slot_info && cast->slot_info->spell_data) {
@@ -511,13 +510,13 @@ struct LeagueEngine {
 
     bool IsCCd(void* obj, float game_time) {
         if (!obj) return false;
-        void* buff_mgr = *(void**)((char*)obj + Offsets::Standard::AIBaseClient::oBuffManager);
-        if (!buff_mgr) return false;
-        void** list_start = *(void***)((char*)buff_mgr + 0x90);
-        void** list_end = *(void***)((char*)buff_mgr + 0x98);
+        // buff manager embedded at oBuffManager; vector at +0xA8/+0xB0 rel. to it (unit+0x2F00/0x2F08)
+        char* buff_mgr = (char*)obj + Offsets::Standard::AIBaseClient::oBuffManager;
+        void** list_start = *(void***)(buff_mgr + 0xA8);
+        void** list_end = *(void***)(buff_mgr + 0xB0);
         if (!list_start || !list_end) return false;
 
-        for (void** it = list_start; it < list_end; ++it) {
+        for (void** it = list_start; it < list_end; it += 2) { // entry stride 0x10: { buffPtr, nameHash }
             void* buff = *it;
             if (!buff) continue;
 
@@ -545,7 +544,7 @@ struct LeagueEngine {
 
     bool GetSpellCastGeometry(void* obj, Vec3& out_start, Vec3& out_end, float& out_windup, uint32_t& out_target_netid) {
         if (!obj) return false;
-        void* sb = *(void**)((char*)obj + 0x3128); // ponytail: hardcoded spellbook offset
+        void* sb = (char*)obj + 0x3108; // spellbook component is embedded, not a pointer
         if (!sb) return false;
         auto* cast = *reinterpret_cast<SpellCastInfo**>((char*)sb + Offsets::Standard::SpellBook::oActiveSpellCast);
         if (!cast) return false;

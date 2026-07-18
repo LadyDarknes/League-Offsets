@@ -1112,10 +1112,10 @@
           "op": 1
         },
         "oCharacterName": {
-          "offset": "0X4380",
+          "offset": "0X40E8",
           "type": "std::string",
           "description": "Character/champion name",
-          "pattern": "48 8D B9 ?? ?? ?? ?? 48 83 7F 18 0F",
+          "pattern": "48 81 C1 E8 40 00 00 E9 ?? ?? ?? ??",
           "op": 1
         },
         "oItemList": {
@@ -1170,7 +1170,7 @@
           "description": "Current health"
         },
         "OFF_HP_MAX": {
-          "offset": "0x10B0",
+          "offset": "0X1088",
           "type": "float",
           "description": "Max health"
         },
@@ -1190,24 +1190,24 @@
           "description": "Primary resource enabled"
         },
         "OFF_LEVEL": {
-          "offset": "0x4D58",
+          "offset": "0X4D70",
           "type": "int",
           "description": "Champion level (mLevelRef)"
         },
         "OFF_MOVE_SPEED": {
-          "offset": "0X500C",
+          "offset": "0X2168",
           "type": "float",
           "description": "Movement speed",
-          "pattern": "48 63 BE ?? 50 ??",
+          "pattern": "48 8D 8F F0 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "OFF_ARMOR": {
-          "offset": "0x4F38",
+          "offset": "0X2078",
           "type": "float",
           "description": "Physical defense (armor)"
         },
         "OFF_MAGIC_RES": {
-          "offset": "0x4CB8",
+          "offset": "0X20C8",
           "type": "float",
           "description": "Magic resistance"
         },
@@ -1217,7 +1217,7 @@
           "description": "Total shield"
         },
         "OFF_PHYS_SHIELD": {
-          "offset": "0x9",
+          "offset": "0X1128",
           "type": "float",
           "description": "Physical damage shield"
         },
@@ -1227,17 +1227,17 @@
           "description": "Magical damage shield"
         },
         "OFF_AS_MULTIPLIER": {
-          "offset": "0X80",
+          "offset": "0X1E48",
           "type": "float",
           "description": "Attack speed multiplier",
-          "pattern": "8B 87 ?? ?? ?? ??",
+          "pattern": "48 8D 8F D0 02 00 00 48 89 5C 24 28",
           "op": 1
         },
         "OFF_ATK_RANGE": {
-          "offset": "0X7",
+          "offset": "0X21B8",
           "type": "float",
           "description": "Attack range",
-          "pattern": "F3 0F ?? ?? ?? ??",
+          "pattern": "48 8D 8F 40 06 00 00 48 89 5C 24 28",
           "op": 1
         },
         "OFF_BOUNDING_RADIUS": {
@@ -1248,10 +1248,10 @@
           "op": 1
         },
         "OFF_SPELLBOOK": {
-          "offset": "0X3128",
+          "offset": "0X3108",
           "type": "QWORD*",
           "description": "SpellBook pointer",
-          "pattern": "48 89 9D 28 31 ?? ?? ?? ??",
+          "pattern": "48 8D 8F 08 31 00 00 4C 8D 87 48 15 00 00",
           "op": 0
         },
         "OFF_AIMANAGER_PTR": {
@@ -1269,77 +1269,77 @@
           "op": 0
         },
         "AbilityHaste": {
-          "offset": "0XB48",
+          "offset": "0X1BA0",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 48 0B 00 00 48 8D 15 7D AE",
+          "pattern": "48 8D 4F 28 48 89 5C 24 28",
           "op": 1
         },
         "Armor": {
-          "offset": "0X2E8",
+          "offset": "0X2078",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 E8 ?? ?? ?? ?? 8D 15 2A C8",
+          "pattern": "48 8D 8F 00 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "AttackRange": {
-          "offset": "0X1",
+          "offset": "0X21B8",
           "type": "",
           "description": "",
-          "pattern": "48 8D ?? ?? ?? ??",
+          "pattern": "48 8D 8F 40 06 00 00 48 89 5C 24 28",
           "op": 1
         },
         "AttackSpeedMod": {
-          "offset": "0X1",
+          "offset": "0X1E48",
           "type": "",
           "description": "",
-          "pattern": "4C 89 ?? ?? ?? ??",
+          "pattern": "48 8D 8F D0 02 00 00 48 89 5C 24 28",
           "op": 0
         },
         "BaseAttackDamage": {
-          "offset": "0X1F08",
+          "offset": "0X1EE8",
           "type": "",
           "description": "",
-          "pattern": "48 C7 44 24 38 08 1F ?? ?? ?? ??",
+          "pattern": "48 8D 8A 70 03 00 00 4D 8B C8",
           "op": 1
         },
         "Crit": {
-          "offset": "0XAC8",
+          "offset": "0X2028",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 C8 0A 00 00 48 8D 15 4D CF",
+          "pattern": "48 8D 8F B0 04 00 00 48 89 5C 24 28",
           "op": 1
         },
         "CritDamageMultiplier": {
-          "offset": "0X528",
+          "offset": "0X1FB0",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 28 05 00 00 48 8D 15 74 9E",
+          "pattern": "48 8D 8F 38 04 00 00 48 89 5C 24 28",
           "op": 1
         },
         "FlatArmorPen": {
-          "offset": "0X868",
+          "offset": "0X2230",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 68 08 00 00 48 8D 15 76 9D",
+          "pattern": "48 8D 8F B8 06 00 00 48 89 5C 24 28",
           "op": 1
         },
         "FlatMagicPen": {
-          "offset": "0X1",
+          "offset": "0X2320",
           "type": "",
           "description": "",
-          "pattern": "48 8D ?? ?? ?? ??",
+          "pattern": "48 8D 8F A8 07 00 00 40 88 74 24 20",
           "op": 1
         },
         "FlatPhysicalDmgMod": {
-          "offset": "0X1",
+          "offset": "0X1CE0",
           "type": "",
           "description": "",
-          "pattern": "48 8D ?? ?? ?? ??",
+          "pattern": "48 8D 8F 68 01 00 00 48 89 5C 24 28",
           "op": 1
         },
         "HPRegenRate": {
-          "offset": "0x2138",
+          "offset": "0X2118",
           "type": "",
           "description": ""
         },
@@ -1351,10 +1351,10 @@
           "op": 0
         },
         "MagicLethality": {
-          "offset": "0X2368",
+          "offset": "0X2348",
           "type": "",
           "description": "",
-          "pattern": "89 85 68 23 ?? ?? ?? ??",
+          "pattern": "48 8D 8F D0 07 00 00 48 89 5C 24 28",
           "op": 0
         },
         "MaxMP": {
@@ -1365,109 +1365,109 @@
           "op": 1
         },
         "MoveSpeed": {
-          "offset": "0x2188",
+          "offset": "0X2168",
           "type": "",
           "description": ""
         },
         "PercentArmorPen": {
-          "offset": "0X1",
+          "offset": "0X2280",
           "type": "",
           "description": "",
-          "pattern": "48 8D ?? ?? ?? ??",
+          "pattern": "48 8D 8F 08 07 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentAttackSpeedMod": {
-          "offset": "0X1",
+          "offset": "0X1E70",
           "type": "",
           "description": "",
-          "pattern": "4C 89 ?? ?? ?? ??",
+          "pattern": "48 8D 8F F8 02 00 00 48 89 5C 24 28",
           "op": 0
         },
         "PercentBonusArmorPen": {
-          "offset": "0X22C8",
+          "offset": "0X22A8",
           "type": "",
           "description": "",
-          "pattern": "41 B8 C8 22 00 00 E8 ?? ?? ?? ??",
+          "pattern": "48 8D 8A 30 07 00 00 4D 8B C8",
           "op": 1
         },
         "PercentBonusMagicPen": {
-          "offset": "0x23B8",
+          "offset": "0X2398",
           "type": "",
           "description": ""
         },
         "PercentCCReduction": {
-          "offset": "0X1088",
+          "offset": "0X2488",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 88 10 00 00 48 8D 15 5F 9A",
+          "pattern": "48 8D 8F 10 09 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentLifeSteal": {
-          "offset": "0XE88",
+          "offset": "0X23C0",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 88 0E 00 00 48 8D 15 1F B1",
+          "pattern": "48 8D 8F 48 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentMagicPen": {
-          "offset": "0X828",
+          "offset": "0X2370",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 28 08 00 00 48 8D 15 8C 9D",
+          "pattern": "48 8D 8F F8 07 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentOmnivamp": {
-          "offset": "0XDC8",
+          "offset": "0X2410",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 C8 0D 00 00 48 8D 15 F9 B1",
+          "pattern": "48 8D 8F 98 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentSpellVamp": {
-          "offset": "0X2408",
+          "offset": "0X23E8",
           "type": "",
           "description": "",
-          "pattern": "48 89 9D 08 24 ?? ?? ?? ??",
+          "pattern": "48 8D 8F 70 08 00 00 48 89 5C 24 28",
           "op": 0
         },
         "PhysicalLethality": {
-          "offset": "0X1EC",
+          "offset": "0X2258",
           "type": "",
           "description": "",
-          "pattern": "83 BB ?? ?? ?? ??",
+          "pattern": "48 8D 8F E0 06 00 00 48 89 5C 24 28",
           "op": 0
         },
         "SpellBlock": {
-          "offset": "0x20E8",
+          "offset": "0X20C8",
           "type": "",
           "description": ""
         },
         "CharacterName": {
-          "offset": "0x4370",
+          "offset": "0X40E8",
           "type": "",
           "description": "",
-          "pattern": "48 8D B9 70 43 ?? ?? ?? ??",
+          "pattern": "48 81 C1 E8 40 00 00 E9 ?? ?? ?? ??",
           "op": 1
         },
         "Name": {
-          "offset": "0x4370",
+          "offset": "0X40E8",
           "type": "",
           "description": "",
-          "pattern": "48 8D B9 70 43 ?? ?? ?? ??",
+          "pattern": "48 81 C1 E8 40 00 00 E9 ?? ?? ?? ??",
           "op": 1
         },
         "AllShield": {
-          "offset": "0X1120",
+          "offset": "0X1100",
           "type": "",
           "description": "",
-          "pattern": "48 8D 85 20 11 00 00 C7 ?? ?? ?? ??",
+          "pattern": "48 8D 8B A0 00 00 00 48 89 74 24 28",
           "op": 1
         },
         "HP": {
-          "offset": "0X1080",
+          "offset": "0X1060",
           "type": "",
           "description": "",
-          "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
+          "pattern": "48 8D 99 60 10 00 00 41 0F B6 E9",
           "op": 0
         },
         "IsTargetable": {
@@ -1478,24 +1478,24 @@
           "op": 0
         },
         "MagicalShield": {
-          "offset": "0X1170",
+          "offset": "0X1150",
           "type": "",
           "description": "",
-          "pattern": "48 C7 44 24 38 70 11 ?? ?? ?? ??",
+          "pattern": "48 8D 8B F0 00 00 00 48 89 74 24 28",
           "op": 1
         },
         "MaxHP": {
-          "offset": "0X10D0",
+          "offset": "0X1088",
           "type": "",
           "description": "",
-          "pattern": "FF 80 ?? 10 00 00",
+          "pattern": "48 8D 4B 28 48 89 74 24 28",
           "op": 0
         },
         "PhysicalShield": {
-          "offset": "0X9",
+          "offset": "0X1128",
           "type": "",
           "description": "",
-          "pattern": "F3 41 ?? ?? ?? ??",
+          "pattern": "48 8D 8B C8 00 00 00 48 89 74 24 28",
           "op": 1
         },
         "TargetableFlags": {
@@ -1618,24 +1618,24 @@
           "op": 1
         },
         "FlatArmorPenetration": {
-          "offset": "0X868",
+          "offset": "0X2230",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 68 08 00 00 48 8D 15 76 9D",
+          "pattern": "48 8D 8F B8 06 00 00 48 89 5C 24 28",
           "op": 1
         },
         "FlatMagicPenetration": {
-          "offset": "0X328",
+          "offset": "0X2320",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 28 03 00 00 48 8D 15 3C 9F",
+          "pattern": "48 8D 8F A8 07 00 00 40 88 74 24 20",
           "op": 1
         },
         "Health": {
-          "offset": "0X1080",
+          "offset": "0X1060",
           "type": "",
           "description": "",
-          "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
+          "pattern": "48 8D 99 60 10 00 00 41 0F B6 E9",
           "op": 0
         },
         "Index": {
@@ -1686,10 +1686,10 @@
           "op": 0
         },
         "MaxHealth": {
-          "offset": "0X10D0",
+          "offset": "0X1088",
           "type": "",
           "description": "",
-          "pattern": "FF 80 ?? 10 00 00",
+          "pattern": "48 8D 4B 28 48 89 74 24 28",
           "op": 0
         },
         "MaxMana": {
@@ -1714,10 +1714,10 @@
           "op": 1
         },
         "PARRegenRate": {
-          "offset": "0X688",
+          "offset": "0X2528",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 88 06 00 00 48 8D 15 EF 9D",
+          "pattern": "48 8D 8F B0 09 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PARState": {
@@ -1735,85 +1735,85 @@
           "op": 1
         },
         "PathfindingRadiusMod": {
-          "offset": "0X748",
+          "offset": "0X2460",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 48 07 00 00 48 8D 15 C5 9D",
+          "pattern": "48 8D 8F E8 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentArmorPenetration": {
-          "offset": "0X3C8",
+          "offset": "0X2280",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 C8 03 00 00 48 8D 15 F9 9E",
+          "pattern": "48 8D 8F 08 07 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentBonusArmorPenetration": {
-          "offset": "0X22C8",
+          "offset": "0X22A8",
           "type": "",
           "description": "",
-          "pattern": "41 B8 C8 22 00 00 E8 ?? ?? ?? ??",
+          "pattern": "48 8D 8A 30 07 00 00 4D 8B C8",
           "op": 1
         },
         "PercentBonusMagicPenetration": {
-          "offset": "0x23B8",
+          "offset": "0X2398",
           "type": "",
           "description": ""
         },
         "PercentHealingAmountMod": {
-          "offset": "0X928",
+          "offset": "0X1EC0",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 28 09 00 00 48 8D 15 D4 B4",
+          "pattern": "48 8D 8F 48 03 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentLifeStealMod": {
-          "offset": "0XE88",
+          "offset": "0X23C0",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 88 0E 00 00 48 8D 15 1F B1",
+          "pattern": "48 8D 8F 48 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentMagicDamageMod": {
-          "offset": "0X1",
+          "offset": "0X1DA8",
           "type": "",
           "description": "",
-          "pattern": "48 8D ?? ?? ?? ??",
+          "pattern": "48 8D 8F 30 02 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentMagicPenetration": {
-          "offset": "0X828",
+          "offset": "0X2370",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 28 08 00 00 48 8D 15 8C 9D",
+          "pattern": "48 8D 8F F8 07 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentOmnivampMod": {
-          "offset": "0XDC8",
+          "offset": "0X2410",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 C8 0D 00 00 48 8D 15 F9 B1",
+          "pattern": "48 8D 8F 98 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentPhysicalDamageMod": {
-          "offset": "0X308",
+          "offset": "0X1D08",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 08 03 00 00 48 8D 15 B3 B7",
+          "pattern": "48 8D 8F 90 01 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentPhysicalVamp": {
-          "offset": "0X9A8",
+          "offset": "0X2438",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 A8 09 00 00 48 8D 15 28 9D",
+          "pattern": "48 8D 8F C0 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "PercentSpellVampMod": {
-          "offset": "0X2E8",
+          "offset": "0X23E8",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 83 E8 ?? ?? ?? ?? 8D 15 BA B1",
+          "pattern": "48 8D 8F 70 08 00 00 48 89 5C 24 28",
           "op": 1
         },
         "Position": {
@@ -1866,8 +1866,8 @@
           "op": 1
         },
         "FlatPhysicalDamageMod": {
-          "offset": "0X408",
-          "pattern": "4C 8D 83 08 04 00 00 48 8D 15 E3 B6",
+          "offset": "0X1CE0",
+          "pattern": "48 8D 8F 68 01 00 00 48 89 5C 24 28",
           "op": 1
         }
       }
@@ -1877,10 +1877,10 @@
       "base": "GameObject",
       "fields": {
         "oCombatStats": {
-          "offset": "0X4438",
+          "offset": "0X1B78",
           "type": "pointer",
-          "description": "Combat stats sub-structure",
-          "pattern": "4C 8D 8F ?? ?? ?? ?? 41 0F B6 51 15 45 33 C0",
+          "description": "Embedded replicated-stats block (0x28-stride records, value at +0)",
+          "pattern": "48 8D BE 78 1B 00 00 48 8B D7",
           "op": 1
         },
         "oModelInstance": {
@@ -1898,10 +1898,10 @@
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0XD8",
+          "offset": "0X2E58",
           "type": "pointer",
-          "description": "Active Buff list pointer",
-          "pattern": "48 8D 8B 78 2E 00 00",
+          "description": "Embedded buff manager sub-object (vtable at +0)",
+          "pattern": "48 89 87 58 2E 00 00 48 8D 57 20",
           "op": 1
         },
         "oFacing": {
@@ -1954,10 +1954,10 @@
           "op": 1
         },
         "Exp": {
-          "offset": "0x4D38",
+          "offset": "0X4D48",
           "type": "",
           "description": "",
-          "pattern": "49 8D 8E 38 4D 00 00 E8 ?? ?? ?? ??",
+          "pattern": "49 8D 8E 48 4D 00 00 E8 ?? ?? ?? ??",
           "op": 1
         },
         "Gold": {
@@ -1975,10 +1975,10 @@
           "op": 1
         },
         "LevelRef": {
-          "offset": "0x4D60",
+          "offset": "0X4D70",
           "type": "",
           "description": "",
-          "pattern": "49 8D 8E 60 4D 00 00 48 89 44 24 28",
+          "pattern": "49 8D 8E 70 4D 00 00 48 89 44 24 28",
           "op": 1
         },
         "LevelUpPoints": {
@@ -2015,10 +2015,10 @@
           "op": 1
         },
         "ArrayBegin": {
-          "offset": "0X18",
+          "offset": "0X2F00",
           "type": "",
           "description": "",
-          "pattern": "4C 8D 66 ?? 4C 89",
+          "pattern": "48 89 B7 00 2F 00 00 48 89 B7 08 2F 00 00",
           "op": 1
         },
         "ArrayCapacity": {
@@ -2029,17 +2029,17 @@
           "op": 1
         },
         "ArrayEnd": {
-          "offset": "0X20",
+          "offset": "0X2F08",
           "type": "",
           "description": "",
-          "pattern": "48 C1 E2 ?? 48 09",
+          "pattern": "48 8B B3 08 2F 00 00 48 8B 9B 00 2F 00 00",
           "op": 1
         },
         "BuffManager": {
-          "offset": "0XD8",
+          "offset": "0X2E58",
           "type": "",
           "description": "",
-          "pattern": "48 8D 8B 78 2E 00 00",
+          "pattern": "48 89 87 58 2E 00 00 48 8D 57 20",
           "op": 1
         },
         "Count": {
@@ -2315,17 +2315,17 @@
           "op": 0
         },
         "Experience": {
-          "offset": "0x4D38",
+          "offset": "0X4D48",
           "type": "",
           "description": "",
-          "pattern": "49 8D 8E 38 4D 00 00 E8 ?? ?? ?? ??",
+          "pattern": "49 8D 8E 48 4D 00 00 E8 ?? ?? ?? ??",
           "op": 1
         },
         "Level": {
-          "offset": "0x4D60",
+          "offset": "0X4D70",
           "type": "",
           "description": "",
-          "pattern": "49 8D 8E 60 4D 00 00 48 89 44 24 28",
+          "pattern": "49 8D 8E 70 4D 00 00 48 89 44 24 28",
           "op": 1
         },
         "MinimumGold": {
@@ -2355,8 +2355,8 @@
       }
     },
     "CombatStats": {
-      "description": "Combat stats sub-structure. Relative to [AIBaseClient + 0x4428]",
-      "base": "0x4428",
+      "description": "Replicated stats block embedded in the unit (records: 0x28 stride, value float at record+0). Relative to [AIBaseClient + 0x1B78]",
+      "base": "0x1B78",
       "fields": {
         "mFlatAPMod": {
           "offset": "0X1C",
@@ -2366,10 +2366,10 @@
           "op": 1
         },
         "mBaseAD": {
-          "offset": "0X24",
+          "offset": "0X370",
           "type": "float",
           "description": "Base Attack Damage",
-          "pattern": "F3 0F 10 41 24",
+          "pattern": "48 8D 8A 70 03 00 00 4D 8B C8",
           "op": 1
         },
         "mLevel": {
@@ -2380,45 +2380,45 @@
           "op": 1
         },
         "mAttackRange": {
-          "offset": "0X5C",
+          "offset": "0X640",
           "type": "float",
           "description": "Basic Attack Range",
-          "pattern": "F3 0F 10 41 5C",
+          "pattern": "48 8D 8F 40 06 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mArmor": {
-          "offset": "0X118",
+          "offset": "0X500",
           "type": "float",
           "description": "Total Armor",
-          "pattern": "F3 0F 10 81 18 01 00 00",
+          "pattern": "48 8D 8F 00 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mBonusArmor": {
-          "offset": "0X174",
+          "offset": "0X528",
           "type": "float",
           "description": "Bonus Armor",
-          "pattern": "F3 0F 10 81 74 01 00 00",
+          "pattern": "48 8D 8F 28 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mSpellBlock": {
-          "offset": "0X25C",
+          "offset": "0X550",
           "type": "float",
           "description": "Magic Resist",
-          "pattern": "F3 0F 10 81 80 01 00 00",
+          "pattern": "48 8D 8F 50 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mAttackSpeedMod": {
-          "offset": "0X1A8",
+          "offset": "0X2D0",
           "type": "float",
           "description": "Attack Speed Multiplier",
-          "pattern": "F3 0F 10 81 A8 01 00 00",
+          "pattern": "48 8D 8F D0 02 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mCrit": {
-          "offset": "0X25C",
+          "offset": "0X4B0",
           "type": "float",
           "description": "Critical Strike Chance",
-          "pattern": "F3 0F 10 81 C8 01 00 00",
+          "pattern": "48 8D 8F B0 04 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mFlatADMod": {
@@ -2429,10 +2429,10 @@
           "op": 1
         },
         "mBonusSpellBlock": {
-          "offset": "0X25C",
+          "offset": "0X578",
           "type": "float",
           "description": "Bonus Magic Resist",
-          "pattern": "F3 0F 10 81 00 02 00 00",
+          "pattern": "48 8D 8F 78 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "mCombatType": {
@@ -2443,15 +2443,15 @@
           "op": 1
         },
         "mMoveSpeed": {
-          "offset": "0X25C",
+          "offset": "0X5F0",
           "type": "float",
           "description": "Movement Speed",
-          "pattern": "F3 0F 10 81 4C 02 00 00",
+          "pattern": "48 8D 8F F0 05 00 00 48 89 5C 24 28",
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0XD8",
-          "pattern": "48 8D 8B 78 2E 00 00",
+          "offset": "0X2E58",
+          "pattern": "48 89 87 58 2E 00 00 48 8D 57 20",
           "op": 1
         },
         "oFacing": {
@@ -2779,10 +2779,10 @@
           "op": 1
         },
         "oSpellSlots": {
-          "offset": "0XAE0",
+          "offset": "0XC0",
           "type": "pointer",
-          "description": "Spell slot pointer array [64]",
-          "pattern": "48 8B 81 E0 0A 00 00",
+          "description": "Slot-state array [64], 0x28 stride (embedded)",
+          "pattern": "49 8D 86 C0 00 00 00 49 89 5E 10 B9",
           "op": 1
         },
         "OFF_SB_DELAY_PCT": {
@@ -2814,24 +2814,24 @@
           "op": 1
         },
         "SlotStride": {
-          "offset": "0X8",
+          "offset": "0X28",
           "type": "",
           "description": "",
           "pattern": "48 89 7C 24 ?? 48",
           "op": 0
         },
         "SpellBook": {
-          "offset": "0X3128",
+          "offset": "0X3108",
           "type": "",
           "description": "",
-          "pattern": "48 89 9D 28 31 ?? ?? ?? ??",
+          "pattern": "48 8D 8F 08 31 00 00 4C 8D 87 48 15 00 00",
           "op": 0
         },
         "SpellSlotArray": {
-          "offset": "0XAE0",
+          "offset": "0XC0",
           "type": "",
           "description": "",
-          "pattern": "48 89 85 ?? ?? ?? ?? 48 8D 54 24 60 44",
+          "pattern": "49 8D 86 C0 00 00 00 49 89 5E 10 B9",
           "op": 0
         }
       }
@@ -3806,9 +3806,9 @@
         "description": "Far clipping plane"
       },
       "OFF_VIEW_MTX": {
-        "offset": "0x1E4",
+        "offset": "0x1A4",
         "type": "float[16]",
-        "description": "View / rotation matrix"
+        "description": "View matrix (render-view + 0x1A4)"
       },
       "OFF_PROJ_MTX": {
         "offset": "0x224",
