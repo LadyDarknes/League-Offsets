@@ -2474,19 +2474,19 @@
           "pattern": "8B 41 30"
         },
         "TargetNetID": {
-          "offset": "0X34",
+          "offset": "0X38",
           "type": "DWORD",
           "description": "Network ID of the target unit (if targeted)",
           "pattern": "8B 41 34"
         },
         "StartPos": {
-          "offset": "0X24",
+          "offset": "0XD8",
           "type": "Vector3",
           "description": "Starting position of the missile",
           "pattern": "F3 0F 10 41 24"
         },
         "EndPos": {
-          "offset": "0X30",
+          "offset": "0XE4",
           "type": "Vector3",
           "description": "Destination position",
           "pattern": "F3 0F 10 41 30"
@@ -2512,21 +2512,21 @@
           "op": 1
         },
         "oTargetNetID": {
-          "offset": "0X34",
+          "offset": "0X38",
           "type": "",
           "description": "",
           "pattern": "8B 41 34",
           "op": 1
         },
         "oStartPos": {
-          "offset": "0X24",
+          "offset": "0XD8",
           "type": "",
           "description": "",
           "pattern": "F3 0F 10 41 24",
           "op": 1
         },
         "oEndPos": {
-          "offset": "0X30",
+          "offset": "0XE4",
           "type": "",
           "description": "",
           "pattern": "F3 0F 10 41 30",
