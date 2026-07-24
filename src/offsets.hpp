@@ -370,15 +370,15 @@ namespace Offsets {
         }
         namespace MissileClient {
             constexpr uintptr_t CasterNetID = 0X30;
-            constexpr uintptr_t TargetNetID = 0X34;
-            constexpr uintptr_t StartPos = 0X24;
-            constexpr uintptr_t EndPos = 0X30;
+            constexpr uintptr_t TargetNetID = 0X38;
+            constexpr uintptr_t StartPos = 0XD8;
+            constexpr uintptr_t EndPos = 0XE4;
             constexpr uintptr_t Speed = 0X25C;
             constexpr uintptr_t CurrentPos = 0X1;
             constexpr uintptr_t oCasterNetID = 0X30;
-            constexpr uintptr_t oTargetNetID = 0X34;
-            constexpr uintptr_t oStartPos = 0X24;
-            constexpr uintptr_t oEndPos = 0X30;
+            constexpr uintptr_t oTargetNetID = 0X38;
+            constexpr uintptr_t oStartPos = 0XD8;
+            constexpr uintptr_t oEndPos = 0XE4;
             constexpr uintptr_t oSpeed = 0X25C;
             constexpr uintptr_t CastEndPos = 0X30;
             constexpr uintptr_t CastInfoBase = 0X2C0;
