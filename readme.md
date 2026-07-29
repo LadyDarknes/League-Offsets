@@ -1,5 +1,10 @@
 <div align="center">
 
+> [!NOTE]
+> **Annouchment:** I am not able to update for a while sorry (┬┬﹏┬┬) 
+
+
+
 # League — Offset & Pattern Database
 
 ![Patch](https://img.shields.io/badge/Patch-26.14-blue?style=flat-square)
