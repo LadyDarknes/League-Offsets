@@ -1,7 +1,7 @@
 <div align="center">
 
 > [!NOTE]
-> **Annouchment:** I am not able to update for a while sorry (┬┬﹏┬┬) 
+> **Announcement:** I am not able to update for a while sorry (┬┬﹏┬┬) 
 
 
 
