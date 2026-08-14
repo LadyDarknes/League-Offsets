@@ -1,222 +1,222 @@
 {
   "meta": {
-    "patch": "26.14",
-    "timestamp": "0X6A593DC5",
-    "imagebase": "0X7FF736E70000",
-    "compiler": "Visual C++ Â· x64 PE",
+    "patch": "26.16",
+    "timestamp": "0X6A974D38",
+    "imagebase": "0X7FF62DAE0000",
+    "compiler": "Visual C++ · x64 PE",
     "generated_by": "ida_dumper.py",
     "description": "League of Legends offset database. AI used for formatting, not for reversing."
   },
   "globals": [
     {
       "name": "BlueMinionManager",
-      "rva": "0X1ED9FB0",
-      "pattern": "8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?",
+      "rva": "0X1EF4210",
+      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 28",
       "description": "Blue team (100) minion list manager"
     },
     {
       "name": "CastSpellFlag",
-      "rva": "0X1E3BD60",
+      "rva": "0X1E55E20",
       "pattern": "C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?",
       "description": "Spell cast flag"
     },
     {
       "name": "ChatClient",
-      "rva": "0X1F10F28",
+      "rva": "0X1F2B490",
       "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D",
       "description": "Handles chat history and UI"
     },
     {
       "name": "ConnSlotSentinel",
-      "rva": "0X1F192D4",
+      "rva": "0X1F33F94",
       "pattern": "0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
       "description": "Connection slot sentinel"
     },
     {
       "name": "EntityList",
-      "rva": "0X1ED6E40",
+      "rva": "0X1EF0ED0",
       "pattern": "0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00",
       "description": "Entity list array"
     },
     {
       "name": "GameClient",
-      "rva": "0X1EF37E8",
+      "rva": "0X1F0DFF8",
       "pattern": "48 8B 05 ? ? ? ? 48 8B F2 83 78 10 02",
       "description": "Game client"
     },
     {
       "name": "GameTime",
-      "rva": "0X1EE5D30",
+      "rva": "0X1F00698",
       "pattern": "F3 0F 5C 35 ? ? ? ? 0F 28 F8 0F 2F CE 76 ? F3 0F 10 73 ? 0F 28 CE 48 8B CB E8 ? ? ? ? 0F 28 CE 48 8B CB E8 ? ? ? ? C6 43 ? ?",
       "description": "Game time"
     },
     {
       "name": "HeroManager",
-      "rva": "0X1ED6DB8",
+      "rva": "0X1EF0E48",
       "pattern": "48 8B 05 ? ? ? ? 45 33 FF 49 89 73 ? 0F 57 C0 F3 0F 7F 45 ? 4C 89 7D ? 48 8B FA 48 8B 70 ? 4C 8B E9 8B 40 ? 41 BE ? ? ? ? 4D 89 63 ?",
       "description": "Manager for all champions in the game"
     },
     {
       "name": "HudInstance",
-      "rva": "0X1ED6E28",
+      "rva": "0X1EF0EB8",
       "pattern": "48 8B 0D ? ? ? ? 8B 57 ? 48 8B 49 ? E8 ? ? ? ? B0 ? 48 8B 5C 24 ? 48 8B 74 24 ? 48 83 C4 ? 5F C3 48 8B 5C 24 ? 48 8B 74 24 ?",
       "description": "Global GUI and user input control"
     },
     {
       "name": "IssueOrderFlag",
-      "rva": "0X1E3BDC8",
+      "rva": "0X1E55E88",
       "pattern": "C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24",
       "description": "Issue order flag"
     },
     {
       "name": "LocalPlayer",
-      "rva": "0X1F15390",
+      "rva": "0X1F304B0",
       "pattern": "48 8B 05 ? ? ? ? 4C 8B DA 4C 8B C1 48 85 C0 0F 84 ? ? ? ? 48 89 5C 24 ? 48 8D 0D ? ? ? ? 48 8B 98 ? ? ? ? 48 85 DB 74 ? 48 8B 80 ? ? ? ? F0 FF 43 ?",
       "description": "Pointer to the local player object"
     },
     {
       "name": "MissileManager",
-      "rva": "0X1ED9FC0",
-      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 0F 84 ? ? ? ? 41 80 7D ? ? F3 0F 10 80 ? ? ? ? F3 0F 5C 83 ? ? ? ? F3 0F 10 88 ? ? ? ? F3 0F 5C 8B ? ? ? ? F3 0F 11 44 24 ?",
+      "rva": "0X1EF4208",
+      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 0F 84 ? ? ? ? 41 80 7D",
       "description": "Manager for all projectiles"
     },
     {
       "name": "MouseScreenVec2",
-      "rva": "0X1ED9F70",
+      "rva": "0X1EF4260",
       "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 8B 01",
       "description": "Mouse screen position"
     },
     {
       "name": "NavGrid",
-      "rva": "0X1ED9F08",
+      "rva": "0X1EF41F8",
       "pattern": "48 8B 05 ? ? ? ? 0F 28 DA",
       "description": "Navigation grid"
     },
     {
       "name": "NetClient",
-      "rva": "0X1ED6C90",
+      "rva": "0X1EF0D20",
       "pattern": "48 8B 05 ? ? ? ? 0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
       "description": "Net client"
     },
     {
       "name": "NetInstance",
-      "rva": "0X1ED6CA8",
+      "rva": "0X1EF0D38",
       "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 74 ? 80 78",
       "description": "Net instance"
     },
     {
       "name": "ObjectManager",
-      "rva": "0X1ED6C98",
+      "rva": "0X1EF0D28",
       "pattern": "48 8B 0D ? ? ? ? 8B D0 E8 ? ? ? ? 48 8B F0 48 85 C0 74 ? 48 8B 08 48 8B 51 ? 48 8B C8 FF D2",
       "description": "Object manager"
     },
     {
       "name": "RedMinionManager",
-      "rva": "0X1ED9FB8",
-      "pattern": "EB 22 E8 ? ? ? ? 8B 40 08 39 03 75 0E 48 8B 0D ? ? ? ?",
+      "rva": "0X1EF4218",
+      "pattern": "48 8B 15 ? ? ? ? 48 85 D2 74 ? 48 8B 02 FF 50 28",
       "description": "Red team (200) minion list manager"
     },
     {
       "name": "SpellCastMap",
-      "rva": "0X1F010D0",
+      "rva": "0X1F1CF30",
       "pattern": "48 8B 05 ?? ?? ?? ?? 48 8B 88 ?? ?? ?? ?? 48 85 C9 74",
       "description": "Spell cast hashmap"
     },
     {
       "name": "SwapChain",
-      "rva": "0X1F765C0",
+      "rva": "0X1F919D0",
       "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? 04 00 00 C3",
       "description": "Direct3D11 swap chain wrapper pointer"
     },
     {
       "name": "TimingTable",
-      "rva": "0X1F1A810",
-      "pattern": "48 8D 05 ? ? ? ? 48 69 D1",
+      "rva": "0X1F35830",
+      "pattern": "48 8D 05 ? ? ? ? 48 89 44 24 ? 48 89 44 24",
       "description": "Timing table"
     },
     {
       "name": "UnderMouseObj",
-      "rva": "0X1EDA1B8",
+      "rva": "0X1EF44B8",
       "pattern": "48 89 0D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 33 D2",
       "description": "Object under mouse cursor"
     },
     {
       "name": "ViewPort",
-      "rva": "0X1ED9F68",
+      "rva": "0X1EF4258",
       "pattern": "48 8B 3D ? ? ? ? 80 78 22 00 74",
       "description": "Viewport"
     },
     {
       "name": "ZoomAnomalyLatch",
-      "rva": "0X1F528D4",
+      "rva": "0X1F6D994",
       "pattern": "80 3D ? ? ? ? ? 0F 85 ? ? ? ? C6 05",
       "description": "Zoom flag check"
     },
     {
       "name": "r3dRenderLayer",
-      "rva": "0X1FB42E0",
+      "rva": "0X1FD0A20",
       "pattern": "48 8B 1D ? ? ? ? 80 BB 84 00 00 00 00",
       "description": "Core rendering layer object pointer"
     },
     {
       "name": "r3dRenderer",
-      "rva": "0X1FB65D8",
-      "pattern": "4C 8B 3D ? ? ? ? 48 03 ? 49",
+      "rva": "0X1FD0A28",
+      "pattern": "48 8B 05 ? ? ? ? C3",
       "description": "Global renderer singleton"
     },
     {
       "name": "g_thread_device",
-      "rva": "0X1FB42F0",
-      "pattern": "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81",
+      "rva": "0X1FD0A48",
+      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? E8 ? ? ? ? 48 8B",
       "description": "D3D11 device ptr, returned by GetThreadDevice()"
     },
     {
       "name": "g_current_x3d_device_override",
-      "rva": "0X1F765C0",
-      "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? 04 00 00 C3",
+      "rva": "0X1FD0A48",
+      "pattern": "48 89 0D ? ? ? ? C3",
       "description": "X3D device override ptr (was SwapChain)"
     },
     {
       "name": "g_x3d_d3d11_backend",
-      "rva": "0X1FB4310",
-      "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? ? ? ? C3 CC 48 8D 81",
+      "rva": "0X1FD0A48",
+      "pattern": "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B 80",
       "description": "X3D D3D11 backend instance, assigned in X3DDeviceD3D11_Initialize"
     },
     {
       "name": "g_d3dcompiler47_module",
-      "rva": "0x1F7B1F0",
-      "pattern": "",
+      "rva": "0X1FD1208",
+      "pattern": "48 89 05 ? ? ? ? 48 85 C0 75 ? E8",
       "description": "LoadLibraryA('d3dcompiler_47.dll') result"
     },
     {
       "name": "g_D3DReflect",
-      "rva": "0x1F7B1F8",
-      "pattern": "",
+      "rva": "0X1FD1210",
+      "pattern": "48 89 05 ? ? ? ? 48 83 C4 20 5B C3",
       "description": "GetProcAddress('D3DReflect') result"
     },
     {
       "name": "TurretManager",
-      "rva": "0X1EDE7A0",
-      "pattern": "83 F9 01 0F 85 ? ? ? ? 48 8B 05 ? ? ? ? 48 8B 78 28",
+      "rva": "0X1EF0E50",
+      "pattern": "48 8B 05 ? ? ? ? 48 8B 58 ? 48 85 DB 74 ? 48 8B 0B",
       "description": "Manager for all turrets"
     },
     {
       "name": "ViewMatrixInstance",
-      "rva": "0X1F9E520",
-      "pattern": "48 83 EC 28 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? 48 C7 05",
+      "rva": "0X1FBA090",
+      "pattern": "48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D",
       "description": "Direct3D view projection matrix instance"
     },
     {
       "name": "X3DDeviceD3D11_vtable",
-      "rva": "0x1B00890",
-      "pattern": "",
+      "rva": "0X1B4F9D8",
+      "pattern": "48 8D 05 ? ? ? ? 48 89 01 48 89 89",
       "description": "X3DDeviceD3D11 vtable, installed at object+0"
     }
   ],
   "functions": [
     {
       "name": "BuffManagerClient__OnBuffRemove",
-      "rva": "0X92FE10",
+      "rva": "0X8CBED0",
       "patterns": [
         "40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1"
       ],
@@ -224,7 +224,7 @@
     },
     {
       "name": "CanCast",
-      "rva": "0X2C5950",
+      "rva": "0X2D62D0",
       "patterns": [
         "40 53 48 83 EC ? 48 8B D9 48 85 C9 74 ? 48 8B"
       ],
@@ -232,15 +232,15 @@
     },
     {
       "name": "CastSpellPosition",
-      "rva": "0X988810",
+      "rva": "0X99A0B0",
       "patterns": [
-        "48 8B C4 4C 89 48 ? 48 89 48 ? 55 53"
+        "48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 57 41 54 41 55 41 56 41 57 48 81 EC ? ? ? ? 0F 29 70"
       ],
       "description": "Position-based cast function"
     },
     {
       "name": "CastSpellSafe",
-      "rva": "0XBE3300",
+      "rva": "0XBD9750",
       "patterns": [
         "40 57 41 54 48 83 EC ? 4C 8B E2"
       ],
@@ -248,15 +248,15 @@
     },
     {
       "name": "CastSpellTarget",
-      "rva": "0X987F30",
+      "rva": "0X99A850",
       "patterns": [
-        "48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 55 41 56 48 8D A8 ? ? ? ? 48 81 EC A0 01 00 00"
+        "48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 56 41 57"
       ],
       "description": "Target-based cast function"
     },
     {
       "name": "CastSpellWrapper",
-      "rva": "0X2036E0",
+      "rva": "0X208010",
       "patterns": [
         "48 89 48 ? 55 56 57 41 54 41 55"
       ],
@@ -264,7 +264,7 @@
     },
     {
       "name": "CharacterDataStack__Push",
-      "rva": "0X3F4900",
+      "rva": "0X404760",
       "patterns": [
         "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F2 48 8B F9 49 8B D0"
       ],
@@ -272,15 +272,15 @@
     },
     {
       "name": "CharacterDataStack__Update",
-      "rva": "0X3F57A0",
+      "rva": "0X214D90",
       "patterns": [
-        "4C 8B DC 55 57 48 8B EC 48 83 EC 78 48 8B 41 40 48 8B F9 48 85 C0"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B 01 48 8B D9 48 8B F2"
       ],
       "description": "Update character model/skin"
     },
     {
       "name": "CharacterDataStackPush",
-      "rva": "0X309F40",
+      "rva": "0X31D000",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 55 57 41 54 41 56 41 57 48 8D 6C 24"
       ],
@@ -288,7 +288,7 @@
     },
     {
       "name": "CharacterDataStackUpdate",
-      "rva": "0X210460",
+      "rva": "0X214D90",
       "patterns": [
         "88 54 24 10 55 53 56 57 41 54 41 55 41 56 41 57"
       ],
@@ -296,7 +296,7 @@
     },
     {
       "name": "ComponentLookupFn",
-      "rva": "0X11BAEE0",
+      "rva": "0X11BE150",
       "patterns": [
         "48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D"
       ],
@@ -304,13 +304,15 @@
     },
     {
       "name": "ComponentRegistry__Lookup",
-      "rva": "0x11AA460",
-      "patterns": [],
+      "rva": "0X259270",
+      "patterns": [
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B D9 8B FA 48 8B 09"
+      ],
       "description": "Alias for ComponentLookupFn"
     },
     {
       "name": "CurrentNodeIdx",
-      "rva": "0X3906F",
+      "rva": "0X4A317",
       "patterns": [
         "8B 08"
       ],
@@ -318,7 +320,7 @@
     },
     {
       "name": "DistanceSq",
-      "rva": "0X219DE0",
+      "rva": "0X21E610",
       "patterns": [
         "F3 0F 10 81 5C 02 00 00"
       ],
@@ -326,7 +328,7 @@
     },
     {
       "name": "GameObject__IsType",
-      "rva": "0X288420",
+      "rva": "0X293FD0",
       "patterns": [
         "40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C"
       ],
@@ -334,15 +336,15 @@
     },
     {
       "name": "GetAIManager",
-      "rva": "0x276E70",
+      "rva": "0X270850",
       "patterns": [
-        "48 8B 89 70 40 00 00 48 85 C9 74"
+        "48 8B 89 B0 40 00 00 48 85 C9 74"
       ],
       "description": "Reads AIManager from object"
     },
     {
       "name": "GetAttackDelay",
-      "rva": "0X28C0B0",
+      "rva": "0X2988A0",
       "patterns": [
         "E8 ? ? ? ? 33 C0 F3 0F 11 83 ? ? ? ?"
       ],
@@ -350,7 +352,7 @@
     },
     {
       "name": "GetAttackWindup",
-      "rva": "0X576A80",
+      "rva": "0X58CFA0",
       "patterns": [
         "48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 60 48 8B 01 8B DA 0F 29 74 24 ??"
       ],
@@ -358,7 +360,7 @@
     },
     {
       "name": "GetBoundingRadius",
-      "rva": "0X278170",
+      "rva": "0X2823C0",
       "patterns": [
         "40 53 48 83 EC ? 48 83 B9 ? ? ? ? 00 48 8B D9 0F 29 74 24 20"
       ],
@@ -366,7 +368,7 @@
     },
     {
       "name": "GetCollisionFlags",
-      "rva": "0X127BAB0",
+      "rva": "0X1280BF0",
       "patterns": [
         "48 83 EC 28 48 8B D1 48 8B 0D ? ? ? ? 48 8B 49 08"
       ],
@@ -374,7 +376,7 @@
     },
     {
       "name": "GetFirstObject",
-      "rva": "0X556900",
+      "rva": "0X574210",
       "patterns": [
         "48 83 EC ? 48 8B 51 ? 8B 41 ? 48 8D 0C C2"
       ],
@@ -382,7 +384,7 @@
     },
     {
       "name": "GetGoldRedirectTarget",
-      "rva": "0X208CD0",
+      "rva": "0X20D600",
       "patterns": [
         "48 81 C1 ? ? ? ? E9 ? ? ? ? CC CC CC CC"
       ],
@@ -390,7 +392,7 @@
     },
     {
       "name": "GetMapID",
-      "rva": "0X17B15A0",
+      "rva": "0X17C6290",
       "patterns": [
         "E8 ? ? ? ? 4C 89 7C 24 40 48 8D 4C 24 70"
       ],
@@ -398,7 +400,7 @@
     },
     {
       "name": "GetModelInstance",
-      "rva": "0X2951A0",
+      "rva": "0X2A2B60",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 ? 48 8B 4B"
       ],
@@ -406,7 +408,7 @@
     },
     {
       "name": "GetNextObject",
-      "rva": "0X557750",
+      "rva": "0X574CD0",
       "patterns": [
         "0F B7 42 ? 44 8B 41"
       ],
@@ -414,7 +416,7 @@
     },
     {
       "name": "GetObjectByID",
-      "rva": "0X555D10",
+      "rva": "0X573A10",
       "patterns": [
         "4C 8B C1 85 D2 74 ? 49 8B 40 20"
       ],
@@ -422,7 +424,7 @@
     },
     {
       "name": "GetPing",
-      "rva": "0X6D1680",
+      "rva": "0X6CF9B0",
       "patterns": [
         "48 83 EC ? 0F B6 81 ? ? ? ? 3A 05"
       ],
@@ -430,7 +432,7 @@
     },
     {
       "name": "GetRenderPipeline",
-      "rva": "0X4BA5E0",
+      "rva": "0X499960",
       "patterns": [
         "48 83 EC 28 8B 0D ? ? ? ? 65 48 8B 04 25 58 00 00 00 BA 40 01 00 00 48 8B 04 C8 8B 04 02 39 05 ? ? ? ? 7F 47 48 8D 05 ? ? ? ? 48 83 C4 28 C3"
       ],
@@ -438,7 +440,7 @@
     },
     {
       "name": "GetSpellCastInfo",
-      "rva": "0X67A640",
+      "rva": "0X677890",
       "patterns": [
         "E8 ?? ?? ?? ?? 48 85 C0 74 ?? 0F B6 40 ?? 84 C0"
       ],
@@ -446,7 +448,7 @@
     },
     {
       "name": "GetSpellSlot",
-      "rva": "0X977B50",
+      "rva": "0X995630",
       "patterns": [
         "48 63 C2 48 8B 84 C1 ?? ?? ?? ?? C3",
         "83 FA ? 77 ? 48 63 C2 48 8B 84 C1"
@@ -455,7 +457,7 @@
     },
     {
       "name": "GetSubObjAiMgr",
-      "rva": "0X55C850",
+      "rva": "0X576C80",
       "patterns": [
         "E8 ? ? ? ? 48 85 C0 74 ? F3 0F 10 70"
       ],
@@ -463,7 +465,7 @@
     },
     {
       "name": "IsAlive",
-      "rva": "0X2B0CE0",
+      "rva": "0X2C01A0",
       "patterns": [
         "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 38 01 00 00 84 C0 74 ? 48 8D 8B ?? ?? ?? ?? 48 8B 01 FF 50 10 84 C0 75"
       ],
@@ -471,7 +473,7 @@
     },
     {
       "name": "IsBuilding",
-      "rva": "0XE15A80",
+      "rva": "0XE170D0",
       "patterns": [
         "E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"
       ],
@@ -479,7 +481,7 @@
     },
     {
       "name": "IsHero",
-      "rva": "0XC7E3C0",
+      "rva": "0XC752D0",
       "patterns": [
         "E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B"
       ],
@@ -487,7 +489,7 @@
     },
     {
       "name": "IsTurret",
-      "rva": "0X2C5A40",
+      "rva": "0X2D63C0",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27"
       ],
@@ -495,7 +497,7 @@
     },
     {
       "name": "IsVisible",
-      "rva": "0X211330",
+      "rva": "0X215B80",
       "patterns": [
         "48 83 EC 38 80 B9 6C 01 00 00 00 0F 29 74 24 ? 0F 28 ? 7F ? 80 B9 ? ? 00 00 00"
       ],
@@ -503,15 +505,15 @@
     },
     {
       "name": "IssueOrderCore",
-      "rva": "0X289BF0",
+      "rva": "0X207C60",
       "patterns": [
-        "4C 89 4C 24 ? 4C 89 44 24 ? 88 54 24 ? 55"
+        "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 C7 41 28 FF FF FF FF"
       ],
       "description": "Core issue order function"
     },
     {
       "name": "MinimapHudInit",
-      "rva": "0X931E50",
+      "rva": "0X8CDEA0",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00"
       ],
@@ -519,15 +521,15 @@
     },
     {
       "name": "MinimapMoveSelf",
-      "rva": "0X59FAB0",
+      "rva": "0XBD41E0",
       "patterns": [
-        "83 FA 01 0F 85 ? ? ? ? 4C 8B DC"
+        "48 8B C4 55 56 57 41 54 41 55 41 56 41 57 48 8D A8"
       ],
       "description": "evtPlayerMoveMinimap handler"
     },
     {
       "name": "NavAgent",
-      "rva": "0X5944D0",
+      "rva": "0X58C670",
       "patterns": [
         "48 8B 40 28 48 85 C0"
       ],
@@ -535,7 +537,7 @@
     },
     {
       "name": "NavMesh__CreatePath",
-      "rva": "0X2074C0",
+      "rva": "0X20BDF0",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC"
       ],
@@ -543,7 +545,7 @@
     },
     {
       "name": "OnCreateObject",
-      "rva": "0X2A4C00",
+      "rva": "0X2B29E0",
       "patterns": [
         "48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 56 48 81 EC ? ? ? ? 0F 29 70 E8"
       ],
@@ -551,7 +553,7 @@
     },
     {
       "name": "OnDeleteObject",
-      "rva": "0X553D00",
+      "rva": "0X572E00",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 48 8B FA 48 8B CA E8 ? ? ? ? 84 C0"
       ],
@@ -559,7 +561,7 @@
     },
     {
       "name": "OnDoCast",
-      "rva": "0X989150",
+      "rva": "0X977E20",
       "patterns": [
         "40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00"
       ],
@@ -567,15 +569,15 @@
     },
     {
       "name": "OnNewPath",
-      "rva": "0x2E5960",
+      "rva": "0X26EEB0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 54"
+        "40 53 48 83 EC 20 48 8B D9 48 8B 09 48 85 C9 74"
       ],
       "description": "Triggered on new movement path"
     },
     {
       "name": "OnProcessSpell",
-      "rva": "0X98EF00",
+      "rva": "0X97C940",
       "patterns": [
         "40 55 56 48 81 EC 88 00 00 00 48 83 79 28 00"
       ],
@@ -583,7 +585,7 @@
     },
     {
       "name": "OnSpellImpact",
-      "rva": "0X987520",
+      "rva": "0X99A6C0",
       "patterns": [
         "48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 49 8B 01"
       ],
@@ -591,7 +593,7 @@
     },
     {
       "name": "PrintChat",
-      "rva": "0X115F3D0",
+      "rva": "0X1161AD0",
       "patterns": [
         "40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF"
       ],
@@ -599,7 +601,7 @@
     },
     {
       "name": "ProjectAndClip",
-      "rva": "0X1327FF0",
+      "rva": "0X1335010",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC ? 48 8B BC 24 ? ? ? ? 48 8D 05"
       ],
@@ -607,15 +609,15 @@
     },
     {
       "name": "QuestProgress__Calculate",
-      "rva": "0X525E40",
+      "rva": "0X5152D0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 56 41 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2"
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2"
       ],
       "description": "Calculates quest tier, target, and progress"
     },
     {
       "name": "QuestProgress__GetQuestValue",
-      "rva": "0X52A000",
+      "rva": "0X518B10",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA"
       ],
@@ -623,7 +625,7 @@
     },
     {
       "name": "RemapBoneIndex",
-      "rva": "0X2CBA00",
+      "rva": "0X436110",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 57 48 8D AC 24 ? ? ? ? B8 60 25 00 00"
       ],
@@ -639,7 +641,7 @@
     },
     {
       "name": "SpellSlot__Cast",
-      "rva": "0X75A980",
+      "rva": "0X759F00",
       "patterns": [
         "48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00"
       ],
@@ -647,7 +649,7 @@
     },
     {
       "name": "SpellSlot__GetCooldown",
-      "rva": "0X921B10",
+      "rva": "0X8B5A40",
       "patterns": [
         "40 53 48 83 EC 40 48 8B D9 0F 29 74 24 30 48 8B 0D ? ? ? ? 0F 29"
       ],
@@ -655,7 +657,7 @@
     },
     {
       "name": "SpellSlot__GetLevel",
-      "rva": "0X3ADA5B",
+      "rva": "0X3B839B",
       "patterns": [
         "CC CC CC CC CC 8B 41 28 C3"
       ],
@@ -663,7 +665,7 @@
     },
     {
       "name": "TransformVec3",
-      "rva": "0X132A030",
+      "rva": "0X1337050",
       "patterns": [
         "48 83 EC ? 48 8B 44 24 ? 4C 8B D1"
       ],
@@ -671,7 +673,7 @@
     },
     {
       "name": "TranslateString",
-      "rva": "0X11BA5C0",
+      "rva": "0X11BD840",
       "patterns": [
         "40 53 48 83 EC ? 80 39 ? 48 8B C1 8B D1 74"
       ],
@@ -679,7 +681,7 @@
     },
     {
       "name": "UpdateCamera",
-      "rva": "0X2F85F0",
+      "rva": "0X308350",
       "patterns": [
         "48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC"
       ],
@@ -687,7 +689,7 @@
     },
     {
       "name": "WaypointCount",
-      "rva": "0X398B0",
+      "rva": "0X26E9A0",
       "patterns": [
         "8B 40 30"
       ],
@@ -695,7 +697,7 @@
     },
     {
       "name": "WorldToScreen",
-      "rva": "0X13280D0",
+      "rva": "0X13350F0",
       "patterns": [
         "48 83 EC ? F3 0F 10 02 48 8D 41 ? F3 0F 10 4A"
       ],
@@ -703,7 +705,7 @@
     },
     {
       "name": "fieldOfView",
-      "rva": "0X72AC60",
+      "rva": "0X308350",
       "patterns": [
         "48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00"
       ],
@@ -711,23 +713,23 @@
     },
     {
       "name": "ClientMainLoop",
-      "rva": "0X5F5F00",
+      "rva": "0X395FB0",
       "patterns": [
-        "48 83 EC 48 80 3D ? ? ? ? 00 48 89 5C 24 50"
+        "48 83 EC 48 80 3D ? ? ? ? 00 48 89 5C 24"
       ],
       "description": "Frame update main loop"
     },
     {
       "name": "OnWndProc",
-      "rva": "0X9808A0",
+      "rva": "0X120B2A0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 49 8B F0"
+        "40 53 57 48 81 EC 88 02 00 00 48 8B 05 ? ? ? ? 48 33 C4"
       ],
       "description": "Windows message procedure"
     },
     {
       "name": "OnStopCast",
-      "rva": null,
+      "rva": "0X97CE40",
       "patterns": [
         "40 53 56 57 48 83 EC 40 F3 0F 10 81 E4 00 00 00"
       ],
@@ -735,15 +737,15 @@
     },
     {
       "name": "OnPlayAnimation",
-      "rva": null,
+      "rva": "0X2A2B60",
       "patterns": [
-        "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 20 48 8B 4B 18"
+        "48 8B DA 48 8B F9 8B 52 ? 48 8B 4B ? E8 ? ? ? ? 48 8B"
       ],
       "description": "AIBaseClient::OnPlayAnimation â€” PKT_S2C handler"
     },
     {
       "name": "BuffManagerClient__OnBuffAdd",
-      "rva": "0X92F290",
+      "rva": "0X8CB370",
       "patterns": [
         "40 55 53 56 48 8D 6C 24 B9 48 81 EC E0 00 00 00 48 8B 01 48 8B F2"
       ],
@@ -751,39 +753,39 @@
     },
     {
       "name": "IssueOrderPacketWrapper",
-      "rva": null,
+      "rva": "0X208010",
       "patterns": [
-        "E8 ? ? ? ? 80 BD ? ? ? ? ? 74 ? 4C 8B 8D ? ? ? ? 4C 8B C7"
+        "48 89 48 ? 55 56 57 41 54 41 55"
       ],
       "description": "Final packet-wrapper call inside IssueOrderCore"
     },
     {
       "name": "GetThreadDevice",
-      "rva": "0X13CA650",
+      "rva": "0X13D0D50",
       "patterns": [
-        "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81"
+        "48 83 EC 28 48 8B 05 ? ? ? ? 48 83 C4 28 C3"
       ],
       "description": "Returns g_thread_device"
     },
     {
       "name": "X3DDeviceD3D11_Initialize",
-      "rva": "0X13BA0E0",
+      "rva": "0X13CDB00",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 41 54 41 55 41 56 41 57 48 83 EC ? 41 8B D9 49 8B E8"
+        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 48 8B E9"
       ],
       "description": "X3D device initialization"
     },
     {
       "name": "X3DDeviceD3D11_Release",
-      "rva": "0X20D8D0",
+      "rva": "0X13DD340",
       "patterns": [
-        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 05 ? ? ? ? 48 8B F9 48 89 01"
+        "40 53 48 83 EC 20 48 8B D9 48 8B 89"
       ],
       "description": "X3D device release"
     },
     {
       "name": "ConstantBuffer_CreateD3D11DynamicBuffer",
-      "rva": "0X381790",
+      "rva": "0X322A60",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4"
       ],
@@ -791,7 +793,7 @@
     },
     {
       "name": "D3D11TextureView_CreateShaderResourceView",
-      "rva": "0X30A4F0",
+      "rva": "0X23BAC0",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 55 41 56 41 57 48 8B EC"
       ],
@@ -799,7 +801,7 @@
     },
     {
       "name": "DX11Backend_CreateDeviceAndSwapChain",
-      "rva": "0X2074C0",
+      "rva": "0X20BDF0",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC"
       ],
@@ -807,7 +809,7 @@
     },
     {
       "name": "GraphicsPipelineD3D11_InitFromDesc",
-      "rva": "0XBA1120",
+      "rva": "0XB96990",
       "patterns": [
         "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 89 51"
       ],
@@ -815,7 +817,7 @@
     },
     {
       "name": "X3DDeviceD3D11_SetGraphicsPipeline",
-      "rva": "0X13C00D0",
+      "rva": "0X13D1110",
       "patterns": [
         "44 88 44 24 ? 53 55 57 41 54"
       ],
@@ -823,7 +825,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateGraphicsPipeline",
-      "rva": "0X13C2430",
+      "rva": "0X13D27B0",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? B9 ? ? ? ? 49 8B F8"
       ],
@@ -831,142 +833,146 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateVertexBuffer",
-      "rva": "0X4ABB20",
+      "rva": "0X13D0D60",
       "patterns": [
-        "40 55 53 56 57 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
       "description": "Create vertex buffer (vtable+0x088)"
     },
     {
       "name": "X3DDeviceD3D11_CreateIndexBuffer",
-      "rva": "0X1EA4B0",
+      "rva": "0X13D72F0",
       "patterns": [
-        "40 55 53 56 57 41 54 41 56 41 57 48 8D 6C 24 ? 48 81 EC"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
       "description": "Create index buffer (vtable+0x098)"
     },
     {
       "name": "X3DDeviceD3D11_CreateDataBuffer",
-      "rva": "0X13C2280",
+      "rva": "0X13D0D50",
       "patterns": [
-        "40 55 56 57 41 54 41 56 41 57 48 8B EC"
+        "48 83 EC 28 48 8B 05 ? ? ? ? 48 83 C4 28 C3"
       ],
       "description": "Create data buffer (vtable+0x0B8)"
     },
     {
       "name": "X3DDeviceD3D11_CreateTexture2D",
-      "rva": "0X843FD0",
+      "rva": "0X13D3520",
       "patterns": [
-        "40 53 55 56 57 41 55 41 56 41 57 48 81 EC ? ? ? ? 48 8B 05"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B F9 49 8B D9"
       ],
       "description": "Create 2D texture (vtable+0x0C8)"
     },
     {
       "name": "X3DDeviceD3D11_CreateVertexProgram",
-      "rva": "0X13C3090",
+      "rva": "0X13E0EA0",
       "patterns": [
-        "40 55 56 41 54 41 55 41 57 48 8D AC 24"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
       "description": "Create vertex program (vtable+0x100)"
     },
     {
       "name": "X3DDeviceD3D11_CreatePixelProgram",
-      "rva": "0X13C2EE0",
+      "rva": "0X13E1040",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 57 48 83 EC ? 48 8B 89"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
       "description": "Create pixel program (vtable+0x118)"
     },
     {
       "name": "X3DDeviceD3D11_CreateShaderProgram",
-      "rva": "0X451930",
+      "rva": "0X13E0FA0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? B9 ? ? ? ? 49 8B F0"
+        "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
       "description": "Create shader program (vtable+0x128)"
     },
     {
       "name": "X3DDeviceD3D11_ClearFramebuffer",
-      "rva": "0XB5D7F0",
+      "rva": "0X13DE280",
       "patterns": [
-        "40 53 56 57 41 56 41 57 48 83 EC ? 48 8B 05 ? ? ? ? 48 33 C4"
+        "48 89 5C 24 ? 57 48 83 EC 30 41 8B D8 48 8B F9"
       ],
       "description": "Clear framebuffer (vtable+0x160)"
     },
     {
       "name": "X3DDeviceD3D11_BeginFrame",
-      "rva": "0X13BE7A0",
+      "rva": "0X13D3C70",
       "patterns": [
-        "48 89 5C 24 ? 57 48 83 EC ? 4C 8B 41 ? 48 8B F9 C6 81"
+        "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
       "description": "Begin frame (vtable+0x180)"
     },
     {
       "name": "X3DDeviceD3D11_EndFrame",
-      "rva": "0X4FE090",
+      "rva": "0X13D70C0",
       "patterns": [
-        "40 53 48 83 EC ? 48 8B D9 E8 ? ? ? ? C6 83 ? ? ? ? ?"
+        "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
       "description": "End frame (vtable+0x188)"
     },
     {
       "name": "X3DDeviceD3D11_BeginRenderPass",
-      "rva": "0X13BE860",
+      "rva": "0X13D6540",
       "patterns": [
-        "48 8B C4 55 53 57 48 8B EC 48 81 EC"
+        "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 48 8B FA"
       ],
       "description": "Begin render pass (vtable+0x190)"
     },
     {
       "name": "X3DDeviceD3D11_EndRenderPass",
-      "rva": "0X13C5E10",
+      "rva": "0X13D7180",
       "patterns": [
-        "40 53 48 83 EC ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? C6 81"
+        "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
       "description": "End render pass (vtable+0x198)"
     },
     {
       "name": "X3DDeviceD3D11_IsRenderPassActive",
-      "rva": "0X284740",
+      "rva": "0X13D32D0",
       "patterns": [
-        "0F B6 81 ? ? ? ? C3"
+        "8B 81 ? ? ? ? C3"
       ],
       "description": "Is render pass active (vtable+0x1A0)"
     },
     {
       "name": "X3DDeviceD3D11_IsFrameActive",
-      "rva": "0X284740",
+      "rva": "0X13D6DE0",
       "patterns": [
-        "0F B6 81 ? ? ? ? C3"
+        "8B 81 ? ? ? ? C3"
       ],
       "description": "Is frame active (vtable+0x1A8)"
     },
     {
       "name": "X3DDeviceD3D11_Draw",
-      "rva": "0X13CC5B0",
+      "rva": "0X13D5CB0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 81"
+        "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 8B FA"
       ],
       "description": "Draw (vtable+0x1C0)"
     },
     {
       "name": "X3DDeviceD3D11_DrawIndexed",
-      "rva": "0X13CC5B0",
+      "rva": "0X13D5EB0",
       "patterns": [
-        "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8D 81"
+        "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 8B FA"
       ],
       "description": "Draw indexed (vtable+0x1C8)"
     },
     {
       "name": "g_thread_device",
-      "rva": "0x13BA550",
-      "patterns": [],
+      "rva": "0X1FD0A48",
+      "patterns": [
+        "48 8B 0D ? ? ? ? 48 85 C9 74 ? E8"
+      ],
       "description": ""
     },
     {
       "name": "g_x3d_d3d11_backend",
-      "rva": "0x13B8690",
-      "patterns": [],
+      "rva": "0X1FD0A48",
+      "patterns": [
+        "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B 80"
+      ],
       "description": ""
     }
   ],
@@ -1091,10 +1097,10 @@
           "op": 1
         },
         "oAIManager": {
-          "offset": "0X4050",
-          "type": "pointer",
-          "description": "AIManager pointer",
-          "pattern": "48 8B 89 ?? ?? ?? ?? 48 85 C9 74 21 FF 81",
+          "offset": "0X40B0",
+          "type": "AIManager*",
+          "description": "Pointer to AIManager component",
+          "pattern": "48 8B 89 B0 40 00 00 48 85 C9 74",
           "op": 1
         },
         "oCharacterData": {
@@ -1112,14 +1118,14 @@
           "op": 1
         },
         "oCharacterName": {
-          "offset": "0X4380",
+          "offset": "0X4378",
           "type": "std::string",
           "description": "Character/champion name",
           "pattern": "48 8D B9 ?? ?? ?? ?? 48 83 7F 18 0F",
           "op": 1
         },
         "oItemList": {
-          "offset": "0X44A0",
+          "offset": "0X4498",
           "type": "pointer",
           "description": "Inventory item list",
           "pattern": "48 8B 81 ?? ?? ?? ?? 4C 8B F1 0F 29 74 24",
@@ -1241,7 +1247,7 @@
           "op": 1
         },
         "OFF_BOUNDING_RADIUS": {
-          "offset": "0X1",
+          "offset": "0X578",
           "type": "float",
           "description": "Bounding / collision radius",
           "pattern": "41 B8 ?? ?? ?? ?? E8 AF 30",
@@ -1255,7 +1261,7 @@
           "op": 0
         },
         "OFF_AIMANAGER_PTR": {
-          "offset": "0X4050",
+          "offset": "0X4048",
           "type": "QWORD*",
           "description": "AIManager ptr â€” cmp qword ptr [rcx+4070h],0",
           "pattern": "48 8B 98 ?? 40 00",
@@ -1499,7 +1505,7 @@
           "op": 1
         },
         "TargetableFlags": {
-          "offset": "0X0",
+          "offset": "0X78",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
@@ -1548,7 +1554,7 @@
           "op": 1
         },
         "CharData": {
-          "offset": "0X4038",
+          "offset": "0X4030",
           "type": "",
           "description": "",
           "pattern": "48 89 B7 ?? 40 00",
@@ -1660,7 +1666,7 @@
           "op": 0
         },
         "IsTargetableToTeamFlags": {
-          "offset": "0X0",
+          "offset": "0X78",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
           "op": 1
         },
@@ -1831,7 +1837,7 @@
           "op": 1
         },
         "SelectionRadius": {
-          "offset": "0X8C",
+          "offset": "0X90",
           "type": "",
           "description": "",
           "pattern": "44 03 84 24 ?? ??",
@@ -1877,14 +1883,14 @@
       "base": "GameObject",
       "fields": {
         "oCombatStats": {
-          "offset": "0X4438",
+          "offset": "0X4430",
           "type": "pointer",
           "description": "Combat stats sub-structure",
           "pattern": "4C 8D 8F ?? ?? ?? ?? 41 0F B6 51 15 45 33 C0",
           "op": 1
         },
         "oModelInstance": {
-          "offset": "0X44E8",
+          "offset": "0X44E0",
           "type": "pointer",
           "description": "Model instance",
           "pattern": "48 8D 93 ?? ?? 00 00 48 8B 08",
@@ -1898,7 +1904,7 @@
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0XD8",
+          "offset": "0X2E78",
           "type": "pointer",
           "description": "Active Buff list pointer",
           "pattern": "48 8D 8B 78 2E 00 00",
@@ -1919,7 +1925,7 @@
           "op": 1
         },
         "oHeroInventoryClient": {
-          "offset": "0X4250",
+          "offset": "0X4248",
           "type": "pointer",
           "description": "Hero inventory client",
           "pattern": "48 8D 93 ?? ?? ?? ?? 48 8B CD 0F B6 42",
@@ -1933,7 +1939,7 @@
           "op": 0
         },
         "CharacterData": {
-          "offset": "0X40E8",
+          "offset": "0X40E0",
           "type": "pointer",
           "description": "Character data",
           "pattern": "48 8D 8D ?? ?? 00 00 44 8B 8C 24 ?? 00 00 00 45 8B C7",
@@ -2036,7 +2042,7 @@
           "op": 1
         },
         "BuffManager": {
-          "offset": "0XD8",
+          "offset": "0X2E78",
           "type": "",
           "description": "",
           "pattern": "48 8D 8B 78 2E 00 00",
@@ -2429,7 +2435,7 @@
           "op": 1
         },
         "mBonusSpellBlock": {
-          "offset": "0X25C",
+          "offset": "0X200",
           "type": "float",
           "description": "Bonus Magic Resist",
           "pattern": "F3 0F 10 81 00 02 00 00",
@@ -2450,7 +2456,7 @@
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0XD8",
+          "offset": "0X2E78",
           "pattern": "48 8D 8B 78 2E 00 00",
           "op": 1
         },
@@ -2474,19 +2480,19 @@
           "pattern": "8B 41 30"
         },
         "TargetNetID": {
-          "offset": "0X38",
+          "offset": "0X34",
           "type": "DWORD",
           "description": "Network ID of the target unit (if targeted)",
           "pattern": "8B 41 34"
         },
         "StartPos": {
-          "offset": "0XD8",
+          "offset": "0X24",
           "type": "Vector3",
           "description": "Starting position of the missile",
           "pattern": "F3 0F 10 41 24"
         },
         "EndPos": {
-          "offset": "0XE4",
+          "offset": "0X30",
           "type": "Vector3",
           "description": "Destination position",
           "pattern": "F3 0F 10 41 30"
@@ -2512,21 +2518,21 @@
           "op": 1
         },
         "oTargetNetID": {
-          "offset": "0X38",
+          "offset": "0X34",
           "type": "",
           "description": "",
           "pattern": "8B 41 34",
           "op": 1
         },
         "oStartPos": {
-          "offset": "0XD8",
+          "offset": "0X24",
           "type": "",
           "description": "",
           "pattern": "F3 0F 10 41 24",
           "op": 1
         },
         "oEndPos": {
-          "offset": "0XE4",
+          "offset": "0X30",
           "type": "",
           "description": "",
           "pattern": "F3 0F 10 41 30",
@@ -2540,7 +2546,7 @@
           "op": 1
         },
         "CastEndPos": {
-          "offset": "0X30",
+          "offset": "0X0",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 82 1C",
@@ -2727,7 +2733,7 @@
           "op": 0
         },
         "SlotType": {
-          "offset": "0X31",
+          "offset": "0X2",
           "type": "",
           "description": "",
           "pattern": "49 C1 E9 ?? 49 C1",
@@ -2945,7 +2951,7 @@
           "op": 0
         },
         "StartPath": {
-          "offset": "0X0",
+          "offset": "0X40",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 04 FB",
@@ -2964,7 +2970,7 @@
           "description": ""
         },
         "Velocity": {
-          "offset": "0X18",
+          "offset": "0X0",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D A2 5A",
@@ -3157,7 +3163,7 @@
           "op": 1
         },
         "ResCastType": {
-          "offset": "0X31",
+          "offset": "0X2",
           "type": "",
           "description": "",
           "pattern": "49 C1 E9 ?? 49 C1",
@@ -3582,7 +3588,7 @@
     "CharacterDataStack": {
       "fields": {
         "ActiveGear": {
-          "offset": "0X1",
+          "offset": "0XB0",
           "type": "",
           "description": "",
           "pattern": "41 B8 ?? ?? ?? ?? E8 E8 77",
