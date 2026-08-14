@@ -1,21 +1,19 @@
 <div align="center">
 
 > [!NOTE]
-> **Announcement:** I am not able to update for a while sorry (┬┬﹏┬┬) 
-
-
+> **Announcement:** Updated for Patch 26.16 (Season 16). Fully reversed & verified with IDA Pro 9.4! ✨
 
 # League — Offset & Pattern Database
 
-![Patch](https://img.shields.io/badge/Patch-26.14-blue?style=flat-square)
+![Patch](https://img.shields.io/badge/Patch-26.16-blue?style=flat-square)
 ![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
 ![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
 
 Star For Support ⭐
 
-RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
-Ai used for formatting, not for reversing.
+RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.  
+AI used for formatting, not for reversing.
 
 </div>
 
@@ -35,13 +33,13 @@ League-Offsets/
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.14 |
-| Timestamp | `6A4EDF34` — Wed Jul 08 23:37:24 2026 |
-| Imagebase | `7FF736E70000` |
+| Patch | 26.16 (`16.16.804.9184`) |
+| Timestamp | `6A974D38` — Mon Aug 10 16:10:32 2026 |
+| Imagebase | `7FF62DAE0000` |
 | Compiler | Visual C++ · x64 PE |
 
 ---
 
 ## 📬 Contact
-Discord — **swansizz**
+Discord — **swansizz**  
 Or open an [issue](../../issues) if a pattern is missing or broken.
