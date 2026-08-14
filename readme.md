@@ -1,7 +1,8 @@
 <div align="center">
 
 > [!NOTE]
-> **Announcement:** Updated for Patch 26.16 (Season 16). Fully reversed & verified with IDA Pro 9.4! ✨
+> **Announcement:** Updated for Patch 26.16 (Season 16). Fully reversed & verified with IDA Pro 9.4!
+> Sorry for delay, I was busy with my own life + cheats
 
 # League — Offset & Pattern Database
 
