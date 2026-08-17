@@ -2,7 +2,7 @@
 #include <cstdint>
 
 namespace Offsets {
-    constexpr uintptr_t ImageBase = 0X7FF62DAE0000;
+    constexpr uintptr_t ImageBase = 0X7FF738CA0000;
 
     namespace Globals {
         constexpr uintptr_t BlueMinionManager = 0X1EF4210;
