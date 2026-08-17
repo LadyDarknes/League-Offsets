@@ -2,7 +2,7 @@
   "meta": {
     "patch": "26.16",
     "timestamp": "0X6A974D38",
-    "imagebase": "0X7FF62DAE0000",
+    "imagebase": "0X7FF738CA0000",
     "compiler": "Visual C++ · x64 PE",
     "generated_by": "ida_dumper.py",
     "description": "League of Legends offset database. AI used for formatting, not for reversing."
