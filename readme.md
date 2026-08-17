@@ -1,3 +1,4 @@
+<div align="center">
 # League — Offset & Pattern Database
 
 ![Patch](https://img.shields.io/badge/Patch-26.16-blue?style=flat-square)
@@ -22,7 +23,7 @@ League-Offsets/
 │       └── all_offsets.hpp    ← unified single header containing all C++ snippets & types
 ```
 Example:
-<img width="1076" height="706" alt="image" src="https://github.com/user-attachments/assets/04753cf1-3c3a-4f8f-ac3a-067c0dc5d11e" /><div align="center">
+<img width="1076" height="706" alt="image" src="https://github.com/user-attachments/assets/04753cf1-3c3a-4f8f-ac3a-067c0dc5d11e" />
 ## Build Info
 
 | Field | Value |
