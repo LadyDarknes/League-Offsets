@@ -1,15 +1,14 @@
 # League — Offset & Pattern Database
 
-![Patch](https://img.shields.io/badge/Patch-26.16-blue?style=flat-square)
-![Arch](https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square)
-![Tool](https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square)
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/Patch-26.16-blue?style=flat-square" alt="Patch" />
+  <img src="https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square" alt="Arch" />
+  <img src="https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square" alt="Tool" />
+  <img src="https://img.shields.io/badge/Status-Up%20to%20date-brightgreen?style=flat-square" alt="Status" />
+</p>
+
 Star For Support ⭐
 RVA offsets, AOB patterns, and structure layouts manually reversed from the game client.
-
-</div>
-
 
 ## Repository Layout
 
