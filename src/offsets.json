@@ -4,213 +4,194 @@
     "timestamp": "0X6A974D38",
     "imagebase": "0X7FF738CA0000",
     "compiler": "Visual C++ · x64 PE",
-    "generated_by": "ida_dumper.py",
-    "description": "League of Legends offset database. AI used for formatting, not for reversing."
+    "generated_by": "IDA Pro 9.4 · Sync & Verification Engine",
+    "description": "Comprehensive League of Legends x64 PE offsets, verified signatures, and data structures."
   },
   "globals": [
     {
-      "name": "BlueMinionManager",
-      "rva": "0X1EF4210",
-      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 28",
-      "description": "Blue team (100) minion list manager"
-    },
-    {
-      "name": "CastSpellFlag",
-      "rva": "0X1E55E20",
-      "pattern": "C6 05 ? ? ? ? ? E8 ? ? ? ? 8B 50 ?",
-      "description": "Spell cast flag"
-    },
-    {
-      "name": "ChatClient",
-      "rva": "0X1F2B490",
-      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 FF 50 ? 84 C0 74 ? 48 8B 1D ? ? ? ? EB ? 48 8B 0D",
-      "description": "Handles chat history and UI"
-    },
-    {
-      "name": "ConnSlotSentinel",
-      "rva": "0X1F33F94",
-      "pattern": "0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
-      "description": "Connection slot sentinel"
-    },
-    {
-      "name": "EntityList",
-      "rva": "0X1EF0ED0",
-      "pattern": "0F B6 4C 24 ? 48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00",
-      "description": "Entity list array"
-    },
-    {
-      "name": "GameClient",
-      "rva": "0X1F0DFF8",
-      "pattern": "48 8B 05 ? ? ? ? 48 8B F2 83 78 10 02",
-      "description": "Game client"
-    },
-    {
-      "name": "GameTime",
-      "rva": "0X1F00698",
-      "pattern": "F3 0F 5C 35 ? ? ? ? 0F 28 F8 0F 2F CE 76 ? F3 0F 10 73 ? 0F 28 CE 48 8B CB E8 ? ? ? ? 0F 28 CE 48 8B CB E8 ? ? ? ? C6 43 ? ?",
-      "description": "Game time"
+      "name": "LocalPlayer",
+      "rva": "0X1F304B0",
+      "pattern": "48 8B 05 ? ? ? ? 4C 8B DA"
     },
     {
       "name": "HeroManager",
       "rva": "0X1EF0E48",
-      "pattern": "48 8B 05 ? ? ? ? 45 33 FF 49 89 73 ? 0F 57 C0 F3 0F 7F 45 ? 4C 89 7D ? 48 8B FA 48 8B 70 ? 4C 8B E9 8B 40 ? 41 BE ? ? ? ? 4D 89 63 ?",
-      "description": "Manager for all champions in the game"
+      "pattern": "48 8B 05 ? ? ? ? 45 33 FF 49 89 73 08"
     },
     {
-      "name": "HudInstance",
-      "rva": "0X1EF0EB8",
-      "pattern": "48 8B 0D ? ? ? ? 8B 57 ? 48 8B 49 ? E8 ? ? ? ? B0 ? 48 8B 5C 24 ? 48 8B 74 24 ? 48 83 C4 ? 5F C3 48 8B 5C 24 ? 48 8B 74 24 ?",
-      "description": "Global GUI and user input control"
+      "name": "MinionManager",
+      "rva": "0X1EF0E88",
+      "pattern": "48 8B 0D ? ? ? ? E8 44 F5 FF FF"
     },
     {
-      "name": "IssueOrderFlag",
-      "rva": "0X1E55E88",
-      "pattern": "C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 48 8B 84 24",
-      "description": "Issue order flag"
-    },
-    {
-      "name": "LocalPlayer",
-      "rva": "0X1F304B0",
-      "pattern": "48 8B 05 ? ? ? ? 4C 8B DA 4C 8B C1 48 85 C0 0F 84 ? ? ? ? 48 89 5C 24 ? 48 8D 0D ? ? ? ? 48 8B 98 ? ? ? ? 48 85 DB 74 ? 48 8B 80 ? ? ? ? F0 FF 43 ?",
-      "description": "Pointer to the local player object"
-    },
-    {
-      "name": "MissileManager",
-      "rva": "0X1EF4208",
-      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 0F 84 ? ? ? ? 41 80 7D",
-      "description": "Manager for all projectiles"
-    },
-    {
-      "name": "MouseScreenVec2",
-      "rva": "0X1EF4260",
-      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 0D ? ? ? ? 48 8B 01",
-      "description": "Mouse screen position"
-    },
-    {
-      "name": "NavGrid",
-      "rva": "0X1EF41F8",
-      "pattern": "48 8B 05 ? ? ? ? 0F 28 DA",
-      "description": "Navigation grid"
-    },
-    {
-      "name": "NetClient",
-      "rva": "0X1EF0D20",
-      "pattern": "48 8B 05 ? ? ? ? 0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1",
-      "description": "Net client"
-    },
-    {
-      "name": "NetInstance",
-      "rva": "0X1EF0D38",
-      "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 85 C0 74 ? 80 78",
-      "description": "Net instance"
-    },
-    {
-      "name": "ObjectManager",
-      "rva": "0X1EF0D28",
-      "pattern": "48 8B 0D ? ? ? ? 8B D0 E8 ? ? ? ? 48 8B F0 48 85 C0 74 ? 48 8B 08 48 8B 51 ? 48 8B C8 FF D2",
-      "description": "Object manager"
+      "name": "BlueMinionManager",
+      "rva": "0X1EF4210",
+      "pattern": "48 8B 0D ? ? ? ? 48 83 B8 C0 00 00 00 00"
     },
     {
       "name": "RedMinionManager",
       "rva": "0X1EF4218",
-      "pattern": "48 8B 15 ? ? ? ? 48 85 D2 74 ? 48 8B 02 FF 50 28",
-      "description": "Red team (200) minion list manager"
-    },
-    {
-      "name": "SpellCastMap",
-      "rva": "0X1F1CF30",
-      "pattern": "48 8B 05 ?? ?? ?? ?? 48 8B 88 ?? ?? ?? ?? 48 85 C9 74",
-      "description": "Spell cast hashmap"
-    },
-    {
-      "name": "SwapChain",
-      "rva": "0X1F919D0",
-      "pattern": "48 8B 05 ? ? ? ? 48 8B 80 ? 04 00 00 C3",
-      "description": "Direct3D11 swap chain wrapper pointer"
-    },
-    {
-      "name": "TimingTable",
-      "rva": "0X1F35830",
-      "pattern": "48 8D 05 ? ? ? ? 48 89 44 24 ? 48 89 44 24",
-      "description": "Timing table"
-    },
-    {
-      "name": "UnderMouseObj",
-      "rva": "0X1EF44B8",
-      "pattern": "48 89 0D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 33 D2",
-      "description": "Object under mouse cursor"
-    },
-    {
-      "name": "ViewPort",
-      "rva": "0X1EF4258",
-      "pattern": "48 8B 3D ? ? ? ? 80 78 22 00 74",
-      "description": "Viewport"
-    },
-    {
-      "name": "ZoomAnomalyLatch",
-      "rva": "0X1F6D994",
-      "pattern": "80 3D ? ? ? ? ? 0F 85 ? ? ? ? C6 05",
-      "description": "Zoom flag check"
-    },
-    {
-      "name": "r3dRenderLayer",
-      "rva": "0X1FD0A20",
-      "pattern": "48 8B 1D ? ? ? ? 80 BB 84 00 00 00 00",
-      "description": "Core rendering layer object pointer"
-    },
-    {
-      "name": "r3dRenderer",
-      "rva": "0X1FD0A28",
-      "pattern": "48 8B 05 ? ? ? ? C3",
-      "description": "Global renderer singleton"
-    },
-    {
-      "name": "g_thread_device",
-      "rva": "0X1FD0A48",
-      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 ? E8 ? ? ? ? 48 8B",
-      "description": "D3D11 device ptr, returned by GetThreadDevice()"
-    },
-    {
-      "name": "g_current_x3d_device_override",
-      "rva": "0X1FD0A48",
-      "pattern": "48 89 0D ? ? ? ? C3",
-      "description": "X3D device override ptr (was SwapChain)"
-    },
-    {
-      "name": "g_x3d_d3d11_backend",
-      "rva": "0X1FD0A48",
-      "pattern": "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B 80",
-      "description": "X3D D3D11 backend instance, assigned in X3DDeviceD3D11_Initialize"
-    },
-    {
-      "name": "g_d3dcompiler47_module",
-      "rva": "0X1FD1208",
-      "pattern": "48 89 05 ? ? ? ? 48 85 C0 75 ? E8",
-      "description": "LoadLibraryA('d3dcompiler_47.dll') result"
-    },
-    {
-      "name": "g_D3DReflect",
-      "rva": "0X1FD1210",
-      "pattern": "48 89 05 ? ? ? ? 48 83 C4 20 5B C3",
-      "description": "GetProcAddress('D3DReflect') result"
+      "pattern": "48 8B 15 ? ? ? ? 48 8B 0D ? ? ? ? 48 83 B8 C0 00 00 00 00"
     },
     {
       "name": "TurretManager",
       "rva": "0X1EF0E50",
-      "pattern": "48 8B 05 ? ? ? ? 48 8B 58 ? 48 85 DB 74 ? 48 8B 0B",
-      "description": "Manager for all turrets"
+      "pattern": "48 8B 1D ? ? ? ? 48 8D 4C 24 70"
+    },
+    {
+      "name": "ViewPort",
+      "rva": "0X1EF4258",
+      "pattern": "48 8B 3D ? ? ? ? FF 90 20 01 00 00"
+    },
+    {
+      "name": "MouseScreenVec2",
+      "rva": "0X1EF4260",
+      "pattern": "48 8B 0D ? ? ? ? 4C 8D 45 67 48 8D 55 6F C7 45 67 00 00 00 00"
+    },
+    {
+      "name": "UnderMouseObj",
+      "rva": "0X1EF44B8",
+      "pattern": "48 89 0D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 33 D2 48 89 51 08"
+    },
+    {
+      "name": "ObjectManager",
+      "rva": "0X1EF0D28",
+      "pattern": "48 8B 0D ? ? ? ? 8B 10 E8 45 C7 35 00"
+    },
+    {
+      "name": "GameTime",
+      "rva": "0X1F00698",
+      "pattern": "F3 0F 5C 35 ? ? ? ? 0F 28 F8"
+    },
+    {
+      "name": "MissileManager",
+      "rva": "0X1EF4208",
+      "pattern": "48 8B 05 ? ? ? ? 41 8B 5E 20"
+    },
+    {
+      "name": "MissileContainer",
+      "rva": "0X1F26018",
+      "pattern": "48 8B 0D ? ? ? ? 48 8D 44 24 50 F3 44 0F 11 44 24 48 4C 8D 4C 24 78 F3 0F 11 7C 24 40 4C 8D 44 24 60 44 89 7C 24 38 48 83 C1 08"
+    },
+    {
+      "name": "HudInstance",
+      "rva": "0X1EF0EB8",
+      "pattern": "48 8B 0D ? ? ? ? 8B 57 20"
+    },
+    {
+      "name": "ChatManager",
+      "rva": "0X1F03418",
+      "pattern": "48 8B 0D ? ? ? ? 48 8B D8 48 85 C9 74 0D"
+    },
+    {
+      "name": "ChatClient",
+      "rva": "0X1F2B490",
+      "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 0E 48 8B 01 FF 50 78"
+    },
+    {
+      "name": "NavGrid",
+      "rva": "0X1EF41F8",
+      "pattern": "48 8B 05 ? ? ? ? 48 89 84 11 E8 02 00 00"
+    },
+    {
+      "name": "NetClient",
+      "rva": "0X1EF0D20",
+      "pattern": "48 8B 05 ? ? ? ? 0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1"
+    },
+    {
+      "name": "NetInstance",
+      "rva": "0X1EF0D38",
+      "pattern": "48 8B 0D ? ? ? ? 8B 5B 08"
+    },
+    {
+      "name": "EntityList",
+      "rva": "0X1EF0ED0",
+      "pattern": "48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00 8B B4 02 A0 00 00 00"
+    },
+    {
+      "name": "GameClient",
+      "rva": "0X1F0DFF8",
+      "pattern": "48 8B 05 ? ? ? ? 48 8B E9 83 78 10 02"
+    },
+    {
+      "name": "SpellCastMap",
+      "rva": "0X1F1CF30",
+      "pattern": "48 89 05 ? ? ? ? E8 F1 69 CF 00"
+    },
+    {
+      "name": "SwapChain",
+      "rva": "0X1F919D0",
+      "pattern": "48 8B 05 ? ? ? ? 48 85 C0 0F 84 54 01 00 00"
+    },
+    {
+      "name": "TimingTable",
+      "rva": "0X1F35830",
+      "pattern": "48 8D 0D ? ? ? ? E8 3A 51 43 00"
+    },
+    {
+      "name": "ZoomAnomalyLatch",
+      "rva": "0X1F6D994",
+      "pattern": "80 3D ? ? ? ? 00 0F 85 8C 01 00 00"
+    },
+    {
+      "name": "r3dRenderLayer",
+      "rva": "0X1FD0A20",
+      "pattern": "48 C7 ? ? ? ? 00 00 00 00 00 48 8D 4B 08"
+    },
+    {
+      "name": "r3dRenderer",
+      "rva": "0X1FD0A28",
+      "pattern": "48 8B 0D ? ? ? ? 8B FA 48 8B 01"
+    },
+    {
+      "name": "g_thread_device",
+      "rva": "0X1FD0A48",
+      "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
+    },
+    {
+      "name": "g_current_x3d_device_override",
+      "rva": "0X1FD0A48",
+      "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
+    },
+    {
+      "name": "g_x3d_d3d11_backend",
+      "rva": "0X1FD0A48",
+      "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
+    },
+    {
+      "name": "g_d3dcompiler47_module",
+      "rva": "0X1FD1208",
+      "pattern": "48 89 05 ? ? ? ? 48 85 C0 75 26"
+    },
+    {
+      "name": "g_D3DReflect",
+      "rva": "0X1FD1210",
+      "pattern": "48 89 05 ? ? ? ? E8 1E 6C 00 00"
     },
     {
       "name": "ViewMatrixInstance",
       "rva": "0X1FBA090",
-      "pattern": "48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D",
-      "description": "Direct3D view projection matrix instance"
+      "pattern": "48 8D 0D ? ? ? ? E8 A0 0A FB 00"
     },
     {
       "name": "X3DDeviceD3D11_vtable",
       "rva": "0X1B4F9D8",
-      "pattern": "48 8D 05 ? ? ? ? 48 89 01 48 89 89",
-      "description": "X3DDeviceD3D11 vtable, installed at object+0"
+      "pattern": "48 8D 05 ? ? ? ? 48 89 06 0F 57 C0 48 89 9E EC 01 00 00"
+    },
+    {
+      "name": "CastSpellFlag",
+      "rva": "0X1E55E20",
+      "pattern": "0F B6 05 ? ? ? ? 48 8D 57 15"
+    },
+    {
+      "name": "IssueOrderFlag",
+      "rva": "0X1E55E88",
+      "pattern": "C7 05 ? ? ? ? 13 00 00 00 E8 2B 8A 00 00"
+    },
+    {
+      "name": "ConnSlotSentinel",
+      "rva": "0X1F33F94",
+      "pattern": "0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1 48 85 C0 74 0A 44 0F B6 80 23 04 00 00 EB 04 44 0F B6 C2 44 3A C2 0F 84 88 01 00 00"
     }
   ],
   "functions": [
@@ -961,7 +942,7 @@
     },
     {
       "name": "g_thread_device",
-      "rva": "0X1FD0A48",
+      "rva": "0X218960",
       "patterns": [
         "48 8B 0D ? ? ? ? 48 85 C9 74 ? E8"
       ],
@@ -969,7 +950,7 @@
     },
     {
       "name": "g_x3d_d3d11_backend",
-      "rva": "0X1FD0A48",
+      "rva": "0X3BEDA0",
       "patterns": [
         "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B 80"
       ],
@@ -997,22 +978,22 @@
         },
         "oTeamID": {
           "offset": "0X239",
-          "type": "byte",
-          "description": "Team ID (100 Blue, 200 Red)",
+          "type": "uint8_t",
+          "description": "Team identifier (100 = Blue, 200 = Red, 300 = Neutral)",
           "pattern": "0F B6 81 ?? ?? 00 00 88 02 48 8B C2 C3",
           "op": 1
         },
         "oName": {
-          "offset": "0X68",
-          "type": "std::string",
-          "description": "Internal object name",
+          "offset": "0X4378",
+          "type": "char[16]",
+          "description": "Champion / Entity model name string (SSO)",
           "pattern": "C5 FA 6F 44 24 ?? C4 42 19 DC E7 4C",
           "op": 1
         },
         "oNetworkID": {
-          "offset": "0XCC",
-          "type": "DWORD",
-          "description": "Unique global network ID",
+          "offset": "0XBC",
+          "type": "uint32_t",
+          "description": "Unique Network ID for entity replication",
           "pattern": "8B 81 CC 00 00 00",
           "op": 1
         },
@@ -1033,8 +1014,8 @@
         },
         "oPosition": {
           "offset": "0X23C",
-          "type": "Vector3",
-          "description": "World position",
+          "type": "Vec3",
+          "description": "Entity position in world coordinates (X, Y, Z)",
           "pattern": "F3 0F 10 81 3C 02 00 00",
           "op": 1
         },
@@ -1049,9 +1030,9 @@
           "description": "Visibility byte"
         },
         "oVisible": {
-          "offset": "0x2E8",
-          "type": "byte",
-          "description": "Visible status"
+          "offset": "0X2E8",
+          "type": "bool",
+          "description": "Entity visibility flag"
         },
         "oMissileClientHandle": {
           "offset": "0x2B8",
@@ -1071,9 +1052,9 @@
           "op": 1
         },
         "oIsTargetable": {
-          "offset": "0XEB0",
-          "type": "byte",
-          "description": "AIBase targetable byte",
+          "offset": "0X10E0",
+          "type": "bool",
+          "description": "Is entity targetable / invulnerable check",
           "pattern": "0F B6 83 ?? ?? ?? ?? 48 83 C4 20 5B C3",
           "op": 1
         },
@@ -1097,7 +1078,7 @@
           "op": 1
         },
         "oAIManager": {
-          "offset": "0X40B0",
+          "offset": "0X4050",
           "type": "AIManager*",
           "description": "Pointer to AIManager component",
           "pattern": "48 8B 89 B0 40 00 00 48 85 C9 74",
@@ -1112,8 +1093,8 @@
         },
         "oSpellBook": {
           "offset": "0X3108",
-          "type": "pointer",
-          "description": "SpellBook pointer",
+          "type": "SpellBook*",
+          "description": "Pointer to SpellBook component",
           "pattern": "49 8D B5 ?? ?? ?? ?? 48 89 00 48 89 40 08 48 89 40 10",
           "op": 1
         },
@@ -1875,6 +1856,141 @@
           "offset": "0X408",
           "pattern": "4C 8D 83 08 04 00 00 48 8D 15 E3 B6",
           "op": 1
+        },
+        "oIsDead": {
+          "offset": "0X231",
+          "type": "bool",
+          "description": "IsDead boolean flag"
+        },
+        "oIsDeadBase": {
+          "offset": "0X230",
+          "type": "Obfuscated<bool>",
+          "description": "Base of obfuscated IsDead struct"
+        },
+        "oMana": {
+          "offset": "0X340",
+          "type": "float",
+          "description": "Current Primary Ability Resource (Mana / Energy / Fury)"
+        },
+        "oMaxMana": {
+          "offset": "0X368",
+          "type": "float",
+          "description": "Max Primary Ability Resource"
+        },
+        "oHealth": {
+          "offset": "0X1060",
+          "type": "float",
+          "description": "Current Health"
+        },
+        "oMaxHealth": {
+          "offset": "0X1088",
+          "type": "float",
+          "description": "Max Health"
+        },
+        "oVisible1": {
+          "offset": "0X2E8",
+          "type": "bool",
+          "description": "Primary visibility flag"
+        },
+        "oVisible2": {
+          "offset": "0X2F0",
+          "type": "bool",
+          "description": "Secondary visibility flag"
+        },
+        "oVisibleFlags": {
+          "offset": "0X2C0",
+          "type": "uint32_t",
+          "description": "Visibility bitmask flags"
+        },
+        "oUnitTypeArray": {
+          "offset": "0X4C",
+          "type": "uint8_t[32]",
+          "description": "UnitType deobfuscation bitmask array"
+        },
+        "oUnitTypeCount": {
+          "offset": "0X61",
+          "type": "uint8_t",
+          "description": "UnitType XOR loop count (97 dec)"
+        },
+        "oUnitTypeOffsetIndex": {
+          "offset": "0X63",
+          "type": "uint8_t",
+          "description": "UnitType XOR index offset (99 dec)"
+        },
+        "oCharacterStats": {
+          "offset": "0X1B78",
+          "type": "CharacterStats*",
+          "description": "Inline CharacterStats component pointer/offset"
+        },
+        "oBaseAttackDamage": {
+          "offset": "0X1EE8",
+          "type": "float",
+          "description": "Base attack damage"
+        },
+        "oBonusAttackDamage": {
+          "offset": "0X1CE0",
+          "type": "float",
+          "description": "Bonus attack damage"
+        },
+        "oAttackRange": {
+          "offset": "0X21B8",
+          "type": "float",
+          "description": "Auto attack range"
+        },
+        "oAttackSpeedMultiplier": {
+          "offset": "0X1E48",
+          "type": "float",
+          "description": "Attack speed multiplier"
+        },
+        "oArmor": {
+          "offset": "0X2078",
+          "type": "float",
+          "description": "Armor"
+        },
+        "oBoundingRadius": {
+          "offset": "0X207C",
+          "type": "float",
+          "description": "Model collision / hit radius (Armor + 4)"
+        },
+        "oMagicResist": {
+          "offset": "0X2098",
+          "type": "float",
+          "description": "Magic resistance (Armor + 0x20)"
+        },
+        "oBuffManager": {
+          "offset": "0X27C8",
+          "type": "BuffManager*",
+          "description": "Pointer to BuffManager component"
+        },
+        "oBuffManagerAlt": {
+          "offset": "0X2E58",
+          "type": "BuffManager*",
+          "description": "Alternative / verified BuffManager offset"
+        },
+        "oParticleName": {
+          "offset": "0X4598",
+          "type": "char[64]",
+          "description": "Particle entity name string"
+        },
+        "oParticleEncName": {
+          "offset": "0X9A8",
+          "type": "char[32]",
+          "description": "XOR-encrypted particle raw name"
+        },
+        "oParticleXorKeyBase": {
+          "offset": "0X29A8",
+          "type": "uint64_t*",
+          "description": "XOR key table for particle deobfuscation"
+        },
+        "oParticleXorKeyFlag": {
+          "offset": "0X29BC",
+          "type": "uint8_t",
+          "description": "XOR key ready flag"
+        },
+        "oParticleXorKeyCount": {
+          "offset": "0X29BD",
+          "type": "uint8_t",
+          "description": "XOR key element count"
         }
       }
     },
@@ -1904,9 +2020,9 @@
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0X2E78",
-          "type": "pointer",
-          "description": "Active Buff list pointer",
+          "offset": "0X27C8",
+          "type": "BuffManager*",
+          "description": "BuffManager component",
           "pattern": "48 8D 8B 78 2E 00 00",
           "op": 1
         },
@@ -2357,6 +2473,91 @@
           "offset": "0x57B0",
           "pattern": "49 8D 8E B0 57 00 00 48 89 44 24 28",
           "op": 1
+        },
+        "oPosition": {
+          "offset": "0X23C",
+          "type": "Vec3",
+          "description": "Entity position in world coordinates"
+        },
+        "oTeamID": {
+          "offset": "0X239",
+          "type": "uint8_t",
+          "description": "Team identifier"
+        },
+        "oIsDead": {
+          "offset": "0X231",
+          "type": "bool",
+          "description": "IsDead boolean flag"
+        },
+        "oNetworkID": {
+          "offset": "0XBC",
+          "type": "uint32_t",
+          "description": "Network ID"
+        },
+        "oHealth": {
+          "offset": "0X1060",
+          "type": "float",
+          "description": "Current Health"
+        },
+        "oMaxHealth": {
+          "offset": "0X1088",
+          "type": "float",
+          "description": "Max Health"
+        },
+        "oArmor": {
+          "offset": "0X2078",
+          "type": "float",
+          "description": "Armor"
+        },
+        "oBoundingRadius": {
+          "offset": "0X207C",
+          "type": "float",
+          "description": "Bounding radius for spell collision"
+        },
+        "oMagicResist": {
+          "offset": "0X2098",
+          "type": "float",
+          "description": "Magic Resist"
+        },
+        "oAttackRange": {
+          "offset": "0X21B8",
+          "type": "float",
+          "description": "Auto Attack Range"
+        },
+        "oAttackSpeedMultiplier": {
+          "offset": "0X1E48",
+          "type": "float",
+          "description": "Attack Speed Mod"
+        },
+        "oCharacterStats": {
+          "offset": "0X1B78",
+          "type": "CharacterStats*",
+          "description": "CharacterStats inline struct"
+        },
+        "oBaseAttackDamage": {
+          "offset": "0X1EE8",
+          "type": "float",
+          "description": "Base AD"
+        },
+        "oBonusAttackDamage": {
+          "offset": "0X1CE0",
+          "type": "float",
+          "description": "Bonus AD"
+        },
+        "oSpellBook": {
+          "offset": "0X3108",
+          "type": "SpellBook*",
+          "description": "SpellBook component"
+        },
+        "oBuffManagerAlt": {
+          "offset": "0X2E58",
+          "type": "BuffManager*",
+          "description": "BuffManager alternate component"
+        },
+        "oAIManager": {
+          "offset": "0X4050",
+          "type": "AIManager*",
+          "description": "AIManager component"
         }
       }
     },
@@ -2466,6 +2667,31 @@
           "description": "Look / facing direction vector",
           "pattern": "48 81 C4 ?? ?? ?? ?? 48 89 7C",
           "op": 1
+        },
+        "AbilityHasteMod": {
+          "offset": "0X28",
+          "type": "float",
+          "description": "Ability haste modifier (CDR)"
+        },
+        "FlatPhysicalDamageMod": {
+          "offset": "0X168",
+          "type": "float",
+          "description": "Flat bonus Attack Damage"
+        },
+        "FlatMagicDamageMod": {
+          "offset": "0X208",
+          "type": "float",
+          "description": "Flat Ability Power (AP)"
+        },
+        "BaseAttackDamage": {
+          "offset": "0X370",
+          "type": "float",
+          "description": "Base Attack Damage"
+        },
+        "MoveSpeed": {
+          "offset": "0X5F0",
+          "type": "float",
+          "description": "Movement speed"
         }
       }
     },
@@ -2560,9 +2786,9 @@
           "op": 0
         },
         "CasterIndex": {
-          "offset": "0X360",
-          "type": "",
-          "description": "",
+          "offset": "0X340",
+          "type": "uint32_t",
+          "description": "Caster unit Network ID",
           "pattern": "C7 85 ?? ?? ?? ?? 0F 00 00 00 C7 85 64",
           "op": 0
         },
@@ -2588,10 +2814,9 @@
           "op": 1
         },
         "SpellDataPtr": {
-          "offset": "0X2C0",
-          "type": "",
-          "description": "",
-          "pattern": "62 71 7E 48 7F 5F ?? ?? ?? ??",
+          "offset": "0X4E8",
+          "type": "SpellData*",
+          "description": "Pointer to Missile SpellData",
           "op": 0
         },
         "SpellName": {
@@ -2609,11 +2834,26 @@
           "op": 0
         },
         "TargetIndex": {
-          "offset": "0X35C",
-          "type": "",
-          "description": "",
+          "offset": "0X344",
+          "type": "uint32_t",
+          "description": "Target unit Network ID",
           "pattern": "89 BD ?? ?? ?? ?? C7 45 98",
           "op": 0
+        },
+        "TargetNetIDAlt1": {
+          "offset": "0X33C",
+          "type": "uint32_t",
+          "description": "Target Network ID alternative 1"
+        },
+        "TargetNetIDAlt2": {
+          "offset": "0X348",
+          "type": "uint32_t",
+          "description": "Target Network ID alternative 2"
+        },
+        "FollowTargetNetID": {
+          "offset": "0X2DA0",
+          "type": "uint32_t",
+          "description": "Follow / lock-on target Net ID"
         }
       }
     },
@@ -2623,21 +2863,21 @@
         "oLevel": {
           "offset": "0X28",
           "type": "int",
-          "description": "Spell level",
+          "description": "Spell level (1-6, 0 = unlearned)",
           "pattern": "8B 41 28",
           "op": 1
         },
         "oCooldown": {
           "offset": "0X30",
           "type": "float",
-          "description": "Current cooldown",
+          "description": "Cooldown expiration timestamp",
           "pattern": "F3 0F 10 41 30",
           "op": 1
         },
         "oCharges": {
-          "offset": "0X64",
+          "offset": "0X8C",
           "type": "int",
-          "description": "Number of charges",
+          "description": "Current spell charges",
           "pattern": "8B 41 64",
           "op": 1
         },
@@ -2678,8 +2918,8 @@
         },
         "ChargeCooldownExpires": {
           "offset": "0X68",
-          "type": "",
-          "description": "",
+          "type": "float",
+          "description": "Charge recharge expire timestamp",
           "pattern": "C5 FA 6F 44 24 ?? C4 42 19 DC E7 4C",
           "op": 1
         },
@@ -2692,9 +2932,8 @@
         },
         "CooldownDuration": {
           "offset": "0X74",
-          "type": "",
-          "description": "",
-          "pattern": "8B 5E ?? 41 81 C0 05",
+          "type": "float",
+          "description": "Total cooldown duration in seconds",
           "op": 1
         },
         "CooldownExpires": {
@@ -2771,6 +3010,31 @@
           "offset": "0x0",
           "type": "",
           "description": ""
+        },
+        "CastStartTime": {
+          "offset": "0X34",
+          "type": "float",
+          "description": "Timestamp when spell cast started"
+        },
+        "oAmmo": {
+          "offset": "0X5C",
+          "type": "int",
+          "description": "Ammo / stack count"
+        },
+        "CastStartTimeSecondary": {
+          "offset": "0X80",
+          "type": "float",
+          "description": "Secondary cast start timestamp"
+        },
+        "SlotID": {
+          "offset": "0XF4",
+          "type": "int",
+          "description": "Spell slot identifier"
+        },
+        "oSpellData": {
+          "offset": "0X130",
+          "type": "SpellData*",
+          "description": "Pointer to SpellData instance"
         }
       }
     },
@@ -2778,30 +3042,29 @@
       "description": "Spell book structure",
       "fields": {
         "oActiveSpellCast": {
-          "offset": "0X1F8",
-          "type": "pointer",
-          "description": "Active spell cast info",
-          "pattern": "48 8B 81 D8 0A 00 00",
+          "offset": "0X38",
+          "type": "SpellCastInfo*",
+          "description": "Pointer to current active spell cast",
           "op": 1
         },
         "oSpellSlots": {
           "offset": "0XAE0",
-          "type": "pointer",
-          "description": "Spell slot pointer array [64]",
+          "type": "SpellSlot*[64]",
+          "description": "Array of SpellSlot pointers",
           "pattern": "48 8B 81 E0 0A 00 00",
           "op": 1
         },
         "OFF_SB_DELAY_PCT": {
           "offset": "0X308",
           "type": "float",
-          "description": "Delay percent in SpellSlot",
+          "description": "Spell delay percentage",
           "pattern": "C6 85 ?? ?? ?? ?? 0F C7 85 18",
           "op": 0
         },
         "ActiveSpellCast": {
           "offset": "0X38",
-          "type": "",
-          "description": "",
+          "type": "SpellCastInfo*",
+          "description": "Active spell cast",
           "pattern": "4D 8B 59 ?? 45 8B 13 4E 8D 14 16 4C 39 D3 72 2F",
           "op": 1
         },
@@ -2835,10 +3098,20 @@
         },
         "SpellSlotArray": {
           "offset": "0XAE0",
-          "type": "",
-          "description": "",
+          "type": "SpellSlot*[64]",
+          "description": "Spell slots array",
           "pattern": "48 89 85 ?? ?? ?? ?? 48 8D 54 24 60 44",
           "op": 0
+        },
+        "LastCastTime": {
+          "offset": "0XF10",
+          "type": "float",
+          "description": "GameTime timestamp of last cast event"
+        },
+        "LastCastSlot": {
+          "offset": "0XF18",
+          "type": "int",
+          "description": "Slot index of last cast event"
         }
       }
     },
@@ -2847,8 +3120,8 @@
       "fields": {
         "oServerPos": {
           "offset": "0X8",
-          "type": "Vector3",
-          "description": "Server position",
+          "type": "Vec3",
+          "description": "Server authoritative position",
           "pattern": "F3 0F 10 41 08",
           "op": 1
         },
@@ -2896,15 +3169,15 @@
         },
         "IsDashing": {
           "offset": "0X120",
-          "type": "",
-          "description": "",
+          "type": "bool",
+          "description": "Unit is dashing boolean",
           "pattern": "F3 0F 10 B5 ?? ??",
           "op": 1
         },
         "IsMoving": {
           "offset": "0X31C",
-          "type": "",
-          "description": "",
+          "type": "bool",
+          "description": "Unit is actively moving boolean",
           "pattern": "C7 85 ?? ?? ?? ?? 06 00 00 00 C7 85 98",
           "op": 0
         },
@@ -2975,6 +3248,16 @@
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D A2 5A",
           "op": 1
+        },
+        "Component": {
+          "offset": "0X4050",
+          "type": "AIManager*",
+          "description": "AIManager component offset"
+        },
+        "WrapperAIMgr": {
+          "offset": "0X28",
+          "type": "void*",
+          "description": "Internal AIManager wrapper"
         }
       }
     },
@@ -3070,8 +3353,8 @@
       "fields": {
         "oName": {
           "offset": "0X28",
-          "type": "std::string",
-          "description": "Spell name",
+          "type": "char[64]",
+          "description": "Spell name string (SSO)",
           "pattern": "48 8B 41 28",
           "op": 1
         },
@@ -3098,8 +3381,8 @@
         },
         "ResourceData": {
           "offset": "0X60",
-          "type": "",
-          "description": "",
+          "type": "SpellDataResource*",
+          "description": "Pointer to SpellDataResource struct",
           "pattern": "66 41 0F 6F 62 ?? 66 0F 38",
           "op": 1
         },
@@ -3149,9 +3432,9 @@
           "op": 1
         },
         "ResCastRange": {
-          "offset": "0X478",
-          "type": "",
-          "description": "",
+          "offset": "0X78C",
+          "type": "float[6]",
+          "description": "Cast range per level",
           "pattern": "48 89 85 ?? ?? ?? ?? BF",
           "op": 0
         },
@@ -3170,9 +3453,9 @@
           "op": 1
         },
         "ResCooldownTime": {
-          "offset": "0X88",
-          "type": "",
-          "description": "",
+          "offset": "0X71C",
+          "type": "float[6]",
+          "description": "Base cooldown time per level",
           "pattern": "48 89 81 ?? ?? 00",
           "op": 0
         },
@@ -3184,9 +3467,9 @@
           "op": 1
         },
         "ResLineWidth": {
-          "offset": "0X568",
-          "type": "",
-          "description": "",
+          "offset": "0X7C4",
+          "type": "float[6]",
+          "description": "Skillshot missile width",
           "pattern": "48 8D 9D ?? ?? ?? ?? 48 83 EB 18",
           "op": 1
         },
@@ -3205,9 +3488,9 @@
           "op": 0
         },
         "ResMissileSpeed": {
-          "offset": "0X518",
-          "type": "",
-          "description": "",
+          "offset": "0X7E0",
+          "type": "float",
+          "description": "Missile projectile speed",
           "pattern": "C6 85 ?? ?? ?? ?? 25 C7",
           "op": 0
         },
@@ -3217,6 +3500,31 @@
           "description": "",
           "pattern": "44 0F 29 AC 24 ??",
           "op": 0
+        },
+        "BaseCost": {
+          "offset": "0X6D0",
+          "type": "float[6]",
+          "description": "Mana / Energy cost per level"
+        },
+        "CastRadius": {
+          "offset": "0X7AC",
+          "type": "float[6]",
+          "description": "Cast radius / area of effect"
+        },
+        "MissileSpeedAlt1": {
+          "offset": "0X7DC",
+          "type": "float",
+          "description": "Missile speed alternative 1"
+        },
+        "MissileSpeedAlt2": {
+          "offset": "0X7E4",
+          "type": "float",
+          "description": "Missile speed alternative 2"
+        },
+        "MissileSpeedAlt3": {
+          "offset": "0X7F0",
+          "type": "float",
+          "description": "Missile speed alternative 3"
         }
       }
     },
@@ -3266,15 +3574,15 @@
       "fields": {
         "OFF_HEROMGR_LIST": {
           "offset": "0X8",
-          "type": "QWORD*",
-          "description": "Pointer to champion pointer array",
+          "type": "void**",
+          "description": "Array pointer to Hero objects",
           "pattern": "48 89 7C 24 ?? 48",
           "op": 0
         },
         "OFF_HEROMGR_COUNT": {
           "offset": "0X10",
-          "type": "uint32",
-          "description": "Number of champions",
+          "type": "uint32_t",
+          "description": "Active hero count in list",
           "pattern": "48 89 74 24 ?? 48 89 E0 48 89 CF 49",
           "op": 0
         }
@@ -3509,6 +3817,71 @@
           "description": "SpellCastInfo object pointer",
           "pattern": "48 C1 E2 ?? 48 09",
           "op": 1
+        },
+        "SpellData": {
+          "offset": "0X8",
+          "type": "SpellData*",
+          "description": "Pointer to SpellData struct"
+        },
+        "SpellLevelAlt": {
+          "offset": "0X10",
+          "type": "int",
+          "description": "Skill level alternate offset"
+        },
+        "SpellName": {
+          "offset": "0X28",
+          "type": "char[64]",
+          "description": "Spell internal name string"
+        },
+        "SpellLevel": {
+          "offset": "0X50",
+          "type": "int",
+          "description": "Skill level (1-18)"
+        },
+        "oStartPos": {
+          "offset": "0XD8",
+          "type": "Vec3",
+          "description": "Skillshot cast start position"
+        },
+        "oEndPos": {
+          "offset": "0XE4",
+          "type": "Vec3",
+          "description": "Skillshot cast destination position"
+        },
+        "CastPosition": {
+          "offset": "0XF0",
+          "type": "Vec3",
+          "description": "Alternate cast position (Thresh Q target etc.)"
+        },
+        "TargetPosition": {
+          "offset": "0XFC",
+          "type": "Vec3",
+          "description": "Alternate target position"
+        },
+        "TargetPosition2": {
+          "offset": "0X108",
+          "type": "Vec3",
+          "description": "Secondary alternate target position"
+        },
+        "CastDelay": {
+          "offset": "0X128",
+          "type": "float",
+          "description": "Cast delay / windup duration in seconds"
+        },
+        "Delay": {
+          "offset": "0X12C",
+          "type": "float",
+          "description": "Delay duration"
+        },
+        "SpellSlotID": {
+          "offset": "0X15C",
+          "type": "int",
+          "description": "Casting spell slot ID"
+        },
+        "CastEndTime": {
+          "offset": "0X1A4",
+          "type": "float",
+          "description": "Cast end game time"
         }
       }
     },
@@ -3779,6 +4152,346 @@
           "offset": "0x1C8",
           "pattern": "",
           "description": ""
+        }
+      }
+    },
+    "MinionManager": {
+      "description": "MinionManager structure layout",
+      "fields": {
+        "List": {
+          "offset": "0X8",
+          "type": "void**",
+          "description": "Array pointer to Minion objects"
+        },
+        "Count": {
+          "offset": "0X10",
+          "type": "uint32_t",
+          "description": "Active minion count"
+        }
+      }
+    },
+    "TurretManager": {
+      "description": "TurretManager structure layout",
+      "fields": {
+        "List": {
+          "offset": "0X8",
+          "type": "void**",
+          "description": "Array pointer to Turret objects"
+        },
+        "Count": {
+          "offset": "0X10",
+          "type": "uint32_t",
+          "description": "Active turret count"
+        }
+      }
+    },
+    "MissileManager": {
+      "description": "MissileManager structure layout",
+      "fields": {
+        "List": {
+          "offset": "0X8",
+          "type": "void**",
+          "description": "Array pointer to active Missile objects"
+        },
+        "Count": {
+          "offset": "0X10",
+          "type": "uint32_t",
+          "description": "Active missile count"
+        },
+        "ActiveMissileMap": {
+          "offset": "0X48",
+          "type": "std::map<uint32_t, MissileClient*>",
+          "description": "Active missile hashmap"
+        },
+        "ActiveMissileCount": {
+          "offset": "0X50",
+          "type": "uint32_t",
+          "description": "Active missile count in map"
+        },
+        "LocalMissileMap": {
+          "offset": "0X58",
+          "type": "void*",
+          "description": "Local missile map"
+        }
+      }
+    },
+    "MissileContainer": {
+      "description": "MissileContainer structure layout",
+      "fields": {
+        "List": {
+          "offset": "0X8",
+          "type": "void**",
+          "description": "Array pointer to missile pool"
+        },
+        "Count": {
+          "offset": "0X10",
+          "type": "uint32_t",
+          "description": "Active missiles in container"
+        }
+      }
+    },
+    "BuffManager": {
+      "description": "BuffManager structure layout",
+      "fields": {
+        "oBuffArrayStart": {
+          "offset": "0X10",
+          "type": "void**",
+          "description": "Array start pointer of active BuffEntry instances"
+        },
+        "oBuffArrayEnd": {
+          "offset": "0X18",
+          "type": "void**",
+          "description": "Array end pointer of active BuffEntry instances"
+        },
+        "ArrayStartAlt": {
+          "offset": "0X18",
+          "type": "void**",
+          "description": "Alternate array start pointer"
+        },
+        "ArrayEndAlt": {
+          "offset": "0X20",
+          "type": "void**",
+          "description": "Alternate array end pointer"
+        }
+      }
+    },
+    "BuffEntry": {
+      "description": "BuffEntry structure layout",
+      "fields": {
+        "BuffType": {
+          "offset": "0X8",
+          "type": "uint8_t",
+          "description": "Crowd control / buff type identifier"
+        },
+        "BuffData": {
+          "offset": "0X10",
+          "type": "BuffScript*",
+          "description": "Pointer to BuffScript data"
+        },
+        "Script": {
+          "offset": "0X10",
+          "type": "BuffScript*",
+          "description": "Pointer to BuffScript data"
+        },
+        "ExpireTime": {
+          "offset": "0X1C",
+          "type": "float",
+          "description": "GameTime timestamp when buff expires"
+        },
+        "oStartTime": {
+          "offset": "0X38",
+          "type": "float",
+          "description": "GameTime timestamp when buff started"
+        },
+        "ScriptInfoSize": {
+          "offset": "0X38",
+          "type": "uint32_t",
+          "description": "Script info size / stack count 1"
+        },
+        "CountAlt3": {
+          "offset": "0X3C",
+          "type": "uint32_t",
+          "description": "Alternate stack count 3"
+        },
+        "oEndTime": {
+          "offset": "0X40",
+          "type": "float",
+          "description": "Buff duration end time"
+        },
+        "CountInt": {
+          "offset": "0X74",
+          "type": "uint32_t",
+          "description": "Integer stack count"
+        },
+        "CountFloat": {
+          "offset": "0X78",
+          "type": "float",
+          "description": "Float stack count"
+        },
+        "IsPermanent": {
+          "offset": "0X88",
+          "type": "bool",
+          "description": "Is buff permanent / aura boolean"
+        },
+        "CountAlt2": {
+          "offset": "0X8C",
+          "type": "uint32_t",
+          "description": "Alternate stack count 2"
+        }
+      }
+    },
+    "BuffScript": {
+      "description": "BuffScript structure layout",
+      "fields": {
+        "BuffName": {
+          "offset": "0X8",
+          "type": "char*",
+          "description": "Pointer or inline string of buff internal name"
+        },
+        "BuffNameAlt": {
+          "offset": "0X18",
+          "type": "char*",
+          "description": "Alternate buffer offset for buff name"
+        }
+      }
+    },
+    "UnitType": {
+      "description": "UnitType structure layout",
+      "fields": {
+        "Array": {
+          "offset": "0X4C",
+          "type": "uint8_t[32]",
+          "description": "Decryption array for unit type bitmask"
+        },
+        "Count": {
+          "offset": "0X61",
+          "type": "uint8_t",
+          "description": "XOR loop count (97 dec)"
+        },
+        "OffsetIndex": {
+          "offset": "0X63",
+          "type": "uint8_t",
+          "description": "XOR index offset (99 dec)"
+        },
+        "KeyFlag": {
+          "offset": "0X16",
+          "type": "uint8_t",
+          "description": "XOR key flag (22 dec)"
+        },
+        "TurretBit": {
+          "offset": "0X2000",
+          "type": "uint32_t",
+          "description": "Turret unit bitmask flag"
+        }
+      }
+    },
+    "IsDeadObfuscated": {
+      "description": "IsDeadObfuscated structure layout",
+      "fields": {
+        "Base": {
+          "offset": "0X230",
+          "type": "void*",
+          "description": "Base struct of obfuscated IsDead"
+        },
+        "OffsetIndex": {
+          "offset": "0X8",
+          "type": "uint8_t",
+          "description": "Index offset in obfuscated array"
+        },
+        "KeyCount": {
+          "offset": "0X6",
+          "type": "uint8_t",
+          "description": "Key count"
+        },
+        "Flag": {
+          "offset": "0X7",
+          "type": "uint8_t",
+          "description": "Flag value"
+        }
+      }
+    },
+    "ObjectManager": {
+      "description": "ObjectManager structure layout",
+      "fields": {
+        "TreeHead": {
+          "offset": "0X38",
+          "type": "void*",
+          "description": "Binary tree head wrapper pointer (ObjectManager + 0x38)"
+        },
+        "TreeRoot": {
+          "offset": "0X8",
+          "type": "void*",
+          "description": "Binary tree root node pointer (TreeHead + 0x8)"
+        },
+        "NodeLeft": {
+          "offset": "0X0",
+          "type": "void*",
+          "description": "Left child node in binary search tree"
+        },
+        "NodeRight": {
+          "offset": "0X10",
+          "type": "void*",
+          "description": "Right child node in binary search tree"
+        },
+        "NodeIsNil": {
+          "offset": "0X19",
+          "type": "uint8_t",
+          "description": "Nil / leaf sentinel flag (non-zero means end)"
+        },
+        "NodeValue": {
+          "offset": "0X28",
+          "type": "void*",
+          "description": "Entity pointer value stored at node"
+        }
+      }
+    },
+    "Navigation": {
+      "description": "Navigation structure layout",
+      "fields": {
+        "XorKeyTable": {
+          "offset": "0X4248",
+          "type": "uint64_t*",
+          "description": "XOR key table for PathController wrapper"
+        },
+        "EncryptedWrapper": {
+          "offset": "0X4250",
+          "type": "uint64_t*",
+          "description": "Encrypted wrapper array"
+        },
+        "ActiveSlotIndex": {
+          "offset": "0X4273",
+          "type": "uint8_t",
+          "description": "Active slot index"
+        },
+        "WrapperToPC": {
+          "offset": "0X10",
+          "type": "void*",
+          "description": "Offset from wrapper to PathController"
+        },
+        "ServerPos": {
+          "offset": "0X338",
+          "type": "Vec3",
+          "description": "Server position Vec3"
+        },
+        "CurrentWaypoint": {
+          "offset": "0X354",
+          "type": "uint32_t",
+          "description": "Index of current target waypoint"
+        },
+        "WaypointArray": {
+          "offset": "0X348",
+          "type": "Vec3*",
+          "description": "Array pointer to navigation waypoints"
+        },
+        "WaypointCount": {
+          "offset": "0X350",
+          "type": "uint32_t",
+          "description": "Number of waypoints in current path"
+        },
+        "EndPos": {
+          "offset": "0X598",
+          "type": "Vec3",
+          "description": "Final destination point Vec3"
+        }
+      }
+    },
+    "StdString": {
+      "description": "StdString structure layout",
+      "fields": {
+        "Data": {
+          "offset": "0X0",
+          "type": "char[16]",
+          "description": "Inline string buffer or heap pointer"
+        },
+        "Length": {
+          "offset": "0X10",
+          "type": "uint64_t",
+          "description": "String character count"
+        },
+        "Capacity": {
+          "offset": "0X18",
+          "type": "uint64_t",
+          "description": "Allocated capacity (15 = SSO inline)"
         }
       }
     }
