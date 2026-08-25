@@ -1,4 +1,4 @@
-# League — Offset & Pattern Database
+<h1 align="center">League — Offset & Pattern Database</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Patch-26.16-blue?style=flat-square" alt="Patch" />
