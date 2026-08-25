@@ -162,19 +162,19 @@ struct LeagueEngine {
 
     std::vector<void*> GetActiveEntities() {
         std::vector<void*> out;
-        struct Node { Node *l, *p, *r; char c, s, pad[6]; uint32_t k; char p2[4]; void* v; };
+        struct Node { void* l; void* p; void* r; char c, s, pad[6]; uint32_t k; char p2[4]; void* v; };
         auto* obj_mgr = *(char**)(base + Offsets::Globals::ObjectManager);
         if (!obj_mgr) return out;
-        Node* head = *(Node**)(obj_mgr + 0x40);
+        Node* head = *(Node**)(obj_mgr + Offsets::Standard::ObjectManager::TreeHead);
         if (!head || !head->p || head->p == head) return out;
         
         auto traverse = [&](auto self, Node* n) -> void {
             if (!n || n == head || n->s) return;
-            self(self, n->l);
+            self(self, (Node*)n->l);
             if (n->v) out.push_back(n->v);
-            self(self, n->r);
+            self(self, (Node*)n->r);
         };
-        traverse(traverse, head->p);
+        traverse(traverse, (Node*)head->p);
         return out;
     }
 
