@@ -1,10 +1,12 @@
+#*Annouchment: I got banned from league, no update for a while.*
+--
 <h1 align="center">League — Offset & Pattern Database</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Patch-26.16-blue?style=flat-square" alt="Patch" />
   <img src="https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square" alt="Arch" />
   <img src="https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square" alt="Tool" />
-  <img src="https://img.shields.io/badge/Status-out_of_date-brightred?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-out_of_date-red?style=flat-square" alt="Status" />
 </p>
 
 <p align="center">
