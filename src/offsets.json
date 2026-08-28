@@ -1263,7 +1263,7 @@
           "op": 1
         },
         "Armor": {
-          "offset": "0X4DE8",
+          "offset": "0X500",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 E8 ?? ?? ?? ?? 8D 15 2A C8",
@@ -1291,21 +1291,21 @@
           "op": 1
         },
         "Crit": {
-          "offset": "0XAC8",
+          "offset": "0X4B0",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 C8 0A 00 00 48 8D 15 4D CF",
           "op": 1
         },
         "CritDamageMultiplier": {
-          "offset": "0X528",
+          "offset": "0X438",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 28 05 00 00 48 8D 15 74 9E",
           "op": 1
         },
         "FlatArmorPen": {
-          "offset": "0X868",
+          "offset": "0X6B8",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 68 08 00 00 48 8D 15 76 9D",
@@ -1390,21 +1390,21 @@
           "op": 1
         },
         "PercentLifeSteal": {
-          "offset": "0XE88",
+          "offset": "0X848",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 88 0E 00 00 48 8D 15 1F B1",
           "op": 1
         },
         "PercentMagicPen": {
-          "offset": "0X828",
+          "offset": "0X7F8",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 28 08 00 00 48 8D 15 8C 9D",
           "op": 1
         },
         "PercentOmnivamp": {
-          "offset": "0XDC8",
+          "offset": "0X8C0",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 C8 0D 00 00 48 8D 15 F9 B1",
@@ -1493,7 +1493,7 @@
           "op": 1
         },
         "AbilityPower": {
-          "offset": "0X708",
+          "offset": "0X208",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 08 07 00 00 48 8D 15 03 B5",
@@ -1556,7 +1556,7 @@
           "op": 1
         },
         "CharacterIntermediate": {
-          "offset": "0X810",
+          "offset": "0X1B78",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 68 15 00 00",
@@ -1570,7 +1570,7 @@
           "op": 1
         },
         "CombatStatsBase": {
-          "offset": "0X810",
+          "offset": "0X1B78",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 68 15 00 00",
@@ -1605,14 +1605,14 @@
           "op": 1
         },
         "FlatArmorPenetration": {
-          "offset": "0X868",
+          "offset": "0X6B8",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 68 08 00 00 48 8D 15 76 9D",
           "op": 1
         },
         "FlatMagicPenetration": {
-          "offset": "0X328",
+          "offset": "0X7A8",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 28 03 00 00 48 8D 15 3C 9F",
@@ -1701,7 +1701,7 @@
           "op": 1
         },
         "PARRegenRate": {
-          "offset": "0X688",
+          "offset": "0X9B0",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 88 06 00 00 48 8D 15 EF 9D",
@@ -1729,7 +1729,7 @@
           "op": 1
         },
         "PercentArmorPenetration": {
-          "offset": "0X3C8",
+          "offset": "0X708",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 C8 03 00 00 48 8D 15 F9 9E",
@@ -1755,7 +1755,7 @@
           "op": 1
         },
         "PercentLifeStealMod": {
-          "offset": "0XE88",
+          "offset": "0X848",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 88 0E 00 00 48 8D 15 1F B1",
@@ -1769,28 +1769,28 @@
           "op": 1
         },
         "PercentMagicPenetration": {
-          "offset": "0X828",
+          "offset": "0X7F8",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 28 08 00 00 48 8D 15 8C 9D",
           "op": 1
         },
         "PercentOmnivampMod": {
-          "offset": "0XDC8",
+          "offset": "0X8C0",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 C8 0D 00 00 48 8D 15 F9 B1",
           "op": 1
         },
         "PercentPhysicalDamageMod": {
-          "offset": "0X308",
+          "offset": "0X190",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 08 03 00 00 48 8D 15 B3 B7",
           "op": 1
         },
         "PercentPhysicalVamp": {
-          "offset": "0X9A8",
+          "offset": "0X8C0",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 A8 09 00 00 48 8D 15 28 9D",
@@ -1853,7 +1853,7 @@
           "op": 1
         },
         "FlatPhysicalDamageMod": {
-          "offset": "0X408",
+          "offset": "0X168",
           "pattern": "4C 8D 83 08 04 00 00 48 8D 15 E3 B6",
           "op": 1
         },
@@ -2566,14 +2566,14 @@
       "base": "0x4428",
       "fields": {
         "mFlatAPMod": {
-          "offset": "0X1C",
+          "offset": "0X208",
           "type": "float",
           "description": "Ability Power (Flat)",
           "pattern": "F3 0F 10 41 1C",
           "op": 1
         },
         "mBaseAD": {
-          "offset": "0X24",
+          "offset": "0X370",
           "type": "float",
           "description": "Base Attack Damage",
           "pattern": "F3 0F 10 41 24",
@@ -2587,56 +2587,56 @@
           "op": 1
         },
         "mAttackRange": {
-          "offset": "0X5C",
+          "offset": "0X640",
           "type": "float",
           "description": "Basic Attack Range",
           "pattern": "F3 0F 10 41 5C",
           "op": 1
         },
         "mArmor": {
-          "offset": "0X118",
+          "offset": "0X500",
           "type": "float",
           "description": "Total Armor",
           "pattern": "F3 0F 10 81 18 01 00 00",
           "op": 1
         },
         "mBonusArmor": {
-          "offset": "0X25C",
+          "offset": "0X528",
           "type": "float",
           "description": "Bonus Armor",
           "pattern": "F3 0F 10 81 74 01 00 00",
           "op": 1
         },
         "mSpellBlock": {
-          "offset": "0X25C",
+          "offset": "0X550",
           "type": "float",
           "description": "Magic Resist",
           "pattern": "F3 0F 10 81 80 01 00 00",
           "op": 1
         },
         "mAttackSpeedMod": {
-          "offset": "0X1A8",
+          "offset": "0X2D0",
           "type": "float",
           "description": "Attack Speed Multiplier",
           "pattern": "F3 0F 10 81 A8 01 00 00",
           "op": 1
         },
         "mCrit": {
-          "offset": "0X25C",
+          "offset": "0X4B0",
           "type": "float",
           "description": "Critical Strike Chance",
           "pattern": "F3 0F 10 81 C8 01 00 00",
           "op": 1
         },
         "mFlatADMod": {
-          "offset": "0X25C",
+          "offset": "0X168",
           "type": "float",
           "description": "Bonus Attack Damage (Flat)",
           "pattern": "F3 0F 10 81 DC 01 00 00",
           "op": 1
         },
         "mBonusSpellBlock": {
-          "offset": "0X200",
+          "offset": "0X578",
           "type": "float",
           "description": "Bonus Magic Resist",
           "pattern": "F3 0F 10 81 00 02 00 00",
@@ -2650,14 +2650,14 @@
           "op": 1
         },
         "mMoveSpeed": {
-          "offset": "0X25C",
+          "offset": "0X5F0",
           "type": "float",
           "description": "Movement Speed",
           "pattern": "F3 0F 10 81 4C 02 00 00",
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0X2E78",
+          "offset": "0X2D88",
           "pattern": "48 8D 8B 78 2E 00 00",
           "op": 1
         },
