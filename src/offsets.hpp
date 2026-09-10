@@ -166,7 +166,7 @@ namespace Offsets {
             constexpr uintptr_t oAIManager = 0X4060;
             constexpr uintptr_t oCharacterData = 0XD8;
             constexpr uintptr_t oSpellBook = 0X3110;
-            constexpr uintptr_t oCharacterName = 0X4388;
+            constexpr uintptr_t oCharacterName = 0x41E8;
             constexpr uintptr_t oItemList = 0X4308;
             constexpr uintptr_t oCharacterDataStack = 0x1270;
             constexpr uintptr_t OFF_POS_X = 0X23C;
@@ -219,8 +219,8 @@ namespace Offsets {
             constexpr uintptr_t PercentSpellVamp = 0X2408;
             constexpr uintptr_t PhysicalLethality = 0X1F4;
             constexpr uintptr_t SpellBlock = 0X20C8;
-            constexpr uintptr_t CharacterName = 0X4388;
-            constexpr uintptr_t Name = 0X4388;
+            constexpr uintptr_t CharacterName = 0x41E8;
+            constexpr uintptr_t Name = 0x41E8;
             constexpr uintptr_t AllShield = 0X1120;
             constexpr uintptr_t HP = 0X1060;
             constexpr uintptr_t IsTargetable = 0X10E0;
@@ -276,7 +276,7 @@ namespace Offsets {
             constexpr uintptr_t Position = 0X23C;
             constexpr uintptr_t SelectionHeight = 0X88;
             constexpr uintptr_t SelectionRadius = 0X90;
-            constexpr uintptr_t SkinName = 0X4388;
+            constexpr uintptr_t SkinName = 0x41E8;
             constexpr uintptr_t StatusFlags = 0XB28;
             constexpr uintptr_t StatusFlagsInvulnerableMask = 0X1;
             constexpr uintptr_t Team = 0X239;
