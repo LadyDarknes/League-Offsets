@@ -1,8 +1,8 @@
 {
   "meta": {
     "patch": "26.17",
-    "timestamp": "0X6A920689",
-    "imagebase": "0X7FF7EBAA0000",
+    "timestamp": "0X6AA23A80",
+    "imagebase": "0X7FF7EA4F0000",
     "compiler": "Visual C++ · x64 PE",
     "generated_by": "IDA Pro 9.4 · Sync & Verification Engine",
     "description": "Comprehensive League of Legends x64 PE offsets, verified signatures, and data structures (Patch 26.17 · 16.17.810.4348)."
@@ -10,107 +10,107 @@
   "globals": [
     {
       "name": "LocalPlayer",
-      "rva": "0X1F695D0",
+      "rva": "0X1FBC8A8",
       "pattern": "48 8B 05 ? ? ? ? 4C 8B DA"
     },
     {
       "name": "HeroManager",
-      "rva": "0X1F25E88",
+      "rva": "0X1F78C38",
       "pattern": "48 8B 05 ? ? ? ? 45 33 FF 49 89 73 08"
     },
     {
       "name": "MinionManager",
-      "rva": "0X1F25EC8",
+      "rva": "0X1F78C78",
       "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 83 B8 C0 00 00 00 00"
     },
     {
       "name": "BlueMinionManager",
-      "rva": "0X1F29218",
+      "rva": "0X1F7BEB8",
       "pattern": "48 8B 0D ? ? ? ? 48 83 B8 C0 00 00 00 00"
     },
     {
       "name": "RedMinionManager",
-      "rva": "0X1F29220",
+      "rva": "0X1F7BEC0",
       "pattern": "48 8B 15 ? ? ? ? 48 8B 0D ? ? ? ? 48 83 B8 C0 00 00 00 00"
     },
     {
       "name": "TurretManager",
-      "rva": "0X1F25E90",
+      "rva": "0X1F78C40",
       "pattern": "48 8B 1D ? ? ? ? 48 8D 4C 24 70"
     },
     {
       "name": "ViewPort",
-      "rva": "0X1F29260",
+      "rva": "0X1F7BF00",
       "pattern": "48 8B 3D ? ? ? ? FF 90 20 01 00 00"
     },
     {
       "name": "MouseScreenVec2",
-      "rva": "0X1F29268",
+      "rva": "0X1F7BF08",
       "pattern": "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B C8 E8 ? ? ? ? 48 85 C0 74 15"
     },
     {
       "name": "UnderMouseObj",
-      "rva": "0X1F294B8",
+      "rva": "0X1F7C158",
       "pattern": "48 89 0D ? ? ? ? 48 8D 05 ? ? ? ? 48 89 01 33 D2 48 89 51 08"
     },
     {
       "name": "ObjectManager",
-      "rva": "0X1F25D68",
+      "rva": "0X1F78B18",
       "pattern": "48 8B 0D ? ? ? ? 8B 10 E8 ? ? ? ? 45 33 C0"
     },
     {
       "name": "GameTime",
-      "rva": "0X1F36120",
+      "rva": "0X1F89500",
       "pattern": "F3 0F 5C 35 ? ? ? ? 0F 28 F8"
     },
     {
       "name": "MissileManager",
-      "rva": "0X1F29208",
+      "rva": "0X1F7BEA8",
       "pattern": "48 8B 05 ? ? ? ? 41 8B 5E 20"
     },
     {
       "name": "MissileContainer",
-      "rva": "0X1F5DA18",
+      "rva": "0X1FB2B68",
       "pattern": "48 8B 0D ? ? ? ? 48 8D 44 24 50 F3 44 0F 11 44 24 48 4C 8D 4C 24 78 F3 0F 11 7C 24 40 4C 8D 44 24 60 44 89 7C 24 38 48 83 C1 08"
     },
     {
       "name": "HudInstance",
-      "rva": "0X1F25EF8",
+      "rva": "0X1F78CA8",
       "pattern": "48 8B 0D ? ? ? ? 8B 57 20"
     },
     {
       "name": "ChatManager",
-      "rva": "0X1F393C8",
+      "rva": "0X1F8E2A0",
       "pattern": "48 8B 0D ? ? ? ? 48 8B D8 48 85 C9 74 0D"
     },
     {
       "name": "ChatClient",
-      "rva": "0X1F64760",
+      "rva": "0X1FB98B0",
       "pattern": "48 8B 0D ? ? ? ? 48 85 C9 74 0E 48 8B 01 FF 50 78"
     },
     {
       "name": "NavGrid",
-      "rva": "0X1F291F8",
+      "rva": "0X1F7BE98",
       "pattern": "48 8B 05 ? ? ? ? 48 89 84 11 E8 02 00 00"
     },
     {
       "name": "NetClient",
-      "rva": "0X1F25D60",
+      "rva": "0X1F78B10",
       "pattern": "48 8B 05 ? ? ? ? 0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1"
     },
     {
       "name": "NetInstance",
-      "rva": "0X1F25D78",
+      "rva": "0X1F78B28",
       "pattern": "48 8B 0D ? ? ? ? 8B 5B 08"
     },
     {
       "name": "EntityList",
-      "rva": "0X1F25F10",
+      "rva": "0X1F78CC0",
       "pattern": "48 8B 05 ? ? ? ? 48 69 D1 D8 01 00 00 8B B4 02 A0 00 00 00"
     },
     {
       "name": "GameClient",
-      "rva": "0X1F41200",
+      "rva": "0X1F963F8",
       "pattern": "48 8B 05 ? ? ? ? 48 8B E9 83 78 10 02"
     },
     {
@@ -120,7 +120,7 @@
     },
     {
       "name": "SwapChain",
-      "rva": "0X1FC9710",
+      "rva": "0X201EB50",
       "pattern": "48 8B 05 ? ? ? ? 48 85 C0 0F 84 54 01 00 00"
     },
     {
@@ -135,32 +135,32 @@
     },
     {
       "name": "r3dRenderLayer",
-      "rva": "0X2008A78",
+      "rva": "0X205EC90",
       "pattern": "48 C7 ? ? ? ? 00 00 00 00 00 48 8D 4B 08"
     },
     {
       "name": "r3dRenderer",
-      "rva": "0X2008A70",
+      "rva": "0X205EC88",
       "pattern": "48 8B 0D ? ? ? ? 8B FA 48 8B 01"
     },
     {
       "name": "g_thread_device",
-      "rva": "0X2008A98",
+      "rva": "0X205ECB0",
       "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
     },
     {
       "name": "g_current_x3d_device_override",
-      "rva": "0X2008A98",
+      "rva": "0X205ECB0",
       "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
     },
     {
       "name": "g_x3d_d3d11_backend",
-      "rva": "0X2008A98",
+      "rva": "0X205ECB0",
       "pattern": "48 8B 35 ? ? ? ? 48 8D 54 24 20 83 C0 0F"
     },
     {
       "name": "g_d3dcompiler47_module",
-      "rva": "0X2009258",
+      "rva": "0X205F478",
       "pattern": "48 89 05 ? ? ? ? 48 85 C0 75 26"
     },
     {
@@ -170,12 +170,12 @@
     },
     {
       "name": "ViewMatrixInstance",
-      "rva": "0X1F29260",
+      "rva": "0X1F7BF00",
       "pattern": "48 8B 3D ? ? ? ? FF 90 20 01 00 00"
     },
     {
       "name": "X3DDeviceD3D11_vtable",
-      "rva": "0X1B817F8",
+      "rva": "0X1BC1938",
       "pattern": "48 8D 05 ? ? ? ? 48 89 06 0F 57 C0 48 89 9E EC 01 00 00"
     },
     {
@@ -185,19 +185,19 @@
     },
     {
       "name": "IssueOrderFlag",
-      "rva": "0X1E8AF18",
+      "rva": "0X1ED8F58",
       "pattern": "C7 05 ? ? ? ? 13 00 00 00"
     },
     {
       "name": "ConnSlotSentinel",
-      "rva": "0X1F6B064",
+      "rva": "0X1FC0394",
       "pattern": "0F B6 15 ? ? ? ? 48 85 C0 41 0F 95 C1"
     }
   ],
   "functions": [
     {
       "name": "BuffManagerClient__OnBuffRemove",
-      "rva": "0X8C3000",
+      "rva": "0X8D4460",
       "patterns": [
         "40 53 57 41 57 48 83 EC 40 48 8B 41 20 41 8B D9 4C 8B 49 18 49 2B C1"
       ],
@@ -205,7 +205,7 @@
     },
     {
       "name": "CanCast",
-      "rva": "0X2E1320",
+      "rva": "0X2EB7B0",
       "patterns": [
         "40 53 48 83 EC ? 48 8B D9 48 85 C9 74 ? 48 8B"
       ],
@@ -213,7 +213,7 @@
     },
     {
       "name": "CastSpellPosition",
-      "rva": "0XC67970",
+      "rva": "0XC73260",
       "patterns": [
         "48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 57 41 54 41 55 41 56 41 57 48 81 EC ? ? ? ? 0F 29 70"
       ],
@@ -221,7 +221,7 @@
     },
     {
       "name": "CastSpellSafe",
-      "rva": "0XBDC990",
+      "rva": "0XBEB7B0",
       "patterns": [
         "40 57 41 54 48 83 EC ? 4C 8B E2"
       ],
@@ -229,7 +229,7 @@
     },
     {
       "name": "CastSpellTarget",
-      "rva": "0X553B40",
+      "rva": "0X562BF0",
       "patterns": [
         "48 8B C4 48 89 50 ? 48 89 48 ? 55 56 41 54 41 56 41 57"
       ],
@@ -237,7 +237,7 @@
     },
     {
       "name": "CastSpellWrapper",
-      "rva": "0X20B6E0",
+      "rva": "0X20E330",
       "patterns": [
         "48 89 48 ? 55 56 57 41 54 41 55"
       ],
@@ -245,7 +245,7 @@
     },
     {
       "name": "CharacterDataStack__Push",
-      "rva": "0X4098E0",
+      "rva": "0X416070",
       "patterns": [
         "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 50 48 8B F2 48 8B F9 49 8B D0"
       ],
@@ -253,7 +253,7 @@
     },
     {
       "name": "CharacterDataStack__Update",
-      "rva": "0X24A990",
+      "rva": "0X24D8B0",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B 01 48 8B D9 48 8B F2"
       ],
@@ -261,7 +261,7 @@
     },
     {
       "name": "CharacterDataStackPush",
-      "rva": "0X296E60",
+      "rva": "0X29F750",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 55 57 41 54 41 56 41 57 48 8D 6C 24"
       ],
@@ -269,7 +269,7 @@
     },
     {
       "name": "CharacterDataStackUpdate",
-      "rva": "0X218490",
+      "rva": "0X21B390",
       "patterns": [
         "88 54 24 10 55 53 56 57 41 54 41 55 41 56 41 57"
       ],
@@ -277,7 +277,7 @@
     },
     {
       "name": "ComponentLookupFn",
-      "rva": "0X11BF700",
+      "rva": "0X11DD160",
       "patterns": [
         "48 89 6C 24 ? 56 41 54 41 57 48 83 EC ? 48 8B 2D"
       ],
@@ -285,7 +285,7 @@
     },
     {
       "name": "ComponentRegistry__Lookup",
-      "rva": "0X2174D0",
+      "rva": "0X21A3B0",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B D9 8B FA 48 8B 09"
       ],
@@ -301,7 +301,7 @@
     },
     {
       "name": "DistanceSq",
-      "rva": "0X221E20",
+      "rva": "0X225250",
       "patterns": [
         "F3 0F 10 81 5C 02 00 00"
       ],
@@ -309,7 +309,7 @@
     },
     {
       "name": "GameObject__IsType",
-      "rva": "0X29B640",
+      "rva": "0X2A4320",
       "patterns": [
         "40 56 48 83 EC 10 0F B6 41 ? 4C 8D 41 4C"
       ],
@@ -325,7 +325,7 @@
     },
     {
       "name": "GetAttackDelay",
-      "rva": "0X29FFF0",
+      "rva": "0X2A8BF0",
       "patterns": [
         "E8 ? ? ? ? 33 C0 F3 0F 11 83 ? ? ? ?"
       ],
@@ -333,7 +333,7 @@
     },
     {
       "name": "GetAttackWindup",
-      "rva": "0X58E660",
+      "rva": "0X59A490",
       "patterns": [
         "48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 60 48 8B 01 8B DA 0F 29 74 24 ??"
       ],
@@ -341,7 +341,7 @@
     },
     {
       "name": "GetBoundingRadius",
-      "rva": "0X289050",
+      "rva": "0X290DD0",
       "patterns": [
         "40 53 48 83 EC ? 48 83 B9 ? ? ? ? 00 48 8B D9 0F 29 74 24 20"
       ],
@@ -349,7 +349,7 @@
     },
     {
       "name": "GetCollisionFlags",
-      "rva": "0X1281DA0",
+      "rva": "0X12A1250",
       "patterns": [
         "48 83 EC 28 48 8B D1 48 8B 0D ? ? ? ? 48 8B 49 08"
       ],
@@ -357,7 +357,7 @@
     },
     {
       "name": "GetFirstObject",
-      "rva": "0X57F6F0",
+      "rva": "0X566D50",
       "patterns": [
         "48 83 EC ? 48 8B 51 ? 8B 41 ? 48 8D 0C C2"
       ],
@@ -365,7 +365,7 @@
     },
     {
       "name": "GetGoldRedirectTarget",
-      "rva": "0X210CD0",
+      "rva": "0X213AE0",
       "patterns": [
         "48 81 C1 ? ? ? ? E9 ? ? ? ? CC CC CC CC"
       ],
@@ -373,7 +373,7 @@
     },
     {
       "name": "GetMapID",
-      "rva": "0X17F5660",
+      "rva": "0X181A7F0",
       "patterns": [
         "E8 ? ? ? ? 4C 89 7C 24 40 48 8D 4C 24 70"
       ],
@@ -381,7 +381,7 @@
     },
     {
       "name": "GetModelInstance",
-      "rva": "0X2AC2A0",
+      "rva": "0X2B5470",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 8B 52 ? 48 8B 4B"
       ],
@@ -389,7 +389,7 @@
     },
     {
       "name": "GetNextObject",
-      "rva": "0X580040",
+      "rva": "0X567F40",
       "patterns": [
         "0F B7 42 ? 44 8B 41"
       ],
@@ -397,7 +397,7 @@
     },
     {
       "name": "GetObjectByID",
-      "rva": "0X57F020",
+      "rva": "0X565D90",
       "patterns": [
         "4C 8B C1 85 D2 74 ? 49 8B 40 20"
       ],
@@ -405,7 +405,7 @@
     },
     {
       "name": "GetPing",
-      "rva": "0X6D9920",
+      "rva": "0X6E31A0",
       "patterns": [
         "48 83 EC ? 0F B6 81 ? ? ? ? 3A 05"
       ],
@@ -413,7 +413,7 @@
     },
     {
       "name": "GetRenderPipeline",
-      "rva": "0X4A8540",
+      "rva": "0X4BA2F0",
       "patterns": [
         "48 83 EC 28 8B 0D ? ? ? ? 65 48 8B 04 25 58 00 00 00 BA 40 01 00 00 48 8B 04 C8 8B 04 02 39 05 ? ? ? ? 7F 47 48 8D 05 ? ? ? ? 48 83 C4 28 C3"
       ],
@@ -421,7 +421,7 @@
     },
     {
       "name": "GetSpellCastInfo",
-      "rva": "0X66FC40",
+      "rva": "0X679840",
       "patterns": [
         "E8 ?? ?? ?? ?? 48 85 C0 74 ?? 0F B6 40 ?? 84 C0"
       ],
@@ -429,7 +429,7 @@
     },
     {
       "name": "GetSpellSlot",
-      "rva": "0X9988F0",
+      "rva": "0X977BE0",
       "patterns": [
         "48 63 C2 48 8B 84 C1 ?? ?? ?? ?? C3",
         "83 FA ? 77 ? 48 63 C2 48 8B 84 C1"
@@ -438,7 +438,7 @@
     },
     {
       "name": "GetSubObjAiMgr",
-      "rva": "0X581F70",
+      "rva": "0X591640",
       "patterns": [
         "E8 ? ? ? ? 48 85 C0 74 ? F3 0F 10 70"
       ],
@@ -446,7 +446,7 @@
     },
     {
       "name": "IsAlive",
-      "rva": "0X2CABD0",
+      "rva": "0X2D46A0",
       "patterns": [
         "40 53 48 83 EC 20 48 8B 01 48 8B D9 FF 90 38 01 00 00 84 C0 74 ? 48 8D 8B ?? ?? ?? ?? 48 8B 01 FF 50 10 84 C0 75"
       ],
@@ -454,7 +454,7 @@
     },
     {
       "name": "IsBuilding",
-      "rva": "0XE19300",
+      "rva": "0XE1F660",
       "patterns": [
         "E8 ?? ?? ?? ?? 84 C0 0F 85 ?? ?? ?? ?? 48 8B CB E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"
       ],
@@ -462,7 +462,7 @@
     },
     {
       "name": "IsHero",
-      "rva": "0XC75850",
+      "rva": "0XC81390",
       "patterns": [
         "E8 ? ? ? ? 84 C0 0F 85 ? ? ? ? 48 8B CB E8 ? ? ? ? 84 C0 74 ? 48 8B"
       ],
@@ -470,7 +470,7 @@
     },
     {
       "name": "IsTurret",
-      "rva": "0X2E1410",
+      "rva": "0X2EB8A0",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 48 85 C9 74 27"
       ],
@@ -478,7 +478,7 @@
     },
     {
       "name": "IsVisible",
-      "rva": "0X219280",
+      "rva": "0X21C180",
       "patterns": [
         "48 83 EC 38 80 B9 6C 01 00 00 00 0F 29 74 24 ? 0F 28 ? 7F ? 80 B9 ? ? 00 00 00"
       ],
@@ -486,7 +486,7 @@
     },
     {
       "name": "IssueOrderCore",
-      "rva": "0X20B330",
+      "rva": "0X20D980",
       "patterns": [
         "48 89 5C 24 08 48 89 74 24 10 57 48 83 EC 20 48 C7 41 28 FF FF FF FF"
       ],
@@ -494,7 +494,7 @@
     },
     {
       "name": "MinimapHudInit",
-      "rva": "0XC40CD0",
+      "rva": "0XC4AFE0",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC 00 02 00 00"
       ],
@@ -510,7 +510,7 @@
     },
     {
       "name": "NavAgent",
-      "rva": "0X5B6A70",
+      "rva": "0X5C1EB0",
       "patterns": [
         "48 8B 40 28 48 85 C0"
       ],
@@ -518,7 +518,7 @@
     },
     {
       "name": "NavMesh__CreatePath",
-      "rva": "0X20F4C0",
+      "rva": "0X212210",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC"
       ],
@@ -526,7 +526,7 @@
     },
     {
       "name": "OnCreateObject",
-      "rva": "0X2BCE20",
+      "rva": "0X2C6650",
       "patterns": [
         "48 8B C4 48 89 58 ? 48 89 68 ? 48 89 70 ? 48 89 78 ? 41 56 48 81 EC ? ? ? ? 0F 29 70 E8"
       ],
@@ -534,7 +534,7 @@
     },
     {
       "name": "OnDeleteObject",
-      "rva": "0X57E440",
+      "rva": "0X562DB0",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B D9 48 8B FA 48 8B CA E8 ? ? ? ? 84 C0"
       ],
@@ -542,7 +542,7 @@
     },
     {
       "name": "OnDoCast",
-      "rva": "0X97A3C0",
+      "rva": "0X98C060",
       "patterns": [
         "40 56 57 48 83 EC 28 48 8B F2 48 8B F9 8B 51 08 48 3B D6 0F 84 ? ? ? ? 48 89 5C 24 40 48 89 6C 24 48 76 45 48 69 EA B0 00 00 00"
       ],
@@ -550,7 +550,7 @@
     },
     {
       "name": "OnNewPath",
-      "rva": "0X58CEC0",
+      "rva": "0X598D90",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 48 8B 09 48 85 C9 74"
       ],
@@ -558,7 +558,7 @@
     },
     {
       "name": "OnProcessSpell",
-      "rva": "0X97F3A0",
+      "rva": "0X9929F0",
       "patterns": [
         "40 55 56 48 81 EC 88 00 00 00 48 83 79 28 00"
       ],
@@ -566,7 +566,7 @@
     },
     {
       "name": "OnSpellImpact",
-      "rva": "0X99E7C0",
+      "rva": "0X98A170",
       "patterns": [
         "48 89 5C 24 10 48 89 74 24 18 57 48 83 EC 30 49 8B 01"
       ],
@@ -574,7 +574,7 @@
     },
     {
       "name": "PrintChat",
-      "rva": "0X11629E0",
+      "rva": "0X1181810",
       "patterns": [
         "40 53 55 56 57 41 54 41 55 41 56 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 60 4C 8B E1 0F 57 C0 33 FF"
       ],
@@ -582,7 +582,7 @@
     },
     {
       "name": "ProjectAndClip",
-      "rva": "0X1361FE0",
+      "rva": "0X13839A0",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC ? 48 8B BC 24 ? ? ? ? 48 8D 05"
       ],
@@ -590,7 +590,7 @@
     },
     {
       "name": "QuestProgress__Calculate",
-      "rva": "0X3C3300",
+      "rva": "0X3CCDA0",
       "patterns": [
         "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B 1D ? ? ? ? 4C 8B F2"
       ],
@@ -598,7 +598,7 @@
     },
     {
       "name": "QuestProgress__GetQuestValue",
-      "rva": "0X247B50",
+      "rva": "0X24AD30",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 8B 41 ? 0F B6 DA"
       ],
@@ -614,7 +614,7 @@
     },
     {
       "name": "RoleBound__Init",
-      "rva": "0XA1580",
+      "rva": "0XA1650",
       "patterns": [
         "48 83 EC ? 48 8D 15 ? ? ? ? 48 8D 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D ? ? ? ? 48 83 C4 ? E9 ? ? ? ?"
       ],
@@ -622,7 +622,7 @@
     },
     {
       "name": "SpellSlot__Cast",
-      "rva": "0X766D90",
+      "rva": "0X773420",
       "patterns": [
         "48 89 5C 24 08 57 48 83 EC 20 48 8B 01 0F B6 DA FF 90 98 00 00 00"
       ],
@@ -630,7 +630,7 @@
     },
     {
       "name": "SpellSlot__GetCooldown",
-      "rva": "0X9649F0",
+      "rva": "0X8BB670",
       "patterns": [
         "40 53 48 83 EC 40 48 8B D9 0F 29 74 24 30 48 8B 0D ? ? ? ? 0F 29"
       ],
@@ -638,7 +638,7 @@
     },
     {
       "name": "SpellSlot__GetLevel",
-      "rva": "0X3C0CAB",
+      "rva": "0X3CA41B",
       "patterns": [
         "CC CC CC CC CC 8B 41 28 C3"
       ],
@@ -646,7 +646,7 @@
     },
     {
       "name": "TransformVec3",
-      "rva": "0X1364020",
+      "rva": "0X13859E0",
       "patterns": [
         "48 83 EC ? 48 8B 44 24 ? 4C 8B D1"
       ],
@@ -654,7 +654,7 @@
     },
     {
       "name": "TranslateString",
-      "rva": "0X11BEDF0",
+      "rva": "0X11DC850",
       "patterns": [
         "40 53 48 83 EC ? 80 39 ? 48 8B C1 8B D1 74"
       ],
@@ -662,7 +662,7 @@
     },
     {
       "name": "UpdateCamera",
-      "rva": "0X306E40",
+      "rva": "0X30EA30",
       "patterns": [
         "48 89 5C 24 18 55 56 57 48 8D 6C 24 ? 48 81 EC"
       ],
@@ -670,7 +670,7 @@
     },
     {
       "name": "WaypointCount",
-      "rva": "0X2749D0",
+      "rva": "0X27B840",
       "patterns": [
         "8B 40 30"
       ],
@@ -678,7 +678,7 @@
     },
     {
       "name": "WorldToScreen",
-      "rva": "0X13620C0",
+      "rva": "0X1383A80",
       "patterns": [
         "48 83 EC ? F3 0F 10 02 48 8D 41 ? F3 0F 10 4A"
       ],
@@ -686,7 +686,7 @@
     },
     {
       "name": "fieldOfView",
-      "rva": "0X4063E0",
+      "rva": "0X412AA0",
       "patterns": [
         "48 8D 15 ? ? ? ? 48 89 4C 24 ? 41 B9 3C 00 00 00"
       ],
@@ -694,7 +694,7 @@
     },
     {
       "name": "ClientMainLoop",
-      "rva": "0X1666D90",
+      "rva": "0X168B650",
       "patterns": [
         "48 83 EC 48 80 3D ? ? ? ? 00 48 89 5C 24"
       ],
@@ -702,7 +702,7 @@
     },
     {
       "name": "OnWndProc",
-      "rva": "0X120C880",
+      "rva": "0X122B300",
       "patterns": [
         "40 53 57 48 81 EC 88 02 00 00 48 8B 05 ? ? ? ? 48 33 C4"
       ],
@@ -718,7 +718,7 @@
     },
     {
       "name": "OnPlayAnimation",
-      "rva": "0X2AC2A0",
+      "rva": "0X2B5470",
       "patterns": [
         "48 8B DA 48 8B F9 8B 52 ? 48 8B 4B ? E8 ? ? ? ? 48 8B"
       ],
@@ -734,7 +734,7 @@
     },
     {
       "name": "IssueOrderPacketWrapper",
-      "rva": "0X20B6E0",
+      "rva": "0X20E330",
       "patterns": [
         "48 89 48 ? 55 56 57 41 54 41 55"
       ],
@@ -742,7 +742,7 @@
     },
     {
       "name": "GetThreadDevice",
-      "rva": "0X21F770",
+      "rva": "0X222B90",
       "patterns": [
         "48 83 EC 28 48 8B 05 ? ? ? ? 48 83 C4 28 C3"
       ],
@@ -750,7 +750,7 @@
     },
     {
       "name": "X3DDeviceD3D11_Initialize",
-      "rva": "0X1FD470",
+      "rva": "0X1FF670",
       "patterns": [
         "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 48 8B E9"
       ],
@@ -758,7 +758,7 @@
     },
     {
       "name": "X3DDeviceD3D11_Release",
-      "rva": "0X211280",
+      "rva": "0X214090",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 48 8B 89"
       ],
@@ -766,7 +766,7 @@
     },
     {
       "name": "ConstantBuffer_CreateD3D11DynamicBuffer",
-      "rva": "0X32B5D0",
+      "rva": "0X3312B0",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4"
       ],
@@ -774,7 +774,7 @@
     },
     {
       "name": "D3D11TextureView_CreateShaderResourceView",
-      "rva": "0X29D790",
+      "rva": "0X32AD10",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 55 41 56 41 57 48 8B EC"
       ],
@@ -782,7 +782,7 @@
     },
     {
       "name": "DX11Backend_CreateDeviceAndSwapChain",
-      "rva": "0X20F4C0",
+      "rva": "0X212210",
       "patterns": [
         "48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC"
       ],
@@ -790,7 +790,7 @@
     },
     {
       "name": "GraphicsPipelineD3D11_InitFromDesc",
-      "rva": "0XB9AA40",
+      "rva": "0XBA5E00",
       "patterns": [
         "48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 56 48 83 EC ? 48 89 51"
       ],
@@ -798,7 +798,7 @@
     },
     {
       "name": "X3DDeviceD3D11_SetGraphicsPipeline",
-      "rva": "0X380C20",
+      "rva": "0X389A20",
       "patterns": [
         "44 88 44 24 ? 53 55 57 41 54"
       ],
@@ -806,7 +806,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateGraphicsPipeline",
-      "rva": "0X3FC280",
+      "rva": "0X408C00",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? B9 ? ? ? ? 49 8B F8"
       ],
@@ -814,7 +814,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateVertexBuffer",
-      "rva": "0X1F0010",
+      "rva": "0X1EB420",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
@@ -822,7 +822,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateIndexBuffer",
-      "rva": "0X1F0010",
+      "rva": "0X1EB420",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
@@ -830,7 +830,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateDataBuffer",
-      "rva": "0X21F770",
+      "rva": "0X222B90",
       "patterns": [
         "48 83 EC 28 48 8B 05 ? ? ? ? 48 83 C4 28 C3"
       ],
@@ -838,7 +838,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateTexture2D",
-      "rva": "0X117AF70",
+      "rva": "0X1199340",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 48 8B F9 49 8B D9"
       ],
@@ -846,7 +846,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateVertexProgram",
-      "rva": "0X1F0010",
+      "rva": "0X1EB420",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
@@ -854,7 +854,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreatePixelProgram",
-      "rva": "0X1F0010",
+      "rva": "0X1EB420",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
@@ -862,7 +862,7 @@
     },
     {
       "name": "X3DDeviceD3D11_CreateShaderProgram",
-      "rva": "0X1F0010",
+      "rva": "0X1EB420",
       "patterns": [
         "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B F9 49 8B D9"
       ],
@@ -870,7 +870,7 @@
     },
     {
       "name": "X3DDeviceD3D11_ClearFramebuffer",
-      "rva": "0X13DBC20",
+      "rva": "0X13FE710",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 30 41 8B D8 48 8B F9"
       ],
@@ -878,7 +878,7 @@
     },
     {
       "name": "X3DDeviceD3D11_BeginFrame",
-      "rva": "0X1E9650",
+      "rva": "0X1AD770",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
@@ -886,7 +886,7 @@
     },
     {
       "name": "X3DDeviceD3D11_EndFrame",
-      "rva": "0X1E9650",
+      "rva": "0X1AD770",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
@@ -894,7 +894,7 @@
     },
     {
       "name": "X3DDeviceD3D11_BeginRenderPass",
-      "rva": "0X2085B0",
+      "rva": "0X20AC00",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 48 8B FA"
       ],
@@ -902,7 +902,7 @@
     },
     {
       "name": "X3DDeviceD3D11_EndRenderPass",
-      "rva": "0X1E9650",
+      "rva": "0X1AD770",
       "patterns": [
         "40 53 48 83 EC 20 48 8B D9 83 B9"
       ],
@@ -910,7 +910,7 @@
     },
     {
       "name": "X3DDeviceD3D11_IsRenderPassActive",
-      "rva": "0X289E00",
+      "rva": "0X291B80",
       "patterns": [
         "8B 81 ? ? ? ? C3"
       ],
@@ -918,7 +918,7 @@
     },
     {
       "name": "X3DDeviceD3D11_IsFrameActive",
-      "rva": "0X289E00",
+      "rva": "0X291B80",
       "patterns": [
         "8B 81 ? ? ? ? C3"
       ],
@@ -926,7 +926,7 @@
     },
     {
       "name": "X3DDeviceD3D11_Draw",
-      "rva": "0X1F3690",
+      "rva": "0X1EFC30",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 8B FA"
       ],
@@ -934,7 +934,7 @@
     },
     {
       "name": "X3DDeviceD3D11_DrawIndexed",
-      "rva": "0X1F3690",
+      "rva": "0X1EFC30",
       "patterns": [
         "48 89 5C 24 ? 57 48 83 EC 20 48 8B D9 8B FA"
       ],
@@ -942,7 +942,7 @@
     },
     {
       "name": "g_thread_device",
-      "rva": "0X21C160",
+      "rva": "0X21F570",
       "patterns": [
         "48 8B 0D ? ? ? ? 48 85 C9 74 ? E8"
       ],
@@ -950,7 +950,7 @@
     },
     {
       "name": "g_x3d_d3d11_backend",
-      "rva": "0X3972F0",
+      "rva": "0X3D2430",
       "patterns": [
         "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8B 80"
       ],
@@ -970,7 +970,7 @@
           "op": 1
         },
         "oNetId": {
-          "offset": "0X20",
+          "offset": "0XBC",
           "type": "DWORD",
           "description": "Network ID (backward compat)",
           "pattern": "48 C1 E2 ?? 48 09",
@@ -991,7 +991,7 @@
           "op": 1
         },
         "oNetworkID": {
-          "offset": "0XCC",
+          "offset": "0XBC",
           "type": "uint32_t",
           "description": "Unique Network ID for entity replication",
           "pattern": "8B 81 CC 00 00 00",
@@ -1003,7 +1003,7 @@
           "description": "Source network ID (CreateClientEffect path)"
         },
         "oDead": {
-          "offset": "0x231",
+          "offset": "0X231",
           "type": "bool",
           "description": "Dead status"
         },
@@ -1025,7 +1025,7 @@
           "description": "Direction"
         },
         "oVisibility": {
-          "offset": "0x2C0",
+          "offset": "0X2C0",
           "type": "byte",
           "description": "Visibility byte"
         },
@@ -1052,7 +1052,7 @@
           "op": 1
         },
         "oIsTargetable": {
-          "offset": "0XEB0",
+          "offset": "0X10E0",
           "type": "bool",
           "description": "Is entity targetable / invulnerable check",
           "pattern": "0F B6 83 ?? ?? ?? ?? 48 83 C4 20 5B C3",
@@ -1106,7 +1106,7 @@
           "op": 1
         },
         "oItemList": {
-          "offset": "0X44A8",
+          "offset": "0X4308",
           "type": "pointer",
           "description": "Inventory item list",
           "pattern": "48 8B 81 ?? ?? ?? ?? 4C 8B F1 0F 29 74 24",
@@ -1118,17 +1118,17 @@
           "description": "Character data stack component"
         },
         "OFF_POS_X": {
-          "offset": "0x23C",
+          "offset": "0X23C",
           "type": "float",
           "description": "Position.X — IDA confirmed via distance fn"
         },
         "OFF_POS_Y": {
-          "offset": "0x240",
+          "offset": "0X240",
           "type": "float",
           "description": "Position.Y"
         },
         "OFF_POS_Z": {
-          "offset": "0x244",
+          "offset": "0X244",
           "type": "float",
           "description": "Position.Z"
         },
@@ -1152,17 +1152,17 @@
           "description": "Alternate visibility source"
         },
         "OFF_HP": {
-          "offset": "0x1060",
+          "offset": "0X1060",
           "type": "float",
           "description": "Current health"
         },
         "OFF_HP_MAX": {
-          "offset": "0x10B0",
+          "offset": "0X1088",
           "type": "float",
           "description": "Max health"
         },
         "OFF_MANA": {
-          "offset": "0x340",
+          "offset": "0X340",
           "type": "float",
           "description": "Current mana/resource"
         },
@@ -1235,7 +1235,7 @@
           "op": 1
         },
         "OFF_SPELLBOOK": {
-          "offset": "0X3128",
+          "offset": "0X3110",
           "type": "QWORD*",
           "description": "SpellBook pointer",
           "pattern": "48 89 9D 28 31 ?? ?? ?? ??",
@@ -1263,28 +1263,28 @@
           "op": 1
         },
         "Armor": {
-          "offset": "0X500",
+          "offset": "0X2078",
           "type": "",
           "description": "",
           "pattern": "4C 8D 83 E8 ?? ?? ?? ?? 8D 15 2A C8",
           "op": 1
         },
         "AttackRange": {
-          "offset": "0X1",
+          "offset": "0X21B8",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
           "op": 1
         },
         "AttackSpeedMod": {
-          "offset": "0X1",
+          "offset": "0X1E48",
           "type": "",
           "description": "",
           "pattern": "4C 89 ?? ?? ?? ??",
           "op": 0
         },
         "BaseAttackDamage": {
-          "offset": "0X1F08",
+          "offset": "0X1EE8",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 08 1F ?? ?? ?? ??",
@@ -1425,7 +1425,7 @@
           "op": 0
         },
         "SpellBlock": {
-          "offset": "0x20E8",
+          "offset": "0X20C8",
           "type": "",
           "description": ""
         },
@@ -1451,14 +1451,14 @@
           "op": 1
         },
         "HP": {
-          "offset": "0X1080",
+          "offset": "0X1060",
           "type": "",
           "description": "",
           "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
           "op": 0
         },
         "IsTargetable": {
-          "offset": "0XED0",
+          "offset": "0X10E0",
           "type": "",
           "description": "",
           "pattern": "48 89 85 ?? ?? ?? ?? 48 8D 54 24 28",
@@ -1472,7 +1472,7 @@
           "op": 1
         },
         "MaxHP": {
-          "offset": "0X10D0",
+          "offset": "0X1088",
           "type": "",
           "description": "",
           "pattern": "FF 80 ?? 10 00 00",
@@ -1486,7 +1486,7 @@
           "op": 1
         },
         "TargetableFlags": {
-          "offset": "0XD0",
+          "offset": "0X18",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
@@ -1521,7 +1521,7 @@
           "op": 0
         },
         "BonusAttackDamage": {
-          "offset": "0X1",
+          "offset": "0X1CE0",
           "type": "",
           "description": "",
           "pattern": "48 8D ?? ?? ?? ??",
@@ -1619,7 +1619,7 @@
           "op": 1
         },
         "Health": {
-          "offset": "0X1080",
+          "offset": "0X1060",
           "type": "",
           "description": "",
           "pattern": "48 89 85 ?? 10 00 00 48 8D 55",
@@ -1647,7 +1647,7 @@
           "op": 0
         },
         "IsTargetableToTeamFlags": {
-          "offset": "0XD0",
+          "offset": "0X18",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D C2 7D",
           "op": 1
         },
@@ -1666,21 +1666,21 @@
           "op": 1
         },
         "Mana": {
-          "offset": "0X360",
+          "offset": "0X340",
           "type": "",
           "description": "",
           "pattern": "C7 85 ?? ?? ?? ?? 0F 00 00 00 C7 85 64",
           "op": 0
         },
         "MaxHealth": {
-          "offset": "0X10D0",
+          "offset": "0X1088",
           "type": "",
           "description": "",
           "pattern": "FF 80 ?? 10 00 00",
           "op": 0
         },
         "MaxMana": {
-          "offset": "0X48",
+          "offset": "0X368",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 52 F1 DC",
@@ -1804,7 +1804,7 @@
           "op": 1
         },
         "Position": {
-          "offset": "0X1",
+          "offset": "0X23C",
           "type": "",
           "description": "",
           "pattern": "41 B8 ?? ?? ?? ?? E8 FF 6F 0E",
@@ -1958,17 +1958,17 @@
           "description": "Magic resistance (Armor + 0x20)"
         },
         "oBuffManager": {
-          "offset": "0X27C8",
+          "offset": "0X2E60",
           "type": "BuffManager*",
           "description": "Pointer to BuffManager component"
         },
         "oBuffManagerAlt": {
-          "offset": "0X2E58",
+          "offset": "0X2E60",
           "type": "BuffManager*",
           "description": "Alternative / verified BuffManager offset"
         },
         "oParticleName": {
-          "offset": "0X4598",
+          "offset": "0X45A8",
           "type": "char[64]",
           "description": "Particle entity name string"
         },
@@ -1991,6 +1991,31 @@
           "offset": "0X29BD",
           "type": "uint8_t",
           "description": "XOR key element count"
+        },
+        "BoundingRadius": {
+          "offset": "0X207C",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "MagicResist": {
+          "offset": "0X20C8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "Visible": {
+          "offset": "0X2E8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "VisibleFlags": {
+          "offset": "0X2C0",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "NetworkID": {
+          "offset": "0XBC",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -1999,28 +2024,28 @@
       "base": "GameObject",
       "fields": {
         "oCombatStats": {
-          "offset": "0X4440",
+          "offset": "0X42A0",
           "type": "pointer",
           "description": "Combat stats sub-structure",
           "pattern": "4C 8D 8F ?? ?? ?? ?? 41 0F B6 51 15 45 33 C0",
           "op": 1
         },
         "oModelInstance": {
-          "offset": "0X44F0",
+          "offset": "0X4350",
           "type": "pointer",
           "description": "Model instance",
           "pattern": "48 8D 93 ?? ?? 00 00 48 8B 08",
           "op": 1
         },
         "oCharacterDataStack": {
-          "offset": "0X40F0",
+          "offset": "0X1270",
           "type": "pointer",
           "description": "Character data stack component",
           "pattern": "48 8D 8B 70 12 00 00",
           "op": 1
         },
         "oBuffManager": {
-          "offset": "0X2D88",
+          "offset": "0X2E60",
           "type": "BuffManager*",
           "description": "BuffManager component",
           "pattern": "48 8D 8B 78 2E 00 00",
@@ -2034,14 +2059,14 @@
           "op": 1
         },
         "oPetOwner": {
-          "offset": "0X4D38",
+          "offset": "0X4BA0",
           "type": "pointer",
           "description": "Pet owner",
           "pattern": "8B 99 ?? ?? ?? ?? 48 8B F9 85 DB 74 2A",
           "op": 1
         },
         "oHeroInventoryClient": {
-          "offset": "0X2C0",
+          "offset": "0X4058",
           "type": "pointer",
           "description": "Hero inventory client",
           "pattern": "48 8D 93 ?? ?? ?? ?? 48 8B CD 0F B6 42",
@@ -2055,7 +2080,7 @@
           "op": 0
         },
         "CharacterData": {
-          "offset": "0X40F0",
+          "offset": "0X3EF0",
           "type": "pointer",
           "description": "Character data",
           "pattern": "48 8D 8D ?? ?? 00 00 44 8B 8C 24 ?? 00 00 00 45 8B C7",
@@ -2545,17 +2570,17 @@
           "description": "Bonus AD"
         },
         "oSpellBook": {
-          "offset": "0X3108",
+          "offset": "0X3110",
           "type": "SpellBook*",
           "description": "SpellBook component"
         },
         "oBuffManagerAlt": {
-          "offset": "0X2E58",
+          "offset": "0X2E60",
           "type": "BuffManager*",
           "description": "BuffManager alternate component"
         },
         "oAIManager": {
-          "offset": "0X4050",
+          "offset": "0X4060",
           "type": "AIManager*",
           "description": "AIManager component"
         }
@@ -2566,14 +2591,14 @@
       "base": "0x4428",
       "fields": {
         "mFlatAPMod": {
-          "offset": "0X208",
+          "offset": "0X1C",
           "type": "float",
           "description": "Ability Power (Flat)",
           "pattern": "F3 0F 10 41 1C",
           "op": 1
         },
         "mBaseAD": {
-          "offset": "0X370",
+          "offset": "0X24",
           "type": "float",
           "description": "Base Attack Damage",
           "pattern": "F3 0F 10 41 24",
@@ -2587,14 +2612,14 @@
           "op": 1
         },
         "mAttackRange": {
-          "offset": "0X640",
+          "offset": "0X5C",
           "type": "float",
           "description": "Basic Attack Range",
           "pattern": "F3 0F 10 41 5C",
           "op": 1
         },
         "mArmor": {
-          "offset": "0X500",
+          "offset": "0X118",
           "type": "float",
           "description": "Total Armor",
           "pattern": "F3 0F 10 81 18 01 00 00",
@@ -2615,14 +2640,14 @@
           "op": 1
         },
         "mAttackSpeedMod": {
-          "offset": "0X2D0",
+          "offset": "0X1A8",
           "type": "float",
           "description": "Attack Speed Multiplier",
           "pattern": "F3 0F 10 81 A8 01 00 00",
           "op": 1
         },
         "mCrit": {
-          "offset": "0X4B0",
+          "offset": "0X1C8",
           "type": "float",
           "description": "Critical Strike Chance",
           "pattern": "F3 0F 10 81 C8 01 00 00",
@@ -2636,7 +2661,7 @@
           "op": 1
         },
         "mBonusSpellBlock": {
-          "offset": "0X578",
+          "offset": "0X200",
           "type": "float",
           "description": "Bonus Magic Resist",
           "pattern": "F3 0F 10 81 00 02 00 00",
@@ -2700,25 +2725,25 @@
       "base": "GameObject",
       "fields": {
         "CasterNetID": {
-          "offset": "0X30",
+          "offset": "0X340",
           "type": "DWORD",
           "description": "Network ID of the unit that fired the missile",
           "pattern": "8B 41 30"
         },
         "TargetNetID": {
-          "offset": "0X34",
+          "offset": "0X3B0",
           "type": "DWORD",
           "description": "Network ID of the target unit (if targeted)",
           "pattern": "8B 41 34"
         },
         "StartPos": {
-          "offset": "0X24",
+          "offset": "0X370",
           "type": "Vector3",
           "description": "Starting position of the missile",
           "pattern": "F3 0F 10 41 24"
         },
         "EndPos": {
-          "offset": "0X30",
+          "offset": "0X37C",
           "type": "Vector3",
           "description": "Destination position",
           "pattern": "F3 0F 10 41 30"
@@ -2772,7 +2797,7 @@
           "op": 1
         },
         "CastEndPos": {
-          "offset": "0X0",
+          "offset": "0X7F0",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 82 1C",
@@ -2820,7 +2845,7 @@
           "op": 0
         },
         "SpellName": {
-          "offset": "0X120",
+          "offset": "0X2C0",
           "type": "",
           "description": "",
           "pattern": "48 81 EC ?? ?? ?? ?? 48 81 E4 00 FC",
@@ -2854,6 +2879,26 @@
           "offset": "0X2DA0",
           "type": "uint32_t",
           "description": "Follow / lock-on target Net ID"
+        },
+        "SpellCastInfo": {
+          "offset": "0X2A0",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastPos": {
+          "offset": "0X388",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "TargetNetIDAlt": {
+          "offset": "0X3B8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "TargetNetIDLegacy": {
+          "offset": "0X344",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -3035,6 +3080,36 @@
           "offset": "0X130",
           "type": "SpellData*",
           "description": "Pointer to SpellData instance"
+        },
+        "CooldownExpire": {
+          "offset": "0X30",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "Ammo": {
+          "offset": "0X5C",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "SecondaryExpire": {
+          "offset": "0X68",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "TotalCooldown": {
+          "offset": "0X74",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "Charges": {
+          "offset": "0X8C",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "SpellData": {
+          "offset": "0X130",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -3112,6 +3187,16 @@
           "offset": "0XF18",
           "type": "int",
           "description": "Slot index of last cast event"
+        },
+        "SpellSlots": {
+          "offset": "0XAE0",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "DelayPct": {
+          "offset": "0X308",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -3217,14 +3302,14 @@
           "op": 1
         },
         "ServerPos": {
-          "offset": "0X560",
+          "offset": "0X8",
           "type": "",
           "description": "",
           "pattern": "89 85 ?? ?? ?? ??",
           "op": 0
         },
         "StartPath": {
-          "offset": "0X0",
+          "offset": "0X28",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D 04 FB",
@@ -3243,14 +3328,14 @@
           "description": ""
         },
         "Velocity": {
-          "offset": "0X0",
+          "offset": "0X20",
           "type": "",
           "description": "",
           "pattern": "48 C7 44 24 38 ?? ?? ?? ?? 48 8D 0D A2 5A",
           "op": 1
         },
         "Component": {
-          "offset": "0X4050",
+          "offset": "0X4060",
           "type": "AIManager*",
           "description": "AIManager component offset"
         },
@@ -3404,6 +3489,16 @@
           "description": "",
           "pattern": "48 C1 E2 ?? 48 09",
           "op": 1
+        },
+        "SpellName": {
+          "offset": "0X28",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "SpellInfo": {
+          "offset": "0X60",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -3502,12 +3597,12 @@
           "op": 0
         },
         "BaseCost": {
-          "offset": "0X6D0",
+          "offset": "0X6D8",
           "type": "float[6]",
           "description": "Mana / Energy cost per level"
         },
         "CastRadius": {
-          "offset": "0X7AC",
+          "offset": "0X7B4",
           "type": "float[6]",
           "description": "Cast radius / area of effect"
         },
@@ -3525,6 +3620,51 @@
           "offset": "0X7F0",
           "type": "float",
           "description": "Missile speed alternative 3"
+        },
+        "CooldownTime": {
+          "offset": "0X6F0",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastRange": {
+          "offset": "0X760",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastRangeDisplayOverride": {
+          "offset": "0X798",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastRadiusSecondary": {
+          "offset": "0X7D0",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "LineWidth": {
+          "offset": "0X448",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "mLineWidth": {
+          "offset": "0X448",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "MissileSpeed": {
+          "offset": "0X3F8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastConeAngle": {
+          "offset": "0X3D8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "CastConeDistance": {
+          "offset": "0X3DC",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -3882,6 +4022,16 @@
           "offset": "0X1A4",
           "type": "float",
           "description": "Cast end game time"
+        },
+        "StartPosition": {
+          "offset": "0XD8",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "EndPosition": {
+          "offset": "0XE4",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -4252,6 +4402,16 @@
           "offset": "0X20",
           "type": "void**",
           "description": "Alternate array end pointer"
+        },
+        "ArrayStart": {
+          "offset": "0X18",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "ArrayEnd": {
+          "offset": "0X20",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -4317,6 +4477,11 @@
           "offset": "0X8C",
           "type": "uint32_t",
           "description": "Alternate stack count 2"
+        },
+        "Count": {
+          "offset": "0X8C",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -4429,17 +4594,17 @@
       "description": "Navigation structure layout",
       "fields": {
         "XorKeyTable": {
-          "offset": "0X4248",
+          "offset": "0X4058",
           "type": "uint64_t*",
           "description": "XOR key table for PathController wrapper"
         },
         "EncryptedWrapper": {
-          "offset": "0X4250",
+          "offset": "0X4060",
           "type": "uint64_t*",
           "description": "Encrypted wrapper array"
         },
         "ActiveSlotIndex": {
-          "offset": "0X4273",
+          "offset": "0X4083",
           "type": "uint8_t",
           "description": "Active slot index"
         },
@@ -4449,12 +4614,12 @@
           "description": "Offset from wrapper to PathController"
         },
         "ServerPos": {
-          "offset": "0X338",
+          "offset": "0X474",
           "type": "Vec3",
           "description": "Server position Vec3"
         },
         "CurrentWaypoint": {
-          "offset": "0X354",
+          "offset": "0X320",
           "type": "uint32_t",
           "description": "Index of current target waypoint"
         },
@@ -4469,9 +4634,24 @@
           "description": "Number of waypoints in current path"
         },
         "EndPos": {
-          "offset": "0X598",
+          "offset": "0X33C",
           "type": "Vec3",
           "description": "Final destination point Vec3"
+        },
+        "WaypointCapacity": {
+          "offset": "0X354",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "RouteStart": {
+          "offset": "0X330",
+          "type": "uintptr_t",
+          "description": "Verified offset"
+        },
+        "TargetPosition": {
+          "offset": "0X33C",
+          "type": "uintptr_t",
+          "description": "Verified offset"
         }
       }
     },
@@ -4525,27 +4705,27 @@
         "description": "Far clipping plane"
       },
       "OFF_VIEW_MTX": {
-        "offset": "0x1E4",
+        "offset": "0X1E4",
         "type": "float[16]",
         "description": "View / rotation matrix"
       },
       "OFF_PROJ_MTX": {
-        "offset": "0x224",
+        "offset": "0X224",
         "type": "float[16]",
         "description": "Projection matrix"
       },
       "camMgr_to_camEnt": {
-        "offset": "0x2F8",
+        "offset": "0X2F8",
         "type": "QWORD*",
         "description": "Camera entity pointer"
       },
       "camMgr_to_viewport": {
-        "offset": "0x300",
+        "offset": "0X300",
         "type": "int[4]",
         "description": "Left/Top/Right/Bottom"
       },
       "OFF_CAM_POS": {
-        "offset": "0x10",
+        "offset": "0X0",
         "type": "Vector3",
         "description": "Camera position (direct)"
       },
@@ -4568,6 +4748,26 @@
         "offset": "0x1F8",
         "type": "float",
         "description": "Far Camera Clip"
+      },
+      "ViewMatrix": {
+        "offset": "0X1E4",
+        "type": "uintptr_t",
+        "description": "Verified offset"
+      },
+      "ProjMatrix": {
+        "offset": "0X224",
+        "type": "uintptr_t",
+        "description": "Verified offset"
+      },
+      "CamEntOffset": {
+        "offset": "0X2F8",
+        "type": "uintptr_t",
+        "description": "Verified offset"
+      },
+      "ViewportRect": {
+        "offset": "0X300",
+        "type": "uintptr_t",
+        "description": "Verified offset"
       }
     }
   },
