@@ -45,7 +45,7 @@ flowchart LR
 
     subgraph Components ["Internal Components"]
         direction TB
-        SB["SpellBook<br/>+0x38 ActiveSpellCast<br/>+0x308 DelayPct<br/>+0xAE0 SpellSlots[]<br/>+0xF10 LastCastTime<br/>+0xF18 LastCastSlot"]
+        SB["SpellBook<br/>+0x38 ActiveSpellCast<br/>+0x308 DelayPct<br/>+0xAE0 SpellSlots Array<br/>+0xF10 LastCastTime<br/>+0xF18 LastCastSlot"]
         NAV["Navigation & Pathing<br/>+0x4058 XorKeyTable<br/>+0x4060 Wrapper Array<br/>+0x4083 ActiveSlotIndex<br/>+0x10 PathController<br/>+0x320 CurrentWaypoint<br/>+0x348 WaypointArray<br/>+0x350 WaypointCount<br/>+0x474 ServerPos"]
         BM["BuffManager<br/>+0x18 ArrayStart<br/>+0x20 ArrayEnd"]
         CS["CharacterStats (0x1B78)<br/>+0x28 AbilityHasteMod<br/>+0x168 FlatBonusAD<br/>+0x208 AbilityPower<br/>+0x370 BaseAD<br/>+0x5F0 MoveSpeed"]
@@ -67,7 +67,7 @@ flowchart LR
 
     LP -->|points to| GO
     OM -->|NodeValue +0x28| GO
-    EM -->|List[i] +0x08| GO
+    EM -->|List +0x08| GO
     MM -->|ActiveMissileMap +0x48| MC
 
     GO -->|+0x3110| SB
@@ -82,7 +82,7 @@ flowchart LR
     MC -->|+0x2A0| SD
     SD -->|+0x60| SDR
 
-    BM -->|ArrayStart[i]| BE
+    BM -->|ArrayStart +0x18| BE
     BE -->|+0x10| BS
 ```
 
