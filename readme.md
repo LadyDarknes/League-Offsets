@@ -1,10 +1,13 @@
 <h1 align="center">League — Offset & Pattern Database</h1>
 
+# update: I am bussy with my own life my customers and this project is paused.
+
+
 <p align="center">
   <img src="https://img.shields.io/badge/Patch-26.18-blue?style=flat-square" alt="Patch" />
   <img src="https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square" alt="Arch" />
   <img src="https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square" alt="Tool" />
-  <img src="https://img.shields.io/badge/Status-up_to_date-brightgreen?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-outdated-red?style=flat-square" alt="Status" />
 </p>
 
 <p align="center">
