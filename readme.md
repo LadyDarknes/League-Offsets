@@ -33,15 +33,6 @@ League-Offsets/
 </p>
 
 
-## Build Info
-
-| Field | Value |
-| ----- | ----- |
-| Patch | 26.18 (16.18.idk.rest.of.it) |
-| Timestamp | `6A9BBDC4` — Sat Sep 05 06:59:16 2026 UTC |
-| Imagebase | `7FF7EA4F0000` |
-| Compiler | Visual C++ · x64 PE |
-
 ---
 
 ## Contact
