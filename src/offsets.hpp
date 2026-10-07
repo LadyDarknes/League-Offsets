@@ -5,7 +5,7 @@ namespace Offsets {
     constexpr uintptr_t ImageBase = 0X7FF6B01A0000;
 
     namespace Globals {
-        constexpr uintptr_t LocalPlayer = 0X1EDE4A0;
+        constexpr uintptr_t LocalPlayer = 0x1EF6BA8;
         constexpr uintptr_t HeroManager = 0X1EDE420;
         constexpr uintptr_t MinionManager = 0X1EDE460;
         constexpr uintptr_t BlueMinionManager = 0X1EDE4D8;
