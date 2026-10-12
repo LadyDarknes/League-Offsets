@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Patch-26.19-blue?style=flat-square" alt="Patch" />
+  <img src="https://img.shields.io/badge/Patch-26.20-blue?style=flat-square" alt="Patch" />
   <img src="https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square" alt="Arch" />
   <img src="https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square" alt="Tool" />
   <img src="https://img.shields.io/badge/Status-not_tested-yellow?style=flat-square" alt="Status" />
@@ -37,7 +37,7 @@ League-Offsets/
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.19 (16.19.idk.rest.of.it) |
+| Patch | 26.20 (16.20.idk.rest.of.it) |
 | Timestamp | `6AC001AD` — Sat Sep 05 06:59:16 2026 UTC |
 | Imagebase | `7FF6B01A0000` |
 | Compiler | Visual C++ · x64 PE |
