@@ -1,7 +1,7 @@
 <h1 align="center">League — Offset & Pattern Database</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Patch-26.20-blue?style=flat-square" alt="Patch" />
+  <img src="https://img.shields.io/badge/Patch-26.21-blue?style=flat-square" alt="Patch" />
   <img src="https://img.shields.io/badge/Arch-x64%20PE-lightgrey?style=flat-square" alt="Arch" />
   <img src="https://img.shields.io/badge/Tool-IDA%20Pro%209.4-orange?style=flat-square" alt="Tool" />
   <img src="https://img.shields.io/badge/Status-up_to_date-brightgreen?style=flat-square" alt="Status" />
@@ -35,7 +35,7 @@ League-Offsets/
 
 | Field | Value |
 | ----- | ----- |
-| Patch | 26.20 |
+| Patch | 26.21 |
 | Timestamp | `6AC5F0E0` |
 | Imagebase | `7FF69A1B0000` |
 | Compiler | Visual C++ · x64 PE |
